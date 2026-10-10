@@ -133,34 +133,33 @@ export default function Header() {
     return () => { document.body.style.overflow = ''; };
   }, [isMenuOpen]);
 
-  // Handle 5-second auto-hide timer & scroll-to-top re-trigger
+  // Handle top meta auto-hide: shows on initial load & when scrolling back to top (<= 10px).
+  // Does NOT force hide when scrolling down; automatically hides after 5 seconds.
   useEffect(() => {
-    setShowTopMeta(true);
-    wasAtTopRef.current = true;
+    let wasBelowTop = false;
 
-    if (metaTimerRef.current) clearTimeout(metaTimerRef.current);
-    metaTimerRef.current = setTimeout(() => {
-      setShowTopMeta(false);
-    }, 5000);
+    const triggerShow = () => {
+      setShowTopMeta(true);
+      if (metaTimerRef.current) clearTimeout(metaTimerRef.current);
+      metaTimerRef.current = setTimeout(() => {
+        setShowTopMeta(false);
+      }, 5000);
+    };
+
+    // Initial trigger on mount / page refresh
+    triggerShow();
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY || document.documentElement.scrollTop || 0;
 
       if (currentScrollY <= 10) {
-        if (!wasAtTopRef.current) {
-          wasAtTopRef.current = true;
-          setShowTopMeta(true);
-          if (metaTimerRef.current) clearTimeout(metaTimerRef.current);
-          metaTimerRef.current = setTimeout(() => {
-            setShowTopMeta(false);
-          }, 5000);
+        if (wasBelowTop) {
+          wasBelowTop = false;
+          triggerShow();
         }
       } else {
-        if (wasAtTopRef.current) {
-          wasAtTopRef.current = false;
-          setShowTopMeta(false);
-          if (metaTimerRef.current) clearTimeout(metaTimerRef.current);
-        }
+        wasBelowTop = true;
+        // Do NOT force hide on scroll down. Let the 5-second timer hide it automatically.
       }
     };
 
@@ -182,7 +181,7 @@ export default function Header() {
       <div className="bg-[#001C1F] text-center px-2 sm:px-4 py-1.5 border-b border-[#0FA4AF]/15 w-full overflow-hidden">
         <div className="w-full max-w-[1480px] mx-auto px-2 sm:px-4 flex flex-col items-center justify-center text-center">
 
-          {/* Welcome Heading (Auto-hides after 5s, shows at top) */}
+          {/* Welcome Heading (Shows on page load/refresh, hides after 5s) */}
           <div
             className={`grid transition-[grid-template-rows,opacity,margin] duration-500 ease-in-out w-full overflow-hidden ${showTopMeta ? 'grid-rows-[1fr] opacity-100 mb-0.5' : 'grid-rows-[0fr] opacity-0 mb-0 pointer-events-none'
               }`}
@@ -202,7 +201,7 @@ export default function Header() {
             </p>
           </div>
 
-          {/* Registration & Establishment Meta (Auto-hides after 5s, shows at top) */}
+          {/* Registration & Establishment Meta (Shows on page load/refresh, hides after 5s) */}
           <div
             className={`grid transition-[grid-template-rows,opacity,margin] duration-500 ease-in-out w-full overflow-hidden ${showTopMeta ? 'grid-rows-[1fr] opacity-100 mt-0.5' : 'grid-rows-[0fr] opacity-0 mt-0 pointer-events-none'
               }`}

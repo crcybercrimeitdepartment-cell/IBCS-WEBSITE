@@ -62,6 +62,7 @@ import {
   ArrowLeft,
   ArrowRight,
   Home,
+  Clock,
   ChevronRight,
   X,
   Download,
@@ -152,7 +153,8 @@ const iconRegistry = {
   ExternalLink,
   CheckCircle2,
   Info,
-  Check
+  Check,
+  Clock
 };
 
 export const getIcon = (name, defaultIcon = Briefcase) => {
@@ -735,26 +737,9 @@ export function RecruitmentCard({ item, onSelect, index, totalCards = 16 }) {
 /* ==========================================================================
    VIEW 1: CURRENT VACANCIES VIEW
    ========================================================================== */
-export function CurrentVacanciesView({ onBack, onHome }) {
+export function CurrentVacanciesView() {
   return (
     <div className="w-full max-w-7xl xl:max-w-[1380px] animate-fadeIn flex flex-col items-center">
-      <div className="w-full flex items-center justify-start gap-3 mb-6">
-        <button
-          onClick={onBack}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/90 hover:bg-white text-neutral-700 text-xs sm:text-sm font-semibold shadow-sm border border-neutral-200/80 transition-all hover:shadow hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
-        >
-          <ArrowLeft className="w-4 h-4 text-neutral-600" />
-          Back
-        </button>
-        <button
-          onClick={onHome}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/90 hover:bg-white text-neutral-700 text-xs sm:text-sm font-semibold shadow-sm border border-neutral-200/80 transition-all hover:shadow hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
-        >
-          <Home className="w-4 h-4 text-neutral-600" />
-          Home
-        </button>
-      </div>
-
       <div className="text-center mb-10 sm:mb-12 max-w-3xl">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 tracking-tight">
           Current{' '}
@@ -790,7 +775,7 @@ export function CurrentVacanciesView({ onBack, onHome }) {
 /* ==========================================================================
    VIEW 2: RECRUITMENT POLICIES VIEW (WITH DETAILED MODAL SYSTEM)
    ========================================================================== */
-export function RecruitmentPoliciesView({ onBack, onHome }) {
+export function RecruitmentPoliciesView() {
   const [selectedCard, setSelectedCard] = useState(null);
   const [activeTab, setActiveTab] = useState('overview');
   const [copied, setCopied] = useState(false);
@@ -843,27 +828,6 @@ export function RecruitmentPoliciesView({ onBack, onHome }) {
 
   return (
     <div className="w-full max-w-7xl xl:max-w-[1440px] animate-fadeIn flex flex-col items-center">
-      <div className="w-full flex items-center justify-start gap-3 mb-6">
-        {onBack && (
-          <button
-            onClick={onBack}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/90 hover:bg-white text-neutral-700 text-xs sm:text-sm font-semibold shadow-sm border border-neutral-200/80 transition-all hover:shadow hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
-          >
-            <ArrowLeft className="w-4 h-4 text-neutral-600" />
-            Back
-          </button>
-        )}
-        {onHome && (
-          <button
-            onClick={onHome}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/90 hover:bg-white text-neutral-700 text-xs sm:text-sm font-semibold shadow-sm border border-neutral-200/80 transition-all hover:shadow hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
-          >
-            <Home className="w-4 h-4 text-neutral-600" />
-            Home
-          </button>
-        )}
-      </div>
-
       <div className="mb-8 sm:mb-12 text-center max-w-3xl mx-auto pt-2 sm:pt-4">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-3.5">
           <span className="text-slate-900">Recruitment </span>
@@ -1116,26 +1080,9 @@ export function RecruitmentPoliciesView({ onBack, onHome }) {
 /* ==========================================================================
    VIEW 3: DOCUMENT VERIFICATION VIEW
    ========================================================================== */
-export function DocumentVerificationView({ onBack, onHome }) {
+export function DocumentVerificationView() {
   return (
     <div className="w-full max-w-7xl xl:max-w-[1380px] animate-fadeIn flex flex-col items-center">
-      <div className="w-full flex items-center justify-start gap-3 mb-6">
-        <button
-          onClick={onBack}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/90 hover:bg-white text-neutral-700 text-xs sm:text-sm font-semibold shadow-sm border border-neutral-200/80 transition-all hover:shadow hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
-        >
-          <ArrowLeft className="w-4 h-4 text-neutral-600" />
-          Back
-        </button>
-        <button
-          onClick={onHome}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/90 hover:bg-white text-neutral-700 text-xs sm:text-sm font-semibold shadow-sm border border-neutral-200/80 transition-all hover:shadow hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
-        >
-          <Home className="w-4 h-4 text-neutral-600" />
-          Home
-        </button>
-      </div>
-
       <div className="text-center mb-10 sm:mb-14 max-w-3xl">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 tracking-tight">
           Document{' '}
@@ -1174,26 +1121,9 @@ export function DocumentVerificationView({ onBack, onHome }) {
 /* ==========================================================================
    VIEW 4: ONLINE APPLICATION PORTAL VIEW
    ========================================================================== */
-export function OnlinePortalView({ onBack, onHome }) {
+export function OnlinePortalView() {
   return (
     <div className="w-full max-w-7xl xl:max-w-[1380px] animate-fadeIn flex flex-col items-center">
-      <div className="w-full flex items-center justify-start gap-3 mb-6">
-        <button
-          onClick={onBack}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/90 hover:bg-white text-neutral-700 text-xs sm:text-sm font-semibold shadow-sm border border-neutral-200/80 transition-all hover:shadow hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
-        >
-          <ArrowLeft className="w-4 h-4 text-neutral-600" />
-          Back
-        </button>
-        <button
-          onClick={onHome}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/90 hover:bg-white text-neutral-700 text-xs sm:text-sm font-semibold shadow-sm border border-neutral-200/80 transition-all hover:shadow hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
-        >
-          <Home className="w-4 h-4 text-neutral-600" />
-          Home
-        </button>
-      </div>
-
       <div className="text-center mb-10 sm:mb-14 max-w-3xl">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 tracking-tight">
           Online Application{' '}
@@ -1422,33 +1352,10 @@ export default function CareerPage({ onClose }) {
         }
       `}</style>
 
-      {currentView === 'vacancies' && (
-        <CurrentVacanciesView
-          onBack={() => navigateTo('home')}
-          onHome={handleBackToSite}
-        />
-      )}
-
-      {currentView === 'policies' && (
-        <RecruitmentPoliciesView
-          onBack={() => navigateTo('home')}
-          onHome={handleBackToSite}
-        />
-      )}
-
-      {currentView === 'verification' && (
-        <DocumentVerificationView
-          onBack={() => navigateTo('home')}
-          onHome={handleBackToSite}
-        />
-      )}
-
-      {currentView === 'portal' && (
-        <OnlinePortalView
-          onBack={() => navigateTo('home')}
-          onHome={handleBackToSite}
-        />
-      )}
+      {currentView === 'vacancies' && <CurrentVacanciesView />}
+      {currentView === 'policies' && <RecruitmentPoliciesView />}
+      {currentView === 'verification' && <DocumentVerificationView />}
+      {currentView === 'portal' && <OnlinePortalView />}
 
       {currentView === 'home' && (
         <>
