@@ -23,13 +23,13 @@ export default function OurTechnologySection({ onOpenPage }) {
   };
 
   return (
-    <section id="our-technology" className="relative scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-[#F0F9FA] via-[#E4F4F7] to-[#D5EEF2] border-b border-[#0FA4AF]/20 overflow-hidden">
+    <section id="our-technology" className="relative scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-[#F0F9FA] via-[#E4F4F7] to-[#D5EEF2] border-b border-[#D4AF37]/20 overflow-hidden">
 
       {/* Background Decorative Wave SVGs & Dot Matrices */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft Background Radial Glows */}
-        <div className="absolute top-1/4 left-1/4 w-[450px] h-[450px] bg-[#0FA4AF]/12 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 w-[350px] h-[350px] bg-[#00A4B4]/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-[450px] h-[450px] bg-[#D4AF37]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-[350px] h-[350px] bg-[#081E52]/10 rounded-full blur-3xl"></div>
 
         {/* Top-Right Decorative Dots */}
         <div className="absolute top-8 right-12 grid grid-cols-6 gap-2 opacity-25">
@@ -46,7 +46,7 @@ export default function OurTechnologySection({ onOpenPage }) {
         </div>
 
         {/* Background Decorative Wave Curves */}
-        <svg className="absolute -bottom-20 -right-20 w-[600px] h-[600px] opacity-25 text-[#0FA4AF]/20" viewBox="0 0 500 500" fill="currentColor">
+        <svg className="absolute -bottom-20 -right-20 w-[600px] h-[600px] opacity-25 text-[#D4AF37]/20" viewBox="0 0 500 500" fill="currentColor">
           <path d="M0,250 C150,180 350,320 500,250 L500,500 L0,500 Z" />
         </svg>
       </div>
@@ -57,7 +57,7 @@ export default function OurTechnologySection({ onOpenPage }) {
         <div className="text-center mb-10 sm:mb-14">
           <AnimatedSectionHeading
             text="Our Technology"
-            className="font-display text-4xl sm:text-5xl lg:text-[56px] font-extrabold leading-[1.1] tracking-tight text-[#003135]"
+            className="font-display text-4xl sm:text-5xl lg:text-[56px] font-extrabold leading-[1.1] tracking-tight text-[#081E52]"
           />
         </div>
 
@@ -69,7 +69,7 @@ export default function OurTechnologySection({ onOpenPage }) {
 
 
             {/* Description Paragraphs (100% Intact Text) */}
-            <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#003135]/85 font-medium mb-8 text-center lg:text-left">
+            <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#081E52]/85 font-medium mb-8 text-center lg:text-left">
               <p>
                 At IB Cyber Security Private Limited, technology is at the core of every software product we design, engineer and commercialise. We combine modern software engineering with Artificial Intelligence, cybersecurity, cloud computing, data technologies, automation and other emerging technologies to build secure, scalable and intelligent digital products.
               </p>
@@ -83,7 +83,7 @@ export default function OurTechnologySection({ onOpenPage }) {
               <button
                 type="button"
                 onClick={handleCtaClick}
-                className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#00A4B4] to-[#006670] hover:from-[#008996] hover:to-[#004E56] text-white font-extrabold text-sm sm:text-base shadow-lg shadow-[#00A4B4]/25 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
+                className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#081E52] to-[#0c2b7a] hover:from-[#0c2b7a] hover:to-[#081E52] border border-[#D4AF37]/40 text-white text-white font-extrabold text-sm sm:text-base shadow-lg shadow-[#081E52]/20 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
               >
                 <span>Explore More</span>
                 <ArrowRight className="w-4 h-4 text-white transition-transform duration-300 group-hover:translate-x-1" />

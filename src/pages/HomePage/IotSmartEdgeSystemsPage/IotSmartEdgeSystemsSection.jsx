@@ -87,7 +87,7 @@ export default function IotSmartEdgeSystemsSection({ onOpenPage }) {
   return (
     <section
       id="iot-smart-edge-systems"
-      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#EBF5F7] via-[#E4F3F5] to-[#DCEEF2] border-b border-[#0FA4AF]/20 overflow-hidden relative"
+      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#EBF5F7] via-[#E4F3F5] to-[#DCEEF2] border-b border-[#D4AF37]/20 overflow-hidden relative"
     >
       {/* Interactive Decorative Background Theme */}
       <SectionDecorativeBackground variant="iot" />
@@ -100,10 +100,10 @@ export default function IotSmartEdgeSystemsSection({ onOpenPage }) {
 
           <AnimatedSectionHeading
             text="IoT, Smart Systems & Edge Computing"
-            className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#003135] mb-5 text-center"
+            className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#081E52] mb-5 text-center"
           />
 
-          <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#003135]/85 font-medium text-center max-w-3xl">
+          <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#081E52]/85 font-medium text-center max-w-3xl">
             <p>
               Engineering intelligent edge computing platforms and connected IoT software products for real-time device telemetry and automated control.
             </p>
@@ -125,8 +125,8 @@ export default function IotSmartEdgeSystemsSection({ onOpenPage }) {
               <Zap className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-[#003135] mb-1">Edge AI &amp; Real-Time Telemetry</h4>
-              <p className="text-xs text-[#003135]/80 leading-relaxed font-medium">
+              <h4 className="text-sm font-bold text-[#081E52] mb-1">Edge AI &amp; Real-Time Telemetry</h4>
+              <p className="text-xs text-[#081E52]/80 leading-relaxed font-medium">
                 Low-latency data processing and predictive intelligence deployed directly on edge hardware for immediate automated response.
               </p>
             </div>
@@ -137,8 +137,8 @@ export default function IotSmartEdgeSystemsSection({ onOpenPage }) {
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-[#003135] mb-1">Encrypted OTA Firmware Updates</h4>
-              <p className="text-xs text-[#003135]/80 leading-relaxed font-medium">
+              <h4 className="text-sm font-bold text-[#081E52] mb-1">Encrypted OTA Firmware Updates</h4>
+              <p className="text-xs text-[#081E52]/80 leading-relaxed font-medium">
                 Cryptographically signed over-the-air firmware updates to ensure device integrity, automated patch cycles, and fleet resilience.
               </p>
             </div>

@@ -118,7 +118,7 @@ export default function CybersecurityDigitalSecuritySection({ onOpenPage }) {
   return (
     <section
       id="cybersecurity-digital-security"
-      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#EBF7F8] via-[#E7F3F5] to-[#DFEFF2] border-b border-[#0FA4AF]/20 overflow-hidden relative"
+      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#EBF7F8] via-[#E7F3F5] to-[#DFEFF2] border-b border-[#D4AF37]/20 overflow-hidden relative"
     >
       {/* Background Decorative Grid Dots & Light Wave Curves */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
@@ -161,7 +161,7 @@ export default function CybersecurityDigitalSecuritySection({ onOpenPage }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
-            className="font-display text-3xl font-extrabold leading-[1.15] tracking-tight text-[#003135] sm:text-4xl lg:text-[44px] mb-2 text-center"
+            className="font-display text-3xl font-extrabold leading-[1.15] tracking-tight text-[#081E52] sm:text-4xl lg:text-[44px] mb-2 text-center"
           >
             Cybersecurity &amp; Digital Security
           </motion.h2>
@@ -192,12 +192,12 @@ export default function CybersecurityDigitalSecuritySection({ onOpenPage }) {
 
 
             {/* Subheading */}
-            <h3 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-[#003135] tracking-tight leading-tight mb-5 text-center lg:text-left">
+            <h3 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-[#081E52] tracking-tight leading-tight mb-5 text-center lg:text-left">
               Building a Safer Digital Tomorrow
             </h3>
 
             {/* Description Paragraphs */}
-            <div className="space-y-4 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#003135]/85 font-medium mb-8 text-center lg:text-left">
+            <div className="space-y-4 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#081E52]/85 font-medium mb-8 text-center lg:text-left">
               <p>
                 Cybersecurity is a core technology area within IB Cyber Security Private Limited. We develop security-focused software products designed to help organisations address application, infrastructure, data and digital security requirements through modern technology.
               </p>
@@ -304,7 +304,7 @@ export default function CybersecurityDigitalSecuritySection({ onOpenPage }) {
                       </div>
 
                       {/* Title (Hidden on Mobile, Visible on Desktop) */}
-                      <span className="hidden lg:inline text-[11px] xl:text-[12.5px] font-extrabold text-[#003135] tracking-tight leading-snug whitespace-nowrap">
+                      <span className="hidden lg:inline text-[11px] xl:text-[12.5px] font-extrabold text-[#081E52] tracking-tight leading-snug whitespace-nowrap">
                         {badge.title}
                       </span>
                     </motion.div>

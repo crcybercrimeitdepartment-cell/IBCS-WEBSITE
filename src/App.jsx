@@ -266,10 +266,31 @@ export default function App() {
         window.location.hash === '#career' ||
         window.location.hash === '#careers-page' ||
         window.location.hash === '#career-page' ||
-        window.location.hash === '#/vacancies' ||
-        window.location.hash === '#/policies' ||
-        window.location.hash === '#/verification' ||
-        window.location.hash === '#/portal'
+        window.location.hash.startsWith('#/vacancies') ||
+        window.location.hash.startsWith('#/current-vacancies') ||
+        window.location.hash.startsWith('#/job-vacancy') ||
+        window.location.hash.startsWith('#/full-time') ||
+        window.location.hash.startsWith('#/part-time') ||
+        window.location.hash.startsWith('#/internship') ||
+        window.location.hash.startsWith('#/remote-job') ||
+        window.location.hash.startsWith('#/post-vacancy') ||
+        window.location.hash.startsWith('#/policies') ||
+        window.location.hash.startsWith('#/recruitment-policies') ||
+        window.location.hash.startsWith('#/rules') ||
+        window.location.hash.startsWith('#/verification') ||
+        window.location.hash.startsWith('#/document-verification') ||
+        window.location.hash.startsWith('#/department') ||
+        window.location.hash.startsWith('#/portal') ||
+        window.location.hash.startsWith('#/online-portal') ||
+        window.location.hash.startsWith('#/online-application-portal') ||
+        window.location.hash.startsWith('#/advertisement') ||
+        window.location.hash.startsWith('#/press') ||
+        window.location.hash.startsWith('#/notices') ||
+        window.location.hash.startsWith('#/status') ||
+        window.location.hash.startsWith('#/application-status') ||
+        window.location.hash.startsWith('#/check-status') ||
+        window.location.hash.startsWith('#/resume') ||
+        window.location.hash.startsWith('#/submit-resume')
       ) {
         resetAll(); setIsCareerPageOpen(true);
       } else if (
@@ -444,7 +465,7 @@ export default function App() {
   const handleCloseSoftwareLibraryPage = () => closePageAndScrollTo('home');
 
   return (
-    <div className="min-h-screen bg-[#001C1F]">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-900">
       <ScrollToTop routeKey={activePageKey} />
       {isInitialLoading && <PageLoader message="Initializing Platform..." />}
       <Header />

@@ -276,7 +276,7 @@ export default function RegulatoryComplianceGovernancePage({ onClose }) {
         <button
           type="button"
           onClick={handleBack}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
         >
           ← Back
         </button>
@@ -284,16 +284,16 @@ export default function RegulatoryComplianceGovernancePage({ onClose }) {
         <button
           type="button"
           onClick={handleHome}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
         >
-          <Home className="w-4 h-4 text-white" />
+          <Home className="w-4 h-4 text-[#040A1A]" />
           <span>Home</span>
         </button>
       </div>
 
       {/* ── Header Section ── */}
       <div className="relative z-10 text-center pb-6 md:pb-8 px-4 mt-6">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-wider uppercase mb-3 text-[#003135]">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-wider uppercase mb-3 text-[#081E52]">
           REGULATORY COMPLIANCE &amp; RISK GOVERNANCE
         </h1>
         <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed font-medium max-w-3xl mx-auto">

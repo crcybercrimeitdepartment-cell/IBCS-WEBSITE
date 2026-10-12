@@ -262,7 +262,7 @@ export default function CloudSaasAndDigitalPlatformsPage({ onClose }) {
    <button
      type="button"
      onClick={handleBack}
-     className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+     className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
    >
      ← Back
    </button>
@@ -270,9 +270,9 @@ export default function CloudSaasAndDigitalPlatformsPage({ onClose }) {
    <button
      type="button"
      onClick={handleHome}
-     className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+     className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
    >
-     <Home className="w-4 h-4 text-white" />
+     <Home className="w-4 h-4 text-[#040A1A]" />
      <span>Home</span>
    </button>
  </div>
@@ -303,7 +303,7 @@ export default function CloudSaasAndDigitalPlatformsPage({ onClose }) {
      visible: { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }
     }}
     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-    className="font-display text-[28px] sm:text-[32px] md:text-[36px] lg:text-[48px] font-extrabold leading-[1.2] text-[#003135] tracking-tight uppercase text-center"
+    className="font-display text-[28px] sm:text-[32px] md:text-[36px] lg:text-[48px] font-extrabold leading-[1.2] text-[#081E52] tracking-tight uppercase text-center"
    >
     CLOUD, SAAS & DIGITAL PLATFORMS
    </motion.h2>

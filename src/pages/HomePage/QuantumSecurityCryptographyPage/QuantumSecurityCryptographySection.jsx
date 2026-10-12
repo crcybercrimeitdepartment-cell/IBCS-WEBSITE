@@ -104,7 +104,7 @@ export default function QuantumSecurityCryptographySection({ onOpenPage }) {
   return (
     <section
       id="quantum-security-cryptography"
-      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F2F8FA] via-[#E8F4F7] to-[#DFEFF2] border-b border-[#0FA4AF]/20 overflow-hidden relative"
+      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F2F8FA] via-[#E8F4F7] to-[#DFEFF2] border-b border-[#D4AF37]/20 overflow-hidden relative"
     >
       {/* Interactive Decorative Background Theme */}
       <SectionDecorativeBackground variant="quantum" />
@@ -118,10 +118,10 @@ export default function QuantumSecurityCryptographySection({ onOpenPage }) {
 
             <AnimatedSectionHeading
               text="Quantum Security & Advanced Cryptography"
-              className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#003135] mb-5 text-center lg:text-left"
+              className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#081E52] mb-5 text-center lg:text-left"
             />
 
-            <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#003135]/85 font-medium mb-6 text-center lg:text-left">
+            <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#081E52]/85 font-medium mb-6 text-center lg:text-left">
               <p>
                 Pioneering post-quantum cryptographic software and next-generation data encryption products for ultra-secure digital operations.
               </p>
@@ -133,11 +133,11 @@ export default function QuantumSecurityCryptographySection({ onOpenPage }) {
             <div className="grid grid-cols-2 gap-3 w-full mb-8">
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-white/80 border border-[#AFDDE5]/80 shadow-xs">
                 <Lock className="w-4 h-4 text-[#0FA4AF] shrink-0" />
-                <span className="text-xs font-bold text-[#003135]">Post-Quantum Protocols</span>
+                <span className="text-xs font-bold text-[#081E52]">Post-Quantum Protocols</span>
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-white/80 border border-[#AFDDE5]/80 shadow-xs">
                 <KeyRound className="w-4 h-4 text-[#0FA4AF] shrink-0" />
-                <span className="text-xs font-bold text-[#003135]">Resilient Key Management</span>
+                <span className="text-xs font-bold text-[#081E52]">Resilient Key Management</span>
               </div>
             </div>
 

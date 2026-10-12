@@ -72,7 +72,7 @@ button { font: inherit; }
 .page-intro h1 {
   max-width: 980px;
   margin: 0 auto 24px;
-  color: #003135;
+  color: #081E52;
   font-size: clamp(26px, 3vw, 40px);
   line-height: 1.25;
   font-weight: 600;
@@ -247,7 +247,7 @@ button { font: inherit; }
 .card-title {
   display: block;
   max-width: 236px;
-  color: #003135;
+  color: #081E52;
   font-size: 22px;
   font-weight: 700;
   line-height: 1.18;
@@ -576,7 +576,7 @@ export default function SoftwareDevelopmentProductEngineeringPage({ onClose }) {
         <button
           type="button"
           onClick={handleBack}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
         >
           ← Back
         </button>
@@ -584,9 +584,9 @@ export default function SoftwareDevelopmentProductEngineeringPage({ onClose }) {
         <button
           type="button"
           onClick={handleHome}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
         >
-          <Home className="w-4 h-4 text-white" />
+          <Home className="w-4 h-4 text-[#040A1A]" />
           <span>Home</span>
         </button>
       </div>

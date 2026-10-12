@@ -22,7 +22,7 @@ export default function AnimatedSectionHeading({
   as = 'h2',
   className = '',
   highlightWords = [],
-  highlightClassName = 'text-[#0FA4AF]',
+  highlightClassName = 'text-[#D4AF37]',
   viewport = { once: true, amount: 0.05, margin: '150px 0px 50px 0px' },
   priority = false,
   stagger,

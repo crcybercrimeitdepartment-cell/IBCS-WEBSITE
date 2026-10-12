@@ -94,7 +94,7 @@ export default function EducationTrainingSkillDevelopmentTechnologySection({ onO
   return (
     <section
       id="education-training-skill-development-technology"
-      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F4F9FA] via-[#ECF6F8] to-[#E3F2F5] border-b border-[#0FA4AF]/20 overflow-hidden relative"
+      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F4F9FA] via-[#ECF6F8] to-[#E3F2F5] border-b border-[#D4AF37]/20 overflow-hidden relative"
     >
       {/* Interactive Decorative Background Theme */}
       <SectionDecorativeBackground variant="education" />
@@ -113,10 +113,10 @@ export default function EducationTrainingSkillDevelopmentTechnologySection({ onO
 
             <AnimatedSectionHeading
               text="Education, Training & Skill Development Technology"
-              className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#003135] mb-5 text-center lg:text-left"
+              className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#081E52] mb-5 text-center lg:text-left"
             />
 
-            <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#003135]/85 font-medium mb-6 text-center lg:text-left">
+            <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#081E52]/85 font-medium mb-6 text-center lg:text-left">
               <p>
                 We develop software products and digital platforms for education, training, professional development and skill development. Our education technology products can support learning management, digital content, assessment, training administration, competency development and institutional operations.
               </p>
@@ -128,11 +128,11 @@ export default function EducationTrainingSkillDevelopmentTechnologySection({ onO
             <div className="grid grid-cols-2 gap-3 w-full mb-8">
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-white/80 border border-[#AFDDE5]/80 shadow-xs">
                 <BookOpen className="w-4 h-4 text-[#0FA4AF] shrink-0" />
-                <span className="text-xs font-bold text-[#003135]">Learning Management</span>
+                <span className="text-xs font-bold text-[#081E52]">Learning Management</span>
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-white/80 border border-[#AFDDE5]/80 shadow-xs">
                 <Award className="w-4 h-4 text-[#0FA4AF] shrink-0" />
-                <span className="text-xs font-bold text-[#003135]">Competency Assessment</span>
+                <span className="text-xs font-bold text-[#081E52]">Competency Assessment</span>
               </div>
             </div>
 

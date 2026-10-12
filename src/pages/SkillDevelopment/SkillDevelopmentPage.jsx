@@ -14,15 +14,15 @@ export function ThreeDIcon({ id }) {
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
             <defs>
               <linearGradient id="codeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#00E5FF" />
+                <stop offset="0%" stopColor="#E5C158" />
                 <stop offset="100%" stopColor="#007799" />
               </linearGradient>
               <linearGradient id="bracketGrad" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#FFFFFF" />
-                <stop offset="100%" stopColor="#AFDDE5" />
+                <stop offset="100%" stopColor="#FFF8DC" />
               </linearGradient>
             </defs>
-            <rect x="8" y="10" width="48" height="42" rx="10" fill="#002328" stroke="#0FA4AF" strokeWidth="2.5" />
+            <rect x="8" y="10" width="48" height="42" rx="10" fill="#002328" stroke="#D4AF37" strokeWidth="2.5" />
             <rect x="8" y="10" width="48" height="12" rx="10" fill="#00373E" />
             <circle cx="16" cy="16" r="2.5" fill="#FF5F56" />
             <circle cx="23" cy="16" r="2.5" fill="#FFBD2E" />
@@ -43,17 +43,17 @@ export function ThreeDIcon({ id }) {
                 <stop offset="100%" stopColor="#00181B" />
               </linearGradient>
               <linearGradient id="lapBody" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#AFDDE5" />
-                <stop offset="100%" stopColor="#0FA4AF" />
+                <stop offset="0%" stopColor="#FFF8DC" />
+                <stop offset="100%" stopColor="#D4AF37" />
               </linearGradient>
             </defs>
             <rect x="12" y="12" width="40" height="28" rx="5" fill="url(#lapScreen)" stroke="url(#lapBody)" strokeWidth="2" />
-            <rect x="16" y="16" width="32" height="20" rx="3" fill="#001C1F" />
-            <line x1="20" y1="22" x2="32" y2="22" stroke="#0FA4AF" strokeWidth="2" strokeLinecap="round" />
-            <line x1="20" y1="27" x2="40" y2="27" stroke="#AFDDE5" strokeWidth="2" strokeLinecap="round" />
+            <rect x="16" y="16" width="32" height="20" rx="3" fill="#040A1A" />
+            <line x1="20" y1="22" x2="32" y2="22" stroke="#D4AF37" strokeWidth="2" strokeLinecap="round" />
+            <line x1="20" y1="27" x2="40" y2="27" stroke="#FFF8DC" strokeWidth="2" strokeLinecap="round" />
             <line x1="20" y1="32" x2="28" y2="32" stroke="#FFBD2E" strokeWidth="2" strokeLinecap="round" />
             <path d="M6 44 L58 44 L52 50 L12 50 Z" fill="url(#lapBody)" />
-            <rect x="26" y="45" width="12" height="2" rx="1" fill="#003135" />
+            <rect x="26" y="45" width="12" height="2" rx="1" fill="#081E52" />
           </svg>
         );
 
@@ -67,15 +67,15 @@ export function ThreeDIcon({ id }) {
                 <stop offset="100%" stopColor="#00181A" />
               </linearGradient>
             </defs>
-            <rect x="10" y="10" width="44" height="12" rx="4" fill="url(#serverGrad)" stroke="#0FA4AF" strokeWidth="1.5" />
-            <circle cx="17" cy="16" r="2" fill="#00E5FF" />
-            <line x1="24" y1="16" x2="48" y2="16" stroke="#AFDDE5" strokeWidth="2" strokeLinecap="round" />
-            <rect x="10" y="26" width="44" height="12" rx="4" fill="url(#serverGrad)" stroke="#0FA4AF" strokeWidth="1.5" />
+            <rect x="10" y="10" width="44" height="12" rx="4" fill="url(#serverGrad)" stroke="#D4AF37" strokeWidth="1.5" />
+            <circle cx="17" cy="16" r="2" fill="#E5C158" />
+            <line x1="24" y1="16" x2="48" y2="16" stroke="#FFF8DC" strokeWidth="2" strokeLinecap="round" />
+            <rect x="10" y="26" width="44" height="12" rx="4" fill="url(#serverGrad)" stroke="#D4AF37" strokeWidth="1.5" />
             <circle cx="17" cy="32" r="2" fill="#27C93F" />
-            <line x1="24" y1="32" x2="48" y2="32" stroke="#AFDDE5" strokeWidth="2" strokeLinecap="round" />
-            <rect x="10" y="42" width="44" height="12" rx="4" fill="url(#serverGrad)" stroke="#0FA4AF" strokeWidth="1.5" />
+            <line x1="24" y1="32" x2="48" y2="32" stroke="#FFF8DC" strokeWidth="2" strokeLinecap="round" />
+            <rect x="10" y="42" width="44" height="12" rx="4" fill="url(#serverGrad)" stroke="#D4AF37" strokeWidth="1.5" />
             <circle cx="17" cy="48" r="2" fill="#FFBD2E" />
-            <line x1="24" y1="48" x2="48" y2="48" stroke="#AFDDE5" strokeWidth="2" strokeLinecap="round" />
+            <line x1="24" y1="48" x2="48" y2="48" stroke="#FFF8DC" strokeWidth="2" strokeLinecap="round" />
           </svg>
         );
 
@@ -83,12 +83,12 @@ export function ThreeDIcon({ id }) {
       case 4:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <rect x="10" y="10" width="44" height="32" rx="6" fill="#002428" stroke="#0FA4AF" strokeWidth="2" />
+            <rect x="10" y="10" width="44" height="32" rx="6" fill="#002428" stroke="#D4AF37" strokeWidth="2" />
             <rect x="14" y="14" width="36" height="24" rx="4" fill="#001618" />
-            <circle cx="32" cy="26" r="7" fill="#003A40" stroke="#0FA4AF" strokeWidth="1.5" />
-            <path d="M29 26 L31 28 L35 24" stroke="#00E5FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-            <path d="M28 42 L36 42 L38 52 L26 52 Z" fill="#0FA4AF" />
-            <rect x="20" y="52" width="24" height="3" rx="1.5" fill="#AFDDE5" />
+            <circle cx="32" cy="26" r="7" fill="#003A40" stroke="#D4AF37" strokeWidth="1.5" />
+            <path d="M29 26 L31 28 L35 24" stroke="#E5C158" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+            <path d="M28 42 L36 42 L38 52 L26 52 Z" fill="#D4AF37" />
+            <rect x="20" y="52" width="24" height="3" rx="1.5" fill="#FFF8DC" />
           </svg>
         );
 
@@ -98,15 +98,15 @@ export function ThreeDIcon({ id }) {
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
             <defs>
               <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#00E5FF" />
-                <stop offset="50%" stopColor="#0FA4AF" />
-                <stop offset="100%" stopColor="#003135" />
+                <stop offset="0%" stopColor="#E5C158" />
+                <stop offset="50%" stopColor="#D4AF37" />
+                <stop offset="100%" stopColor="#081E52" />
               </linearGradient>
             </defs>
             <path d="M32 8 L50 16 C50 36 32 52 32 52 C32 52 14 36 14 16 Z" fill="url(#shieldGrad)" stroke="#FFFFFF" strokeWidth="1.5" />
-            <path d="M32 14 L44 20 C44 34 32 46 32 46 C32 46 20 34 20 20 Z" fill="#001C1F" />
-            <rect x="27" y="27" width="10" height="9" rx="2" fill="#AFDDE5" />
-            <path d="M29 27 V23 C29 21.3 30.3 20 32 20 C33.7 20 35 21.3 35 23 V27" stroke="#AFDDE5" strokeWidth="2" fill="none" />
+            <path d="M32 14 L44 20 C44 34 32 46 32 46 C32 46 20 34 20 20 Z" fill="#040A1A" />
+            <rect x="27" y="27" width="10" height="9" rx="2" fill="#FFF8DC" />
+            <path d="M29 27 V23 C29 21.3 30.3 20 32 20 C33.7 20 35 21.3 35 23 V27" stroke="#FFF8DC" strokeWidth="2" fill="none" />
           </svg>
         );
 
@@ -120,8 +120,8 @@ export function ThreeDIcon({ id }) {
                 <stop offset="100%" stopColor="#D4AF37" />
               </linearGradient>
             </defs>
-            <path d="M22 28 V20 C22 14.5 26.5 10 32 10 C37.5 10 42 14.5 42 20 V28" stroke="#00E5FF" strokeWidth="5.5" strokeLinecap="round" fill="none" />
-            <rect x="16" y="26" width="32" height="26" rx="6" fill="#002D33" stroke="#0FA4AF" strokeWidth="2.5" />
+            <path d="M22 28 V20 C22 14.5 26.5 10 32 10 C37.5 10 42 14.5 42 20 V28" stroke="#E5C158" strokeWidth="5.5" strokeLinecap="round" fill="none" />
+            <rect x="16" y="26" width="32" height="26" rx="6" fill="#002D33" stroke="#D4AF37" strokeWidth="2.5" />
             <circle cx="32" cy="37" r="3.5" fill="url(#goldLock)" />
             <polygon points="30,38 34,38 33,45 31,45" fill="url(#goldLock)" />
           </svg>
@@ -131,12 +131,12 @@ export function ThreeDIcon({ id }) {
       case 7:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <circle cx="28" cy="28" r="16" fill="#002B30" stroke="#0FA4AF" strokeWidth="3" />
+            <circle cx="28" cy="28" r="16" fill="#002B30" stroke="#D4AF37" strokeWidth="3" />
             <circle cx="28" cy="28" r="12" fill="#00181A" />
             <circle cx="28" cy="28" r="7" stroke="#FF5F56" strokeWidth="1.5" strokeDasharray="3 2" fill="none" />
             <path d="M28 18 V38 M18 28 H38" stroke="#FF5F56" strokeWidth="1.5" />
-            <line x1="40" y1="40" x2="54" y2="54" stroke="#AFDDE5" strokeWidth="6" strokeLinecap="round" />
-            <line x1="40" y1="40" x2="54" y2="54" stroke="#003135" strokeWidth="3" strokeLinecap="round" />
+            <line x1="40" y1="40" x2="54" y2="54" stroke="#FFF8DC" strokeWidth="6" strokeLinecap="round" />
+            <line x1="40" y1="40" x2="54" y2="54" stroke="#081E52" strokeWidth="3" strokeLinecap="round" />
           </svg>
         );
 
@@ -144,11 +144,11 @@ export function ThreeDIcon({ id }) {
       case 8:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <rect x="14" y="10" width="36" height="44" rx="8" fill="#002226" stroke="#0FA4AF" strokeWidth="2" />
-            <path d="M32 20 C27 20 23 24 23 29 C23 35 25 41 27 46" stroke="#AFDDE5" strokeWidth="2" strokeLinecap="round" fill="none" />
-            <path d="M32 24 C29 24 27 26 27 29 C27 33 29 39 31 43" stroke="#0FA4AF" strokeWidth="2" strokeLinecap="round" fill="none" />
-            <path d="M32 28 C32 29 32 30 32 32 C32 36 34 40 35 44" stroke="#00E5FF" strokeWidth="2" strokeLinecap="round" fill="none" />
-            <path d="M37 25 C39 28 39 32 39 35 C39 39 38 42 37 45" stroke="#AFDDE5" strokeWidth="2" strokeLinecap="round" fill="none" />
+            <rect x="14" y="10" width="36" height="44" rx="8" fill="#002226" stroke="#D4AF37" strokeWidth="2" />
+            <path d="M32 20 C27 20 23 24 23 29 C23 35 25 41 27 46" stroke="#FFF8DC" strokeWidth="2" strokeLinecap="round" fill="none" />
+            <path d="M32 24 C29 24 27 26 27 29 C27 33 29 39 31 43" stroke="#D4AF37" strokeWidth="2" strokeLinecap="round" fill="none" />
+            <path d="M32 28 C32 29 32 30 32 32 C32 36 34 40 35 44" stroke="#E5C158" strokeWidth="2" strokeLinecap="round" fill="none" />
+            <path d="M37 25 C39 28 39 32 39 35 C39 39 38 42 37 45" stroke="#FFF8DC" strokeWidth="2" strokeLinecap="round" fill="none" />
             <line x1="12" y1="30" x2="52" y2="30" stroke="#FF5F56" strokeWidth="2" filter="drop-shadow(0 0 4px #FF5F56)" />
           </svg>
         );
@@ -157,12 +157,12 @@ export function ThreeDIcon({ id }) {
       case 9:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <rect x="12" y="10" width="40" height="44" rx="6" fill="#002328" stroke="#0FA4AF" strokeWidth="2" />
-            <circle cx="32" cy="28" r="14" fill="#003840" stroke="#AFDDE5" strokeWidth="2" />
-            <circle cx="32" cy="28" r="4" fill="#00E5FF" />
+            <rect x="12" y="10" width="40" height="44" rx="6" fill="#002328" stroke="#D4AF37" strokeWidth="2" />
+            <circle cx="32" cy="28" r="14" fill="#003840" stroke="#FFF8DC" strokeWidth="2" />
+            <circle cx="32" cy="28" r="4" fill="#E5C158" />
             <line x1="32" y1="28" x2="44" y2="40" stroke="#FF5F56" strokeWidth="2.5" strokeLinecap="round" />
-            <circle cx="44" cy="40" r="2.5" fill="#AFDDE5" />
-            <line x1="16" y1="46" x2="28" y2="46" stroke="#0FA4AF" strokeWidth="2" strokeLinecap="round" />
+            <circle cx="44" cy="40" r="2.5" fill="#FFF8DC" />
+            <line x1="16" y1="46" x2="28" y2="46" stroke="#D4AF37" strokeWidth="2" strokeLinecap="round" />
           </svg>
         );
 
@@ -170,12 +170,12 @@ export function ThreeDIcon({ id }) {
       case 10:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <path d="M12 16 L26 16 L30 22 L52 22 C54.2 22 56 23.8 56 26 L56 48 C56 50.2 54.2 52 52 52 L12 52 C9.8 52 8 50.2 8 48 L8 20 C8 17.8 9.8 16 12 16 Z" fill="#00282E" stroke="#0FA4AF" strokeWidth="2" />
+            <path d="M12 16 L26 16 L30 22 L52 22 C54.2 22 56 23.8 56 26 L56 48 C56 50.2 54.2 52 52 52 L12 52 C9.8 52 8 50.2 8 48 L8 20 C8 17.8 9.8 16 12 16 Z" fill="#00282E" stroke="#D4AF37" strokeWidth="2" />
             <rect x="16" y="26" width="22" height="18" rx="2" fill="#003B42" />
-            <line x1="20" y1="30" x2="30" y2="30" stroke="#AFDDE5" strokeWidth="1.5" strokeLinecap="round" />
-            <line x1="20" y1="34" x2="34" y2="34" stroke="#AFDDE5" strokeWidth="1.5" strokeLinecap="round" />
-            <circle cx="40" cy="38" r="8" fill="#00181A" stroke="#00E5FF" strokeWidth="2" />
-            <line x1="46" y1="44" x2="52" y2="50" stroke="#00E5FF" strokeWidth="3" strokeLinecap="round" />
+            <line x1="20" y1="30" x2="30" y2="30" stroke="#FFF8DC" strokeWidth="1.5" strokeLinecap="round" />
+            <line x1="20" y1="34" x2="34" y2="34" stroke="#FFF8DC" strokeWidth="1.5" strokeLinecap="round" />
+            <circle cx="40" cy="38" r="8" fill="#00181A" stroke="#E5C158" strokeWidth="2" />
+            <line x1="46" y1="44" x2="52" y2="50" stroke="#E5C158" strokeWidth="3" strokeLinecap="round" />
           </svg>
         );
 
@@ -183,11 +183,11 @@ export function ThreeDIcon({ id }) {
       case 11:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <circle cx="32" cy="32" r="22" fill="#002024" stroke="#0FA4AF" strokeWidth="2.5" />
+            <circle cx="32" cy="32" r="22" fill="#002024" stroke="#D4AF37" strokeWidth="2.5" />
             <circle cx="32" cy="32" r="15" stroke="#003B42" strokeWidth="1.5" fill="none" />
             <circle cx="32" cy="32" r="8" stroke="#003B42" strokeWidth="1.5" fill="none" />
             <path d="M32 32 L47 20 A 22 22 0 0 0 32 10 Z" fill="rgba(0, 229, 255, 0.25)" />
-            <line x1="32" y1="32" x2="47" y2="20" stroke="#00E5FF" strokeWidth="2" />
+            <line x1="32" y1="32" x2="47" y2="20" stroke="#E5C158" strokeWidth="2" />
             <circle cx="24" cy="22" r="2.5" fill="#FF5F56" />
             <circle cx="40" cy="42" r="2" fill="#FFBD2E" />
           </svg>
@@ -197,13 +197,13 @@ export function ThreeDIcon({ id }) {
       case 12:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <path d="M8 32 C16 18 48 18 56 32 C48 46 16 46 8 32 Z" fill="#002226" stroke="#0FA4AF" strokeWidth="2.5" />
-            <circle cx="32" cy="32" r="10" fill="#003E47" stroke="#AFDDE5" strokeWidth="1.5" />
-            <circle cx="32" cy="32" r="5" fill="#00E5FF" />
-            <path d="M26 26 H24 V28" stroke="#00E5FF" strokeWidth="1.5" fill="none" />
-            <path d="M38 26 H40 V28" stroke="#00E5FF" strokeWidth="1.5" fill="none" />
-            <path d="M26 38 H24 V36" stroke="#00E5FF" strokeWidth="1.5" fill="none" />
-            <path d="M38 38 H40 V36" stroke="#00E5FF" strokeWidth="1.5" fill="none" />
+            <path d="M8 32 C16 18 48 18 56 32 C48 46 16 46 8 32 Z" fill="#002226" stroke="#D4AF37" strokeWidth="2.5" />
+            <circle cx="32" cy="32" r="10" fill="#003E47" stroke="#FFF8DC" strokeWidth="1.5" />
+            <circle cx="32" cy="32" r="5" fill="#E5C158" />
+            <path d="M26 26 H24 V28" stroke="#E5C158" strokeWidth="1.5" fill="none" />
+            <path d="M38 26 H40 V28" stroke="#E5C158" strokeWidth="1.5" fill="none" />
+            <path d="M26 38 H24 V36" stroke="#E5C158" strokeWidth="1.5" fill="none" />
+            <path d="M38 38 H40 V36" stroke="#E5C158" strokeWidth="1.5" fill="none" />
           </svg>
         );
 
@@ -213,20 +213,20 @@ export function ThreeDIcon({ id }) {
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
             <defs>
               <linearGradient id="brainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#00E5FF" />
+                <stop offset="0%" stopColor="#E5C158" />
                 <stop offset="100%" stopColor="#8A2BE2" />
               </linearGradient>
             </defs>
             <path d="M32 14 C24 14 18 20 18 27 C18 31 20 34 23 36 C21 40 23 46 28 48 C30 49 32 50 32 50 C32 50 34 49 36 48 C41 46 43 40 41 36 C44 34 46 31 46 27 C46 20 40 14 32 14 Z" fill="#00262C" stroke="url(#brainGrad)" strokeWidth="2.5" />
-            <circle cx="26" cy="24" r="2.5" fill="#00E5FF" />
-            <circle cx="38" cy="24" r="2.5" fill="#00E5FF" />
+            <circle cx="26" cy="24" r="2.5" fill="#E5C158" />
+            <circle cx="38" cy="24" r="2.5" fill="#E5C158" />
             <circle cx="32" cy="32" r="3" fill="#FFFFFF" />
             <circle cx="26" cy="40" r="2.5" fill="#8A2BE2" />
             <circle cx="38" cy="40" r="2.5" fill="#8A2BE2" />
-            <line x1="26" y1="24" x2="32" y2="32" stroke="#AFDDE5" strokeWidth="1.5" />
-            <line x1="38" y1="24" x2="32" y2="32" stroke="#AFDDE5" strokeWidth="1.5" />
-            <line x1="32" y1="32" x2="26" y2="40" stroke="#AFDDE5" strokeWidth="1.5" />
-            <line x1="32" y1="32" x2="38" y2="40" stroke="#AFDDE5" strokeWidth="1.5" />
+            <line x1="26" y1="24" x2="32" y2="32" stroke="#FFF8DC" strokeWidth="1.5" />
+            <line x1="38" y1="24" x2="32" y2="32" stroke="#FFF8DC" strokeWidth="1.5" />
+            <line x1="32" y1="32" x2="26" y2="40" stroke="#FFF8DC" strokeWidth="1.5" />
+            <line x1="32" y1="32" x2="38" y2="40" stroke="#FFF8DC" strokeWidth="1.5" />
           </svg>
         );
 
@@ -234,8 +234,8 @@ export function ThreeDIcon({ id }) {
       case 14:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <rect x="16" y="16" width="32" height="32" rx="6" fill="#00282E" stroke="#0FA4AF" strokeWidth="2" />
-            <rect x="22" y="22" width="20" height="20" rx="3" fill="#00181A" stroke="#00E5FF" strokeWidth="1.5" />
+            <rect x="16" y="16" width="32" height="32" rx="6" fill="#00282E" stroke="#D4AF37" strokeWidth="2" />
+            <rect x="22" y="22" width="20" height="20" rx="3" fill="#00181A" stroke="#E5C158" strokeWidth="1.5" />
             <text x="32" y="36" fill="#FFFFFF" fontSize="11" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">AI</text>
             <path d="M22 10 V16 M32 10 V16 M42 10 V16 M22 48 V54 M32 48 V54 M42 48 V54 M10 22 H16 M10 32 H16 M10 42 H16 M48 22 H54 M48 32 H54 M48 42 H54" stroke="#FFBD2E" strokeWidth="2.5" strokeLinecap="round" />
           </svg>
@@ -245,10 +245,10 @@ export function ThreeDIcon({ id }) {
       case 15:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <path d="M12 50 H52 M12 50 V14" stroke="#0FA4AF" strokeWidth="2" strokeLinecap="round" />
-            <rect x="18" y="34" width="7" height="16" rx="2" fill="#003E47" stroke="#AFDDE5" strokeWidth="1" />
-            <rect x="29" y="24" width="7" height="26" rx="2" fill="#0FA4AF" stroke="#00E5FF" strokeWidth="1" />
-            <rect x="40" y="14" width="7" height="36" rx="2" fill="#00E5FF" stroke="#FFFFFF" strokeWidth="1" />
+            <path d="M12 50 H52 M12 50 V14" stroke="#D4AF37" strokeWidth="2" strokeLinecap="round" />
+            <rect x="18" y="34" width="7" height="16" rx="2" fill="#003E47" stroke="#FFF8DC" strokeWidth="1" />
+            <rect x="29" y="24" width="7" height="26" rx="2" fill="#D4AF37" stroke="#E5C158" strokeWidth="1" />
+            <rect x="40" y="14" width="7" height="36" rx="2" fill="#E5C158" stroke="#FFFFFF" strokeWidth="1" />
             <path d="M20 30 L32 18 L44 10" stroke="#FFBD2E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
             <polygon points="44,6 48,10 42,12" fill="#FFBD2E" />
           </svg>
@@ -258,11 +258,11 @@ export function ThreeDIcon({ id }) {
       case 16:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <rect x="10" y="12" width="44" height="40" rx="8" fill="#002328" stroke="#0FA4AF" strokeWidth="2" />
-            <path d="M16 42 Q 24 24, 32 34 T 48 20" stroke="#00E5FF" strokeWidth="3" fill="none" strokeLinecap="round" />
+            <rect x="10" y="12" width="44" height="40" rx="8" fill="#002328" stroke="#D4AF37" strokeWidth="2" />
+            <path d="M16 42 Q 24 24, 32 34 T 48 20" stroke="#E5C158" strokeWidth="3" fill="none" strokeLinecap="round" />
             <circle cx="48" cy="20" r="3.5" fill="#FF5F56" />
-            <circle cx="22" cy="22" r="5" fill="#003E47" stroke="#AFDDE5" strokeWidth="1.5" />
-            <path d="M22 22 L22 17 A 5 5 0 0 1 27 22 Z" fill="#0FA4AF" />
+            <circle cx="22" cy="22" r="5" fill="#003E47" stroke="#FFF8DC" strokeWidth="1.5" />
+            <path d="M22 22 L22 17 A 5 5 0 0 1 27 22 Z" fill="#D4AF37" />
           </svg>
         );
 
@@ -270,12 +270,12 @@ export function ThreeDIcon({ id }) {
       case 17:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <circle cx="32" cy="32" r="20" fill="#00262C" stroke="#0FA4AF" strokeWidth="2.5" />
-            <ellipse cx="32" cy="32" rx="9" ry="20" stroke="#AFDDE5" strokeWidth="1.5" fill="none" />
-            <line x1="12" y1="32" x2="52" y2="32" stroke="#AFDDE5" strokeWidth="1.5" />
-            <line x1="16" y1="22" x2="48" y2="22" stroke="#00E5FF" strokeWidth="1" strokeDasharray="2 2" />
-            <line x1="16" y1="42" x2="48" y2="42" stroke="#00E5FF" strokeWidth="1" strokeDasharray="2 2" />
-            <rect x="22" y="4" width="20" height="8" rx="2" fill="#0FA4AF" />
+            <circle cx="32" cy="32" r="20" fill="#00262C" stroke="#D4AF37" strokeWidth="2.5" />
+            <ellipse cx="32" cy="32" rx="9" ry="20" stroke="#FFF8DC" strokeWidth="1.5" fill="none" />
+            <line x1="12" y1="32" x2="52" y2="32" stroke="#FFF8DC" strokeWidth="1.5" />
+            <line x1="16" y1="22" x2="48" y2="22" stroke="#E5C158" strokeWidth="1" strokeDasharray="2 2" />
+            <line x1="16" y1="42" x2="48" y2="42" stroke="#E5C158" strokeWidth="1" strokeDasharray="2 2" />
+            <rect x="22" y="4" width="20" height="8" rx="2" fill="#D4AF37" />
             <text x="32" y="10.5" fill="#FFFFFF" fontSize="6" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">WWW</text>
           </svg>
         );
@@ -284,14 +284,14 @@ export function ThreeDIcon({ id }) {
       case 18:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <rect x="10" y="10" width="44" height="44" rx="8" fill="#002428" stroke="#0FA4AF" strokeWidth="2" />
+            <rect x="10" y="10" width="44" height="44" rx="8" fill="#002428" stroke="#D4AF37" strokeWidth="2" />
             <rect x="10" y="10" width="44" height="10" rx="8" fill="#00353C" />
             <circle cx="16" cy="15" r="1.5" fill="#FF5F56" />
             <circle cx="21" cy="15" r="1.5" fill="#FFBD2E" />
             <circle cx="26" cy="15" r="1.5" fill="#27C93F" />
-            <rect x="16" y="26" width="14" height="22" rx="3" fill="#003E47" stroke="#AFDDE5" strokeWidth="1" />
-            <rect x="34" y="26" width="14" height="10" rx="3" fill="#0FA4AF" />
-            <rect x="34" y="39" width="14" height="9" rx="3" fill="#00E5FF" />
+            <rect x="16" y="26" width="14" height="22" rx="3" fill="#003E47" stroke="#FFF8DC" strokeWidth="1" />
+            <rect x="34" y="26" width="14" height="10" rx="3" fill="#D4AF37" />
+            <rect x="34" y="39" width="14" height="9" rx="3" fill="#E5C158" />
           </svg>
         );
 
@@ -299,14 +299,14 @@ export function ThreeDIcon({ id }) {
       case 19:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <rect x="18" y="8" width="28" height="48" rx="7" fill="#002226" stroke="#0FA4AF" strokeWidth="2.5" />
+            <rect x="18" y="8" width="28" height="48" rx="7" fill="#002226" stroke="#D4AF37" strokeWidth="2.5" />
             <rect x="21" y="13" width="22" height="38" rx="4" fill="#001517" />
-            <rect x="28" y="10.5" width="8" height="2" rx="1" fill="#AFDDE5" />
-            <rect x="24" y="18" width="6" height="6" rx="2" fill="#00E5FF" />
+            <rect x="28" y="10.5" width="8" height="2" rx="1" fill="#FFF8DC" />
+            <rect x="24" y="18" width="6" height="6" rx="2" fill="#E5C158" />
             <rect x="34" y="18" width="6" height="6" rx="2" fill="#FFBD2E" />
             <rect x="24" y="28" width="6" height="6" rx="2" fill="#27C93F" />
             <rect x="34" y="28" width="6" height="6" rx="2" fill="#FF5F56" />
-            <line x1="28" y1="48" x2="36" y2="48" stroke="#AFDDE5" strokeWidth="1.5" strokeLinecap="round" />
+            <line x1="28" y1="48" x2="36" y2="48" stroke="#FFF8DC" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         );
 
@@ -314,11 +314,11 @@ export function ThreeDIcon({ id }) {
       case 20:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <rect x="14" y="12" width="26" height="40" rx="6" fill="#002428" stroke="#0FA4AF" strokeWidth="2" />
-            <rect x="26" y="20" width="26" height="34" rx="6" fill="#00343B" stroke="#00E5FF" strokeWidth="2" />
-            <circle cx="39" cy="30" r="4" fill="#AFDDE5" />
+            <rect x="14" y="12" width="26" height="40" rx="6" fill="#002428" stroke="#D4AF37" strokeWidth="2" />
+            <rect x="26" y="20" width="26" height="34" rx="6" fill="#00343B" stroke="#E5C158" strokeWidth="2" />
+            <circle cx="39" cy="30" r="4" fill="#FFF8DC" />
             <line x1="32" y1="38" x2="46" y2="38" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
-            <line x1="32" y1="43" x2="42" y2="43" stroke="#AFDDE5" strokeWidth="1.5" strokeLinecap="round" />
+            <line x1="32" y1="43" x2="42" y2="43" stroke="#FFF8DC" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         );
 
@@ -328,8 +328,8 @@ export function ThreeDIcon({ id }) {
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
             <defs>
               <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#00E5FF" />
-                <stop offset="100%" stopColor="#0FA4AF" />
+                <stop offset="0%" stopColor="#E5C158" />
+                <stop offset="100%" stopColor="#D4AF37" />
               </linearGradient>
             </defs>
             <path d="M46 36 C49.3 36 52 33.3 52 30 C52 27.2 50.1 24.8 47.4 24.2 C46.9 18.5 42 14 36 14 C31.5 14 27.6 16.5 25.7 20.3 C24.6 19.5 23.1 19 21.5 19 C17.9 19 15 21.9 15 25.5 C15 26.2 15.1 26.8 15.3 27.4 C13.3 28.7 12 31 12 33.5 C12 37.1 14.9 40 18.5 40 H46 Z" fill="url(#cloudGrad)" stroke="#FFFFFF" strokeWidth="1.5" />
@@ -341,7 +341,7 @@ export function ThreeDIcon({ id }) {
       case 22:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <path d="M22 24 C16 24 12 28 12 32 C12 36 16 40 22 40 C28 40 32 32 32 32 C32 32 36 24 42 24 C48 24 52 28 52 32 C52 36 48 40 42 40 C36 40 32 32 32 32 C32 32 28 24 22 24 Z" stroke="#00E5FF" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+            <path d="M22 24 C16 24 12 28 12 32 C12 36 16 40 22 40 C28 40 32 32 32 32 C32 32 36 24 42 24 C48 24 52 28 52 32 C52 36 48 40 42 40 C36 40 32 32 32 32 C32 32 28 24 22 24 Z" stroke="#E5C158" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
             <circle cx="22" cy="32" r="3" fill="#FFBD2E" />
             <circle cx="42" cy="32" r="3" fill="#27C93F" />
           </svg>
@@ -351,12 +351,12 @@ export function ThreeDIcon({ id }) {
       case 23:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <rect x="22" y="14" width="20" height="14" rx="4" fill="#00353C" stroke="#00E5FF" strokeWidth="2" />
+            <rect x="22" y="14" width="20" height="14" rx="4" fill="#00353C" stroke="#E5C158" strokeWidth="2" />
             <circle cx="28" cy="21" r="2" fill="#27C93F" />
-            <circle cx="36" cy="21" r="2" fill="#0FA4AF" />
-            <rect x="10" y="42" width="14" height="10" rx="3" fill="#002428" stroke="#AFDDE5" strokeWidth="1.5" />
-            <rect x="40" y="42" width="14" height="10" rx="3" fill="#002428" stroke="#AFDDE5" strokeWidth="1.5" />
-            <path d="M32 28 V36 M17 42 V36 H47 V42" stroke="#0FA4AF" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+            <circle cx="36" cy="21" r="2" fill="#D4AF37" />
+            <rect x="10" y="42" width="14" height="10" rx="3" fill="#002428" stroke="#FFF8DC" strokeWidth="1.5" />
+            <rect x="40" y="42" width="14" height="10" rx="3" fill="#002428" stroke="#FFF8DC" strokeWidth="1.5" />
+            <path d="M32 28 V36 M17 42 V36 H47 V42" stroke="#D4AF37" strokeWidth="2.5" strokeLinecap="round" fill="none" />
           </svg>
         );
 
@@ -364,12 +364,12 @@ export function ThreeDIcon({ id }) {
       case 24:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <path d="M28 52 L32 22 L36 52 M29 42 H35 M27 32 H37" stroke="#0FA4AF" strokeWidth="2.5" strokeLinecap="round" />
+            <path d="M28 52 L32 22 L36 52 M29 42 H35 M27 32 H37" stroke="#D4AF37" strokeWidth="2.5" strokeLinecap="round" />
             <circle cx="32" cy="20" r="3.5" fill="#FF5F56" />
-            <path d="M24 16 A 12 12 0 0 0 24 24" stroke="#00E5FF" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-            <path d="M40 16 A 12 12 0 0 1 40 24" stroke="#00E5FF" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-            <path d="M18 10 A 20 20 0 0 0 18 30" stroke="#AFDDE5" strokeWidth="2" strokeLinecap="round" fill="none" />
-            <path d="M46 10 A 20 20 0 0 1 46 30" stroke="#AFDDE5" strokeWidth="2" strokeLinecap="round" fill="none" />
+            <path d="M24 16 A 12 12 0 0 0 24 24" stroke="#E5C158" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+            <path d="M40 16 A 12 12 0 0 1 40 24" stroke="#E5C158" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+            <path d="M18 10 A 20 20 0 0 0 18 30" stroke="#FFF8DC" strokeWidth="2" strokeLinecap="round" fill="none" />
+            <path d="M46 10 A 20 20 0 0 1 46 30" stroke="#FFF8DC" strokeWidth="2" strokeLinecap="round" fill="none" />
           </svg>
         );
 
@@ -385,8 +385,8 @@ export function ThreeDIcon({ id }) {
             </defs>
             <line x1="16" y1="22" x2="48" y2="22" stroke="url(#goldScales)" strokeWidth="3" strokeLinecap="round" />
             <path d="M32 14 V48 M24 48 H40" stroke="url(#goldScales)" strokeWidth="3" strokeLinecap="round" />
-            <path d="M16 22 L12 34 H20 Z" fill="#00353C" stroke="#00E5FF" strokeWidth="1.5" />
-            <path d="M48 22 L44 34 H52 Z" fill="#00353C" stroke="#00E5FF" strokeWidth="1.5" />
+            <path d="M16 22 L12 34 H20 Z" fill="#00353C" stroke="#E5C158" strokeWidth="1.5" />
+            <path d="M48 22 L44 34 H52 Z" fill="#00353C" stroke="#E5C158" strokeWidth="1.5" />
           </svg>
         );
 
@@ -394,12 +394,12 @@ export function ThreeDIcon({ id }) {
       case 26:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <rect x="14" y="10" width="36" height="44" rx="5" fill="#00282E" stroke="#0FA4AF" strokeWidth="2" />
-            <line x1="20" y1="18" x2="34" y2="18" stroke="#AFDDE5" strokeWidth="2" strokeLinecap="round" />
-            <line x1="20" y1="24" x2="44" y2="24" stroke="#AFDDE5" strokeWidth="2" strokeLinecap="round" />
-            <line x1="20" y1="30" x2="40" y2="30" stroke="#AFDDE5" strokeWidth="2" strokeLinecap="round" />
+            <rect x="14" y="10" width="36" height="44" rx="5" fill="#00282E" stroke="#D4AF37" strokeWidth="2" />
+            <line x1="20" y1="18" x2="34" y2="18" stroke="#FFF8DC" strokeWidth="2" strokeLinecap="round" />
+            <line x1="20" y1="24" x2="44" y2="24" stroke="#FFF8DC" strokeWidth="2" strokeLinecap="round" />
+            <line x1="20" y1="30" x2="40" y2="30" stroke="#FFF8DC" strokeWidth="2" strokeLinecap="round" />
             <circle cx="36" cy="40" r="7" fill="#FFBD2E" stroke="#FFFFFF" strokeWidth="1.5" />
-            <path d="M33 40 L35 42 L39 38" stroke="#001C1F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+            <path d="M33 40 L35 42 L39 38" stroke="#040A1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
           </svg>
         );
 
@@ -407,8 +407,8 @@ export function ThreeDIcon({ id }) {
       case 27:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <circle cx="32" cy="22" r="7" fill="#00E5FF" stroke="#FFFFFF" strokeWidth="1.5" />
-            <path d="M20 40 C20 34 25 32 32 32 C39 32 44 34 44 40 Z" fill="#0FA4AF" />
+            <circle cx="32" cy="22" r="7" fill="#E5C158" stroke="#FFFFFF" strokeWidth="1.5" />
+            <path d="M20 40 C20 34 25 32 32 32 C39 32 44 34 44 40 Z" fill="#D4AF37" />
             <circle cx="32" cy="30" r="20" stroke="#27C93F" strokeWidth="2" strokeDasharray="6 3" fill="none" />
           </svg>
         );
@@ -418,7 +418,7 @@ export function ThreeDIcon({ id }) {
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
             <circle cx="32" cy="32" r="18" fill="#FF5F56" stroke="#FFFFFF" strokeWidth="2.5" />
-            <circle cx="32" cy="32" r="9" fill="#001C1F" stroke="#FFFFFF" strokeWidth="2.5" />
+            <circle cx="32" cy="32" r="9" fill="#040A1A" stroke="#FFFFFF" strokeWidth="2.5" />
             <path d="M32 14 V23 M32 41 V50 M14 32 H23 M41 32 H50" stroke="#FFFFFF" strokeWidth="3" />
           </svg>
         );
@@ -427,8 +427,8 @@ export function ThreeDIcon({ id }) {
       case 29:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <polygon points="32,14 54,24 32,34 10,24" fill="#00353C" stroke="#00E5FF" strokeWidth="2" />
-            <path d="M18 28 V38 C18 44 46 44 46 38 V28" fill="#002428" stroke="#0FA4AF" strokeWidth="2" />
+            <polygon points="32,14 54,24 32,34 10,24" fill="#00353C" stroke="#E5C158" strokeWidth="2" />
+            <path d="M18 28 V38 C18 44 46 44 46 38 V28" fill="#002428" stroke="#D4AF37" strokeWidth="2" />
             <circle cx="32" cy="24" r="2" fill="#FFBD2E" />
             <path d="M32 24 L48 30 V38" stroke="#FFBD2E" strokeWidth="2" fill="none" />
           </svg>
@@ -438,8 +438,8 @@ export function ThreeDIcon({ id }) {
       case 30:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <rect x="12" y="22" width="40" height="28" rx="5" fill="#002D33" stroke="#0FA4AF" strokeWidth="2" />
-            <path d="M24 22 V15 C24 13 26 11 28 11 H36 C38 11 40 13 40 15 V22" stroke="#AFDDE5" strokeWidth="3" fill="none" />
+            <rect x="12" y="22" width="40" height="28" rx="5" fill="#002D33" stroke="#D4AF37" strokeWidth="2" />
+            <path d="M24 22 V15 C24 13 26 11 28 11 H36 C38 11 40 13 40 15 V22" stroke="#FFF8DC" strokeWidth="3" fill="none" />
             <line x1="12" y1="32" x2="52" y2="32" stroke="#003F47" strokeWidth="2" />
             <rect x="22" y="30" width="4" height="6" rx="1" fill="#FFBD2E" />
             <rect x="38" y="30" width="4" height="6" rx="1" fill="#FFBD2E" />
@@ -450,8 +450,8 @@ export function ThreeDIcon({ id }) {
       case 31:
         return (
           <svg viewBox="0 0 64 64" className="w-10 h-10 drop-shadow-[0_8px_10px_rgba(0,0,0,0.5)]">
-            <path d="M16 16 L22 22 L44 44 L40 48 L18 26 L12 28 Z" fill="#AFDDE5" stroke="#0FA4AF" strokeWidth="1.5" />
-            <path d="M48 16 L42 22 L20 44 L24 48 L46 26 L52 28 Z" fill="#00E5FF" stroke="#003135" strokeWidth="1.5" />
+            <path d="M16 16 L22 22 L44 44 L40 48 L18 26 L12 28 Z" fill="#FFF8DC" stroke="#D4AF37" strokeWidth="1.5" />
+            <path d="M48 16 L42 22 L20 44 L24 48 L46 26 L52 28 Z" fill="#E5C158" stroke="#081E52" strokeWidth="1.5" />
             <circle cx="32" cy="32" r="3" fill="#FFBD2E" />
           </svg>
         );
@@ -471,7 +471,7 @@ export function ThreeDIcon({ id }) {
             <path d="M20 18 H14 C12 18 12 28 20 28" stroke="url(#trophyGrad)" strokeWidth="3" fill="none" strokeLinecap="round" />
             <path d="M44 18 H50 C52 18 52 28 44 28" stroke="url(#trophyGrad)" strokeWidth="3" fill="none" strokeLinecap="round" />
             <path d="M30 38 H34 V44 H30 Z" fill="url(#trophyGrad)" />
-            <rect x="22" y="44" width="20" height="7" rx="2" fill="#002D33" stroke="#0FA4AF" strokeWidth="1.5" />
+            <rect x="22" y="44" width="20" height="7" rx="2" fill="#002D33" stroke="#D4AF37" strokeWidth="1.5" />
             <polygon points="32,20 33.5,24 37,24 34,26.5 35,30 32,27.5 29,30 30,26.5 27,24 30.5,24" fill="#FFFFFF" />
           </svg>
         );
@@ -484,11 +484,11 @@ export function ThreeDIcon({ id }) {
   return (
     <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shrink-0">
       {/* 3D Glassmorphic Circular Pod with crisp white border and luminous aura */}
-      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#005561] via-[#003840] to-[#00171B] border-[2px] sm:border-[2.5px] md:border-[3px] border-white shadow-[0_0_12px_rgba(0,229,255,0.4),0_4px_10px_rgba(0,0,0,0.5),inset_0_0_10px_rgba(0,229,255,0.3)] group-hover:shadow-[0_0_20px_rgba(0,229,255,0.65)] transition-all duration-300" />
+      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#081E52] via-[#0c2b7a] to-[#040A1A] border-[2px] sm:border-[2.5px] md:border-[3px] border-[#D4AF37] shadow-[0_0_15px_rgba(212,175,55,0.4),0_4px_10px_rgba(0,0,0,0.5),inset_0_0_10px_rgba(229,193,88,0.3)] group-hover:shadow-[0_0_22px_rgba(229,193,88,0.7)] transition-all duration-300" />
       {/* Specular curved reflection highlight on top */}
       <div className="absolute top-0.5 inset-x-2 h-2.5 sm:h-3 rounded-t-full bg-gradient-to-b from-white/45 to-transparent pointer-events-none" />
       {/* Center Spotlight to illuminate icon */}
-      <div className="absolute inset-1 rounded-full bg-radial from-[#00E5FF]/25 to-transparent pointer-events-none" />
+      <div className="absolute inset-1 rounded-full bg-radial from-[#E5C158]/25 to-transparent pointer-events-none" />
       {/* 3D Vector Illustration Content - Responsive, Crisp, Highly Visible */}
       <div className="relative z-10 flex items-center justify-center transform group-hover:scale-108 transition-transform duration-300 [&>svg]:w-7.5 [&>svg]:h-7.5 sm:[&>svg]:w-9 sm:[&>svg]:h-9 md:[&>svg]:w-10 md:[&>svg]:h-10 [&>svg]:drop-shadow-[0_0_5px_rgba(0,229,255,0.65)]">
         {renderIconContent()}
@@ -504,14 +504,14 @@ export function Card({ skill }) {
   const isInternship = skill.title.toLowerCase().includes('internship');
 
   return (
-    <div className="group relative flex flex-col items-center justify-center text-center p-2.5 sm:p-4 md:p-6 rounded-[1.6rem] sm:rounded-[2rem] md:rounded-[2.4rem] bg-gradient-to-b from-[#002D33] via-[#002024] to-[#001417] border-[3px] sm:border-[4px] md:border-[5px] border-white shadow-[0_8px_20px_rgba(0,18,22,0.18)] hover:shadow-[0_16px_36px_rgba(15,164,175,0.32)] hover:border-[#AFDDE5] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer h-full min-h-[185px] sm:min-h-[200px] md:min-h-[225px] overflow-hidden">
+    <div className="group relative flex flex-col items-center justify-center text-center p-2.5 sm:p-4 md:p-6 rounded-[1.6rem] sm:rounded-[2rem] md:rounded-[2.4rem] bg-gradient-to-b from-[#081E52] via-[#06173F] to-[#040A1A] border-[2.5px] sm:border-[3px] border-[#D4AF37]/50 shadow-[0_8px_25px_rgba(4,10,26,0.6)] hover:shadow-[0_16px_36px_rgba(212,175,55,0.35)] hover:border-[#E5C158] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer h-full min-h-[185px] sm:min-h-[200px] md:min-h-[225px] overflow-hidden">
       {/* 3 Heavy Dense Continuous Falling Snow Spray Layers */}
       <div className="absolute inset-0 dense-snow-layer-1 pointer-events-none rounded-[1.5rem] opacity-90" />
       <div className="absolute inset-0 dense-snow-layer-2 pointer-events-none rounded-[1.5rem] opacity-85" />
       <div className="absolute inset-0 dense-snow-layer-3 pointer-events-none rounded-[1.5rem] opacity-75" />
 
       {/* Top Subtle Cyan Glow Rim Highlight */}
-      <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#00E5FF]/45 to-transparent pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#E5C158]/45 to-transparent pointer-events-none" />
 
       {/* Foreground Content: Compact Round 3D Icon Badge */}
       <div className="relative z-10 flex flex-col items-center">
@@ -520,10 +520,10 @@ export function Card({ skill }) {
 
       {/* Foreground Content: Full Uncut Title & Short Subtitle */}
       <div className="relative z-10 flex flex-col items-center w-full mt-2 sm:mt-2.5 md:mt-3 px-0.5">
-        <h3 className="font-heading font-extrabold text-white text-[11px] sm:text-xs md:text-sm lg:text-base tracking-tight leading-snug group-hover:text-[#AFDDE5] transition-colors drop-shadow-md">
+        <h3 className="font-heading font-extrabold text-white text-[11px] sm:text-xs md:text-sm lg:text-base tracking-tight leading-snug group-hover:text-[#E5C158] transition-colors drop-shadow-md">
           {skill.title}
         </h3>
-        <p className="mt-1 text-[9.5px] sm:text-[10px] md:text-xs text-[#AFDDE5]/80 font-normal leading-tight max-w-[210px]">
+        <p className="mt-1 text-[9.5px] sm:text-[10px] md:text-xs text-[#FFF8DC]/85 font-normal leading-tight max-w-[210px]">
           {isInternship
             ? "Corporate live projects & mentorship"
             : "Practical hands-on labs & certification"}
@@ -547,7 +547,7 @@ export function Pagination({
   return (
     <nav aria-label="Page navigation" className="mt-8 sm:mt-10 mb-8 sm:mb-12 flex justify-center w-full px-2">
       {/* Clean White Navigation Controls with Brand Cyan Accents */}
-      <div className="inline-flex items-center justify-center gap-1 sm:gap-2.5 p-1 sm:p-1.5 rounded-2xl bg-white border border-slate-200 shadow-md shadow-slate-200/50 max-w-full">
+      <div className="inline-flex items-center justify-center gap-1 sm:gap-2.5 p-1 sm:p-1.5 rounded-2xl bg-[#081E52] border border-[#D4AF37]/40 shadow-lg shadow-black/50 max-w-full">
         {/* Previous Button */}
         <button
           onClick={() => onPageChange(currentPage - 1)}
@@ -556,10 +556,10 @@ export function Pagination({
           className={`flex items-center justify-center gap-1 sm:gap-2 px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 shrink-0 ${
             isFirstPage
               ? 'opacity-35 cursor-not-allowed text-slate-400 bg-transparent'
-              : 'text-slate-700 hover:bg-slate-100 hover:text-[#0FA4AF] active:scale-95 cursor-pointer'
+              : 'text-white/85 hover:bg-[#0c2b7a] hover:text-[#FFF8DC] active:scale-95 cursor-pointer'
           }`}
         >
-          <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0FA4AF] shrink-0" />
+          <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D4AF37] shrink-0" />
           <span className="inline sm:hidden">Prev</span>
           <span className="hidden sm:inline">Previous</span>
         </button>
@@ -575,8 +575,8 @@ export function Pagination({
                 aria-current={isActive ? 'page' : undefined}
                 className={`flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 shrink-0 ${
                   isActive
-                    ? 'bg-[#0FA4AF] text-white shadow-md shadow-[#0FA4AF]/30 scale-105'
-                    : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                    ? 'bg-[#D4AF37] text-[#040A1A] font-bold shadow-md shadow-[#D4AF37]/40 scale-105'
+                    : 'text-white/80 hover:bg-[#0c2b7a] hover:text-[#FFF8DC]'
                 }`}
               >
                 {page}
@@ -593,11 +593,11 @@ export function Pagination({
           className={`flex items-center justify-center gap-1 sm:gap-2 px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 shrink-0 ${
             isLastPage
               ? 'opacity-35 cursor-not-allowed text-slate-400 bg-transparent'
-              : 'text-slate-700 hover:bg-slate-100 hover:text-[#0FA4AF] active:scale-95 cursor-pointer'
+              : 'text-white/85 hover:bg-[#0c2b7a] hover:text-[#FFF8DC] active:scale-95 cursor-pointer'
           }`}
         >
           <span>Next</span>
-          <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0FA4AF] shrink-0" />
+          <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D4AF37] shrink-0" />
         </button>
       </div>
     </nav>
@@ -677,25 +677,25 @@ export default function SkillDevelopment({ skillsData = DEFAULT_SKILLS_DATA, onC
         @keyframes textWaveOnce {
           0% {
             transform: translateY(0px) rotate(0deg);
-            color: #001C1F;
+            color: #040A1A;
           }
           25% {
             transform: translateY(-22px) rotate(-3.5deg) scale(1.12);
-            color: #0FA4AF;
+            color: #D4AF37;
             filter: drop-shadow(0 10px 18px rgba(15, 164, 175, 0.65));
           }
           55% {
             transform: translateY(6px) rotate(2deg) scale(0.98);
-            color: #003135;
+            color: #081E52;
           }
           80% {
             transform: translateY(-2px) rotate(-0.5deg);
-            color: #001C1F;
+            color: #040A1A;
             filter: none;
           }
           100% {
             transform: translateY(0px) rotate(0deg) scale(1);
-            color: #001C1F;
+            color: #040A1A;
             filter: none;
           }
         }
@@ -710,7 +710,7 @@ export default function SkillDevelopment({ skillsData = DEFAULT_SKILLS_DATA, onC
 
         .text-wave-char:hover {
           transform: translateY(-12px) scale(1.15) !important;
-          color: #0FA4AF !important;
+          color: #D4AF37 !important;
         }
 
         /* Flowing Brand Underline */
@@ -735,12 +735,12 @@ export default function SkillDevelopment({ skillsData = DEFAULT_SKILLS_DATA, onC
         .animated-brand-line {
           background: linear-gradient(
             90deg,
-            #001C1F 0%,
-            #003135 20%,
-            #0FA4AF 45%,
-            #AFDDE5 70%,
-            #0FA4AF 85%,
-            #001C1F 100%
+            #040A1A 0%,
+            #081E52 20%,
+            #D4AF37 45%,
+            #FFF8DC 70%,
+            #D4AF37 85%,
+            #040A1A 100%
           );
           background-size: 260% 100%;
           animation: brandLineFlow 3s ease-in-out infinite;
@@ -875,7 +875,7 @@ export default function SkillDevelopment({ skillsData = DEFAULT_SKILLS_DATA, onC
           <button
             type="button"
             onClick={handleBack}
-            className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
           >
             ← Back
           </button>
@@ -883,9 +883,9 @@ export default function SkillDevelopment({ skillsData = DEFAULT_SKILLS_DATA, onC
           <button
             type="button"
             onClick={handleHome}
-            className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
           >
-            <Home className="w-4 h-4 text-white" />
+            <Home className="w-4 h-4 text-[#040A1A]" />
             <span>Home</span>
           </button>
         </div>
@@ -924,7 +924,7 @@ export default function SkillDevelopment({ skillsData = DEFAULT_SKILLS_DATA, onC
         </header>
 
         {/* --- SHOWCASE BOX CONTAINER: Clean Box Housing the 8 Cards with Soft Tint for White Border Contrast --- */}
-        <div className="relative rounded-[2.2rem] sm:rounded-[2.8rem] md:rounded-[3rem] bg-gradient-to-b from-[#e8f6f8] via-[#f2fafb] to-[#eaf6f8] border border-[#AFDDE5]/60 shadow-2xl p-3 sm:p-5 md:p-8 lg:p-10 ring-1 ring-[#0FA4AF]/10 overflow-hidden">
+        <div className="relative rounded-[2.2rem] sm:rounded-[2.8rem] md:rounded-[3rem] bg-gradient-to-b from-[#e8f6f8] via-[#f2fafb] to-[#eaf6f8] border border-[#FFF8DC]/60 shadow-2xl p-3 sm:p-5 md:p-8 lg:p-10 ring-1 ring-[#D4AF37]/10 overflow-hidden">
           {/* 8 Cards Grid: Mobile Strictly 2 Cards per Line (grid-cols-2), Desktop 4 Cards per Line (lg:grid-cols-4) */}
           <div key={currentPage} className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 md:gap-6">
             {currentSkills.map((skill, index) => {

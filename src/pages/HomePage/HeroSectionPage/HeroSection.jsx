@@ -3,7 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { heroSlides } from './HeroSectionData';
 
-const AUTOPLAY_DELAY = 4500;
+const AUTOPLAY_DELAY = 6500;
 
 const slideThemes = [
   // Slide 0: Digital Infrastructure Protection (Cyan / Cyber Blue)
@@ -307,10 +307,10 @@ export function HeroSection() {
       opacity: 1,
       filter: 'blur(0px)',
       transition: {
-        x: { duration: reduceMotion ? 0.01 : 1.25, delay: reduceMotion ? 0 : 0.8, ease: [0.16, 1, 0.3, 1] },
-        y: { duration: reduceMotion ? 0.01 : 1.25, delay: reduceMotion ? 0 : 0.8, ease: [0.16, 1, 0.3, 1] },
-        opacity: { duration: reduceMotion ? 0.01 : 0.95, delay: reduceMotion ? 0 : 0.8, ease: 'easeOut' },
-        filter: { duration: reduceMotion ? 0.01 : 0.95, delay: reduceMotion ? 0 : 0.8, ease: 'easeOut' },
+        x: { duration: reduceMotion ? 0.01 : 0.75, delay: reduceMotion ? 0 : 0.25, ease: [0.16, 1, 0.3, 1] },
+        y: { duration: reduceMotion ? 0.01 : 0.75, delay: reduceMotion ? 0 : 0.25, ease: [0.16, 1, 0.3, 1] },
+        opacity: { duration: reduceMotion ? 0.01 : 0.65, delay: reduceMotion ? 0 : 0.25, ease: 'easeOut' },
+        filter: { duration: reduceMotion ? 0.01 : 0.65, delay: reduceMotion ? 0 : 0.25, ease: 'easeOut' },
       },
     },
     exit: (custom) => {
@@ -409,8 +409,8 @@ export function HeroSection() {
                               initial={{ opacity: 0, x: currentData.wordOffset.x, y: currentData.wordOffset.y, filter: 'blur(8px)' }}
                               animate={{ opacity: 1, x: 0, y: 0, filter: 'blur(0px)' }}
                               transition={{
-                                duration: reduceMotion ? 0.01 : 0.6,
-                                delay: reduceMotion ? 0 : 1.0 + wIdx * 0.06,
+                                duration: reduceMotion ? 0.01 : 0.45,
+                                delay: reduceMotion ? 0 : 0.35 + wIdx * 0.05,
                                 ease: [0.16, 1, 0.3, 1],
                               }}
                               className="inline-block will-change-transform pb-1 pt-0.5"
@@ -426,8 +426,8 @@ export function HeroSection() {
                           initial={{ opacity: 0, x: currentData.wordOffset.x * 0.6, y: currentData.wordOffset.y * 0.6, filter: 'blur(6px)' }}
                           animate={{ opacity: 1, x: 0, y: 0, filter: 'blur(0px)' }}
                           transition={{
-                            duration: reduceMotion ? 0.01 : 0.7,
-                            delay: reduceMotion ? 0 : 1.25,
+                            duration: reduceMotion ? 0.01 : 0.55,
+                            delay: reduceMotion ? 0 : 0.65,
                             ease: [0.16, 1, 0.3, 1],
                           }}
                           className="mt-3.5 max-w-2xl mx-auto w-full"

@@ -129,7 +129,7 @@ export default function OurTechnologyPage({ onClose }) {
         <button
           type="button"
           onClick={handleBack}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
         >
           ← Back
         </button>
@@ -137,9 +137,9 @@ export default function OurTechnologyPage({ onClose }) {
         <button
           type="button"
           onClick={handleHome}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
         >
-          <Home className="w-4 h-4 text-white" />
+          <Home className="w-4 h-4 text-[#040A1A]" />
           <span>Home</span>
         </button>
       </div>
@@ -165,7 +165,7 @@ export default function OurTechnologyPage({ onClose }) {
       {/* HEADER SECTION */}
       <div className="max-w-4xl text-center px-6 mb-4 md:mb-6">
         <h2
-          className="text-[30px] md:text-[36px] lg:text-[48px] text-[#003135] font-extrabold mb-6 tracking-wide"
+          className="text-[30px] md:text-[36px] lg:text-[48px] text-[#081E52] font-extrabold mb-6 tracking-wide"
           style={{ fontFamily: "'Manrope', sans-serif" }}
         >
           OUR TECHNOLOGY
@@ -348,7 +348,7 @@ export default function OurTechnologyPage({ onClose }) {
       <div className={`flex items-center justify-center gap-4 md:gap-6 z-20 transition-all duration-700 ${isExpanded ? 'mt-2 md:mt-8' : '-mt-24 md:mt-8'}`}>
         <button
           onClick={handlePrev}
-          className="p-3 md:p-4 rounded-full bg-white text-[#003135] shadow-[0_5px_15px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] hover:-translate-x-1 transition-all duration-300 border border-slate-100"
+          className="p-3 md:p-4 rounded-full bg-white text-[#081E52] shadow-[0_5px_15px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] hover:-translate-x-1 transition-all duration-300 border border-slate-100"
           aria-label="Previous card"
         >
           <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />
@@ -360,7 +360,7 @@ export default function OurTechnologyPage({ onClose }) {
         </div>
         <button
           onClick={handleNext}
-          className="p-3 md:p-4 rounded-full bg-white text-[#003135] shadow-[0_5px_15px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] hover:translate-x-1 transition-all duration-300 border border-slate-100"
+          className="p-3 md:p-4 rounded-full bg-white text-[#081E52] shadow-[0_5px_15px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] hover:translate-x-1 transition-all duration-300 border border-slate-100"
           aria-label="Next card"
         >
           <ChevronRight className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />

@@ -557,7 +557,7 @@ function RainbowPhoneCard({
       {/* 3. CARD HEADING - Full Complete Name Without Any Truncation / Dot-Dot (Fixed height for uniform alignment) */}
       <div className="relative z-10 text-center px-0.5 w-full h-[28px] sm:h-[34px] md:h-[36px] shrink-0 flex items-center justify-center">
         <h2
-          className="text-[#003135] text-[10px] sm:text-[10.5px] md:text-[11px] font-extrabold tracking-tight leading-[1.18] text-center w-full"
+          className="text-[#081E52] text-[10px] sm:text-[10.5px] md:text-[11px] font-extrabold tracking-tight leading-[1.18] text-center w-full"
           style={{
             fontFamily: "'Plus Jakarta Sans', sans-serif",
             wordBreak: 'normal',
@@ -1007,7 +1007,7 @@ export default function ArtificialIntelligenceIntelligentSoftwarePage({ onClose 
         <button
           type="button"
           onClick={handleBack}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-3.5 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-3.5 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
         >
           ← Back
         </button>
@@ -1015,9 +1015,9 @@ export default function ArtificialIntelligenceIntelligentSoftwarePage({ onClose 
         <button
           type="button"
           onClick={handleHome}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-3.5 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-3.5 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
         >
-          <Home className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
+          <Home className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#040A1A]" />
           <span>Home</span>
         </button>
       </div>
@@ -1026,14 +1026,14 @@ export default function ArtificialIntelligenceIntelligentSoftwarePage({ onClose 
       <div className="w-full max-w-[880px] mx-auto text-center px-3 sm:px-4 pt-1 sm:pt-3 pb-3 sm:pb-6 relative z-20 shrink-0">
         <h1
           id="main-heading"
-          className="text-2xl sm:text-3xl lg:text-[40px] font-extrabold text-[#003135] tracking-tight leading-tight mb-3 sm:mb-4"
+          className="text-2xl sm:text-3xl lg:text-[40px] font-extrabold text-[#081E52] tracking-tight leading-tight mb-3 sm:mb-4"
           style={{ fontFamily: "'Manrope', sans-serif" }}
         >
           Artificial Intelligence &amp; Intelligent Software
         </h1>
 
         <p
-          className="text-xs sm:text-sm lg:text-[15px] leading-relaxed text-[#003135]/80 font-normal max-w-4xl mx-auto px-1 sm:px-0"
+          className="text-xs sm:text-sm lg:text-[15px] leading-relaxed text-[#081E52]/80 font-normal max-w-4xl mx-auto px-1 sm:px-0"
           style={{ fontFamily: "'Inter', sans-serif" }}
         >
           Artificial Intelligence is an important technology area within our software product development strategy. We explore AI, Machine Learning and Generative AI to build software products that can process information, automate workflows, analyse data and enable intelligent digital experiences. Our focus is not simply on incorporating AI as a feature, but on developing commercially useful AI software products that solve defined problems. We combine AI technologies with secure software engineering, data systems, cloud infrastructure and product design to create scalable intelligent applications.
@@ -1093,7 +1093,7 @@ export default function ArtificialIntelligenceIntelligentSoftwarePage({ onClose 
 
               <div className="flex-1 min-w-0">
                 <h2
-                  className="text-base sm:text-lg md:text-xl font-extrabold text-[#003135] tracking-tight leading-snug"
+                  className="text-base sm:text-lg md:text-xl font-extrabold text-[#081E52] tracking-tight leading-snug"
                   style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 >
                   {activeItem.fullTitle || `${activeItem.number}. ${activeItem.title}`}
@@ -1116,7 +1116,7 @@ export default function ArtificialIntelligenceIntelligentSoftwarePage({ onClose 
           <div className="flex items-center justify-center gap-1 sm:gap-1.5 px-2 py-1.5 sm:px-3 sm:py-2 rounded-full bg-white/95 border border-[#0FA4AF]/30 shadow-xs backdrop-blur-md mx-auto w-fit max-w-full mt-3 sm:mt-4 overflow-x-auto no-scrollbar select-none">
             <button
               onClick={handleRotateLeft}
-              className="w-6 h-6 sm:w-7.5 sm:h-7.5 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#003135] flex items-center justify-center transition-transform hover:scale-110 cursor-pointer shadow-xs shrink-0"
+              className="w-6 h-6 sm:w-7.5 sm:h-7.5 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#081E52] flex items-center justify-center transition-transform hover:scale-110 cursor-pointer shadow-xs shrink-0"
               title="Previous Product"
               aria-label="Previous Product"
             >
@@ -1131,8 +1131,8 @@ export default function ArtificialIntelligenceIntelligentSoftwarePage({ onClose 
                     key={c.id}
                     onClick={() => handleSelectCard(i)}
                     className={`w-5 h-5 sm:w-6.5 sm:h-6.5 rounded-full text-[9px] sm:text-[11px] font-bold transition-all duration-200 flex items-center justify-center cursor-pointer shrink-0 ${isActive
-                        ? 'text-[#003135] font-black'
-                        : 'text-[#003135]/70 bg-white/70 hover:bg-white hover:text-[#003135]'
+                        ? 'text-[#081E52] font-black'
+                        : 'text-[#081E52]/70 bg-white/70 hover:bg-white hover:text-[#081E52]'
                       }`}
                     style={{
                       backgroundColor: isActive ? c.colorTheme.accent : undefined,
@@ -1151,7 +1151,7 @@ export default function ArtificialIntelligenceIntelligentSoftwarePage({ onClose 
 
             <button
               onClick={handleRotateRight}
-              className="w-6 h-6 sm:w-7.5 sm:h-7.5 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#003135] flex items-center justify-center transition-transform hover:scale-110 cursor-pointer shadow-xs shrink-0"
+              className="w-6 h-6 sm:w-7.5 sm:h-7.5 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#081E52] flex items-center justify-center transition-transform hover:scale-110 cursor-pointer shadow-xs shrink-0"
               title="Next Product"
               aria-label="Next Product"
             >

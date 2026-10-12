@@ -210,7 +210,7 @@ export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPag
         <button
           type="button"
           onClick={handleBack}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
         >
           ← Back
         </button>
@@ -218,9 +218,9 @@ export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPag
         <button
           type="button"
           onClick={handleHome}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
         >
-          <Home className="w-4 h-4 text-white" />
+          <Home className="w-4 h-4 text-[#040A1A]" />
           <span>Home</span>
         </button>
       </div>
@@ -235,8 +235,8 @@ export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPag
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
               {/* Left Content & Interactive Search Bar */}
               <div className="md:col-span-7 space-y-3.5">
-                <span className="inline-flex items-center space-x-1.5 bg-[#FDF2EC] px-3 py-1 rounded-full text-[11px] font-mono font-extrabold text-[#D96B43] border border-[#FAD8C7] uppercase tracking-widest">
-                  <LifeBuoy className="w-3.5 h-3.5 text-[#D96B43]" />
+                <span className="inline-flex items-center space-x-1.5 bg-[#D4AF37]/15 px-3 py-1 rounded-full text-[11px] font-mono font-extrabold text-[#081E52] border border-[#D4AF37]/40 uppercase tracking-widest">
+                  <LifeBuoy className="w-3.5 h-3.5 text-[#D4AF37]" />
                   <span>About Us & Corporate Profile</span>
                 </span>
 
@@ -257,7 +257,7 @@ export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPag
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                       placeholder={heroData.searchPlaceholder}
-                      className="w-full pl-11 pr-10 py-3 rounded-full bg-[#FAF7F2] text-[#1E293B] placeholder-slate-400 font-sans text-xs sm:text-sm border border-[#E5DAD0] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#E07A5F] focus:border-transparent transition-all"
+                      className="w-full pl-11 pr-10 py-3 rounded-full bg-[#FAF7F2] text-[#1E293B] placeholder-slate-400 font-sans text-xs sm:text-sm border border-[#E5DAD0] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent transition-all"
                     />
                     {searchQuery && (
                       <button
@@ -280,7 +280,7 @@ export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPag
                           const elem = document.getElementById('pillars-directory');
                           if (elem) elem.scrollIntoView({ behavior: 'smooth' });
                         }}
-                        className="bg-[#F7F2EC] hover:bg-[#EFE7DE] text-[#334155] hover:text-[#D96B43] border border-[#E5DAD0] px-2.5 py-0.5 rounded-full font-medium transition-all hover:scale-105"
+                        className="bg-[#F7F2EC] hover:bg-[#EFE7DE] text-[#334155] hover:text-[#081E52] border border-[#E5DAD0] px-2.5 py-0.5 rounded-full font-medium transition-all hover:scale-105"
                       >
                         {tag}
                       </button>
@@ -305,9 +305,9 @@ export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPag
                       const elem = document.getElementById('pillars-directory');
                       if (elem) elem.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="w-full bg-gradient-to-r from-[#E07A5F] to-[#D96B43] hover:from-[#D96B43] hover:to-[#C85A32] text-white py-2.5 rounded-xl text-xs font-black flex items-center justify-center space-x-2 shadow-lg shadow-[#E07A5F]/25 hover:shadow-xl hover:shadow-[#E07A5F]/35 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+                    className="w-full bg-gradient-to-r from-[#D4AF37] to-[#B89628] hover:from-[#E5C158] hover:to-[#D4AF37] text-[#040A1A] py-2.5 rounded-xl text-xs font-black flex items-center justify-center space-x-2 shadow-lg shadow-[#D4AF37]/30 hover:shadow-xl hover:shadow-[#D4AF37]/45 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
                   >
-                    <FileText className="w-3.5 h-3.5 text-white" />
+                    <FileText className="w-3.5 h-3.5 text-[#040A1A]" />
                     <span>Browse All {coursesData.length} Topics ↓</span>
                   </button>
                 </div>
@@ -321,12 +321,12 @@ export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPag
                   <React.Fragment key={brand.id}>
                     {brand.type === 'serif' && (
                       <div className="flex items-center space-x-1.5">
-                        <span className="text-base italic font-serif text-[#D96B43]">{brand.prefix}</span>
+                        <span className="text-base italic font-serif text-[#081E52]">{brand.prefix}</span>
                         <span>{brand.name}</span>
                       </div>
                     )}
                     {brand.type === 'mono' && (
-                      <div className="tracking-tighter uppercase font-mono text-[10px] bg-[#FDF2EC] px-2 py-0.5 rounded border border-[#FAD8C7] text-[#D96B43] font-bold">
+                      <div className="tracking-tighter uppercase font-mono text-[10px] bg-[#D4AF37]/15 px-2 py-0.5 rounded border border-[#D4AF37]/40 text-[#081E52] font-bold">
                         {brand.badge}
                       </div>
                     )}
@@ -361,13 +361,13 @@ export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPag
 
               {/* Search Input Filter */}
               <div className="relative w-full md:w-72">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[#D96B43]" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[#D4AF37]" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Filter topics..."
-                  className="w-full pl-9 pr-8 py-2 rounded-full bg-[#FAF7F2] text-[#1E293B] text-xs placeholder-slate-400 border border-[#E5DAD0] focus:outline-none focus:ring-2 focus:ring-[#E07A5F] shadow-sm"
+                  className="w-full pl-9 pr-8 py-2 rounded-full bg-[#FAF7F2] text-[#1E293B] text-xs placeholder-slate-400 border border-[#E5DAD0] focus:outline-none focus:ring-2 focus:ring-[#D4AF37] shadow-sm"
                 />
                 {searchQuery && (
                   <button
@@ -383,7 +383,7 @@ export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPag
             {/* Zero State Result Notice */}
             {filteredArticles.length === 0 && (
               <div className="bg-white text-[#1E293B] p-8 rounded-[24px] text-center max-w-md mx-auto my-8 border border-[#EADFD5] shadow-xl space-y-3">
-                <LifeBuoy className="w-12 h-12 mx-auto text-[#D96B43]" />
+                <LifeBuoy className="w-12 h-12 mx-auto text-[#D4AF37]" />
                 <h3 className="text-lg font-bold font-display">No topics found</h3>
                 <p className="text-xs text-slate-600 font-sans">
                   We couldn't find any section matching "{searchQuery}". Try searching for another topic.
@@ -394,7 +394,7 @@ export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPag
                       setSearchQuery('');
                       setSelectedCategory('ALL');
                     }}
-                    className="px-4 py-2 bg-[#FDF2EC] hover:bg-[#FAD8C7] text-[#D96B43] rounded-full text-xs font-bold transition-colors"
+                    className="px-4 py-2 bg-[#081E52] hover:bg-[#0c2b7a] text-[#FFF8DC] rounded-full text-xs font-bold transition-colors"
                   >
                     Clear Filters
                   </button>
@@ -408,11 +408,11 @@ export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPag
                 <div
                   key={article.id}
                   onClick={() => handleArticleClick(article)}
-                  className="group relative bg-[#FFFDFB] hover:bg-white text-[#1E293B] p-4 sm:p-5 rounded-[22px] border border-[#EADFD5] hover:border-[#E07A5F]/60 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between cursor-pointer select-none"
+                  className="group relative bg-[#FFFDFB] hover:bg-white text-[#1E293B] p-4 sm:p-5 rounded-[22px] border border-[#EADFD5] hover:border-[#D4AF37]/60 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between cursor-pointer select-none"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-2.5">
-                      <span className="text-[9px] font-extrabold tracking-widest uppercase text-[#D96B43] bg-[#FDF2EC] px-2 py-0.5 rounded font-mono border border-[#FAD8C7]">
+                      <span className="text-[9px] font-extrabold tracking-widest uppercase text-[#081E52] bg-[#D4AF37]/15 px-2 py-0.5 rounded font-mono border border-[#D4AF37]/35">
                         {article.category}
                       </span>
                       <span className="text-[10px] text-slate-400 font-semibold flex items-center space-x-1">
@@ -422,13 +422,13 @@ export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPag
                     </div>
 
                     {/* ONLY Card Name/Title */}
-                    <h3 className="text-sm sm:text-base font-bold font-display leading-snug text-[#1E293B] group-hover:text-[#D96B43] transition-colors capitalize">
+                    <h3 className="text-sm sm:text-base font-bold font-display leading-snug text-[#1E293B] group-hover:text-[#081E52] transition-colors capitalize">
                       {article.title}
                     </h3>
                   </div>
 
                   <div className="mt-4 pt-2.5 border-t border-[#EAE0D5] flex items-end justify-between">
-                    <span className="text-[10px] font-extrabold tracking-wider uppercase text-[#D96B43] flex items-center space-x-1 group-hover:translate-x-1 transition-transform duration-300">
+                    <span className="text-[10px] font-extrabold tracking-wider uppercase text-[#D4AF37] group-hover:text-[#081E52] flex items-center space-x-1 group-hover:translate-x-1 transition-transform duration-300">
                       <span>{article.linkText || 'VIEW DETAILS →'}</span>
                     </span>
 

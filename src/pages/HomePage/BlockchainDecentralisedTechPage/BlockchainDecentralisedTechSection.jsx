@@ -122,10 +122,10 @@ export default function BlockchainDecentralisedTechSection({ onOpenPage }) {
       </div>
       {/* Content */}
       <div className="text-left min-w-0 flex-1">
-        <h4 className="font-display text-[12px] sm:text-[13.5px] font-bold text-[#003135] leading-tight group-hover:text-[#0FA4AF] transition-colors duration-200 truncate sm:whitespace-normal">
+        <h4 className="font-display text-[12px] sm:text-[13.5px] font-bold text-[#081E52] leading-tight group-hover:text-[#0FA4AF] transition-colors duration-200 truncate sm:whitespace-normal">
           {card.title}
         </h4>
-        <p className="text-[#003135]/70 text-[10px] sm:text-[11px] leading-snug mt-0.5 font-medium line-clamp-2">
+        <p className="text-[#081E52]/70 text-[10px] sm:text-[11px] leading-snug mt-0.5 font-medium line-clamp-2">
           {card.description}
         </p>
       </div>
@@ -137,7 +137,7 @@ export default function BlockchainDecentralisedTechSection({ onOpenPage }) {
   return (
     <section
       id="blockchain-decentralised-tech"
-      className="scroll-mt-20 relative py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F2F8FA] via-[#E8F4F7] to-[#DFEFF2] border-b border-[#0FA4AF]/20 overflow-hidden select-none"
+      className="scroll-mt-20 relative py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F2F8FA] via-[#E8F4F7] to-[#DFEFF2] border-b border-[#D4AF37]/20 overflow-hidden select-none"
     >
       {/* Interactive Decorative Background Theme (Waves, Soft Glows, Floating 3D Orbs & Dot Matrices) */}
       <SectionDecorativeBackground variant="blockchain" />
@@ -152,7 +152,7 @@ export default function BlockchainDecentralisedTechSection({ onOpenPage }) {
             text={`${titleLine1} ${titleLine2}`}
             highlightWords={[titleLine2]}
             highlightClassName="text-[#0FA4AF]"
-            className="font-display text-3xl sm:text-4xl lg:text-[46px] font-extrabold leading-[1.14] tracking-tight text-[#003135] mb-5 text-center"
+            className="font-display text-3xl sm:text-4xl lg:text-[46px] font-extrabold leading-[1.14] tracking-tight text-[#081E52] mb-5 text-center"
           />
 
           {/* Descriptions */}
@@ -161,7 +161,7 @@ export default function BlockchainDecentralisedTechSection({ onOpenPage }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="space-y-3 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#003135]/85 font-medium text-center max-w-3xl mx-auto mb-7"
+            className="space-y-3 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#081E52]/85 font-medium text-center max-w-3xl mx-auto mb-7"
           >
             {paragraphs.map((para, index) => (
               <p key={index}>{para}</p>
@@ -372,7 +372,7 @@ export default function BlockchainDecentralisedTechSection({ onOpenPage }) {
                   <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/90 border border-[#AFDDE5] flex items-center justify-center shadow-xs group-hover:bg-[#E6F7F9] group-hover:border-[#0FA4AF] transition-colors duration-200">
                     {renderBadgeIcon(badgeItem.iconType)}
                   </div>
-                  <span className="text-[11px] sm:text-xs font-extrabold tracking-wider text-[#003135] uppercase group-hover:text-[#0FA4AF] transition-colors duration-200">
+                  <span className="text-[11px] sm:text-xs font-extrabold tracking-wider text-[#081E52] uppercase group-hover:text-[#0FA4AF] transition-colors duration-200">
                     {badgeItem.label}
                   </span>
                 </div>

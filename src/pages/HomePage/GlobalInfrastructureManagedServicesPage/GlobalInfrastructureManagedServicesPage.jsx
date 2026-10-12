@@ -771,7 +771,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #003135;
+  color: #081E52;
   cursor: pointer;
   z-index: 35;
   transition: all 0.25s var(--smooth-ease);
@@ -838,7 +838,7 @@ body {
   border-radius: 50%;
   background: #F0F9FA;
   border: 1px solid rgba(15, 164, 175, 0.25);
-  color: #003135;
+  color: #081E52;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -853,7 +853,7 @@ body {
   font-family: var(--font-sans);
   font-size: 0.84rem;
   font-weight: 750;
-  color: #003135;
+  color: #081E52;
   padding: 0 4px;
   min-width: 58px;
   text-align: center;
@@ -1680,7 +1680,7 @@ export default function GlobalInfrastructureManagedServicesPage({ onClose }) {
         <button
           type="button"
           onClick={handleBack}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
         >
           ← Back
         </button>
@@ -1688,9 +1688,9 @@ export default function GlobalInfrastructureManagedServicesPage({ onClose }) {
         <button
           type="button"
           onClick={handleHome}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
         >
-          <Home className="w-4 h-4 text-white" />
+          <Home className="w-4 h-4 text-[#040A1A]" />
           <span>Home</span>
         </button>
       </div>

@@ -103,7 +103,7 @@ export default function GlobalInfrastructureManagedServicesSection({ onOpenPage 
   return (
     <section
       id="global-infrastructure-managed-services"
-      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F2F8FA] via-[#E8F4F7] to-[#DFEFF2] border-b border-[#0FA4AF]/20 overflow-hidden relative"
+      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F2F8FA] via-[#E8F4F7] to-[#DFEFF2] border-b border-[#D4AF37]/20 overflow-hidden relative"
     >
       {/* Interactive Decorative Background Theme */}
       <SectionDecorativeBackground variant="infrastructure" />
@@ -117,12 +117,12 @@ export default function GlobalInfrastructureManagedServicesSection({ onOpenPage 
 
             <AnimatedSectionHeading
               text="Global Infrastructure & Managed Services"
-              className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#003135] mb-5 text-center lg:text-left"
+              className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#081E52] mb-5 text-center lg:text-left"
             />
 
-            <div className="space-y-3.5 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#003135]/85 font-medium mb-6 text-center lg:text-left">
+            <div className="space-y-3.5 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#081E52]/85 font-medium mb-6 text-center lg:text-left">
               <p>
-                <strong className="font-bold text-[#003135]">IB Cyber Security Private Limited</strong> provides technology infrastructure and managed services designed to support secure, reliable, scalable, and continuously available digital environments. Our capabilities span cloud infrastructure, data centres, network management, cybersecurity operations, application infrastructure, monitoring, backup, disaster recovery, technical support, and managed technology operations.
+                <strong className="font-bold text-[#081E52]">IB Cyber Security Private Limited</strong> provides technology infrastructure and managed services designed to support secure, reliable, scalable, and continuously available digital environments. Our capabilities span cloud infrastructure, data centres, network management, cybersecurity operations, application infrastructure, monitoring, backup, disaster recovery, technical support, and managed technology operations.
               </p>
               <p>
                 We combine modern infrastructure technologies, automation, security engineering, and operational expertise to help organisations maintain dependable digital environments.
@@ -136,11 +136,11 @@ export default function GlobalInfrastructureManagedServicesSection({ onOpenPage 
             <div className="grid grid-cols-2 gap-3 w-full mb-8">
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-white/80 border border-[#AFDDE5]/80 shadow-xs">
                 <CheckCircle className="w-4 h-4 text-[#10B981] shrink-0" />
-                <span className="text-xs font-bold text-[#003135]">99.99% Continuous Uptime</span>
+                <span className="text-xs font-bold text-[#081E52]">99.99% Continuous Uptime</span>
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-white/80 border border-[#AFDDE5]/80 shadow-xs">
                 <Globe className="w-4 h-4 text-[#0FA4AF] shrink-0" />
-                <span className="text-xs font-bold text-[#003135]">Multi-Region Cloud Mesh</span>
+                <span className="text-xs font-bold text-[#081E52]">Multi-Region Cloud Mesh</span>
               </div>
             </div>
 

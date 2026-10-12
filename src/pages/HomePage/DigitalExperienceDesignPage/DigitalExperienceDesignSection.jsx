@@ -110,7 +110,7 @@ export default function DigitalExperienceDesignSection({ onOpenPage }) {
   return (
     <section
       id="digital-experience-design"
-      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F2F8FA] via-[#E8F4F7] to-[#DFEFF2] border-b border-[#0FA4AF]/20 overflow-hidden relative"
+      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F2F8FA] via-[#E8F4F7] to-[#DFEFF2] border-b border-[#D4AF37]/20 overflow-hidden relative"
     >
       {/* Interactive Decorative Background Theme */}
       <SectionDecorativeBackground variant="design" />
@@ -124,12 +124,12 @@ export default function DigitalExperienceDesignSection({ onOpenPage }) {
 
             <AnimatedSectionHeading
               text="Digital Experience & UI/UX Design"
-              className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#003135] mb-5 text-center lg:text-left"
+              className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#081E52] mb-5 text-center lg:text-left"
             />
 
-            <div className="space-y-3.5 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#003135]/85 font-medium mb-6 text-center lg:text-left">
+            <div className="space-y-3.5 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#081E52]/85 font-medium mb-6 text-center lg:text-left">
               <p>
-                <strong className="font-bold text-[#003135]">IB Cyber Security Private Limited</strong> designs digital experiences that make complex software products intuitive, accessible, engaging, and efficient to use. Our UI/UX approach combines user research, information architecture, interaction design, visual design, prototyping, usability, accessibility, and product engineering to create meaningful digital experiences.
+                <strong className="font-bold text-[#081E52]">IB Cyber Security Private Limited</strong> designs digital experiences that make complex software products intuitive, accessible, engaging, and efficient to use. Our UI/UX approach combines user research, information architecture, interaction design, visual design, prototyping, usability, accessibility, and product engineering to create meaningful digital experiences.
               </p>
               <p>
                 We design interfaces for software products, government platforms, enterprise applications, cybersecurity systems, SaaS products, and mobile experiences.
@@ -142,11 +142,11 @@ export default function DigitalExperienceDesignSection({ onOpenPage }) {
             <div className="grid grid-cols-2 gap-3 w-full mb-8">
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-white/80 border border-[#AFDDE5]/80 shadow-xs">
                 <LayoutTemplate className="w-4 h-4 text-[#0FA4AF] shrink-0" />
-                <span className="text-xs font-bold text-[#003135]">Design Systems &amp; Wireframes</span>
+                <span className="text-xs font-bold text-[#081E52]">Design Systems &amp; Wireframes</span>
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-white/80 border border-[#AFDDE5]/80 shadow-xs">
                 <Smartphone className="w-4 h-4 text-[#0FA4AF] shrink-0" />
-                <span className="text-xs font-bold text-[#003135]">Responsive Web &amp; Mobile</span>
+                <span className="text-xs font-bold text-[#081E52]">Responsive Web &amp; Mobile</span>
               </div>
             </div>
 

@@ -31,13 +31,13 @@ export default function IntroductionSection({ onOpenPage }) {
   };
 
   return (
-    <section id="introduction" className="relative scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#F0F9FA] via-[#E4F4F7] to-[#D5EEF2] border-b border-[#0FA4AF]/20 overflow-hidden">
+    <section id="introduction" className="relative scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#F0F9FA] via-[#E4F4F7] to-[#D5EEF2] border-b border-[#D4AF37]/20 overflow-hidden">
 
       {/* Background Decorative Wave SVG & Dot Matrix */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft Background Radial Glows */}
-        <div className="absolute top-1/4 right-1/4 w-[450px] h-[450px] bg-[#0FA4AF]/12 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-[350px] h-[350px] bg-[#00A4B4]/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 right-1/4 w-[450px] h-[450px] bg-[#D4AF37]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-[350px] h-[350px] bg-[#081E52]/10 rounded-full blur-3xl"></div>
 
         {/* Top-Right Decorative Dots */}
         <div className="absolute top-8 right-12 grid grid-cols-6 gap-2 opacity-25">
@@ -54,7 +54,7 @@ export default function IntroductionSection({ onOpenPage }) {
         </div>
 
         {/* Background Decorative Wave Curves */}
-        <svg className="absolute -bottom-20 -right-20 w-[600px] h-[600px] opacity-25 text-[#0FA4AF]/20" viewBox="0 0 500 500" fill="currentColor">
+        <svg className="absolute -bottom-20 -right-20 w-[600px] h-[600px] opacity-25 text-[#D4AF37]/20" viewBox="0 0 500 500" fill="currentColor">
           <path d="M0,250 C150,180 350,320 500,250 L500,500 L0,500 Z" />
         </svg>
       </div>
@@ -80,7 +80,7 @@ export default function IntroductionSection({ onOpenPage }) {
                   },
                 },
               }}
-              className="font-display text-4xl sm:text-5xl lg:text-[52px] font-extrabold leading-[1.1] tracking-tight text-[#003135] mb-5 text-center lg:text-left"
+              className="font-display text-4xl sm:text-5xl lg:text-[52px] font-extrabold leading-[1.1] tracking-tight text-[#081E52] mb-5 text-center lg:text-left"
             >
               <span className="sr-only">Introduction</span>
               <span aria-hidden="true" className="inline-block" style={{ perspective: '800px', transformStyle: 'preserve-3d' }}>
@@ -114,15 +114,15 @@ export default function IntroductionSection({ onOpenPage }) {
             </motion.h2>
 
             {/* Paragraphs */}
-            <div className="space-y-3.5 text-[15px] sm:text-[16px] leading-relaxed text-[#003135]/85 font-medium text-center lg:text-left">
+            <div className="space-y-3.5 text-[15px] sm:text-[16px] leading-relaxed text-[#081E52]/85 font-medium text-center lg:text-left">
               <p>
-                <strong className="font-bold text-[#003135]">IB Cyber Security Private Limited (IBCS)</strong> is a technology-driven product company building secure, intelligent, and scalable digital solutions for government, law enforcement, enterprises, and financial institutions.
+                <strong className="font-bold text-[#081E52]">IB Cyber Security Private Limited (IBCS)</strong> is a technology-driven product company building secure, intelligent, and scalable digital solutions for government, law enforcement, enterprises, and financial institutions.
               </p>
               <p>
                 IBCS develops innovative cybersecurity platforms, investigation and intelligence tools, AI-powered solutions, government technology platforms, digital evidence and forensic systems, and SaaS products.
               </p>
               <p>
-                With a strong focus on innovation, reliability, customization, and advanced technology, we transform complex digital challenges into purposeful products that strengthen security, intelligence, and decision-making, advancing our vision of a <strong className="font-bold text-[#003135]">Cyber Safe India</strong>.
+                With a strong focus on innovation, reliability, customization, and advanced technology, we transform complex digital challenges into purposeful products that strengthen security, intelligence, and decision-making, advancing our vision of a <strong className="font-bold text-[#081E52]">Cyber Safe India</strong>.
               </p>
             </div>
           </div>
@@ -247,7 +247,7 @@ export default function IntroductionSection({ onOpenPage }) {
               <button
                 type="button"
                 onClick={handleCtaClick}
-                className="group inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-[#0E7980] hover:bg-[#003135] text-white font-extrabold text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
+                className="group inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white text-white font-extrabold text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
               >
                 <span>Explore More</span>
                 <ArrowRight className="w-4 h-4 text-white transition-transform duration-300 group-hover:translate-x-1" />

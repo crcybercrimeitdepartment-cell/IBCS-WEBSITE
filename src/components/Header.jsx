@@ -176,9 +176,9 @@ export default function Header() {
   };
 
   return (
-    <header id="home" className="sticky inset-x-0 top-0 z-[9999] scroll-mt-0 bg-[#001C1F] shadow-lg w-full max-w-full">
+    <header id="home" className="sticky inset-x-0 top-0 z-[9999] scroll-mt-0 bg-[#040A1A] shadow-lg w-full max-w-full">
       {/* Company Header Announcement Bar */}
-      <div className="bg-[#001C1F] text-center px-2 sm:px-4 py-1.5 border-b border-[#0FA4AF]/15 w-full overflow-hidden">
+      <div className="bg-[#040A1A] text-center px-2 sm:px-4 py-1.5 border-b border-[#D4AF37]/20 w-full overflow-hidden">
         <div className="w-full max-w-[1480px] mx-auto px-2 sm:px-4 flex flex-col items-center justify-center text-center">
 
           {/* Welcome Heading (Shows on page load/refresh, hides after 5s) */}
@@ -196,7 +196,7 @@ export default function Header() {
 
           {/* Description */}
           <div className="w-full py-0.5">
-            <p className="w-full max-w-full text-center whitespace-normal sm:whitespace-nowrap text-[9.5px] sm:text-[11px] md:text-[12.5px] font-medium leading-tight sm:leading-snug tracking-normal sm:tracking-tight text-[#0FA4AF]">
+            <p className="w-full max-w-full text-center whitespace-normal sm:whitespace-nowrap text-[9.5px] sm:text-[11px] md:text-[12.5px] font-medium leading-tight sm:leading-snug tracking-normal sm:tracking-tight text-[#FFF8DC]">
               One of the best international software product-based companies, focused on creating innovative and intelligent technology solutions. Creating intelligent software products and technologies for a digital future.
             </p>
           </div>
@@ -209,7 +209,7 @@ export default function Header() {
             <div className="overflow-hidden min-h-0 w-full py-0.5">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-0.5 text-[9px] sm:text-[10.5px] font-mono text-white/70">
                 <span>ESTABLISHED • SEPT. 26-26</span>
-                <span className="text-[#0FA4AF] hidden sm:inline">•</span>
+                <span className="text-[#E5C158] hidden sm:inline">•</span>
                 <span>MCA REGISTRATION NO. 1010</span>
               </div>
             </div>
@@ -221,12 +221,12 @@ export default function Header() {
 
 
       {/* Sticky Navigation Menu Bar (Underneath Announcement Banner) */}
-      <div className="relative border-b border-white/10 bg-brand-navy/95 shadow-[0_8px_30px_-24px_rgba(0,49,53,.55)] backdrop-blur-xl w-full max-w-full">
+      <div className="relative border-b border-[#D4AF37]/25 bg-[#081E52]/95 shadow-[0_8px_30px_-24px_rgba(8,30,82,.85)] backdrop-blur-xl w-full max-w-full">
         {/* Main Navigation Menu Bar (UNDERNEATH Heading & Description) */}
         <div className="w-full max-w-[1480px] mx-auto px-3 sm:px-5 lg:px-6 flex h-14 sm:h-16 items-center justify-between gap-1.5 sm:gap-2">
           {/* Logo & Brand Name */}
           <a href="#home" className="group flex min-w-0 items-center gap-2.5 sm:gap-3 focus-ring shrink-0" aria-label="IB Cyber Security home">
-            <div className="relative flex items-center justify-center shrink-0 rounded-full p-1 bg-white ring-2 ring-[#0FA4AF] shadow-[0_0_15px_rgba(15,164,175,0.7)] group-hover:shadow-[0_0_25px_rgba(15,164,175,1)] group-hover:scale-105 transition-all duration-300 overflow-hidden">
+            <div className="relative flex items-center justify-center shrink-0 rounded-full p-1 bg-white ring-2 ring-[#D4AF37] shadow-[0_0_15px_rgba(212,175,55,0.6)] group-hover:shadow-[0_0_25px_rgba(229,193,88,0.9)] group-hover:scale-105 transition-all duration-300 overflow-hidden">
               <img
                 src={brandLogo}
                 alt="IB Cyber Security Logo"
@@ -237,7 +237,7 @@ export default function Header() {
               <span className="text-[11px] xs:text-[12px] sm:text-[13.5px] lg:text-[14px] font-extrabold tracking-[0.03em] text-white whitespace-nowrap">
                 IB CYBER SECURITY
               </span>
-              <span className="text-[8px] xs:text-[8.5px] sm:text-[9.5px] lg:text-[10px] font-bold tracking-[0.06em] text-[#0FA4AF] whitespace-nowrap">
+              <span className="text-[8px] xs:text-[8.5px] sm:text-[9.5px] lg:text-[10px] font-bold tracking-[0.06em] text-[#D4AF37] whitespace-nowrap">
                 PRIVATE LIMITED
               </span>
             </span>
@@ -251,7 +251,7 @@ export default function Header() {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="group relative px-2 xl:px-2.5 py-1.5 text-[11.5px] xl:text-[12px] 2xl:text-[13px] font-bold text-white/95 transition-all duration-300 hover:text-brand-cyan focus-ring text-center whitespace-nowrap shrink-0 flex items-center justify-center"
+                  className="group relative px-2 xl:px-2.5 py-1.5 text-[11.5px] xl:text-[12px] 2xl:text-[13px] font-bold text-white/95 transition-all duration-300 hover:text-[#FFF8DC] focus-ring text-center whitespace-nowrap shrink-0 flex items-center justify-center"
                 >
                   {parts.length > 1 ? (
                     <span className="flex flex-col items-center leading-[1.18] text-center z-10">
@@ -262,8 +262,8 @@ export default function Header() {
                     <span className="leading-tight z-10">{item.label}</span>
                   )}
 
-                  {/* Center-to-both-sides expanding glowing line hover effect ONLY */}
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2.5px] bg-gradient-to-r from-[#0FA4AF] via-[#5EEAD4] to-[#0FA4AF] rounded-full opacity-0 shadow-[0_0_10px_rgba(15,164,175,0.9)] group-hover:w-full group-hover:opacity-100 transition-all duration-300 ease-out" />
+                  {/* Center-to-both-sides expanding glowing line hover effect */}
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2.5px] bg-gradient-to-r from-[#D4AF37] via-[#FFF8DC] to-[#E5C158] rounded-full opacity-0 shadow-[0_0_10px_rgba(212,175,55,0.9)] group-hover:w-full group-hover:opacity-100 transition-all duration-300 ease-out" />
                 </a>
               );
             })}
@@ -279,7 +279,7 @@ export default function Header() {
                   setIsSearchOpen((prev) => !prev);
                   setIsNotificationOpen(false);
                 }}
-                className="relative grid h-7 w-7 sm:h-8 sm:w-8 place-items-center text-white/90 transition-colors hover:bg-white/10 hover:text-brand-cyan rounded-lg focus:outline-none shrink-0"
+                className="relative grid h-7 w-7 sm:h-8 sm:w-8 place-items-center text-white/90 transition-colors hover:bg-white/10 hover:text-[#E5C158] rounded-lg focus:outline-none shrink-0"
                 aria-label={isSearchOpen ? 'Close search' : 'Open search'}
                 title="Search"
               >
@@ -288,20 +288,20 @@ export default function Header() {
 
               {/* Floating Search Popup Box */}
               {isSearchOpen && (
-                <div className="absolute right-0 top-full mt-2.5 w-[210px] xs:w-[230px] sm:w-80 md:w-96 rounded-xl sm:rounded-2xl border border-[#0FA4AF]/40 bg-[#002629] p-1.5 sm:p-2.5 shadow-[0_12px_36px_rgba(0,0,0,0.6)] backdrop-blur-2xl z-50 before:absolute before:-top-2 before:right-2.5 before:h-0 before:w-0 before:border-b-8 before:border-b-[#002629] before:border-l-8 before:border-l-transparent before:border-r-8 before:border-r-transparent">
-                  {/* Search Input Bar with Cyber Cyan Submit Button */}
-                  <form onSubmit={(e) => e.preventDefault()} className="flex items-center overflow-hidden rounded-lg sm:rounded-xl border border-[#0FA4AF]/25 bg-[#001719]">
+                <div className="absolute right-0 top-full mt-2.5 w-[210px] xs:w-[230px] sm:w-80 md:w-96 rounded-xl sm:rounded-2xl border border-[#D4AF37]/40 bg-[#081E52] p-1.5 sm:p-2.5 shadow-[0_12px_36px_rgba(0,0,0,0.6)] backdrop-blur-2xl z-50 before:absolute before:-top-2 before:right-2.5 before:h-0 before:w-0 before:border-b-8 before:border-b-[#081E52] before:border-l-8 before:border-l-transparent before:border-r-8 before:border-r-transparent">
+                  {/* Search Input Bar with Gold Submit Button */}
+                  <form onSubmit={(e) => e.preventDefault()} className="flex items-center overflow-hidden rounded-lg sm:rounded-xl border border-[#D4AF37]/35 bg-[#040A1A]">
                     <input
                       ref={searchInputRef}
                       type="text"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                       placeholder="Type to search..."
-                      className="w-full bg-transparent px-2.5 py-1 text-[11px] sm:text-sm text-white placeholder-[#0FA4AF]/60 focus:outline-none"
+                      className="w-full bg-transparent px-2.5 py-1 text-[11px] sm:text-sm text-white placeholder-[#FFF8DC]/60 focus:outline-none"
                     />
                     <button
                       type="submit"
-                      className="grid h-7 w-7.5 sm:h-9 sm:w-11 shrink-0 place-items-center bg-[#0FA4AF] text-[#002629] font-bold transition-colors hover:bg-[#12BCC8] focus:outline-none"
+                      className="grid h-7 w-7.5 sm:h-9 sm:w-11 shrink-0 place-items-center bg-[#D4AF37] text-[#040A1A] font-bold transition-colors hover:bg-[#E5C158] focus:outline-none"
                       aria-label="Submit search"
                     >
                       <Search className="h-3 w-3 sm:h-4 sm:w-4 stroke-[2.5]" />
@@ -310,24 +310,24 @@ export default function Header() {
 
                   {/* Dynamic Search Results Dropdown List */}
                   {searchQuery.trim() && (
-                    <div className="mt-2.5 max-h-72 overflow-y-auto space-y-1.5 border-t border-[#0FA4AF]/20 pt-2">
+                    <div className="mt-2.5 max-h-72 overflow-y-auto space-y-1.5 border-t border-[#D4AF37]/25 pt-2">
                       {filteredResults.length > 0 ? (
                         filteredResults.map((item) => (
                           <a
                             key={item.id}
                             href={`#${item.sectionSlug}`}
                             onClick={() => setIsSearchOpen(false)}
-                            className="group flex flex-col rounded-xl border border-[#0FA4AF]/15 bg-white/[0.03] p-2 sm:p-2.5 transition-colors hover:border-[#0FA4AF]/50 hover:bg-[#0FA4AF]/10"
+                            className="group flex flex-col rounded-xl border border-[#D4AF37]/20 bg-white/[0.03] p-2 sm:p-2.5 transition-colors hover:border-[#E5C158]/60 hover:bg-[#D4AF37]/15"
                           >
                             <div className="flex items-center justify-between">
-                              <span className="font-display text-xs font-bold text-white group-hover:text-[#0FA4AF]">{item.title}</span>
-                              <span className="text-[9px] font-bold uppercase tracking-wider text-[#0FA4AF]/80">{item.sectionTitle}</span>
+                              <span className="font-display text-xs font-bold text-white group-hover:text-[#E5C158]">{item.title}</span>
+                              <span className="text-[9px] font-bold uppercase tracking-wider text-[#D4AF37]">{item.sectionTitle}</span>
                             </div>
-                            <p className="mt-0.5 line-clamp-1 text-[11px] text-[#0FA4AF]/75">{item.description}</p>
+                            <p className="mt-0.5 line-clamp-1 text-[11px] text-white/80">{item.description}</p>
                           </a>
                         ))
                       ) : (
-                        <div className="py-6 text-center text-xs text-[#0FA4AF]/70">
+                        <div className="py-6 text-center text-xs text-[#FFF8DC]/70">
                           No results for &quot;{searchQuery}&quot;
                         </div>
                       )}
@@ -340,7 +340,7 @@ export default function Header() {
             {/* 2. Help Icon */}
             <a
               href="#help"
-              className="hidden lg:grid h-7 w-7 sm:h-8 sm:w-8 place-items-center text-white/90 transition-colors hover:bg-white/10 hover:text-brand-cyan rounded-lg focus:outline-none shrink-0"
+              className="hidden lg:grid h-7 w-7 sm:h-8 sm:w-8 place-items-center text-white/90 transition-colors hover:bg-white/10 hover:text-[#E5C158] rounded-lg focus:outline-none shrink-0"
               title="Help"
               aria-label="Help"
             >
@@ -350,7 +350,7 @@ export default function Header() {
             {/* 3. Follow Icon */}
             <a
               href="#follow"
-              className="hidden lg:grid h-7 w-7 sm:h-8 sm:w-8 place-items-center text-white/90 transition-colors hover:bg-white/10 hover:text-brand-cyan rounded-lg focus:outline-none shrink-0"
+              className="hidden lg:grid h-7 w-7 sm:h-8 sm:w-8 place-items-center text-white/90 transition-colors hover:bg-white/10 hover:text-[#E5C158] rounded-lg focus:outline-none shrink-0"
               title="Follow"
               aria-label="Follow"
             >
@@ -360,7 +360,7 @@ export default function Header() {
             {/* 4. Gallery Icon */}
             <a
               href="#gallery"
-              className="hidden lg:grid h-7 w-7 sm:h-8 sm:w-8 place-items-center text-white/90 transition-colors hover:bg-white/10 hover:text-brand-cyan rounded-lg focus:outline-none shrink-0"
+              className="hidden lg:grid h-7 w-7 sm:h-8 sm:w-8 place-items-center text-white/90 transition-colors hover:bg-white/10 hover:text-[#E5C158] rounded-lg focus:outline-none shrink-0"
               title="Gallery"
               aria-label="Gallery"
             >
@@ -370,7 +370,7 @@ export default function Header() {
             {/* 5. Tender Icon */}
             <a
               href="#tender"
-              className="hidden lg:grid h-7 w-7 sm:h-8 sm:w-8 place-items-center text-white/90 transition-colors hover:bg-white/10 hover:text-brand-cyan rounded-lg focus:outline-none shrink-0"
+              className="hidden lg:grid h-7 w-7 sm:h-8 sm:w-8 place-items-center text-white/90 transition-colors hover:bg-white/10 hover:text-[#E5C158] rounded-lg focus:outline-none shrink-0"
               title="Tender"
               aria-label="Tender"
             >
@@ -380,7 +380,7 @@ export default function Header() {
             {/* 6. Contact Us CTA Button */}
             <a
               href="#contact"
-              className="group inline-flex items-center gap-1 rounded-md bg-brand-rust px-2.5 sm:px-3 py-1 text-[11px] sm:text-[11.5px] font-bold text-white transition-all hover:bg-[#a9543e] shrink-0 shadow-xs whitespace-nowrap"
+              className="group inline-flex items-center gap-1 rounded-md bg-[#D4AF37] px-2.5 sm:px-3 py-1 text-[11px] sm:text-[11.5px] font-bold text-[#040A1A] transition-all hover:bg-[#E5C158] shrink-0 shadow-[0_0_15px_rgba(212,175,55,0.4)] whitespace-nowrap"
             >
               <span>Contact Us</span>
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -400,55 +400,55 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Navigation Drawer Modal (Positioned cleanly under header bar) */}
+        {/* Mobile Navigation Drawer Modal */}
         {isMenuOpen && (
           <div
             id="mobile-navigation"
-            className="absolute top-full left-0 right-0 w-full min-h-[calc(100vh-60px)] max-h-[calc(100vh-60px)] overflow-y-auto bg-[#071622] border-t border-[#0FA4AF]/20 px-4 py-5 shadow-2xl xl:hidden z-[999999]"
+            className="absolute top-full left-0 right-0 w-full min-h-[calc(100vh-60px)] max-h-[calc(100vh-60px)] overflow-y-auto bg-[#040A1A] border-t border-[#D4AF37]/30 px-4 py-5 shadow-2xl xl:hidden z-[999999]"
           >
             {/* Quick Action Buttons Grid on Mobile Drawer */}
             <div className="grid grid-cols-4 gap-2.5 pb-4 border-b border-white/10 mb-4 max-w-2xl mx-auto">
               <a
                 href="#help"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl bg-[#0F2232] border border-white/5 text-[11px] font-bold text-white hover:bg-[#18344B] transition-colors shadow-sm"
+                className="flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl bg-[#081E52] border border-[#D4AF37]/25 text-[11px] font-bold text-white hover:bg-[#0c2b7a] transition-colors shadow-sm"
               >
-                <HelpCircle className="h-4 w-4 text-[#0FA4AF]" /> Help
+                <HelpCircle className="h-4 w-4 text-[#E5C158]" /> Help
               </a>
               <a
                 href="#follow"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl bg-[#0F2232] border border-white/5 text-[11px] font-bold text-white hover:bg-[#18344B] transition-colors shadow-sm"
+                className="flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl bg-[#081E52] border border-[#D4AF37]/25 text-[11px] font-bold text-white hover:bg-[#0c2b7a] transition-colors shadow-sm"
               >
-                <UserPlus className="h-4 w-4 text-[#0FA4AF]" /> Follow
+                <UserPlus className="h-4 w-4 text-[#E5C158]" /> Follow
               </a>
               <a
                 href="#gallery"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl bg-[#0F2232] border border-white/5 text-[11px] font-bold text-white hover:bg-[#18344B] transition-colors shadow-sm"
+                className="flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl bg-[#081E52] border border-[#D4AF37]/25 text-[11px] font-bold text-white hover:bg-[#0c2b7a] transition-colors shadow-sm"
               >
-                <Image className="h-4 w-4 text-[#0FA4AF]" /> Gallery
+                <Image className="h-4 w-4 text-[#E5C158]" /> Gallery
               </a>
               <a
                 href="#tender"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl bg-[#0F2232] border border-white/5 text-[11px] font-bold text-white hover:bg-[#18344B] transition-colors shadow-sm"
+                className="flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl bg-[#081E52] border border-[#D4AF37]/25 text-[11px] font-bold text-white hover:bg-[#0c2b7a] transition-colors shadow-sm"
               >
-                <FileText className="h-4 w-4 text-[#0FA4AF]" /> Tender
+                <FileText className="h-4 w-4 text-[#E5C158]" /> Tender
               </a>
             </div>
 
-            {/* Navigation Items Cards (Matching Reference Screenshot layout & 10 numbered items) */}
+            {/* Navigation Items Cards */}
             <nav className="mx-auto flex max-w-2xl flex-col space-y-2.5 pb-8" aria-label="Mobile navigation">
               {navigationItems.map((item, index) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center justify-between rounded-xl bg-[#0F2232] border border-white/5 px-4 py-3.5 font-display text-sm font-bold text-white transition-all hover:bg-[#18344B] hover:text-[#0FA4AF] focus-ring active:scale-[0.99] shadow-sm"
+                  className="flex items-center justify-between rounded-xl bg-[#081E52] border border-[#D4AF37]/20 px-4 py-3.5 font-display text-sm font-bold text-white transition-all hover:bg-[#0c2b7a] hover:text-[#FFF8DC] focus-ring active:scale-[0.99] shadow-sm"
                 >
                   <span className="text-[14px] font-bold text-white">{item.label}</span>
-                  <span className="text-xs font-extrabold text-[#0FA4AF] font-mono tracking-wider">
+                  <span className="text-xs font-extrabold text-[#E5C158] font-mono tracking-wider">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                 </a>
@@ -459,14 +459,14 @@ export default function Header() {
                 <a
                   href="#contact"
                   onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 rounded-xl border border-[#0FA4AF]/40 bg-[#092B38] px-4 py-3.5 text-xs font-extrabold text-white shadow-md transition-all hover:bg-[#0F3A4B] active:scale-[0.98]"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-[#D4AF37]/45 bg-[#081E52] px-4 py-3.5 text-xs font-extrabold text-white shadow-md transition-all hover:bg-[#0c2b7a] active:scale-[0.98]"
                 >
-                  <PhoneCall className="h-4 w-4 text-[#0FA4AF]" /> Contact Us
+                  <PhoneCall className="h-4 w-4 text-[#E5C158]" /> Contact Us
                 </a>
                 <a
                   href="#tender"
                   onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 rounded-xl bg-[#0FA4AF] px-4 py-3.5 text-xs font-extrabold text-[#001C1F] shadow-lg shadow-[#0FA4AF]/20 transition-all hover:bg-[#12BCC8] active:scale-[0.98]"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-[#D4AF37] px-4 py-3.5 text-xs font-extrabold text-[#040A1A] shadow-lg shadow-[#D4AF37]/25 transition-all hover:bg-[#E5C158] active:scale-[0.98]"
                 >
                   <FileText className="h-4 w-4" /> Tender
                 </a>

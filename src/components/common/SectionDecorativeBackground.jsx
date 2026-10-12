@@ -120,8 +120,8 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
             <defs>
               <linearGradient id="archWaveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.7" />
-                <stop offset="60%" stopColor="#AFDDE5" stopOpacity="0.35" />
-                <stop offset="100%" stopColor="#0FA4AF" stopOpacity="0.1" />
+                <stop offset="60%" stopColor="#FFF8DC" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.1" />
               </linearGradient>
             </defs>
             <path d="M-100,200 C300,50 700,380 1150,180 C1350,80 1500,220 1600,160 L1600,-50 L-100,-50 Z" fill="url(#archWaveGrad)" />
@@ -136,8 +136,8 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
             <defs>
               <linearGradient id="govRibbonGrad" x1="0%" y1="100%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#AFDDE5" stopOpacity="0.35" />
-                <stop offset="100%" stopColor="#0FA4AF" stopOpacity="0.1" />
+                <stop offset="50%" stopColor="#FFF8DC" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.1" />
               </linearGradient>
             </defs>
             <path d="M-100,480 C300,280 750,580 1250,380 C1420,320 1520,460 1650,420 L1650,750 L-100,750 Z" fill="url(#govRibbonGrad)" />
@@ -152,8 +152,8 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
             <defs>
               <linearGradient id="legalRibbon" x1="100%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.7" />
-                <stop offset="60%" stopColor="#AFDDE5" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="#0FA4AF" stopOpacity="0.08" />
+                <stop offset="60%" stopColor="#FFF8DC" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.08" />
               </linearGradient>
             </defs>
             <path d="M-100,220 C250,80 800,460 1350,220 C1450,170 1550,260 1650,290 L1650,-50 L-100,-50 Z" fill="url(#legalRibbon)" />
@@ -168,8 +168,8 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
             <defs>
               <linearGradient id="eduWaveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.75" />
-                <stop offset="50%" stopColor="#AFDDE5" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#0FA4AF" stopOpacity="0.12" />
+                <stop offset="50%" stopColor="#FFF8DC" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.12" />
               </linearGradient>
             </defs>
             <path d="M-100,500 C200,300 600,600 1100,380 C1350,270 1500,450 1600,350 L1600,750 L-100,750 Z" fill="url(#eduWaveGrad)" />
@@ -184,8 +184,8 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
             <defs>
               <linearGradient id="ipWaveGrad" x1="0%" y1="100%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.75" />
-                <stop offset="60%" stopColor="#AFDDE5" stopOpacity="0.35" />
-                <stop offset="100%" stopColor="#0FA4AF" stopOpacity="0.1" />
+                <stop offset="60%" stopColor="#FFF8DC" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.1" />
               </linearGradient>
             </defs>
             <path d="M-100,280 C250,80 800,480 1350,220 C1450,170 1550,260 1650,300 L1650,750 L-100,750 Z" fill="url(#ipWaveGrad)" opacity="0.7" />
@@ -200,8 +200,8 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
             <defs>
               <linearGradient id="commGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#AFDDE5" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#0FA4AF" stopOpacity="0.1" />
+                <stop offset="50%" stopColor="#FFF8DC" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.1" />
               </linearGradient>
             </defs>
             <path d="M-100,540 C350,360 800,640 1300,440 C1450,390 1550,520 1650,470 L1650,750 L-100,750 Z" fill="url(#commGrad)" />
@@ -216,8 +216,8 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
             <defs>
               <linearGradient id="infraGrad" x1="100%" y1="100%" x2="0%" y2="0%">
                 <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.75" />
-                <stop offset="50%" stopColor="#AFDDE5" stopOpacity="0.35" />
-                <stop offset="100%" stopColor="#0FA4AF" stopOpacity="0.1" />
+                <stop offset="50%" stopColor="#FFF8DC" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.1" />
               </linearGradient>
             </defs>
             <path d="M-100,180 C300,50 700,360 1150,170 C1350,70 1500,210 1600,150 L1600,-50 L-100,-50 Z" fill="url(#infraGrad)" />
@@ -232,8 +232,8 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
             <defs>
               <linearGradient id="devopsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.7" />
-                <stop offset="60%" stopColor="#AFDDE5" stopOpacity="0.35" />
-                <stop offset="100%" stopColor="#0FA4AF" stopOpacity="0.12" />
+                <stop offset="60%" stopColor="#FFF8DC" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.12" />
               </linearGradient>
             </defs>
             <path d="M-100,460 C250,260 700,560 1200,360 C1400,270 1520,440 1650,390 L1650,750 L-100,750 Z" fill="url(#devopsGrad)" />
@@ -248,8 +248,8 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
             <defs>
               <linearGradient id="designWaveGrad" x1="0%" y1="100%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#AFDDE5" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#0FA4AF" stopOpacity="0.1" />
+                <stop offset="50%" stopColor="#FFF8DC" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.1" />
               </linearGradient>
             </defs>
             <path d="M-100,240 C300,90 750,420 1200,210 C1400,120 1520,290 1650,250 L1650,-50 L-100,-50 Z" fill="url(#designWaveGrad)" />
@@ -264,8 +264,8 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
             <defs>
               <linearGradient id="govGrad" x1="100%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.75" />
-                <stop offset="60%" stopColor="#AFDDE5" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="#0FA4AF" stopOpacity="0.1" />
+                <stop offset="60%" stopColor="#FFF8DC" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.1" />
               </linearGradient>
             </defs>
             <path d="M-100,500 C300,320 750,600 1250,400 C1450,330 1550,490 1650,440 L1650,750 L-100,750 Z" fill="url(#govGrad)" />
@@ -280,8 +280,8 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
             <defs>
               <linearGradient id="quantumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#AFDDE5" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#0FA4AF" stopOpacity="0.1" />
+                <stop offset="50%" stopColor="#FFF8DC" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.1" />
               </linearGradient>
             </defs>
             <path d="M-100,210 C300,60 700,390 1150,190 C1350,90 1500,230 1600,170 L1600,-50 L-100,-50 Z" fill="url(#quantumGrad)" />
@@ -296,8 +296,8 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
             <defs>
               <linearGradient id="iotGrad" x1="100%" y1="100%" x2="0%" y2="0%">
                 <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.75" />
-                <stop offset="60%" stopColor="#AFDDE5" stopOpacity="0.35" />
-                <stop offset="100%" stopColor="#0FA4AF" stopOpacity="0.1" />
+                <stop offset="60%" stopColor="#FFF8DC" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.1" />
               </linearGradient>
             </defs>
             <path d="M-100,480 C300,300 750,590 1250,390 C1450,310 1550,470 1650,420 L1650,750 L-100,750 Z" fill="url(#iotGrad)" />
@@ -312,8 +312,8 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
             <defs>
               <linearGradient id="chainWaveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.75" />
-                <stop offset="50%" stopColor="#AFDDE5" stopOpacity="0.35" />
-                <stop offset="100%" stopColor="#0FA4AF" stopOpacity="0.1" />
+                <stop offset="50%" stopColor="#FFF8DC" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.1" />
               </linearGradient>
             </defs>
             <path d="M-100,220 C250,80 800,460 1350,220 C1450,170 1550,260 1650,290 L1650,-50 L-100,-50 Z" fill="url(#chainWaveGrad)" />
@@ -328,8 +328,8 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
             <defs>
               <linearGradient id="entWaveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#AFDDE5" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#0FA4AF" stopOpacity="0.12" />
+                <stop offset="50%" stopColor="#FFF8DC" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.12" />
               </linearGradient>
             </defs>
             <path d="M-100,240 C280,70 780,440 1280,200 C1420,130 1520,240 1650,270 L1650,-50 L-100,-50 Z" fill="url(#entWaveGrad)" />
@@ -345,8 +345,8 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
             <defs>
               <linearGradient id="defaultWaveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.75" />
-                <stop offset="50%" stopColor="#AFDDE5" stopOpacity="0.35" />
-                <stop offset="100%" stopColor="#0FA4AF" stopOpacity="0.1" />
+                <stop offset="50%" stopColor="#FFF8DC" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.1" />
               </linearGradient>
             </defs>
             <path d="M-100,500 C200,300 600,600 1100,380 C1350,270 1500,450 1600,350 L1600,750 L-100,750 Z" fill="url(#defaultWaveGrad)" />
@@ -389,14 +389,14 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
 
       {/* 3. Soft Ambient Radial Lighting Orbs */}
       <div className="absolute top-8 right-16 w-[550px] h-[450px] bg-white/60 rounded-full blur-3xl opacity-85" />
-      <div className="absolute -bottom-16 -left-16 w-[600px] h-[500px] bg-gradient-to-tr from-[#0FA4AF]/15 via-[#AFDDE5]/25 to-transparent rounded-full blur-3xl opacity-80" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-[#0FA4AF]/8 rounded-full blur-3xl opacity-60" />
+      <div className="absolute -bottom-16 -left-16 w-[600px] h-[500px] bg-gradient-to-tr from-[#D4AF37]/15 via-[#FFF8DC]/25 to-transparent rounded-full blur-3xl opacity-80" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-[#D4AF37]/8 rounded-full blur-3xl opacity-60" />
 
       {/* 4. Interactive Parallax Floating 3D Glass Spheres */}
       {/* Sphere 1: Top-Left */}
       <div
         ref={sphere1Ref}
-        className="absolute top-14 left-16 sm:left-24 w-8 h-8 rounded-full bg-gradient-to-tr from-[#86E4EE] via-[#AFDDE5]/80 to-white/95 shadow-[0_8px_20px_rgba(15,164,175,0.25)] border border-white/60 animate-float-1 will-change-transform"
+        className="absolute top-14 left-16 sm:left-24 w-8 h-8 rounded-full bg-gradient-to-tr from-[#E5C158] via-[#FFF8DC]/80 to-white/95 shadow-[0_8px_20px_rgba(15,164,175,0.25)] border border-white/60 animate-float-1 will-change-transform"
       >
         <span className="absolute top-1.5 left-2 w-2 h-2 rounded-full bg-white/90 blur-[0.6px]" />
       </div>
@@ -404,7 +404,7 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
       {/* Sphere 2: Bottom-Right */}
       <div
         ref={sphere2Ref}
-        className="absolute bottom-16 right-16 sm:right-28 w-11 h-11 rounded-full bg-gradient-to-tr from-[#0FA4AF]/40 via-[#86E4EE]/70 to-white/95 shadow-[0_12px_28px_rgba(15,164,175,0.25)] border border-white/60 animate-float-2 will-change-transform"
+        className="absolute bottom-16 right-16 sm:right-28 w-11 h-11 rounded-full bg-gradient-to-tr from-[#D4AF37]/40 via-[#E5C158]/70 to-white/95 shadow-[0_12px_28px_rgba(15,164,175,0.25)] border border-white/60 animate-float-2 will-change-transform"
       >
         <span className="absolute top-2 left-2.5 w-2.5 h-2.5 rounded-full bg-white/95 blur-[0.8px]" />
       </div>
@@ -412,7 +412,7 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
       {/* Sphere 3: Mid-Left */}
       <div
         ref={sphere3Ref}
-        className="absolute top-1/2 -translate-y-16 left-8 sm:left-14 w-6 h-6 rounded-full bg-gradient-to-tr from-[#AFDDE5] to-white/90 shadow-[0_6px_16px_rgba(15,164,175,0.2)] border border-white/50 animate-float-3 will-change-transform"
+        className="absolute top-1/2 -translate-y-16 left-8 sm:left-14 w-6 h-6 rounded-full bg-gradient-to-tr from-[#FFF8DC] to-white/90 shadow-[0_6px_16px_rgba(15,164,175,0.2)] border border-white/50 animate-float-3 will-change-transform"
       >
         <span className="absolute top-1 left-1.5 w-1.5 h-1.5 rounded-full bg-white/90 blur-[0.4px]" />
       </div>
@@ -420,7 +420,7 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
       {/* Sphere 4: Top-Right */}
       <div
         ref={sphere4Ref}
-        className="absolute top-20 right-20 sm:right-36 w-7 h-7 rounded-full bg-gradient-to-tr from-[#9EE8F2] to-white/90 shadow-[0_7px_18px_rgba(15,164,175,0.22)] border border-white/50 animate-float-4 will-change-transform"
+        className="absolute top-20 right-20 sm:right-36 w-7 h-7 rounded-full bg-gradient-to-tr from-[#FFF8DC] to-white/90 shadow-[0_7px_18px_rgba(15,164,175,0.22)] border border-white/50 animate-float-4 will-change-transform"
       >
         <span className="absolute top-1 left-1.5 w-1.5 h-1.5 rounded-full bg-white/90 blur-[0.5px]" />
       </div>
@@ -429,14 +429,14 @@ export default function SectionDecorativeBackground({ variant = 'default', showG
       {/* Top-Right Matrix */}
       <div className="absolute top-8 right-8 sm:top-10 sm:right-14 grid grid-cols-6 gap-2.5 opacity-25">
         {Array.from({ length: 24 }).map((_, i) => (
-          <span key={`tr-${i}`} className="w-1.5 h-1.5 rounded-full bg-[#0FA4AF]" />
+          <span key={`tr-${i}`} className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
         ))}
       </div>
 
       {/* Bottom-Left Matrix */}
       <div className="absolute bottom-8 left-8 sm:bottom-10 sm:left-14 grid grid-cols-6 gap-2.5 opacity-25">
         {Array.from({ length: 24 }).map((_, i) => (
-          <span key={`bl-${i}`} className="w-1.5 h-1.5 rounded-full bg-[#0FA4AF]" />
+          <span key={`bl-${i}`} className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
         ))}
       </div>
 

@@ -1,0 +1,78 @@
+/* ==========================================================================
+   CURRENT VACANCIES DATA STORE
+   ========================================================================== */
+
+export const currentVacanciesData = [
+  {
+    id: '01',
+    title: 'Job Vacancy',
+    description: 'Browse active job vacancies and roles.',
+    iconName: 'Briefcase',
+    iconColor: 'text-[#D4AF37]',
+    blobColor: 'fill-[#D4AF37]/25',
+    view: 'job-vacancy',
+  },
+  {
+    id: '02',
+    title: 'Full Time',
+    description: 'Explore permanent & full-time career positions.',
+    iconName: 'Clock',
+    iconColor: 'text-[#E5C158]',
+    blobColor: 'fill-[#D4AF37]/25',
+    view: 'full-time',
+  },
+  {
+    id: '03',
+    title: 'Part Time',
+    description: 'Flexible part-time roles & hourly opportunities.',
+    iconName: 'Calendar',
+    iconColor: 'text-[#D4AF37]',
+    blobColor: 'fill-[#D4AF37]/25',
+    view: 'part-time',
+  },
+  {
+    id: '04',
+    title: 'Internship',
+    description: 'Student fellowships & practical training programs.',
+    iconName: 'GraduationCap',
+    iconColor: 'text-[#E5C158]',
+    blobColor: 'fill-[#D4AF37]/25',
+    view: 'internship',
+  },
+  {
+    id: '05',
+    title: 'Remote Job',
+    description: 'Work-from-anywhere & remote positions.',
+    iconName: 'Globe',
+    iconColor: 'text-[#D4AF37]',
+    blobColor: 'fill-[#D4AF37]/25',
+    view: 'remote-job',
+  },
+  {
+    id: '06',
+    title: 'Post Vacancy',
+    description: 'Post new requirements and openings.',
+    iconName: 'Users',
+    iconColor: 'text-[#E5C158]',
+    blobColor: 'fill-[#D4AF37]/25',
+    view: 'post-vacancy',
+  },
+  {
+    id: '07',
+    title: 'Vacancy Card 1',
+    description: 'View detailed vacancy information.',
+    iconName: 'LayoutGrid',
+    iconColor: 'text-[#D4AF37]',
+    blobColor: 'fill-[#D4AF37]/25',
+    view: 'vacancy-card-1',
+  },
+  {
+    id: '08',
+    title: 'Vacancy Card 2',
+    description: 'Explore department-wise opportunities.',
+    iconName: 'AppWindow',
+    iconColor: 'text-[#E5C158]',
+    blobColor: 'fill-[#D4AF37]/25',
+    view: 'vacancy-card-2',
+  },
+];

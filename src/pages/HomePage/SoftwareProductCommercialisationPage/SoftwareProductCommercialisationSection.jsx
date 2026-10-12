@@ -88,7 +88,7 @@ export default function SoftwareProductCommercialisationSection({ onOpenPage }) 
   return (
     <section
       id="software-commercialisation-section"
-      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#EBF6F8] via-[#E4F3F5] to-[#DCEEF2] border-b border-[#0FA4AF]/20 overflow-hidden relative"
+      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#EBF6F8] via-[#E4F3F5] to-[#DCEEF2] border-b border-[#D4AF37]/20 overflow-hidden relative"
     >
       {/* Interactive Decorative Background Theme */}
       <SectionDecorativeBackground variant="commercial" />
@@ -101,10 +101,10 @@ export default function SoftwareProductCommercialisationSection({ onOpenPage }) 
 
           <AnimatedSectionHeading
             text="Software Product Commercialisation"
-            className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#003135] mb-5 text-center"
+            className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#081E52] mb-5 text-center"
           />
 
-          <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#003135]/85 font-medium text-center max-w-3xl">
+          <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#081E52]/85 font-medium text-center max-w-3xl">
             <p>
               Building a software product is only one part of creating a technology business. We focus on taking software products from development to deployment, market adoption and long-term commercialisation through scalable technology-product business models.
             </p>
@@ -123,19 +123,19 @@ export default function SoftwareProductCommercialisationSection({ onOpenPage }) 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mb-10">
           <div className="p-4 rounded-xl bg-white/80 border border-[#AFDDE5] shadow-xs text-center flex flex-col items-center">
             <Cloud className="w-6 h-6 text-[#0FA4AF] mb-2" />
-            <span className="text-xs font-bold text-[#003135]">SaaS &amp; Subscription</span>
+            <span className="text-xs font-bold text-[#081E52]">SaaS &amp; Subscription</span>
           </div>
           <div className="p-4 rounded-xl bg-white/80 border border-[#AFDDE5] shadow-xs text-center flex flex-col items-center">
             <FileKey className="w-6 h-6 text-[#0FA4AF] mb-2" />
-            <span className="text-xs font-bold text-[#003135]">Software Licensing</span>
+            <span className="text-xs font-bold text-[#081E52]">Software Licensing</span>
           </div>
           <div className="p-4 rounded-xl bg-white/80 border border-[#AFDDE5] shadow-xs text-center flex flex-col items-center">
             <Building2 className="w-6 h-6 text-[#0FA4AF] mb-2" />
-            <span className="text-xs font-bold text-[#003135]">Enterprise Deployment</span>
+            <span className="text-xs font-bold text-[#081E52]">Enterprise Deployment</span>
           </div>
           <div className="p-4 rounded-xl bg-white/80 border border-[#AFDDE5] shadow-xs text-center flex flex-col items-center">
             <Globe2 className="w-6 h-6 text-[#0FA4AF] mb-2" />
-            <span className="text-xs font-bold text-[#003135]">Global Distribution</span>
+            <span className="text-xs font-bold text-[#081E52]">Global Distribution</span>
           </div>
         </div>
 

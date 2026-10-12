@@ -240,7 +240,7 @@ const LifecycleCard = ({ stage, index, isScattering, colorTheme, numCols = 4 }) 
                   <ChevronDown className={`w-3.5 h-3.5 transition-colors duration-200 ${cardExpanded ? 'text-[#0FA4AF]' : 'text-slate-400'}`} />
                 </motion.div>
               </div>
-              <h3 className={`font-bold text-black text-left text-[15px] transition-colors duration-200 ${cardExpanded ? 'text-[#003135]' : 'text-slate-900'}`}>
+              <h3 className={`font-bold text-black text-left text-[15px] transition-colors duration-200 ${cardExpanded ? 'text-[#081E52]' : 'text-slate-900'}`}>
                 {stage.title}
               </h3>
             </div>
@@ -567,7 +567,7 @@ const ProductDevelopmentLifecycle = ({ onClose }) => {
           <button
             type="button"
             onClick={handleBack}
-            className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
           >
             ← Back
           </button>
@@ -575,9 +575,9 @@ const ProductDevelopmentLifecycle = ({ onClose }) => {
           <button
             type="button"
             onClick={handleHome}
-            className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
           >
-            <Home className="w-4 h-4 text-white" />
+            <Home className="w-4 h-4 text-[#040A1A]" />
             <span>Home</span>
           </button>
         </div>
@@ -588,7 +588,7 @@ const ProductDevelopmentLifecycle = ({ onClose }) => {
             initial={{ opacity: 0, y: 25 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 25 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-[30px] md:text-[36px] lg:text-[48px] font-black tracking-tight mb-12 text-[#003135] leading-[1.1]"
+            className="text-[30px] md:text-[36px] lg:text-[48px] font-black tracking-tight mb-12 text-[#081E52] leading-[1.1]"
           >
             {introData.heading}
           </motion.h2>

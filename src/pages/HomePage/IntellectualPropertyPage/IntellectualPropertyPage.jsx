@@ -200,7 +200,7 @@ export function IntellectualPropertyCard({
         <button
           type="button"
           onClick={handleCloseButtonClick}
-          className="absolute top-2 right-2 sm:top-3.5 sm:right-3.5 z-40 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-500 hover:text-[#003135] flex items-center justify-center transition-all duration-200 shadow-xs cursor-pointer"
+          className="absolute top-2 right-2 sm:top-3.5 sm:right-3.5 z-40 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-500 hover:text-[#081E52] flex items-center justify-center transition-all duration-200 shadow-xs cursor-pointer"
           title="Close details"
           aria-label="Close details"
         >
@@ -231,7 +231,7 @@ export function IntellectualPropertyCard({
           }`}
       >
         <h3
-          className="text-[13px] sm:text-[16.5px] font-bold text-[#003135] text-center leading-tight sm:leading-snug tracking-tight mb-1 sm:mb-2 shrink-0 w-full"
+          className="text-[13px] sm:text-[16.5px] font-bold text-[#081E52] text-center leading-tight sm:leading-snug tracking-tight mb-1 sm:mb-2 shrink-0 w-full"
           title={title}
         >
           {title}
@@ -334,7 +334,7 @@ export default function IntellectualPropertyPage({ onClose }) {
       <div className="w-full py-10 sm:py-16 md:py-20 px-2.5 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <style>{`
         :root {
-          --heading-color: #003135;
+          --heading-color: #081E52;
           --subheading-color: #0FA4AF;
         }
 
@@ -356,7 +356,7 @@ export default function IntellectualPropertyPage({ onClose }) {
         <button
           type="button"
           onClick={handleBack}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
         >
           ← Back
         </button>
@@ -364,9 +364,9 @@ export default function IntellectualPropertyPage({ onClose }) {
         <button
           type="button"
           onClick={handleHome}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
         >
-          <Home className="w-4 h-4 text-white" />
+          <Home className="w-4 h-4 text-[#040A1A]" />
           <span>Home</span>
         </button>
       </div>
@@ -375,7 +375,7 @@ export default function IntellectualPropertyPage({ onClose }) {
       <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-14">
         <h1
           id="main-heading"
-          className="text-[30px] md:text-[36px] lg:text-[48px] font-extrabold text-[#003135] tracking-tight mb-4 sm:mb-5 leading-tight"
+          className="text-[30px] md:text-[36px] lg:text-[48px] font-extrabold text-[#081E52] tracking-tight mb-4 sm:mb-5 leading-tight"
           style={{ fontFamily: "'Manrope', sans-serif" }}
         >
           Intellectual Property &amp; Technology

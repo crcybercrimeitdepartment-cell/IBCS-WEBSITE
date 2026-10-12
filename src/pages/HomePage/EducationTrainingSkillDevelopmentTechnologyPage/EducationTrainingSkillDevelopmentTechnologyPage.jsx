@@ -246,7 +246,7 @@ export default function EducationTrainingSkillDevelopmentTechnologyPage({ onClos
         /* --- TYPOGRAPHY --- */
         .card-title {
           text-align: center;
-          color: #003135;
+          color: #081E52;
           font-weight: 900;
           font-family: "Comic Sans MS", "Chalkboard SE", "Marker Felt", sans-serif;
           letter-spacing: 0.05em;
@@ -290,7 +290,7 @@ export default function EducationTrainingSkillDevelopmentTechnologyPage({ onClos
             <button
               type="button"
               onClick={handleBack}
-              className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95 z-20"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95 z-20"
             >
               ← Back
             </button>
@@ -298,9 +298,9 @@ export default function EducationTrainingSkillDevelopmentTechnologyPage({ onClos
             <button
               type="button"
               onClick={handleHome}
-              className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95 z-20"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95 z-20"
             >
-              <Home className="w-4 h-4 text-white" />
+              <Home className="w-4 h-4 text-[#040A1A]" />
               <span>Home</span>
             </button>
           </div>
@@ -309,7 +309,7 @@ export default function EducationTrainingSkillDevelopmentTechnologyPage({ onClos
           <div className="flex flex-col items-center justify-center mb-10">
             <div className="flex items-center justify-center gap-4 mb-4">
               <div className="h-[2px] w-12 bg-[#0FA4AF]"></div>
-              <h1 className="text-[28px] md:text-[36px] lg:text-[46px] font-black text-[#003135] font-['Manrope',sans-serif] tracking-wider uppercase text-center leading-tight">
+              <h1 className="text-[28px] md:text-[36px] lg:text-[46px] font-black text-[#081E52] font-['Manrope',sans-serif] tracking-wider uppercase text-center leading-tight">
                 Education, Training &amp; Skill Development Technology
               </h1>
               <div className="h-[2px] w-12 bg-[#0FA4AF]"></div>

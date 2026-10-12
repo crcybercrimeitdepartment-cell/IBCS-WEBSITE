@@ -79,7 +79,7 @@ export const coursesData = [
   {
     id: 'about-2',
     category: 'MISSION & GOALS',
-    title: 'Organization Our View',
+    title: 'Organization Overview',
     summary: 'Our organizational philosophy, world outlook, and modern approach to collective progress.',
     details: [
       'We view progress as a shared journey where innovation must serve people and foster positive societal change.',

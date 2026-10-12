@@ -155,7 +155,7 @@ function HomeProductCard({ item, index }) {
       {/* 1. Underneath Content Panel (Revealed on Hover / Click / Peeking) */}
       <div className="under-content">
         <h3
-          className="text-[17px] font-extrabold text-[#003135] leading-snug tracking-tight mb-2 group-hover:text-[#0FA4AF] transition-colors shrink-0"
+          className="text-[17px] font-extrabold text-[#081E52] leading-snug tracking-tight mb-2 group-hover:text-[#0FA4AF] transition-colors shrink-0"
           style={{ fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif" }}
           title={item.title}
         >
@@ -230,7 +230,7 @@ export default function OurProductEcosystemSection({ onOpenPage }) {
   const firstFourCards = productEcosystemData.slice(0, 4);
 
   return (
-    <section id="our-product-ecosystem" className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-[#E2F3ED] via-[#D5ECE1] to-[#C7E5D6] border-b border-[#0FA4AF]/20 overflow-hidden relative">
+    <section id="our-product-ecosystem" className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-[#E2F3ED] via-[#D5ECE1] to-[#C7E5D6] border-b border-[#D4AF37]/20 overflow-hidden relative">
 
       {/* Background Vector Artwork: Waves, Glows, Lines & Network Dots (Exact 100% Match to Reference Image) */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">

@@ -166,7 +166,7 @@ export default function SoftwareArchitectureProductEngineeringSection({ onOpenPa
   return (
     <section
       id="software-architecture-product-engineering"
-      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F2F8FA] via-[#E8F4F7] to-[#DFEFF2] border-b border-[#0FA4AF]/20 overflow-hidden relative"
+      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F2F8FA] via-[#E8F4F7] to-[#DFEFF2] border-b border-[#D4AF37]/20 overflow-hidden relative"
     >
       {/* Interactive Decorative Background Theme */}
       <SectionDecorativeBackground variant="architecture" />
@@ -181,11 +181,11 @@ export default function SoftwareArchitectureProductEngineeringSection({ onOpenPa
             {/* Main Heading */}
             <AnimatedSectionHeading
               text="Software Architecture & Product Engineering"
-              className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#003135] mb-5 text-center lg:text-left"
+              className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#081E52] mb-5 text-center lg:text-left"
             />
 
             {/* Descriptions from original text */}
-            <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#003135]/85 font-medium mb-6 text-center lg:text-left">
+            <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#081E52]/85 font-medium mb-6 text-center lg:text-left">
               <p>
                 Strong software products begin with strong engineering foundations. We design software architecture and product engineering systems that support performance, security, scalability, maintainability and long-term product evolution.
               </p>
@@ -198,11 +198,11 @@ export default function SoftwareArchitectureProductEngineeringSection({ onOpenPa
             <div className="grid grid-cols-2 gap-3 w-full mb-8">
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-white/80 border border-[#AFDDE5]/80 shadow-xs">
                 <Cpu className="w-4 h-4 text-[#0FA4AF] shrink-0" />
-                <span className="text-xs font-bold text-[#003135]">Scalable Microservices</span>
+                <span className="text-xs font-bold text-[#081E52]">Scalable Microservices</span>
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-white/80 border border-[#AFDDE5]/80 shadow-xs">
                 <Boxes className="w-4 h-4 text-[#0FA4AF] shrink-0" />
-                <span className="text-xs font-bold text-[#003135]">Product Engineering</span>
+                <span className="text-xs font-bold text-[#081E52]">Product Engineering</span>
               </div>
             </div>
 

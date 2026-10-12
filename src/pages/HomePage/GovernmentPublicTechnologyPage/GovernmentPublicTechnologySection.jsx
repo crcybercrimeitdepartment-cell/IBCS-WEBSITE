@@ -111,7 +111,7 @@ export default function GovernmentPublicTechnologySection({ onOpenPage }) {
   return (
     <section
       id="government-public-technology"
-      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F2F9FA] via-[#EAF5F7] to-[#E3F2F5] border-b border-[#0FA4AF]/20 overflow-hidden relative"
+      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F2F9FA] via-[#EAF5F7] to-[#E3F2F5] border-b border-[#D4AF37]/20 overflow-hidden relative"
     >
       {/* Interactive Decorative Background Theme (Waves, Soft Glows, Floating 3D Orbs & Dot Matrices) */}
       <SectionDecorativeBackground variant="government" />
@@ -126,11 +126,11 @@ export default function GovernmentPublicTechnologySection({ onOpenPage }) {
             {/* Main Heading */}
             <AnimatedSectionHeading
               text="Government & Public Technology"
-              className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#003135] mb-5 text-center lg:text-left"
+              className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#081E52] mb-5 text-center lg:text-left"
             />
 
             {/* Descriptions from original text */}
-            <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#003135]/85 font-medium mb-6 text-center lg:text-left">
+            <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#081E52]/85 font-medium mb-6 text-center lg:text-left">
               <p>
                 We develop software products and digital platforms designed to support government departments, public authorities and institutional users in their digital transformation initiatives. Our government technology products can address administration, information management, citizen services, workflow automation, reporting and institutional operations.
               </p>
@@ -143,11 +143,11 @@ export default function GovernmentPublicTechnologySection({ onOpenPage }) {
             <div className="grid grid-cols-2 gap-3 w-full mb-8">
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-white/80 border border-[#AFDDE5]/80 shadow-xs">
                 <Users className="w-4 h-4 text-[#0FA4AF] shrink-0" />
-                <span className="text-xs font-bold text-[#003135]">Citizen &amp; Admin Services</span>
+                <span className="text-xs font-bold text-[#081E52]">Citizen &amp; Admin Services</span>
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-white/80 border border-[#AFDDE5]/80 shadow-xs">
                 <ShieldCheck className="w-4 h-4 text-[#0FA4AF] shrink-0" />
-                <span className="text-xs font-bold text-[#003135]">Authorised &amp; Lawful Access</span>
+                <span className="text-xs font-bold text-[#081E52]">Authorised &amp; Lawful Access</span>
               </div>
             </div>
 

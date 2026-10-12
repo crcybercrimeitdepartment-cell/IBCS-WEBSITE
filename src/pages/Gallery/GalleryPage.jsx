@@ -252,7 +252,7 @@ export function EventDetailPage({ card, onBack, onSelectCard, onOpenGenerator, o
         <div className="flex items-center gap-3">
           <button
             onClick={onBack}
-            className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
           >
             ← Back to Gallery Wheel
           </button>
@@ -261,9 +261,9 @@ export function EventDetailPage({ card, onBack, onSelectCard, onOpenGenerator, o
             <button
               type="button"
               onClick={onClose}
-              className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
             >
-              <Home className="w-4 h-4 text-white" />
+              <Home className="w-4 h-4 text-[#040A1A]" />
               <span>Home</span>
             </button>
           )}
@@ -516,9 +516,9 @@ export function EventDetailPage({ card, onBack, onSelectCard, onOpenGenerator, o
 
           <button
             onClick={onBack}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#18181B] hover:bg-black text-white rounded-full text-sm font-semibold shadow-md transition-all active:scale-95"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/30 text-white rounded-full text-sm font-semibold shadow-md transition-all active:scale-95"
           >
-            <Compass className="w-4 h-4 text-pink-400" />
+            <Compass className="w-4 h-4 text-[#D4AF37]" />
             <span>Return to Interactive Wheel</span>
           </button>
 
@@ -823,7 +823,7 @@ export function ArcHero({ onSelectCard, onStartGenerating, onClose }) {
                 window.location.hash = '#home';
               }
             }}
-            className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
           >
             ← Back
           </button>
@@ -835,9 +835,9 @@ export function ArcHero({ onSelectCard, onStartGenerating, onClose }) {
               window.location.hash = '#home';
               window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
             }}
-            className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
           >
-            <Home className="w-4 h-4 text-white" />
+            <Home className="w-4 h-4 text-[#040A1A]" />
             <span>Home</span>
           </button>
         </div>

@@ -183,7 +183,7 @@ export default function DevOpsContinuousDeliveryPage({ onClose }) {
         <button
           type="button"
           onClick={handleBack}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
         >
           ← Back
         </button>
@@ -191,9 +191,9 @@ export default function DevOpsContinuousDeliveryPage({ onClose }) {
         <button
           type="button"
           onClick={handleHome}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
         >
-          <Home className="w-4 h-4 text-white" />
+          <Home className="w-4 h-4 text-[#040A1A]" />
           <span>Home</span>
         </button>
       </div>
@@ -211,12 +211,12 @@ export default function DevOpsContinuousDeliveryPage({ onClose }) {
       >
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#AFDDE5] shadow-xs mb-3">
           <span className="w-2 h-2 rounded-full bg-[#0FA4AF] animate-pulse" />
-          <span className="text-xs font-extrabold text-[#003135] tracking-wider uppercase">
+          <span className="text-xs font-extrabold text-[#081E52] tracking-wider uppercase">
             {devOpsHeaderData.badge}
           </span>
         </div>
 
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#003135] tracking-tight uppercase mb-3">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#081E52] tracking-tight uppercase mb-3">
           {devOpsHeaderData.title}
         </h1>
 
@@ -440,24 +440,24 @@ export default function DevOpsContinuousDeliveryPage({ onClose }) {
             >
               {/* Header: Number Badge, Title, Category Pill */}
               <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-4">
-                <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-[#0FA4AF]/15 text-[#003135] border border-[#0FA4AF]/30 shadow-xs">
+                <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-[#0FA4AF]/15 text-[#081E52] border border-[#0FA4AF]/30 shadow-xs">
                   {cards[active]?.num}
                 </span>
 
                 {(() => {
                   const ActiveIcon = cards[active]?.Icon;
                   return (
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-teal-50 border border-teal-200/80 text-[#003135] flex items-center justify-center shadow-xs">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-teal-50 border border-teal-200/80 text-[#081E52] flex items-center justify-center shadow-xs">
                       {ActiveIcon && <ActiveIcon className="w-5 h-5 md:w-6 md:h-6 text-[#0FA4AF]" strokeWidth={2.4} />}
                     </div>
                   );
                 })()}
 
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-[#003135] tracking-tight text-center">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-[#081E52] tracking-tight text-center">
                   {cards[active]?.title}
                 </h3>
 
-                <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#003135]/10 text-[#003135] border border-[#003135]/15">
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#003135]/10 text-[#081E52] border border-[#003135]/15">
                   {cards[active]?.badge}
                 </span>
               </div>

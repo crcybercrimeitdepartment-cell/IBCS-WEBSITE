@@ -57,7 +57,7 @@ export default function EnterpriseBusinessSoftwareProductsPage({ onClose }) {
         <button
           type="button"
           onClick={handleBack}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
         >
           ← Back
         </button>
@@ -65,16 +65,16 @@ export default function EnterpriseBusinessSoftwareProductsPage({ onClose }) {
         <button
           type="button"
           onClick={handleHome}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
         >
-          <Home className="w-4 h-4 text-white" />
+          <Home className="w-4 h-4 text-[#040A1A]" />
           <span>Home</span>
         </button>
       </div>
 
       {/* Header Section */}
       <div className="max-w-[1400px] mx-auto px-6 pt-10 md:pt-16 pb-12 md:pb-16 flex flex-col items-center text-center">
-        <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-[#003135] mb-6 tracking-tighter leading-[1.1] drop-shadow-sm px-2">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-[#081E52] mb-6 tracking-tighter leading-[1.1] drop-shadow-sm px-2">
           Enterprise &amp; Business <br className="hidden sm:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#0FA4AF] via-[#006670] to-[#003135]">Software Products</span>
         </h1>

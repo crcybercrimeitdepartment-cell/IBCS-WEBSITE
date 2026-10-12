@@ -111,7 +111,7 @@ export default function DevOpsContinuousDeliverySection({ onOpenPage }) {
   return (
     <section
       id="devops-continuous-delivery"
-      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#EBF5F7] via-[#E4F3F5] to-[#DCEEF2] border-b border-[#0FA4AF]/20 overflow-hidden relative"
+      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#EBF5F7] via-[#E4F3F5] to-[#DCEEF2] border-b border-[#D4AF37]/20 overflow-hidden relative"
     >
       {/* Interactive Decorative Background Theme */}
       <SectionDecorativeBackground variant="devops" />
@@ -124,12 +124,12 @@ export default function DevOpsContinuousDeliverySection({ onOpenPage }) {
 
           <AnimatedSectionHeading
             text="DevOps & Continuous Delivery"
-            className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#003135] mb-5 text-center"
+            className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#081E52] mb-5 text-center"
           />
 
-          <div className="space-y-3.5 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#003135]/85 font-medium text-center max-w-3xl">
+          <div className="space-y-3.5 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#081E52]/85 font-medium text-center max-w-3xl">
             <p>
-              <strong className="font-bold text-[#003135]">IB Cyber Security Private Limited</strong> follows modern DevOps and continuous delivery practices to build, test, secure, deploy, and continuously improve software products efficiently. Our approach brings together development, infrastructure, security, automation, testing, and operations throughout the product lifecycle.
+              <strong className="font-bold text-[#081E52]">IB Cyber Security Private Limited</strong> follows modern DevOps and continuous delivery practices to build, test, secure, deploy, and continuously improve software products efficiently. Our approach brings together development, infrastructure, security, automation, testing, and operations throughout the product lifecycle.
             </p>
             <p>
               We use modern tools and engineering practices to create reliable and repeatable delivery pipelines, improve release efficiency, strengthen software quality, and support scalable digital environments.
@@ -152,8 +152,8 @@ export default function DevOpsContinuousDeliverySection({ onOpenPage }) {
               <Zap className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-[#003135] mb-1">Accelerated Release Velocity</h4>
-              <p className="text-xs text-[#003135]/80 leading-relaxed font-medium">
+              <h4 className="text-sm font-bold text-[#081E52] mb-1">Accelerated Release Velocity</h4>
+              <p className="text-xs text-[#081E52]/80 leading-relaxed font-medium">
                 Automated continuous integration and delivery pipelines shorten cycle times from commit to production with total predictability.
               </p>
             </div>
@@ -164,8 +164,8 @@ export default function DevOpsContinuousDeliverySection({ onOpenPage }) {
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-[#003135] mb-1">Zero-Downtime &amp; Security Scans</h4>
-              <p className="text-xs text-[#003135]/80 leading-relaxed font-medium">
+              <h4 className="text-sm font-bold text-[#081E52] mb-1">Zero-Downtime &amp; Security Scans</h4>
+              <p className="text-xs text-[#081E52]/80 leading-relaxed font-medium">
                 Built-in security vulnerability checks, rollback mechanisms, and blue-green deployments safeguard system availability.
               </p>
             </div>

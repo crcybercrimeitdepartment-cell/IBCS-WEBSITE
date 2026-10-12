@@ -729,7 +729,7 @@ export default function IntroductionPage({ onClose }) {
         <button
           type="button"
           onClick={handleBack}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
         >
           ← Back
         </button>
@@ -737,9 +737,9 @@ export default function IntroductionPage({ onClose }) {
         <button
           type="button"
           onClick={handleHome}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
         >
-          <Home className="w-4 h-4 text-white" />
+          <Home className="w-4 h-4 text-[#040A1A]" />
           <span>Home</span>
         </button>
       </div>
@@ -769,7 +769,7 @@ export default function IntroductionPage({ onClose }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-black tracking-tight leading-[1.15] text-[#003135] mb-2 sm:mb-3"
+            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-black tracking-tight leading-[1.15] text-[#081E52] mb-2 sm:mb-3"
           >
             <span className="bg-gradient-to-r from-[#003135] via-[#0E7980] to-[#0FA4AF] bg-clip-text text-transparent">
               {introductionPageData.header.title}
@@ -796,7 +796,7 @@ export default function IntroductionPage({ onClose }) {
                 introductionPageData.header.subtitle
               ) : (
                 <>
-                  <strong className="font-semibold text-[#003135] italic">IB Cyber Security Private Limited (IBCS)</strong> is a technology-driven product company building secure, intelligent, and scalable digital solutions for government, law enforcement, enterprises, and financial institutions. IBCS develops innovative cybersecurity platforms, investigation and intelligence tools, AI-powered solutions, government technology platforms, digital evidence and forensic systems, and SaaS products. With a strong focus on innovation, reliability, customization, and advanced technology, we transform complex digital challenges into purposeful products that strengthen security, intelligence, and decision-making, advancing our vision of a <strong className="font-semibold text-[#0E7980] italic">Cyber Safe India</strong>.
+                  <strong className="font-semibold text-[#081E52] italic">IB Cyber Security Private Limited (IBCS)</strong> is a technology-driven product company building secure, intelligent, and scalable digital solutions for government, law enforcement, enterprises, and financial institutions. IBCS develops innovative cybersecurity platforms, investigation and intelligence tools, AI-powered solutions, government technology platforms, digital evidence and forensic systems, and SaaS products. With a strong focus on innovation, reliability, customization, and advanced technology, we transform complex digital challenges into purposeful products that strengthen security, intelligence, and decision-making, advancing our vision of a <strong className="font-semibold text-[#0E7980] italic">Cyber Safe India</strong>.
                 </>
               )}
             </p>

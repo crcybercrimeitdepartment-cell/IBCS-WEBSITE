@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight, Home } from 'lucide-react';
 import { ibcsData } from './MeaningBehindOurNamePageData';
 
 const BOOK_STYLES = `.mbon-section, .mbon-section * { box-sizing: border-box; }
-.mbon-section { --color-ivory:#faf6eb; --color-navy:#102641; --color-gold:#c6a46a; position:relative; width:100%; min-height:100svh; display:flex; align-items:center; justify-content:center; padding:24px; background:#eeefed; color:var(--color-navy); font-family:'Georgia',serif; isolation:isolate; }
+.mbon-section { --color-ivory:#FFF8DC; --color-navy:#081E52; --color-gold:#D4AF37; position:relative; width:100%; min-height:100svh; display:flex; align-items:center; justify-content:center; padding:24px; background:#eeefed; color:var(--color-navy); font-family:'Georgia',serif; isolation:isolate; }
 .mbon-bg-layer { position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:-1; background:#eeefed; }
 .mbon-bg-typography { position:absolute; color:rgba(212,175,55,.025); font-weight:800; line-height:1; letter-spacing:-.02em; white-space:nowrap; user-select:none; }
 .mbon-bg-typography-1 { top:10%; left:-5%; font-size:18vw; }.mbon-bg-typography-2 { top:40%; right:-5%; font-size:22vw; }.mbon-bg-typography-3 { bottom:-5%; left:10%; font-size:15vw; }.mbon-bg-graphics { position:absolute; inset:0; }
@@ -296,7 +296,7 @@ export default function MeaningBehindOurName({ onClose }) {
         <button
           type="button"
           onClick={handleBack}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
         >
           ← Back
         </button>
@@ -304,7 +304,7 @@ export default function MeaningBehindOurName({ onClose }) {
         <button
           type="button"
           onClick={handleHome}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
         >
           <Home className="w-4 h-4 text-white" />
           <span>Home</span>

@@ -91,7 +91,7 @@ export default function InvestigationLegalInstitutionalTechnologySection({ onOpe
   return (
     <section
       id="investigation-legal-institutional-technology"
-      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#EBF5F7] via-[#E6F3F5] to-[#DFEFF2] border-b border-[#0FA4AF]/20 overflow-hidden relative"
+      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#EBF5F7] via-[#E6F3F5] to-[#DFEFF2] border-b border-[#D4AF37]/20 overflow-hidden relative"
     >
       {/* Interactive Decorative Background Theme */}
       <SectionDecorativeBackground variant="legal" />
@@ -104,10 +104,10 @@ export default function InvestigationLegalInstitutionalTechnologySection({ onOpe
 
           <AnimatedSectionHeading
             text="Investigation, Legal & Institutional Technology"
-            className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#003135] mb-5 text-center"
+            className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#081E52] mb-5 text-center"
           />
 
-          <p className="text-[15px] sm:text-[16px] leading-relaxed text-[#003135]/85 font-medium text-center max-w-3xl">
+          <p className="text-[15px] sm:text-[16px] leading-relaxed text-[#081E52]/85 font-medium text-center max-w-3xl">
             We develop specialised software products for lawful investigation, legal technology, case management and institutional workflows. These products are designed to help authorised organisations manage complex information, records, documents, cases and reporting processes through structured digital systems.
           </p>
         </div>
@@ -124,8 +124,8 @@ export default function InvestigationLegalInstitutionalTechnologySection({ onOpe
               <FolderGit2 className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-[#003135] mb-1">Investigation &amp; Case Workflow</h4>
-              <p className="text-xs text-[#003135]/80 leading-relaxed font-medium">
+              <h4 className="text-sm font-bold text-[#081E52] mb-1">Investigation &amp; Case Workflow</h4>
+              <p className="text-xs text-[#081E52]/80 leading-relaxed font-medium">
                 Supporting structured evidence-related workflows, complaint management, case dossiers and verified intelligence pipelines.
               </p>
             </div>
@@ -136,8 +136,8 @@ export default function InvestigationLegalInstitutionalTechnologySection({ onOpe
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-[#003135] mb-1">Lawful Use &amp; Access Controls</h4>
-              <p className="text-xs text-[#003135]/80 leading-relaxed font-medium">
+              <h4 className="text-sm font-bold text-[#081E52] mb-1">Lawful Use &amp; Access Controls</h4>
+              <p className="text-xs text-[#081E52]/80 leading-relaxed font-medium">
                 All software products are built for lawful, authorised institutional deployment subject to governing regulations and strict permissions.
               </p>
             </div>

@@ -555,7 +555,7 @@ function RainbowPhoneCard({
       {/* 3. CARD HEADING */}
       <div className="relative z-10 text-center px-0.5 w-full h-[28px] sm:h-[34px] md:h-[36px] shrink-0 flex items-center justify-center">
         <h2
-          className="text-[#003135] text-[10px] sm:text-[10.5px] md:text-[11px] font-extrabold tracking-tight leading-[1.18] text-center w-full"
+          className="text-[#081E52] text-[10px] sm:text-[10.5px] md:text-[11px] font-extrabold tracking-tight leading-[1.18] text-center w-full"
           style={{
             fontFamily: "'Plus Jakarta Sans', sans-serif",
             wordBreak: 'normal',
@@ -826,7 +826,7 @@ export default function ArtificialIntelligenceIntelligentSoftwareSection({ onOpe
   return (
     <section
       id="artificial-intelligence-intelligent-software"
-      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F0F7FB] via-[#F6F4FD] to-[#F9F7FC] border-b border-[#0FA4AF]/20 overflow-hidden relative"
+      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F0F7FB] via-[#F6F4FD] to-[#F9F7FC] border-b border-[#D4AF37]/20 overflow-hidden relative"
     >
       <style>{`
         /* Hide scrollbars completely across WebKit, Firefox and IE/Edge */
@@ -996,7 +996,7 @@ export default function ArtificialIntelligenceIntelligentSoftwareSection({ onOpe
         <div className="w-full max-w-[880px] mx-auto text-center pt-2 pb-4 sm:pb-6 relative z-20 shrink-0">
           <AnimatedSectionHeading
             text="Artificial Intelligence & Intelligent Software"
-            className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#003135] tracking-tight leading-tight mb-4 text-center"
+            className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#081E52] tracking-tight leading-tight mb-4 text-center"
           />
 
           <motion.div
@@ -1004,7 +1004,7 @@ export default function ArtificialIntelligenceIntelligentSoftwareSection({ onOpe
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.15, ease: [0.215, 0.61, 0.355, 1] }}
-            className="space-y-3.5 text-xs sm:text-sm lg:text-[15px] leading-relaxed text-[#003135]/80 font-normal max-w-4xl mx-auto px-1 sm:px-0 text-center"
+            className="space-y-3.5 text-xs sm:text-sm lg:text-[15px] leading-relaxed text-[#081E52]/80 font-normal max-w-4xl mx-auto px-1 sm:px-0 text-center"
           >
             <p>
               Artificial Intelligence is an important technology area within our software product development strategy. We explore AI, Machine Learning and Generative AI to build software products that can process information, automate workflows, analyse data and enable intelligent digital experiences.
@@ -1068,7 +1068,7 @@ export default function ArtificialIntelligenceIntelligentSoftwareSection({ onOpe
 
                 <div className="flex-1 min-w-0">
                   <h3
-                    className="text-base sm:text-lg md:text-xl font-extrabold text-[#003135] tracking-tight leading-snug"
+                    className="text-base sm:text-lg md:text-xl font-extrabold text-[#081E52] tracking-tight leading-snug"
                     style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                   >
                     {activeItem.fullTitle || `${activeItem.number}. ${activeItem.title}`}
@@ -1091,7 +1091,7 @@ export default function ArtificialIntelligenceIntelligentSoftwareSection({ onOpe
             <div className="flex items-center justify-center gap-1 sm:gap-1.5 px-2 py-1.5 sm:px-3 sm:py-2 rounded-full bg-white/95 border border-[#0FA4AF]/30 shadow-xs backdrop-blur-md mx-auto w-fit max-w-full mt-3 sm:mt-4 overflow-x-auto no-scrollbar select-none">
               <button
                 onClick={handleRotateLeft}
-                className="w-6 h-6 sm:w-7.5 sm:h-7.5 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#003135] flex items-center justify-center transition-transform hover:scale-110 cursor-pointer shadow-xs shrink-0"
+                className="w-6 h-6 sm:w-7.5 sm:h-7.5 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#081E52] flex items-center justify-center transition-transform hover:scale-110 cursor-pointer shadow-xs shrink-0"
                 title="Previous Product"
                 aria-label="Previous Product"
               >
@@ -1106,8 +1106,8 @@ export default function ArtificialIntelligenceIntelligentSoftwareSection({ onOpe
                       key={c.id}
                       onClick={() => handleSelectCard(i)}
                       className={`w-5 h-5 sm:w-6.5 sm:h-6.5 rounded-full text-[9px] sm:text-[11px] font-bold transition-all duration-200 flex items-center justify-center cursor-pointer shrink-0 ${isActive
-                          ? 'text-[#003135] font-black'
-                          : 'text-[#003135]/70 bg-white/70 hover:bg-white hover:text-[#003135]'
+                          ? 'text-[#081E52] font-black'
+                          : 'text-[#081E52]/70 bg-white/70 hover:bg-white hover:text-[#081E52]'
                         }`}
                       style={{
                         backgroundColor: isActive ? c.colorTheme.accent : undefined,
@@ -1126,7 +1126,7 @@ export default function ArtificialIntelligenceIntelligentSoftwareSection({ onOpe
 
               <button
                 onClick={handleRotateRight}
-                className="w-6 h-6 sm:w-7.5 sm:h-7.5 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#003135] flex items-center justify-center transition-transform hover:scale-110 cursor-pointer shadow-xs shrink-0"
+                className="w-6 h-6 sm:w-7.5 sm:h-7.5 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#081E52] flex items-center justify-center transition-transform hover:scale-110 cursor-pointer shadow-xs shrink-0"
                 title="Next Product"
                 aria-label="Next Product"
               >

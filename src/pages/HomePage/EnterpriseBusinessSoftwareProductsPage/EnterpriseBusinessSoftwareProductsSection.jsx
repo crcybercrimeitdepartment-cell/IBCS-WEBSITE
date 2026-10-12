@@ -190,7 +190,7 @@ export default function EnterpriseBusinessSoftwareProductsSection({ onOpenPage }
   return (
     <section
       id="enterprise-business-software-products"
-      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F2F8FA] via-[#E8F4F7] to-[#DFEFF2] border-b border-[#0FA4AF]/20 overflow-hidden relative"
+      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F2F8FA] via-[#E8F4F7] to-[#DFEFF2] border-b border-[#D4AF37]/20 overflow-hidden relative"
     >
       {/* Interactive Decorative Background Theme (Waves, Soft Glows, Floating 3D Orbs & Dot Matrices) */}
       <SectionDecorativeBackground variant="enterprise" />
@@ -213,11 +213,11 @@ export default function EnterpriseBusinessSoftwareProductsSection({ onOpenPage }
             {/* Main Section Heading */}
             <AnimatedSectionHeading
               text="Enterprise & Business Software Products"
-              className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#003135] tracking-tight leading-[1.12] mb-5 text-center lg:text-left"
+              className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#081E52] tracking-tight leading-[1.12] mb-5 text-center lg:text-left"
             />
 
             {/* Original Paragraphs (100% UNTOUCHED TEXT) */}
-            <div className="space-y-4 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#003135]/85 font-medium mb-7 text-center lg:text-left">
+            <div className="space-y-4 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#081E52]/85 font-medium mb-7 text-center lg:text-left">
               <p>
                 We develop software products designed to help businesses and organisations manage operations, information, workflows and digital processes. Our enterprise technology capabilities cover management systems, automation, analytics, communication, productivity and organisational software.
               </p>
@@ -233,7 +233,7 @@ export default function EnterpriseBusinessSoftwareProductsSection({ onOpenPage }
                 return (
                   <div
                     key={i}
-                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/90 backdrop-blur-md border border-[#AFDDE5] shadow-xs text-xs font-extrabold text-[#003135] hover:border-[#0FA4AF] transition-all duration-300"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/90 backdrop-blur-md border border-[#AFDDE5] shadow-xs text-xs font-extrabold text-[#081E52] hover:border-[#0FA4AF] transition-all duration-300"
                   >
                     <PillIcon className="w-3.5 h-3.5 text-[#0FA4AF]" strokeWidth={2.2} />
                     <span>{pill.label}</span>

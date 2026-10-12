@@ -436,7 +436,7 @@ export default function DigitalExperienceDesignPage({ onClose }) {
        <button
          type="button"
          onClick={handleBack}
-         className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+         className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
        >
          ← Back
        </button>
@@ -444,9 +444,9 @@ export default function DigitalExperienceDesignPage({ onClose }) {
        <button
          type="button"
          onClick={handleHome}
-         className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+         className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
        >
-         <Home className="w-4 h-4 text-white" />
+         <Home className="w-4 h-4 text-[#040A1A]" />
          <span>Home</span>
        </button>
      </div>
@@ -480,12 +480,12 @@ export default function DigitalExperienceDesignPage({ onClose }) {
      >
       <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#AFDDE5] shadow-xs mb-3">
         <span className="w-2 h-2 rounded-full bg-[#0FA4AF] animate-pulse" />
-        <span className="text-xs font-extrabold text-[#003135] tracking-wider uppercase">
+        <span className="text-xs font-extrabold text-[#081E52] tracking-wider uppercase">
           {digitalExperiencePageData.badge}
         </span>
       </div>
 
-      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#003135] tracking-wider uppercase mb-3">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#081E52] tracking-wider uppercase mb-3">
         {digitalExperiencePageData.title}
       </h1>
       <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed font-medium max-w-3xl mx-auto">
@@ -516,7 +516,7 @@ export default function DigitalExperienceDesignPage({ onClose }) {
      // Theme gradient colors
      const theme = {
        iconBg: "bg-teal-50 border-teal-100",
-       textPrimary: "text-[#003135]",
+       textPrimary: "text-[#081E52]",
        gradientLine: "from-[#0FA4AF] to-[#003135]",
        buttonGrad: "from-[#003135] to-[#0FA4AF] hover:from-[#0D5C63] hover:to-[#12BCC8] shadow-[0_8px_20px_-6px_rgba(15,164,175,0.5)]",
        rightBg: "bg-teal-50/40",
@@ -568,7 +568,7 @@ export default function DigitalExperienceDesignPage({ onClose }) {
 
      <motion.div layout className="flex flex-col shrink-0">
      <div className="flex items-center gap-2 mb-2">
-       <span className="px-2.5 py-0.5 rounded-full text-[10px] md:text-xs font-black bg-[#0FA4AF]/15 text-[#003135] border border-[#0FA4AF]/30">
+       <span className="px-2.5 py-0.5 rounded-full text-[10px] md:text-xs font-black bg-[#0FA4AF]/15 text-[#081E52] border border-[#0FA4AF]/30">
          {String(card.id).padStart(2, '0')}
        </span>
        <span className="text-[10px] md:text-xs font-bold text-[#0FA4AF] uppercase tracking-wider">
@@ -586,7 +586,7 @@ export default function DigitalExperienceDesignPage({ onClose }) {
      {IconComponent ? <IconComponent className="w-6 h-6 md:w-8 md:h-8 text-[#0FA4AF]" /> : <PhishingIcon />}
      </motion.div>
 
-     <motion.h2 layout className={`font-black text-[#003135] leading-[1.2] tracking-tight pb-0.5 ${isShowingDetails ? 'text-lg md:text-2xl' : 'text-2xl md:text-3xl lg:text-[2.5rem]'}`}>
+     <motion.h2 layout className={`font-black text-[#081E52] leading-[1.2] tracking-tight pb-0.5 ${isShowingDetails ? 'text-lg md:text-2xl' : 'text-2xl md:text-3xl lg:text-[2.5rem]'}`}>
      {card.title}
      </motion.h2>
      </motion.div>
@@ -664,11 +664,11 @@ export default function DigitalExperienceDesignPage({ onClose }) {
            <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" /></svg>
          </button>
 
-         <div className="flex items-center gap-1.5 sm:gap-2 px-1 text-xs sm:text-sm font-extrabold text-[#003135]">
+         <div className="flex items-center gap-1.5 sm:gap-2 px-1 text-xs sm:text-sm font-extrabold text-[#081E52]">
            <span className="text-[#0FA4AF]">{String(currentIndex + 1).padStart(2, '0')}</span>
            <span className="text-slate-400 font-normal">/ {cardsData.length}</span>
            <span className="text-slate-300 font-light">•</span>
-           <span className="text-[#003135] font-bold truncate max-w-[150px] sm:max-w-[240px] md:max-w-[320px]">
+           <span className="text-[#081E52] font-bold truncate max-w-[150px] sm:max-w-[240px] md:max-w-[320px]">
              {cardsData[currentIndex]?.title}
            </span>
          </div>
@@ -693,7 +693,7 @@ export default function DigitalExperienceDesignPage({ onClose }) {
              setCurrentIndex((prev) => (prev + 1) % cardsData.length);
              setShowDetails(false);
            }}
-           className="p-1.5 sm:p-2 rounded-full bg-[#003135] text-[#003135] hover:bg-[#0FA4AF] transition-colors cursor-pointer active:scale-95 shadow-xs"
+           className="p-1.5 sm:p-2 rounded-full bg-[#003135] text-[#081E52] hover:bg-[#0FA4AF] transition-colors cursor-pointer active:scale-95 shadow-xs"
            title="Next Card"
            aria-label="Next Card"
          >

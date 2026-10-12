@@ -332,7 +332,7 @@ export default function DataAnalyticsAndIntelligenceTechnologyPage({ onClose }) 
           <button
             type="button"
             onClick={handleBack}
-            className="inline-flex items-center gap-2 rounded-xl bg-[#003135] hover:bg-[#0D5C63] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
           >
             ← Back
           </button>
@@ -340,7 +340,7 @@ export default function DataAnalyticsAndIntelligenceTechnologyPage({ onClose }) 
           <button
             type="button"
             onClick={handleHome}
-            className="inline-flex items-center gap-2 rounded-xl bg-[#0FA4AF] hover:bg-[#12BCC8] px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
           >
             <Icons.Home className="w-4 h-4 text-white" />
             <span>Home</span>
@@ -353,7 +353,7 @@ export default function DataAnalyticsAndIntelligenceTechnologyPage({ onClose }) 
           <div className="flex flex-col items-center justify-center mb-10 gap-2 overflow-hidden">
             <div className="flex items-center justify-center gap-4">
               <div className={`h-[2px] bg-cyan-500 hidden sm:block transition-all duration-1000 delay-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible ? 'w-12 opacity-100' : 'w-0 opacity-0'}`}></div>
-              <h2 className={`text-[30px] md:text-[36px] lg:text-[48px] font-['Manrope'] font-black text-[#003135] tracking-wider uppercase text-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-12 blur-[4px]'}`}>
+              <h2 className={`text-[30px] md:text-[36px] lg:text-[48px] font-['Manrope'] font-black text-[#081E52] tracking-wider uppercase text-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-12 blur-[4px]'}`}>
                 Data, Analytics & Intelligence Technology
               </h2>
               <div className={`h-[2px] bg-cyan-500 hidden sm:block transition-all duration-1000 delay-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible ? 'w-12 opacity-100' : 'w-0 opacity-0'}`}></div>
