@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Home } from 'lucide-react';
-import { softwareProducts } from './SoftwareLibraryPageData';
+import { softwareProducts, softwareLibraryDescription } from './SoftwareLibraryPageData';
 
 /**
  * Splits product title into 2 or 3 balanced lines to fit inside the pendrive casing
@@ -1396,9 +1396,8 @@ export default function Softwarelibrary({ onClose }) {
           </span>
         </h1>
 
-        <p className="desc-animated mt-2 text-xs sm:text-base text-stone-600 max-w-2xl font-medium leading-relaxed px-2">
-          Explore our curated vault of specialized cybersecurity, digital forensics, intelligence, 
-          and enterprise software solutions categorized for mission-critical operations.
+        <p className="desc-animated mt-2.5 text-xs sm:text-sm md:text-[14px] text-stone-600 max-w-4xl font-medium leading-relaxed px-2">
+          {softwareLibraryDescription}
         </p>
       </header>
 

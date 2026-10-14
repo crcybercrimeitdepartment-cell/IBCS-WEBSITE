@@ -46,30 +46,100 @@ function useSaved(key,fallback){
 function AppleLogo({className=''}){return <svg className={className} viewBox="0 0 24 24" aria-label="Apple logo" role="img"><path fill="currentColor" d="M17.05 12.04c.02 3.27 2.87 4.36 2.9 4.37-.02.08-.46 1.56-1.5 3.09-.9 1.32-1.84 2.64-3.31 2.67-1.45.03-1.92-.86-3.58-.86-1.66 0-2.18.83-3.56.89-1.43.05-2.51-1.43-3.42-2.74-1.85-2.68-3.26-7.58-1.36-10.89.94-1.64 2.62-2.68 4.44-2.71 1.39-.03 2.7.94 3.55.94.85 0 2.44-1.16 4.12-.99.71.03 2.68.29 3.95 2.15-.1.06-2.36 1.37-2.33 4.08ZM14.32 4.04c.76-.92 1.28-2.19 1.14-3.46-1.1.04-2.43.73-3.22 1.65-.71.82-1.34 2.13-1.17 3.38 1.23.1 2.49-.63 3.25-1.57Z"/></svg>}
 const colors=['#173d8c','#732d7c','#174c48','#a25823'];
 
-export default function App({ activeItem }){
- const [angle,setAngle]=useState({x:0,y:0}),[locked,setLocked]=useState(false),[power,setPower]=useState(false),[now,setNow]=useState(new Date()),[boot,setBoot]=useState('flip'),[batteryLevel,setBatteryLevel]=useState(100);
+export default function App({ activeItem, replayCount = 0 }){
+ const [angle,setAngle]=useState({x:0,y:0}),[locked,setLocked]=useState(false),[power,setPower]=useState(true),[now,setNow]=useState(new Date()),[boot,setBoot]=useState('ready'),[batteryLevel,setBatteryLevel]=useState(100);
  const deviceRef=useRef(null);
  const [settings,setSettings,settingsError]=useSaved('ipad-settings',{brightness:100,wallpaper:0,dark:false});
  const drag=useRef(null);
 
  useEffect(()=>{const id=setInterval(()=>setNow(new Date()),1000);return()=>clearInterval(id)},[]);
  useEffect(()=>{if(navigator.getBattery){navigator.getBattery().then(b=>{const u=()=>setBatteryLevel(Math.round(b.level*100));u();b.addEventListener('levelchange',u)})}},[]);
+
  useEffect(()=>{
- const node=deviceRef.current;
- const animation=node.animate([
- {transform:'translateY(120vh) rotateX(60deg) rotateY(0deg) scale(0.2)'},
- {transform:'translateY(-10vh) rotateX(-20deg) rotateY(220deg) scale(0.85)',offset:.65},
- {transform:'translateY(0px) rotateX(0deg) rotateY(360deg) scale(1)'}
- ],{duration:4000,easing:'cubic-bezier(.22,.68,.18,1)',fill:'both'});
- let timer;
- animation.onfinish=()=>{animation.cancel();setBoot('logo');setPower(true);timer=setTimeout(()=>setBoot('ready'),900)};
- return()=>{animation.onfinish=null;animation.cancel();clearTimeout(timer)};
+   const node=deviceRef.current;
+   if(!node) return;
+   setBoot('ready');
+   try {
+     const animation=node.animate([
+       { transform: 'translateY(110vh) rotateX(60deg) rotateY(0deg) scale(0.2)' },
+       { transform: 'translateY(-10vh) rotateX(-20deg) rotateY(220deg) scale(0.85)', offset: 0.65 },
+       { transform: 'translateY(0px) rotateX(0deg) rotateY(360deg) scale(1)' }
+     ], { duration: 2800, easing: 'cubic-bezier(.22,.68,.18,1)', fill: 'both' });
+     animation.onfinish=()=>{
+       animation.cancel();
+       setAngle({x:0,y:0});
+     };
+     return()=>{
+       try { animation.cancel(); } catch(e){}
+     };
+   } catch(e) {
+     setAngle({x:0,y:0});
+   }
+ },[activeItem, replayCount]);
+
+ useEffect(()=>{
+   const handleMouseMove=(e)=>{
+     if(!drag.current) return;
+     const dx=e.clientX - drag.current.startX;
+     const dy=e.clientY - drag.current.startY;
+     setAngle({
+       x: Math.max(-35, Math.min(35, drag.current.startAngleX - dy * 0.15)),
+       y: drag.current.startAngleY + dx * 0.3
+     });
+   };
+   const handleMouseUp=()=>{ drag.current = null; };
+   window.addEventListener('mousemove', handleMouseMove);
+   window.addEventListener('mouseup', handleMouseUp);
+   return()=>{
+     window.removeEventListener('mousemove', handleMouseMove);
+     window.removeEventListener('mouseup', handleMouseUp);
+   };
  },[]);
+
+ useEffect(()=>{
+   const deviceNode = deviceRef.current;
+   if(!deviceNode) return;
+
+   const getScrollableElement = (root) => {
+     if(!root) return null;
+     const candidate = root.querySelector(
+       '.legal-notice-container div[style*="overflow"], .legal-notice-container div[style*="overflowY"], .screen div[style*="overflow"], .screen [style*="auto"]'
+     );
+     if(candidate && candidate.scrollHeight > candidate.clientHeight) return candidate;
+
+     const screen = root.querySelector('.screen');
+     if(screen) {
+       const divs = screen.querySelectorAll('div');
+       for(const d of divs) {
+         if(d.scrollHeight > d.clientHeight) {
+           const ov = window.getComputedStyle(d).overflowY;
+           if(ov === 'auto' || ov === 'scroll') return d;
+         }
+       }
+     }
+     return candidate;
+   };
+
+   const handleWheel = (e) => {
+     // When scrolling inside the device, scroll only the inner page inside the device
+     const scrollable = getScrollableElement(deviceNode);
+     if(scrollable) {
+       scrollable.scrollTop += e.deltaY;
+     }
+     // Keep the main page still while cursor is inside the device
+     e.preventDefault();
+     e.stopPropagation();
+   };
+
+   deviceNode.addEventListener('wheel', handleWheel, { passive: false });
+   return () => {
+     deviceNode.removeEventListener('wheel', handleWheel);
+   };
+ },[activeItem]);
+
  function reset(){setAngle({x:0,y:0})}
  return <>
-<style dangerouslySetInnerHTML={{__html: `@import "tailwindcss";
-
-:root {
+<style dangerouslySetInnerHTML={{__html: `:root {
     font-family: Inter, system-ui, sans-serif;
     font-synthesis: none
 }
@@ -93,25 +163,11 @@ button:focus-visible {
     outline-offset: 3px
 }
 
-main.product-scene {
+.product-scene {
     background: transparent;
     padding: 0
 }
 
-
-
-header {
-    max-width: 1400px;
-    margin: auto
-}
-
-h1 {
-    font-size: clamp(24px, 3vw, 44px);
-    letter-spacing: -1.5px;
-    margin: 12px 0
-}
-
-header p,
 .controls>p {
     color: #94a3b8
 }
@@ -159,69 +215,101 @@ header p,
 .chassis {
     position: absolute;
     inset: 0;
-    border-radius: 34px;
-    background: linear-gradient(110deg, #dae0e5, #9da6ae 30%, #e9edf0 55%, #76818d);
-    border: 1px solid #aab3bc;
-    pointer-events: none
+    border-radius: 35px;
+    background: linear-gradient(110deg, #e4e9ee, #cbd5e1 28%, #eadeca 48%, #f8fafc 68%, #94a3b8);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 2px rgba(212, 175, 55, 0.2);
+    pointer-events: none;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .front,
 .back {
     position: absolute;
     inset: 0;
-    border-radius: 34px;
-    backface-visibility: hidden
+    border-radius: 35px;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    transform-style: flat !important;
+    -webkit-transform-style: flat !important;
 }
 
 .front {
-    transform: translateZ(9px);
+    transform: translateZ(6px);
     background: #08090b;
     border: 3px solid #68727c;
     padding: 22px;
-    box-shadow: inset 0 0 0 2px #171b20
+    box-shadow: inset 0 0 0 2px #171b20;
+}
+
+.front,
+.front *,
+.screen,
+.screen * {
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+}
+
+.screen,
+.screen *,
+.legal-notice-container,
+.legal-notice-container * {
+    overscroll-behavior: contain !important;
 }
 
 .back {
-    transform: translateZ(-9px) rotateY(180deg);
-    background: linear-gradient(125deg, #b5bcc3, #e6e9ec 48%, #a9b2ba);
-    border: 2px solid #a3adb6;
-    color: #757f8a;
-    display: flex;
-    align-items: center;
-    justify-content: center
+    transform: rotateY(180deg) translateZ(6px);
+    background: linear-gradient(135deg, #e2e8f0 0%, #f8fafc 25%, #eadeca 50%, #fffdfa 65%, #dfd6c3 85%, #cbd5e1 100%) !important;
+    border: 2.5px solid #d4af37 !important;
+    box-shadow: inset 0 0 50px rgba(212, 175, 55, 0.2), inset 0 0 15px rgba(255, 255, 255, 0.8), 0 8px 25px rgba(0,0,0,0.15) !important;
+    color: #b59247;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 .back-logo {
-    font-size: 64px;
-    color: #89939d
+    width: 72px;
+    height: 84px;
+    font-size: 72px;
+    color: #d4af37 !important;
+    filter: drop-shadow(0 2px 5px rgba(180, 140, 40, 0.5)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.8)) !important;
 }
 
 .back-label {
     position: absolute;
     bottom: 75px;
-    font-size: 13px;
-    letter-spacing: 2px
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: #bfa054 !important;
+    font-weight: 700;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
 }
 
 .connector {
     position: absolute;
     bottom: 30px;
-    letter-spacing: 8px
+    letter-spacing: 8px;
+    font-size: 9px;
+    color: #d4af37 !important;
+    filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.8)) !important;
 }
 
 .camera {
     position: absolute;
     top: 20px;
     left: 20px;
-    background: #99a3ad;
-    border-radius: 18px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 45%, #eadeca 100%) !important;
+    border-radius: 20px;
     width: 90px;
     height: 100px;
-    box-shadow: 0 1px 3px #545d69;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16), inset 0 0 0 1px rgba(255, 255, 255, 0.8) !important;
+    border: 1.5px solid #d4af37 !important;
     padding: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 9px
+    gap: 9px;
 }
 
 .camera i {
@@ -229,14 +317,16 @@ header p,
     height: 29px;
     border-radius: 50%;
     background: radial-gradient(circle, #163954 10%, #030509 33%, #24303d 50%, #070809 68%);
-    border: 2px solid #626c77
+    border: 2px solid rgba(212, 175, 55, 0.7);
+    box-shadow: 0 0 4px rgba(212, 175, 55, 0.3);
 }
 
 .camera small {
     width: 15px;
     height: 15px;
-    background: #ddd5c1;
-    border-radius: 50%
+    background: radial-gradient(circle, #fffbe8, #e8d5a3);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 50%;
 }
 
 .lens {
@@ -766,17 +856,6 @@ header p,
     margin-top: 100px
 }
 
-footer {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    font-size: 10px;
-    color: #62738c;
-    border-top: 1px solid #ffffff12;
-    padding-top: 20px
-}
-
 @media(max-width:1150px) {
     .workspace {
         grid-template-columns: 1fr;
@@ -800,10 +879,6 @@ footer {
 }
 
 @media(max-width:650px) {
-    main {
-        padding: 25px 18px
-    }
-
     .badge {
         display: none
     }
@@ -820,14 +895,6 @@ footer {
     .workspace {
         margin-top: 20px
     }
-
-    footer {
-        margin-top: 30px
-    }
-
-    footer span {
-        display: none
-    }
 }
 
 @media(prefers-reduced-motion:reduce) {
@@ -836,19 +903,13 @@ footer {
     }
 }
 
-/* Minimal product presentation */
-:root {
-    background: #f3f3f5;
-    color: #1d1d1f
-}
-
 .product-scene {
     min-height: 100svh;
     padding: 0;
     display: grid;
     place-items: center;
-    background: radial-gradient(ellipse at 50% 42%, #fff 0%, #f6f6f8 46%, #e8e9ec 100%);
-    overflow: hidden
+    background: transparent !important;
+    overflow: visible !important;
 }
 
 .workspace {
@@ -859,10 +920,9 @@ footer {
 }
 
 .stage {
-    height: 100svh;
     min-height: 540px;
     perspective: 1800px;
-    touch-action: none
+    touch-action: pan-y
 }
 
 .stage:after {
@@ -889,62 +949,6 @@ footer {
 
 .device:active {
     cursor: grabbing
-}
-
-.chassis {
-    border-radius: 35px;
-    border-color: #a4a7ab;
-    background: linear-gradient(120deg, #f0f1f3, #aab0b7 25%, #fafbfc 55%, #929aa4)
-}
-
-.front {
-    transform: translateZ(6px);
-    border: 2px solid #bac0c6;
-    border-radius: 35px;
-    padding: 24px;
-    background: #07080a;
-    box-shadow: inset 0 0 0 1px #282b30
-}
-
-.back {
-    transform: translateZ(-6px) rotateY(180deg);
-    border-radius: 35px;
-    background: linear-gradient(115deg, #c3c7cb, #e5e7e9 43%, #cdd1d5 80%, #bcc2c8);
-    border: 1px solid #aab1b8
-}
-
-.back-logo {
-    width: 72px;
-    height: 84px;
-    color: #62666c;
-    filter: drop-shadow(0 1px 1px #fff9)
-}
-
-.back-label {
-    bottom: 66px;
-    font-size: 15px;
-    letter-spacing: 0;
-    color: #73777c
-}
-
-.camera {
-    width: 80px;
-    height: 88px;
-    border-radius: 19px;
-    background: linear-gradient(145deg, #b5bbc0, #ced3d7);
-    border: 1px solid #a6adb4;
-    box-shadow: 0 2px 3px #60667066
-}
-
-.camera i {
-    box-shadow: 0 0 0 1px #dce1e5, inset 0 0 2px #fff5
-}
-
-.connector {
-    bottom: 28px;
-    font-size: 8px;
-    letter-spacing: 7px;
-    color: #979b9f
 }
 
 .lens {
@@ -1401,27 +1405,39 @@ footer {
 
 /* Issue 15: Calculator label truncation */
 .app-grid small, .dock small { font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; display: block; text-align: center; }`}} />
-<main className="product-scene">
+<div className="product-scene" style={{ background: 'transparent' }}>
  <h1 className="sr-only">iPad Spatial Studio</h1>
  <div className="workspace"><section className="stage" aria-label="Interactive iPad.">
- <div ref={deviceRef} className="device" style={{transform:`rotateX(${angle.x}deg) rotateY(${angle.y}deg)`}}>
- {Array.from({length:11},(_,i)=><div key={i} className="chassis" style={{transform:`translateZ(${i-5}px)`}}/>)}
- <div className="back">
- <div className="camera ipad-only"><i/><i/><small/></div>
- <div className="iphone-camera iphone-only"><div className="lens-main"/><div className="lens-ultra"/><div className="lens-tele"/><div className="flash"/><div className="lidar"/></div>
- <AppleLogo className="back-logo"/><span className="back-label ipad-only">iPad</span><div className="connector ipad-only">● ● ●</div>
- </div>
+ <div 
+   ref={deviceRef} 
+   className="device" 
+   style={{
+     transform:`rotateX(${angle.x}deg) rotateY(${angle.y}deg)`,
+     transition: drag.current ? 'none' : 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)'
+   }}
+   onMouseDown={(e)=>{
+     if (e.target.closest('button, input, a, .legal-notice-container')) return;
+     drag.current = { startX: e.clientX, startY: e.clientY, startAngleX: angle.x, startAngleY: angle.y };
+   }}
+ >
  <div className="front"><button aria-label="Power button" className="hardware-power" onClick={()=>{if(boot==='ready')setPower(p=>!p)}}/>
  <div className="iphone-buttons iphone-only"><button className="btn-action"/><button className="btn-vol-up"/><button className="btn-vol-down"/></div>
  <div className="dynamic-island iphone-only"><div className="island-lens"/></div>
- <div className={`screen ${settings.dark?'dark':''}`} style={{pointerEvents:boot==='ready'?'auto':'none',filter:`brightness(${settings.brightness}%)`,backgroundColor:boot==='ready'?colors[settings.wallpaper]:'#000',backgroundImage:boot==='ready'?undefined:'none'}}>
+ <div className={`screen ${settings?.dark?'dark':''}`} style={{pointerEvents:boot==='ready'?'auto':'none',filter:`brightness(${Math.max(Number(settings?.brightness)||100, 20)}%)`,backgroundColor:boot==='ready'?(colors[settings?.wallpaper]||colors[0]):'#000',backgroundImage:boot==='ready'?undefined:'none'}}>
  {boot==='flip'?<div className="boot-screen"/>:boot==='logo'?<div className="boot-screen"><AppleLogo className="boot-logo"/></div>:!power?<button className="off" onClick={()=>setPower(true)}>Tap to wake</button>:locked?<button className="lock" onClick={()=>setLocked(false)}><h2>{now.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</h2><p>{now.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'})}</p><small>Tap to unlock</small></button>:<><div className="status"><span>{now.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}<span className="ipad-only"> &nbsp; {now.toLocaleDateString([],{month:'short',day:'numeric'})}</span></span><div style={{display:'flex',gap:'10px',alignItems:'center'}}><span><span className="ipad-only">▰ Wi-Fi · </span>{batteryLevel}% ▣</span><button aria-label="Lock screen" onClick={()=>setLocked(true)} className="ipad-only" style={{background:'#ffffff33',borderRadius:'4px',padding:'2px 6px'}}>🔒 Lock</button></div></div>
   {(()=>{
     const ComponentToRender = activeItem?.name ? componentMap[activeItem.name] : CopyrightLegalNoticePage;
     return ComponentToRender ? <ComponentToRender settings={settings} /> : null;
   })()}
  <button className="home-indicator" aria-label="Go home" /></>}
- </div></div></div></section>
- </div>{settingsError&&<p className="save-error" role="alert">{settingsError}</p>}</main>
+ </div></div>
+ {Array.from({length:11},(_,i)=><div key={i} className="chassis" style={{transform:`translateZ(${i-5}px)`}}/>)}
+ <div className="back">
+ <div className="camera ipad-only"><i/><i/><small/></div>
+ <div className="iphone-camera iphone-only"><div className="lens-main"/><div className="lens-ultra"/><div className="lens-tele"/><div className="flash"/><div className="lidar"/></div>
+ <AppleLogo className="back-logo"/><span className="back-label ipad-only">iPad</span><div className="connector ipad-only">● ● ●</div>
+ </div>
+ </div></section>
+ </div>{settingsError&&<p className="save-error" role="alert">{settingsError}</p>}</div>
 </>
 }

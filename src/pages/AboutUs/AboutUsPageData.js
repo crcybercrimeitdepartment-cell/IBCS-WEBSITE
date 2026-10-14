@@ -1,7 +1,7 @@
 // Comprehensive Structured Data for the About Us Center Page
 export const heroData = {
   title: "About Us",
-  subtitle: "Explore our journey, core values, and the foundational pillars that define who we are. From our origins, mission, and operational initiatives to global partnerships and legal compliance frameworks, discover how we strive to foster innovation, build trusted solutions, and create sustainable impact for our community.",
+  subtitle: "IB Cyber Security Private Limited (IBCS) is a software product-based technology company focused on designing, developing, and delivering intelligent software solutions for a digitally connected world. Our areas of focus include Artificial Intelligence, cybersecurity, cyber crime investigation, law enforcement technology, digital forensics, legal technology, government solutions, and data intelligence. We aim to build secure, scalable, and future-ready products for government departments, enterprises, institutions, and individuals through technology-driven innovation, responsible development, and continuous improvement.",
   searchPlaceholder: "Search topics like mission, history, identity, legal compliance...",
   ctaText: "EXPLORE TOPICS",
   ctaAlert: "Explore our 18 comprehensive organizational topics below.",

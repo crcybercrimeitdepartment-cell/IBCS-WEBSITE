@@ -725,11 +725,11 @@ export default function IntroductionPage({ onClose }) {
       `}</style>
       
       {/* Top Header Navigation buttons */}
-      <div className="w-full max-w-[1300px] mx-auto px-6 pt-6 flex items-center justify-start gap-3 z-30">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 flex items-center justify-start gap-3 z-30">
         <button
           type="button"
           onClick={handleBack}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold transition-all cursor-pointer shadow-sm active:scale-95"
         >
           ← Back
         </button>
@@ -745,13 +745,13 @@ export default function IntroductionPage({ onClose }) {
       </div>
 
       {/* Main Page Content */}
-      <main className="max-w-[1560px] mx-auto px-3.5 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         
         {/* Page Hero Header Banner */}
-        <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 lg:mb-16 relative">
+        <div className="text-center max-w-5xl mx-auto mb-8 sm:mb-12 lg:mb-16 relative px-2 sm:px-4">
           
           {/* Ambient Background Aura behind Header */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[480px] h-[200px] sm:h-[260px] bg-gradient-to-r from-[#0FA4AF]/15 via-[#00A4B4]/10 to-[#0E7980]/15 rounded-full blur-3xl pointer-events-none -z-10" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[540px] h-[200px] sm:h-[260px] bg-gradient-to-r from-[#0FA4AF]/15 via-[#00A4B4]/10 to-[#0E7980]/15 rounded-full blur-3xl pointer-events-none -z-10" />
 
           {/* Animated Badge Pill */}
           <motion.div
@@ -789,7 +789,7 @@ export default function IntroductionPage({ onClose }) {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="relative p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl bg-white/85 backdrop-blur-md border border-[#0FA4AF]/20 shadow-[0_10px_30px_-10px_rgba(15,164,175,0.12)] text-left sm:text-center text-slate-700 text-[13.5px] sm:text-[15px] lg:text-[15.5px] leading-relaxed sm:leading-[1.8] font-normal"
+            className="relative p-6 sm:p-8 lg:p-9 rounded-2xl sm:rounded-3xl bg-white/90 backdrop-blur-md border border-[#0FA4AF]/20 shadow-[0_10px_30px_-10px_rgba(15,164,175,0.12)] text-center text-slate-700 text-[13.5px] sm:text-[15px] lg:text-[15.5px] leading-relaxed sm:leading-[1.8] font-normal"
           >
             <p>
               {introductionPageData.header.subtitle ? (
@@ -804,7 +804,7 @@ export default function IntroductionPage({ onClose }) {
         </div>
 
         {/* 12 Grid Cards Layout - Responsive: 1 col on mobile, 2 on tablet, 3 on laptop, 4 on desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6 w-full">
           {introductionPageData.cards.map((card, index) => {
             return (
               <motion.div
@@ -862,21 +862,24 @@ export default function IntroductionPage({ onClose }) {
                   </div>
 
                   {/* Scrollable Full Description Container */}
-                  <div className="mt-3 sm:mt-3.5 max-h-[170px] sm:max-h-[190px] lg:max-h-[210px] overflow-y-auto pr-2 custom-card-scroll pointer-events-auto bg-transparent">
+                  <div className="mt-3 sm:mt-3.5 max-h-[170px] sm:max-h-[190px] lg:max-h-[210px] overflow-y-auto px-1 custom-card-scroll pointer-events-auto bg-transparent">
                     <p className="text-[12px] sm:text-[12.5px] lg:text-[13px] leading-[1.65] font-normal text-slate-600 group-hover:text-white/95 transition-colors duration-300 drop-shadow-sm select-text">
                       {card.description}
                     </p>
                   </div>
                 </div>
 
-                {/* Bottom Row: Circular Arrow Button (z-20) */}
-                <div className="relative z-20 flex items-end justify-between mt-3 sm:mt-4">
-                  
+                {/* Bottom Row: Action Area with Equal Margins & Symmetry (z-20) */}
+                <div className="relative z-20 flex items-center justify-between mt-3 sm:mt-4 pt-2.5 border-t border-slate-100/90 group-hover:border-white/20 transition-colors duration-300">
                   {/* Circular Arrow Button (Bottom-Left) */}
                   <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-sm bg-slate-100 text-slate-800 group-hover:bg-white/25 group-hover:text-white border border-transparent group-hover:border-white/30">
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
                   </div>
 
+                  {/* Right Action Hint for Balanced Symmetry */}
+                  <span className="text-[11px] sm:text-xs font-semibold text-slate-400 group-hover:text-white/85 transition-colors duration-300 tracking-wide">
+                    Explore Domain →
+                  </span>
                 </div>
 
               </motion.div>

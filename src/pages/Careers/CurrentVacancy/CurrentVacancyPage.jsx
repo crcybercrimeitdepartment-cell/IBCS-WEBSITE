@@ -21,10 +21,10 @@ export default function CurrentVacancyPage({ subRoute, onNavigate, onBack, onHom
     return <PartTimePage onNavigate={onNavigate} onBack={onBack} onHome={onHome} />;
   }
   if (subRoute === 'internship' || subRoute === 'intern') {
-    return <InternshipPage onNavigate={onNavigate} onBack={onBack} onHome={onHome} />;
+    return <InternshipPage onNavigate={onNavigate} />;
   }
   if (subRoute === 'remote-job' || subRoute === 'remote') {
-    return <RemoteJobPage onNavigate={onNavigate} />;
+    return <RemoteJobPage onNavigate={onNavigate} onBack={onBack} onHome={onHome} />;
   }
   if (subRoute === 'post-vacancy' || subRoute === 'post') {
     return <PostVacancyPage onNavigate={onNavigate} />;

@@ -27,6 +27,9 @@ const GlobalInfrastructureManagedServicesPage = lazy(() => import('./pages/HomeP
 const DevOpsContinuousDeliveryPage = lazy(() => import('./pages/HomePage/DevOpsContinuousDeliveryPage/DevOpsContinuousDeliveryPage'));
 const DigitalExperienceDesignPage = lazy(() => import('./pages/HomePage/DigitalExperienceDesignPage/DigitalExperienceDesignPage'));
 const RegulatoryComplianceGovernancePage = lazy(() => import('./pages/HomePage/RegulatoryComplianceGovernancePage/RegulatoryComplianceGovernancePage'));
+const AiInnovationResearchAdvancedIntelligenceAutomationPage = lazy(() => import('./pages/HomePage/AiInnovationResearchAdvancedIntelligenceAutomationPage/AiInnovationResearchAdvancedIntelligenceAutomationPage'));
+const IotSmartEdgeSystemsPage = lazy(() => import('./pages/HomePage/IotSmartEdgeSystemsPage/IotSmartEdgeSystemsPage'));
+const NextGenerationDigitalInnovationDecentralisedIntelligencePage = lazy(() => import('./pages/HomePage/NextGenerationDigitalInnovationDecentralisedIntelligencePage/NextGenerationDigitalInnovationDecentralisedIntelligencePage'));
 const IntroductionPage = lazy(() => import('./pages/HomePage/IntroductionPage/IntroductionPage'));
 const SoftwareProductPage = lazy(() => import('./pages/SoftwareProducts/SoftwareProductPage'));
 const AboutUsPage = lazy(() => import('./pages/AboutUs/AboutUsPage'));
@@ -38,6 +41,7 @@ const CopyRightPage = lazy(() => import('./pages/AboutUs/CopyRight/CopyRightPage
 const MeaningBehindOurNamePage = lazy(() => import('./pages/AboutUs/MeaningBehindOurName/MeaningBehindOurNamePage'));
 const SkillDevelopmentPage = lazy(() => import('./pages/SkillDevelopment/SkillDevelopmentPage.jsx'));
 const SoftwareLibraryPage = lazy(() => import('./pages/SoftwareLibrary/SoftwareLibraryPage'));
+const ITServicesPage = lazy(() => import('./pages/IT Services/ITServicesPage'));
 
 // Root App Component
 export default function App() {
@@ -72,6 +76,10 @@ export default function App() {
   const [isSkillDevPageOpen, setIsSkillDevPageOpen] = useState(false);
   const [isIntroductionPageOpen, setIsIntroductionPageOpen] = useState(false);
   const [isSoftwareLibraryPageOpen, setIsSoftwareLibraryPageOpen] = useState(false);
+  const [isAiInnovationPageOpen, setIsAiInnovationPageOpen] = useState(false);
+  const [isIotPageOpen, setIsIotPageOpen] = useState(false);
+  const [isNextGenPageOpen, setIsNextGenPageOpen] = useState(false);
+  const [isItServicesPageOpen, setIsItServicesPageOpen] = useState(false);
 
   // Initial fast platform loading transition
   useEffect(() => {
@@ -130,10 +138,18 @@ export default function App() {
                                                    : isCareerPageOpen
                                                      ? 'careers'
                                                      : isCybersecurityPageOpen
-                                                       ? 'cybersecurity'
-                                                       : isSoftwareLibraryPageOpen
+                                                        ? 'cybersecurity'
+                                                        : isAiInnovationPageOpen
+                                                          ? 'ai-innovation'
+                                                        : isIotPageOpen
+                                                          ? 'iot'
+                                                        : isNextGenPageOpen
+                                                          ? 'nextgen'
+                                                        : isSoftwareLibraryPageOpen
                                                          ? 'software-library'
-                                                         : 'home';
+                                                         : isItServicesPageOpen
+                                                           ? 'it-services'
+                                                          : 'home';
 
   const isAnyDetailPageOpen =
     isSdpePageOpen ||
@@ -165,42 +181,65 @@ export default function App() {
     isMeaningPageOpen ||
     isSkillDevPageOpen ||
     isIntroductionPageOpen ||
-    isSoftwareLibraryPageOpen;
+    isSoftwareLibraryPageOpen ||
+    isAiInnovationPageOpen ||
+    isIotPageOpen ||
+    isNextGenPageOpen ||
+    isItServicesPageOpen;
+
+    const resetAll = () => {
+    setIsSdpePageOpen(false);
+    setIsIpPageOpen(false);
+    setIsSpcPageOpen(false);
+    setIsPdlPageOpen(false);
+    setIsOpePageOpen(false);
+    setIsOtPageOpen(false);
+    setIsAiPageOpen(false);
+    setIsCloudPageOpen(false);
+    setIsDaPageOpen(false);
+    setIsApisPageOpen(false);
+    setIsEduPageOpen(false);
+    setIsEntPageOpen(false);
+    setIsGovPageOpen(false);
+    setIsInvPageOpen(false);
+    setIsArchPageOpen(false);
+    setIsGlobalInfraPageOpen(false);
+    setIsDevOpsPageOpen(false);
+    setIsDigitalExpPageOpen(false);
+    setIsRegulatoryPageOpen(false);
+    setIsSoftwareProductPageOpen(false);
+    setIsAboutUsPageOpen(false);
+    setIsGalleryPageOpen(false);
+    setIsFollowPageOpen(false);
+    setIsCareerPageOpen(false);
+    setIsCybersecurityPageOpen(false);
+    setIsCopyrightPageOpen(false);
+    setIsMeaningPageOpen(false);
+    setIsSkillDevPageOpen(false);
+    setIsIntroductionPageOpen(false);
+    setIsSoftwareLibraryPageOpen(false);
+    setIsAiInnovationPageOpen(false);
+    setIsIotPageOpen(false);
+    setIsNextGenPageOpen(false);
+    setIsItServicesPageOpen(false);
+  };
 
   useEffect(() => {
     const handleHash = () => {
-      const resetAll = () => {
-        setIsSdpePageOpen(false);
-        setIsIpPageOpen(false);
-        setIsSpcPageOpen(false);
-        setIsPdlPageOpen(false);
-        setIsOpePageOpen(false);
-        setIsOtPageOpen(false);
-        setIsAiPageOpen(false);
-        setIsCloudPageOpen(false);
-        setIsDaPageOpen(false);
-        setIsApisPageOpen(false);
-        setIsEduPageOpen(false);
-        setIsEntPageOpen(false);
-        setIsGovPageOpen(false);
-        setIsInvPageOpen(false);
-        setIsArchPageOpen(false);
-        setIsGlobalInfraPageOpen(false);
-        setIsDevOpsPageOpen(false);
-        setIsDigitalExpPageOpen(false);
-        setIsRegulatoryPageOpen(false);
-        setIsSoftwareProductPageOpen(false);
-        setIsAboutUsPageOpen(false);
-        setIsGalleryPageOpen(false);
-        setIsFollowPageOpen(false);
-        setIsCareerPageOpen(false);
-        setIsCybersecurityPageOpen(false);
-        setIsCopyrightPageOpen(false);
-        setIsMeaningPageOpen(false);
-        setIsSkillDevPageOpen(false);
-        setIsIntroductionPageOpen(false);
-        setIsSoftwareLibraryPageOpen(false);
-      };
+      const rawHash = (window.location.hash || '').toLowerCase().trim();
+      if (
+        rawHash === '#it-services' ||
+        rawHash === '#/it-services' ||
+        rawHash === '#it-services-page' ||
+        rawHash === '#/it-services-page' ||
+        rawHash === '#itservices' ||
+        rawHash === '#/itservices' ||
+        rawHash.startsWith('#it-services')
+      ) {
+        resetAll();
+        setIsItServicesPageOpen(true);
+        return;
+      }
 
       if (window.location.hash === '#sdpe-page') {
         resetAll(); setIsSdpePageOpen(true);
@@ -253,7 +292,19 @@ export default function App() {
         resetAll(); setIsDigitalExpPageOpen(true);
       } else if (window.location.hash === '#regulatory-compliance-page' || window.location.hash === '#regulatory-compliance-governance-page') {
         resetAll(); setIsRegulatoryPageOpen(true);
-      } else if (window.location.hash === '#software-products' || window.location.hash === '#software-products-page' || window.location.hash === '#software-product-page') {
+      } else if (
+        window.location.hash === '#software-products' ||
+        window.location.hash === '#software-products-page' ||
+        window.location.hash === '#software-product-page' ||
+        window.location.hash === '#product-introduction' ||
+        window.location.hash === '#purpose-use-cases' ||
+        window.location.hash === '#vision-mission' ||
+        window.location.hash === '#product-roadmap' ||
+        window.location.hash === '#technology-architecture' ||
+        window.location.hash === '#security-compliance' ||
+        window.location.hash === '#integrations-apis' ||
+        window.location.hash === '#product-benefits-impact'
+      ) {
         resetAll(); setIsSoftwareProductPageOpen(true);
       } else if (window.location.hash === '#about-us' || window.location.hash === '#about-us-page' || window.location.hash === '#about') {
         resetAll(); setIsAboutUsPageOpen(true);
@@ -331,6 +382,28 @@ export default function App() {
         window.location.hash === '#software-library-section'
       ) {
         resetAll(); setIsSoftwareLibraryPageOpen(true);
+      } else if (
+        window.location.hash === '#ai-innovation-research-advanced-intelligence-automation' ||
+        window.location.hash === '#ai-innovation-research-advanced-intelligence-automation-page' ||
+        window.location.hash === '#ai-innovation-page' ||
+        window.location.hash === '#ai-innovation'
+      ) {
+        resetAll(); setIsAiInnovationPageOpen(true);
+      } else if (
+        window.location.hash === '#iot-smart-edge-systems' ||
+        window.location.hash === '#iot-smart-edge-systems-page' ||
+        window.location.hash === '#iot-page' ||
+        window.location.hash === '#iot'
+      ) {
+        resetAll(); setIsIotPageOpen(true);
+      } else if (
+        window.location.hash === '#next-generation-digital-innovation-decentralised-intelligence' ||
+        window.location.hash === '#next-generation-digital-innovation-decentralised-intelligence-page' ||
+        window.location.hash === '#nextgen-page' ||
+        window.location.hash === '#next-generation-digital-innovation' ||
+        window.location.hash === '#blockchain-page'
+      ) {
+        resetAll(); setIsNextGenPageOpen(true);
       } else {
         resetAll();
       }
@@ -356,7 +429,7 @@ export default function App() {
         clearTimeout(timer2);
       };
     }
-  }, [isAnyDetailPageOpen, isSdpePageOpen, isIpPageOpen, isSpcPageOpen, isPdlPageOpen, isOpePageOpen, isOtPageOpen, isAiPageOpen, isCloudPageOpen, isDaPageOpen, isApisPageOpen, isEduPageOpen, isEntPageOpen, isGovPageOpen, isInvPageOpen, isArchPageOpen, isGlobalInfraPageOpen, isDevOpsPageOpen, isDigitalExpPageOpen, isRegulatoryPageOpen, isSoftwareProductPageOpen, isAboutUsPageOpen, isGalleryPageOpen, isFollowPageOpen, isCareerPageOpen, isCybersecurityPageOpen, isCopyrightPageOpen, isSkillDevPageOpen, isIntroductionPageOpen, isSoftwareLibraryPageOpen]);
+  }, [isAnyDetailPageOpen, isSdpePageOpen, isIpPageOpen, isSpcPageOpen, isPdlPageOpen, isOpePageOpen, isOtPageOpen, isAiPageOpen, isCloudPageOpen, isDaPageOpen, isApisPageOpen, isEduPageOpen, isEntPageOpen, isGovPageOpen, isInvPageOpen, isArchPageOpen, isGlobalInfraPageOpen, isDevOpsPageOpen, isDigitalExpPageOpen, isRegulatoryPageOpen, isSoftwareProductPageOpen, isAboutUsPageOpen, isGalleryPageOpen, isFollowPageOpen, isCareerPageOpen, isCybersecurityPageOpen, isCopyrightPageOpen, isSkillDevPageOpen, isIntroductionPageOpen, isSoftwareLibraryPageOpen, isAiInnovationPageOpen, isIotPageOpen, isNextGenPageOpen, isItServicesPageOpen]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
@@ -383,6 +456,9 @@ export default function App() {
   const openDevOps = () => { setIsDevOpsPageOpen(true); scrollToTop(); };
   const openDigitalExp = () => { setIsDigitalExpPageOpen(true); scrollToTop(); };
   const openRegulatory = () => { setIsRegulatoryPageOpen(true); scrollToTop(); };
+  const openAiInnovation = () => { setIsAiInnovationPageOpen(true); scrollToTop(); };
+  const openIot = () => { setIsIotPageOpen(true); scrollToTop(); };
+  const openNextGen = () => { setIsNextGenPageOpen(true); scrollToTop(); };
   const openCybersecurity = () => { setIsCybersecurityPageOpen(true); scrollToTop(); };
   const openIntroduction = () => { setIsIntroductionPageOpen(true); scrollToTop(); };
   const openCopyright = () => { setIsCopyrightPageOpen(true); scrollToTop(); window.location.hash = '#copyright-page'; };
@@ -420,6 +496,11 @@ export default function App() {
     setIsSkillDevPageOpen(false);
     setIsIntroductionPageOpen(false);
     setIsSoftwareLibraryPageOpen(false);
+    setIsAiInnovationPageOpen(false);
+    setIsIotPageOpen(false);
+    setIsNextGenPageOpen(false);
+
+    setIsItServicesPageOpen(false);
 
     window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${sectionId}`);
 
@@ -463,12 +544,25 @@ export default function App() {
   const handleCloseSkillDevPage = () => closePageAndScrollTo('home');
   const handleCloseIntroductionPage = () => closePageAndScrollTo('introduction');
   const handleCloseSoftwareLibraryPage = () => closePageAndScrollTo('home');
+  const handleCloseAiInnovationPage = () => closePageAndScrollTo('ai-innovation-research-advanced-intelligence-automation');
+  const handleCloseIotPage = () => closePageAndScrollTo('iot-smart-edge-systems');
+  const handleCloseNextGenPage = () => closePageAndScrollTo('next-generation-digital-innovation-decentralised-intelligence');
+  const openItServices = () => {
+    resetAll();
+    setIsItServicesPageOpen(true);
+    scrollToTop();
+    if (window.location.hash !== '#it-services') {
+      window.location.hash = '#it-services';
+    }
+  };
+
+  const handleCloseItServicesPage = () => closePageAndScrollTo('home');
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-slate-900">
       <ScrollToTop routeKey={activePageKey} />
       {isInitialLoading && <PageLoader message="Initializing Platform..." />}
-      <Header />
+      <Header onOpenItServicesPage={openItServices} activePage={activePageKey} />
       <main className="min-h-screen">
         <div className={isAnyDetailPageOpen ? 'hidden' : 'block'}>
           <Home
@@ -493,6 +587,9 @@ export default function App() {
             onOpenRegulatoryPage={openRegulatory}
             onOpenCybersecurityPage={openCybersecurity}
             onOpenIntroductionPage={openIntroduction}
+            onOpenAiInnovationPage={openAiInnovation}
+            onOpenIotPage={openIot}
+            onOpenNextGenPage={openNextGen}
           />
         </div>
 
@@ -527,6 +624,10 @@ export default function App() {
           {isSkillDevPageOpen && <SkillDevelopmentPage onClose={handleCloseSkillDevPage} />}
           {isIntroductionPageOpen && <IntroductionPage onClose={handleCloseIntroductionPage} />}
           {isSoftwareLibraryPageOpen && <SoftwareLibraryPage onClose={handleCloseSoftwareLibraryPage} />}
+          {isAiInnovationPageOpen && <AiInnovationResearchAdvancedIntelligenceAutomationPage onClose={handleCloseAiInnovationPage} />}
+          {isIotPageOpen && <IotSmartEdgeSystemsPage onClose={handleCloseIotPage} />}
+          {isNextGenPageOpen && <NextGenerationDigitalInnovationDecentralisedIntelligencePage onClose={handleCloseNextGenPage} />}
+          {isItServicesPageOpen && <ITServicesPage onClose={handleCloseItServicesPage} />}
         </Suspense>
       </main>
 

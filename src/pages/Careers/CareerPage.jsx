@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Home } from 'lucide-react';
-import { careerCardsData } from './CareerPageData';
+import { careerCardsData, careersPageDescription } from './CareerPageData';
 import StatCard from './components/StatCard';
 
 // Modular Level 2 Page Imports
@@ -128,7 +128,7 @@ export default function CareerPage({ onClose }) {
 
   const isFullWidthVacancyView =
     currentView === 'vacancies' &&
-    ['job-vacancy', 'job', 'full-time', 'fulltime', 'part-time', 'parttime', 'internship', 'intern'].includes(currentSubRoute);
+    ['job-vacancy', 'job', 'full-time', 'fulltime', 'part-time', 'parttime', 'remote-job', 'remote'].includes(currentSubRoute);
 
   if (isFullWidthVacancyView) {
     return (
@@ -321,15 +321,15 @@ export default function CareerPage({ onClose }) {
       {/* Level 1 Parent Overview View (Exact 8 Cards) */}
       {currentView === 'home' && (
         <>
-          <div className="text-center mb-10 sm:mb-12 max-w-3xl">
+          <div className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
               Careers at{' '}
               <span className="text-[#081E52]">
                 IBCS
               </span>
             </h1>
-            <p className="mt-3.5 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Discover <span className="text-[#081E52] font-semibold">rewarding career paths</span>, explore active vacancies, and shape your future with our growing and innovative team at <span className="text-[#D4AF37] font-semibold">IBCS</span>.
+            <p className="mt-3.5 text-sm sm:text-base text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              {careersPageDescription}
             </p>
           </div>
 

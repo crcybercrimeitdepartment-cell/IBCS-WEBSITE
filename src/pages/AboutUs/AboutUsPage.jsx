@@ -7,7 +7,6 @@ import {
   ThumbsUp,
   ThumbsDown,
   CheckCircle,
-  Clock,
   ChevronDown,
   ChevronUp,
   Home
@@ -244,7 +243,7 @@ export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPag
                   {heroData.title}
                 </h1>
 
-                <p className="text-[#475569] text-xs sm:text-sm max-w-md font-sans leading-relaxed">
+                <p className="text-[#475569] text-xs sm:text-sm max-w-2xl font-sans leading-relaxed">
                   {heroData.subtitle}
                 </p>
 
@@ -411,18 +410,8 @@ export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPag
                   className="group relative bg-[#FFFDFB] hover:bg-white text-[#1E293B] p-4 sm:p-5 rounded-[22px] border border-[#EADFD5] hover:border-[#D4AF37]/60 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between cursor-pointer select-none"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-2.5">
-                      <span className="text-[9px] font-extrabold tracking-widest uppercase text-[#081E52] bg-[#D4AF37]/15 px-2 py-0.5 rounded font-mono border border-[#D4AF37]/35">
-                        {article.category}
-                      </span>
-                      <span className="text-[10px] text-slate-400 font-semibold flex items-center space-x-1">
-                        <Clock className="w-3 h-3 text-slate-400" />
-                        <span>{article.readTime}</span>
-                      </span>
-                    </div>
-
-                    {/* ONLY Card Name/Title */}
-                    <h3 className="text-sm sm:text-base font-bold font-display leading-snug text-[#1E293B] group-hover:text-[#081E52] transition-colors capitalize">
+                    {/* Card Title */}
+                    <h3 className="text-sm sm:text-base font-bold font-display leading-snug text-[#1E293B] group-hover:text-[#081E52] transition-colors capitalize pt-1">
                       {article.title}
                     </h3>
                   </div>

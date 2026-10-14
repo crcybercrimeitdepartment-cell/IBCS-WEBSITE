@@ -1,3 +1,6 @@
+export const skillDevelopmentDescription =
+  "Explore comprehensive skill development opportunities designed to build technical expertise, enhance practical knowledge, and prepare individuals for evolving industry demands. Our programs cover professional training, industry-oriented internships, hands-on workshops, practical learning experiences, and career development initiatives across software development, information technology, cybersecurity, cyber crime investigation, digital forensics, artificial intelligence, machine learning, data science, cloud computing, and emerging technologies. Through structured learning, real-world projects, practical exposure, and professional guidance, we aim to help students, graduates, aspiring professionals, and working individuals strengthen their capabilities, develop industry-relevant skills, and prepare for future career opportunities in the digital and technology-driven world.";
+
 export const SKILLS_DATA = [
   { id: 1, title: "Software Development Training" },
   { id: 2, title: "Software Development Internship" },

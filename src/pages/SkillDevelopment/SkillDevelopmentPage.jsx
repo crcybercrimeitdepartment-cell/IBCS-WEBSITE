@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, ArrowRight, Home } from 'lucide-react';
-import { SKILLS_DATA as DEFAULT_SKILLS_DATA } from './SkillDevelopmentPage.js';
+import { SKILLS_DATA as DEFAULT_SKILLS_DATA, skillDevelopmentDescription } from './SkillDevelopmentPage.js';
 
 /* ==========================================================================
    1. 3D ICON COMPONENT (All 32 Custom Isometric Tracks)
@@ -912,13 +912,10 @@ export default function SkillDevelopment({ skillsData = DEFAULT_SKILLS_DATA, onC
           {/* Synchronized Flowing Animated Underline Matching Text Colors */}
           <div className="h-1.5 mx-auto mt-2 rounded-full animated-brand-line" />
 
-          {/* Clean Strictly 2-Line Description: Same Font Size, Top Line Longer Length, Bottom Line Shorter Length */}
-          <div className="mt-3 text-xs sm:text-base md:text-lg text-slate-600 leading-relaxed font-normal max-w-3xl mx-auto text-center px-1">
+          {/* Description from Skill_Development_Description.docx */}
+          <div className="mt-3.5 text-xs sm:text-sm md:text-[14.5px] text-slate-600 leading-relaxed font-normal max-w-4xl mx-auto text-center px-2">
             <p>
-              Explore industry-recognized training and internship programs,
-            </p>
-            <p className="mt-0.5">
-              and accelerate your professional career.
+              {skillDevelopmentDescription}
             </p>
           </div>
         </header>

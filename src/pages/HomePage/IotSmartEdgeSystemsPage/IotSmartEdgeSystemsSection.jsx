@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Cpu, Wifi, Radio, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import SectionDecorativeBackground from '../../../components/common/SectionDecorativeBackground';
 import AnimatedSectionHeading from '../../../components/common/AnimatedSectionHeading';
 
@@ -118,32 +118,6 @@ export default function IotSmartEdgeSystemsSection({ onOpenPage }) {
           <IotEdgeTelemetrySVG />
         </div>
 
-        {/* 2 Core Feature Highlight Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
-          <div className="p-5 rounded-2xl bg-white/80 border border-[#AFDDE5] shadow-xs flex items-start gap-4">
-            <div className="w-10 h-10 rounded-xl bg-[#E6F7F9] flex items-center justify-center text-[#0FA4AF] shrink-0">
-              <Zap className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-[#081E52] mb-1">Edge AI &amp; Real-Time Telemetry</h4>
-              <p className="text-xs text-[#081E52]/80 leading-relaxed font-medium">
-                Low-latency data processing and predictive intelligence deployed directly on edge hardware for immediate automated response.
-              </p>
-            </div>
-          </div>
-
-          <div className="p-5 rounded-2xl bg-white/80 border border-[#AFDDE5] shadow-xs flex items-start gap-4">
-            <div className="w-10 h-10 rounded-xl bg-[#E6F7F9] flex items-center justify-center text-[#0FA4AF] shrink-0">
-              <ShieldCheck className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-[#081E52] mb-1">Encrypted OTA Firmware Updates</h4>
-              <p className="text-xs text-[#081E52]/80 leading-relaxed font-medium">
-                Cryptographically signed over-the-air firmware updates to ensure device integrity, automated patch cycles, and fleet resilience.
-              </p>
-            </div>
-          </div>
-        </div>
 
         {/* Centered CTA */}
         <div className="w-full flex justify-center">

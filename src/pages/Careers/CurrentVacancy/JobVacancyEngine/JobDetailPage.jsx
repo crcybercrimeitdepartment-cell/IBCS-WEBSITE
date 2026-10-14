@@ -230,9 +230,9 @@ function HeroSection({
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EEF2FF] border border-[#E0E7FF] text-[#3730A3] shadow-xs"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F3EEFF] border border-purple-200/80 text-[#6D28D9] shadow-xs"
           >
-            <Users className="w-3.5 h-3.5 text-indigo-600" />
+            <Users className="w-3.5 h-3.5 text-[#6D28D9]" />
             <span className="text-xs font-bold uppercase tracking-wider">{config.deptBadge}</span>
           </motion.div>
 
@@ -251,7 +251,7 @@ function HeroSection({
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="mt-2 text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-black text-[#0B1E48] tracking-tight leading-none"
+            className="mt-2 text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-black text-[#0B1F4D] tracking-tight leading-none"
           >
             {jobTitle}
           </motion.h1>
@@ -459,56 +459,56 @@ function HeroSection({
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="w-full max-w-5xl mx-auto mt-2 sm:mt-4 bg-white/95 backdrop-blur-md border border-white/80 shadow-[0_12px_40px_rgba(15,23,42,0.08)] rounded-3xl lg:rounded-full px-6 sm:px-8 lg:px-10 py-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-2 items-center relative z-20"
+          className="w-full max-w-5xl mx-auto mt-2 sm:mt-4 bg-white/95 backdrop-blur-md border border-purple-100/60 shadow-[0_12px_40px_rgba(11,31,77,0.06)] rounded-3xl lg:rounded-full px-6 sm:px-8 lg:px-10 py-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-2 items-center relative z-20"
         >
           {/* Stat 1: Position Level */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#EFF6FF] border border-[#DBEAFE] flex items-center justify-center text-[#2563EB] shrink-0 shadow-xs">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#F3EEFF] border border-purple-100/90 flex items-center justify-center text-[#6D28D9] shrink-0 shadow-xs">
               <GraduationCap className="w-5 h-5" />
             </div>
             <div className="text-left">
               <div className="text-[10px] sm:text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Position Level</div>
-              <div className="text-xs sm:text-sm lg:text-[15px] font-bold text-slate-900 leading-tight mt-0.5">{positionLevel || 'Entry Level'}</div>
+              <div className="text-xs sm:text-sm lg:text-[15px] font-bold text-[#0B1F4D] leading-tight mt-0.5">{positionLevel || 'Entry Level'}</div>
             </div>
           </div>
 
           {/* Stat 2: Open Positions */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#EFF6FF] border border-[#DBEAFE] flex items-center justify-center text-[#2563EB] shrink-0 shadow-xs">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#F3EEFF] border border-purple-100/90 flex items-center justify-center text-[#6D28D9] shrink-0 shadow-xs">
               <Users className="w-5 h-5" />
             </div>
             <div className="text-left">
               <div className="text-[10px] sm:text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Open Positions</div>
-              <div className="text-xs sm:text-sm lg:text-[15px] font-bold text-slate-900 leading-tight mt-0.5">{formattedVacancies || '30'}</div>
+              <div className="text-xs sm:text-sm lg:text-[15px] font-bold text-[#0B1F4D] leading-tight mt-0.5">{formattedVacancies || '30'}</div>
             </div>
           </div>
 
           {/* Stat 3: Employment Type */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#EFF6FF] border border-[#DBEAFE] flex items-center justify-center text-[#2563EB] shrink-0 shadow-xs">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#F3EEFF] border border-purple-100/90 flex items-center justify-center text-[#6D28D9] shrink-0 shadow-xs">
               <Briefcase className="w-5 h-5" />
             </div>
             <div className="text-left">
               <div className="text-[10px] sm:text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Employment Type</div>
-              <div className="text-xs sm:text-sm lg:text-[15px] font-bold text-slate-900 leading-tight mt-0.5">{employmentType || 'Permanent'}</div>
+              <div className="text-xs sm:text-sm lg:text-[15px] font-bold text-[#0B1F4D] leading-tight mt-0.5">{employmentType || 'Permanent'}</div>
             </div>
           </div>
 
           {/* Stat 4: Work Mode */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#EFF6FF] border border-[#DBEAFE] flex items-center justify-center text-[#2563EB] shrink-0 shadow-xs">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#F3EEFF] border border-purple-100/90 flex items-center justify-center text-[#6D28D9] shrink-0 shadow-xs">
               <MapPin className="w-5 h-5" />
             </div>
             <div className="text-left">
               <div className="text-[10px] sm:text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Work Mode</div>
-              <div className="text-xs sm:text-sm lg:text-[15px] font-bold text-slate-900 leading-tight mt-0.5">{formattedWorkMode || 'On-Site'}</div>
+              <div className="text-xs sm:text-sm lg:text-[15px] font-bold text-[#0B1F4D] leading-tight mt-0.5">{formattedWorkMode || 'On-Site'}</div>
             </div>
           </div>
 
           {/* Stat 5: Hiring Status */}
           <div className="flex items-center gap-3 col-span-2 sm:col-span-1">
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#EFF6FF] border border-[#DBEAFE] flex items-center justify-center text-[#2563EB] shrink-0 shadow-xs">
-              <CheckCircle2 className="w-5 h-5 text-[#2563EB]" />
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 shrink-0 shadow-xs">
+              <CheckCircle2 className="w-5 h-5 text-emerald-600" />
             </div>
             <div className="text-left">
               <div className="text-[10px] sm:text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Hiring Status</div>
@@ -528,20 +528,20 @@ function HeroSection({
           <button
             type="button"
             onClick={onApplyClick || handleScrollToApply}
-            className="px-9 py-3.5 bg-gradient-to-r from-[#2563EB] via-[#1D4ED8] to-[#1E40AF] hover:from-[#1D4ED8] hover:to-[#172554] text-white font-bold text-sm sm:text-base rounded-full shadow-lg shadow-blue-600/30 flex items-center gap-3 transition-all duration-300 transform hover:scale-105 active:scale-95 cursor-pointer"
+            className="px-9 py-3.5 bg-gradient-to-r from-[#0B1F4D] via-[#173B78] to-[#0B1F4D] hover:from-[#173B78] hover:to-[#0B1F4D] text-white border border-[#D4AF37]/50 font-bold text-sm sm:text-base rounded-full shadow-lg shadow-[#0B1F4D]/25 flex items-center gap-3 transition-all duration-300 transform hover:scale-105 active:scale-95 cursor-pointer"
           >
             <span>Apply Now</span>
-            <ArrowRight className="w-4 h-4 text-white" />
+            <ArrowRight className="w-4 h-4 text-[#D4AF37]" />
           </button>
 
           {/* Application Deadline Badge */}
-          <div className="bg-white/85 backdrop-blur-md border border-slate-200/80 rounded-2xl px-5 py-2.5 flex items-center gap-3.5 shadow-sm text-left">
-            <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-[#4F46E5] shrink-0">
-              <Calendar className="w-5 h-5" />
+          <div className="bg-white/85 backdrop-blur-md border border-purple-100/80 rounded-2xl px-5 py-2.5 flex items-center gap-3.5 shadow-sm text-left">
+            <div className="w-10 h-10 rounded-xl bg-[#F3EEFF] border border-purple-100 flex items-center justify-center text-[#6D28D9] shrink-0">
+              <Calendar className="w-5 h-5 text-[#6D28D9]" />
             </div>
             <div className="text-left">
               <div className="text-[10px] uppercase font-bold tracking-wider text-slate-400">Applications close on</div>
-              <div className="text-xs sm:text-sm font-bold text-slate-800 leading-tight">June 30, 2026</div>
+              <div className="text-xs sm:text-sm font-bold text-[#0B1F4D] leading-tight">June 30, 2026</div>
               <div className="text-[11px] text-slate-500">Secure your interview round.</div>
             </div>
           </div>
@@ -743,23 +743,23 @@ const StackedSection = ({ title, children, index, direction }) => {
             <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
               {/* Number Badge */}
               {numberStr && (
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-600 text-white font-extrabold text-base sm:text-xl flex items-center justify-center shrink-0 shadow-sm">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#0B1F4D] text-[#D4AF37] border border-[#D4AF37]/40 font-extrabold text-base sm:text-xl flex items-center justify-center shrink-0 shadow-sm">
                   {numberStr}
                 </div>
               )}
 
               {/* Subtitle & Title */}
               <div className="min-w-0 flex-1">
-                <span className="text-[10px] sm:text-xs font-bold text-blue-600 uppercase tracking-wider block truncate">
+                <span className="text-[10px] sm:text-xs font-bold text-[#6D28D9] uppercase tracking-wider block truncate">
                   {SECTION_SUBTITLES[index] || 'ROLE OVERVIEW'}
                 </span>
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight truncate">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#0B1F4D] tracking-tight leading-tight truncate">
                   {cleanTitle}
                 </h2>
               </div>
 
               {/* Decorative line spanning to right illustration */}
-              <div className="hidden md:block flex-1 h-[1.5px] bg-blue-100/70 ml-6 mr-6 self-center" />
+              <div className="hidden md:block flex-1 h-[1.5px] bg-purple-100/80 ml-6 mr-6 self-center" />
             </div>
 
             {/* Top Right Decorative Illustration */}
@@ -948,8 +948,8 @@ const JobDescriptionCard = ({ descriptionText }) => {
 
         {/* Text Content */}
         <div className="relative z-10 mt-auto">
-          <div className="w-8 h-1.5 bg-blue-600 rounded-full mb-3" />
-          <span className="block text-xs font-bold text-blue-600 tracking-wider uppercase mb-2">
+          <div className="w-8 h-1.5 bg-[#0B1F4D] rounded-full mb-3" />
+          <span className="block text-xs font-bold text-[#6D28D9] tracking-wider uppercase mb-2">
             JOB DESCRIPTION
           </span>
           <p className="text-[14px] sm:text-[14.5px] font-medium text-slate-600 leading-relaxed whitespace-pre-line">
@@ -962,8 +962,8 @@ const JobDescriptionCard = ({ descriptionText }) => {
       <div className="lg:col-span-7 bg-white rounded-2xl sm:rounded-[24px] border border-slate-100 p-6 sm:p-7 shadow-[0_2px_12px_rgba(0,0,0,0.02)] flex flex-col">
         {/* Header */}
         <div className="flex items-center gap-3.5 pb-4 mb-3 border-b border-slate-100/80">
-          <div className="w-11 h-11 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 shrink-0">
-            <svg className="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <div className="w-11 h-11 rounded-xl bg-[#F3EEFF] border border-purple-100 flex items-center justify-center text-[#6D28D9] shrink-0">
+            <svg className="w-5 h-5 text-[#6D28D9]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
               <polyline points="14 2 14 8 20 8" />
               <line x1="16" y1="13" x2="8" y2="13" />
@@ -971,7 +971,7 @@ const JobDescriptionCard = ({ descriptionText }) => {
               <line x1="10" y1="9" x2="8" y2="9" />
             </svg>
           </div>
-          <h3 className="text-lg sm:text-[19px] font-bold text-slate-900 tracking-tight">
+          <h3 className="text-lg sm:text-[19px] font-bold text-[#0B1F4D] tracking-tight">
             {leadIn}
           </h3>
         </div>
@@ -982,12 +982,12 @@ const JobDescriptionCard = ({ descriptionText }) => {
             <div key={idx} className="relative flex items-start gap-3.5 py-3 border-b border-slate-100/70 last:border-b-0">
               {/* Timeline Connector Line */}
               {idx < bullets.length - 1 && (
-                <span className="absolute left-[9px] top-6 bottom-0 w-[2px] bg-blue-100/90" />
+                <span className="absolute left-[9px] top-6 bottom-0 w-[2px] bg-purple-100/90" />
               )}
 
-              {/* Solid Blue Circle Checkmark */}
-              <div className="relative z-10 w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center text-white shrink-0 mt-0.5 shadow-xs">
-                <svg className="w-3 h-3 text-white" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* Solid Navy Circle Checkmark with Gold Accent */}
+              <div className="relative z-10 w-5 h-5 rounded-full bg-[#0B1F4D] border border-[#D4AF37]/50 flex items-center justify-center text-[#D4AF37] shrink-0 mt-0.5 shadow-xs">
+                <svg className="w-3 h-3 text-[#D4AF37]" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M2.5 6.5l2.5 2.5 5-5" />
                 </svg>
               </div>
@@ -1320,26 +1320,26 @@ function ApplyDropdownMenu({ target, onClose, onSelectOption }) {
         exit={{ opacity: 0, scale: 0.95 }}
         transition={{ duration: 0.15, ease: 'easeOut' }}
         style={{ top, left, width: menuWidth }}
-        className="pointer-events-auto fixed bg-white/95 backdrop-blur-xl border border-indigo-100 rounded-2xl shadow-2xl shadow-indigo-950/20 p-2 overflow-hidden z-50"
+        className="pointer-events-auto fixed bg-white/95 backdrop-blur-xl border border-purple-200/80 rounded-2xl shadow-2xl shadow-[#0B1F4D]/15 p-2 overflow-hidden z-50"
       >
         <div className="px-3 py-2 border-b border-slate-100 mb-1">
           <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Select Option</p>
-          <p className="text-[12px] font-extrabold text-slate-800 truncate">{job.jobTitle}</p>
-          <p className="text-[10px] font-mono text-indigo-600 font-semibold">{job.jobCode}</p>
+          <p className="text-[12px] font-extrabold text-[#0B1F4D] truncate">{job.jobTitle}</p>
+          <p className="text-[10px] font-mono text-[#6D28D9] font-semibold">{job.jobCode}</p>
         </div>
 
         <button
           type="button"
           onClick={() => onSelectOption(job, 'new')}
-          className="w-full text-left p-2.5 rounded-xl hover:bg-indigo-50/80 transition-all flex items-center gap-3 group active:scale-[0.98] cursor-pointer"
+          className="w-full text-left p-2.5 rounded-xl hover:bg-[#F3EEFF] transition-all flex items-center gap-3 group active:scale-[0.98] cursor-pointer"
         >
-          <div className="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors shadow-sm">
+          <div className="w-8 h-8 rounded-lg bg-[#F3EEFF] text-[#6D28D9] flex items-center justify-center shrink-0 group-hover:bg-[#6D28D9] group-hover:text-white transition-colors shadow-sm">
             <UserPlus className="w-4 h-4" />
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between">
-              <span className="text-[13px] font-bold text-slate-800 group-hover:text-indigo-600">New Registration</span>
-              <span className="text-[9px] font-extrabold bg-indigo-100 text-indigo-700 px-1.5 py-0.5 rounded-full uppercase">New</span>
+              <span className="text-[13px] font-bold text-[#0B1F4D] group-hover:text-[#6D28D9]">New Registration</span>
+              <span className="text-[9px] font-extrabold bg-[#F3EEFF] text-[#6D28D9] border border-purple-200 px-1.5 py-0.5 rounded-full uppercase">New</span>
             </div>
             <p className="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">First time applying? Register & apply</p>
           </div>
@@ -1348,15 +1348,15 @@ function ApplyDropdownMenu({ target, onClose, onSelectOption }) {
         <button
           type="button"
           onClick={() => onSelectOption(job, 'login')}
-          className="w-full text-left p-2.5 rounded-xl hover:bg-emerald-50/80 transition-all flex items-center gap-3 group active:scale-[0.98] cursor-pointer"
+          className="w-full text-left p-2.5 rounded-xl hover:bg-amber-50/80 transition-all flex items-center gap-3 group active:scale-[0.98] cursor-pointer"
         >
-          <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-colors shadow-sm">
+          <div className="w-8 h-8 rounded-lg bg-[#F7E7A9]/40 text-[#0B1F4D] border border-[#D4AF37]/30 flex items-center justify-center shrink-0 group-hover:bg-[#0B1F4D] group-hover:text-[#D4AF37] transition-colors shadow-sm">
             <LogIn className="w-4 h-4" />
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between">
-              <span className="text-[13px] font-bold text-slate-800 group-hover:text-emerald-600">Already Registered</span>
-              <span className="text-[9px] font-extrabold bg-emerald-100 text-emerald-700 px-1.5 py-0.5 rounded-full uppercase">Login</span>
+              <span className="text-[13px] font-bold text-[#0B1F4D] group-hover:text-[#173B78]">Already Registered</span>
+              <span className="text-[9px] font-extrabold bg-[#F7E7A9]/60 text-[#0B1F4D] border border-[#D4AF37]/40 px-1.5 py-0.5 rounded-full uppercase">Login</span>
             </div>
             <p className="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">Sign in with Registration ID</p>
           </div>
@@ -1400,7 +1400,7 @@ function AlreadyRegisteredModal({ data, onClose, onNewRegistration }) {
         className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden my-8"
       >
         {/* Modal Header */}
-        <div className="relative bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 p-6 text-white">
+        <div className="relative bg-gradient-to-br from-[#0B1F4D] via-[#173B78] to-[#0B1F4D] p-6 text-white border-b-2 border-[#D4AF37]">
           <button
             onClick={onClose}
             className="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
@@ -1409,10 +1409,10 @@ function AlreadyRegisteredModal({ data, onClose, onNewRegistration }) {
             <X className="w-4 h-4" />
           </button>
           <div className="flex flex-wrap items-center gap-2 mb-2">
-            <span className="text-[10px] font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-400/30 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+            <span className="text-[10px] font-bold text-[#D4AF37] bg-white/10 border border-[#D4AF37]/40 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
               {job.department}
             </span>
-            <span className="text-[10px] font-mono text-slate-300 bg-white/10 px-2 py-0.5 rounded-full">
+            <span className="text-[10px] font-mono text-[#F7E7A9] bg-white/10 px-2 py-0.5 rounded-full">
               {job.jobCode}
             </span>
           </div>
@@ -1426,15 +1426,15 @@ function AlreadyRegisteredModal({ data, onClose, onNewRegistration }) {
         <div className="p-6 max-h-[75vh] overflow-y-auto">
           {loginResult ? (
             <div className="space-y-4 py-2">
-              <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-2xl">
-                <div className="flex items-center gap-2 text-emerald-700 font-bold text-[13px] mb-2">
-                  <CheckCircle2 className="w-4 h-4" />
+              <div className="p-4 bg-[#F3EEFF]/60 border border-purple-200 rounded-2xl">
+                <div className="flex items-center gap-2 text-[#6D28D9] font-bold text-[13px] mb-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#6D28D9]" />
                   Applicant Verified
                 </div>
                 <div className="space-y-1.5 text-[12px] text-slate-700">
                   <div className="flex justify-between">
                     <span className="text-slate-500">Registration ID:</span>
-                    <span className="font-mono font-bold text-slate-900">{loginResult.regId}</span>
+                    <span className="font-mono font-bold text-[#0B1F4D]">{loginResult.regId}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-500">Post Applied:</span>
@@ -1442,13 +1442,13 @@ function AlreadyRegisteredModal({ data, onClose, onNewRegistration }) {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-500">Application Status:</span>
-                    <span className="font-bold text-indigo-600">{loginResult.status}</span>
+                    <span className="font-bold text-[#6D28D9]">{loginResult.status}</span>
                   </div>
                 </div>
               </div>
 
               <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-[12px] text-slate-600 space-y-1">
-                <p className="font-bold text-slate-800">Recruitment Cell Update:</p>
+                <p className="font-bold text-[#0B1F4D]">Recruitment Cell Update:</p>
                 <p>Your application is active in our recruitment records. Assessment schedule and further updates are communicated via your registered email.</p>
               </div>
 
@@ -1463,7 +1463,7 @@ function AlreadyRegisteredModal({ data, onClose, onNewRegistration }) {
                 <button
                   type="button"
                   onClick={onClose}
-                  className="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[12px] rounded-xl transition-all shadow-md active:scale-95 cursor-pointer"
+                  className="flex-1 py-2.5 bg-[#0B1F4D] hover:bg-[#173B78] text-white border border-[#D4AF37]/50 font-bold text-[12px] rounded-xl transition-all shadow-md active:scale-95 cursor-pointer"
                 >
                   Close
                 </button>
@@ -1471,16 +1471,16 @@ function AlreadyRegisteredModal({ data, onClose, onNewRegistration }) {
             </div>
           ) : (
             <form onSubmit={handleLoginSubmit} className="space-y-4">
-              <div className="bg-emerald-50/70 border border-emerald-100 rounded-2xl p-3.5 flex items-start gap-2.5">
-                <LogIn className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <p className="text-[12px] text-emerald-900 leading-relaxed font-medium">
+              <div className="bg-[#F3EEFF]/70 border border-purple-200 rounded-2xl p-3.5 flex items-start gap-2.5">
+                <LogIn className="w-4 h-4 text-[#6D28D9] shrink-0 mt-0.5" />
+                <p className="text-[12px] text-[#0B1F4D] leading-relaxed font-medium">
                   Enter your existing Registration ID to view application status or verify credentials for <strong className="font-bold">{job.jobTitle}</strong>.
                 </p>
               </div>
 
               <div className="space-y-3">
                 <div>
-                  <label className="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1">
+                  <label className="block text-[11px] font-bold text-[#0B1F4D] uppercase tracking-wider mb-1">
                     Registration / Application ID <span className="text-rose-500">*</span>
                   </label>
                   <input
@@ -1489,12 +1489,12 @@ function AlreadyRegisteredModal({ data, onClose, onNewRegistration }) {
                     value={loginForm.regId}
                     onChange={(e) => setLoginForm({ ...loginForm, regId: e.target.value })}
                     placeholder="e.g. IBCS-REG-2026-10293"
-                    className="w-full px-3.5 py-2.5 text-[13px] font-mono font-bold text-slate-800 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 placeholder-slate-400"
+                    className="w-full px-3.5 py-2.5 text-[13px] font-mono font-bold text-[#0B1F4D] border border-slate-200 rounded-xl focus:outline-none focus:border-[#6D28D9] focus:ring-2 focus:ring-purple-500/15 placeholder-slate-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1">
+                  <label className="block text-[11px] font-bold text-[#0B1F4D] uppercase tracking-wider mb-1">
                     Registered Mobile Number or Date of Birth
                   </label>
                   <input
@@ -1502,7 +1502,7 @@ function AlreadyRegisteredModal({ data, onClose, onNewRegistration }) {
                     value={loginForm.dobOrPhone}
                     onChange={(e) => setLoginForm({ ...loginForm, dobOrPhone: e.target.value })}
                     placeholder="DD/MM/YYYY or 10-digit mobile number"
-                    className="w-full px-3.5 py-2.5 text-[13px] font-semibold text-slate-800 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 placeholder-slate-400"
+                    className="w-full px-3.5 py-2.5 text-[13px] font-semibold text-[#0B1F4D] border border-slate-200 rounded-xl focus:outline-none focus:border-[#6D28D9] focus:ring-2 focus:ring-purple-500/15 placeholder-slate-400"
                   />
                 </div>
               </div>
@@ -1517,10 +1517,10 @@ function AlreadyRegisteredModal({ data, onClose, onNewRegistration }) {
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[13px] rounded-xl transition-all shadow-md active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="flex-1 py-2.5 bg-[#0B1F4D] hover:bg-[#173B78] text-white border border-[#D4AF37]/50 font-bold text-[13px] rounded-xl transition-all shadow-md active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer"
                 >
-                  Sign In & View Status
-                  <ArrowRight className="w-4 h-4" />
+                  <span>Sign In & View Status</span>
+                  <ArrowRight className="w-4 h-4 text-[#D4AF37]" />
                 </button>
               </div>
 
@@ -1531,10 +1531,10 @@ function AlreadyRegisteredModal({ data, onClose, onNewRegistration }) {
                     onClose();
                     if (onNewRegistration) onNewRegistration(job);
                   }}
-                  className="text-[12px] font-bold text-indigo-600 hover:text-indigo-700 transition-colors inline-flex items-center gap-1 cursor-pointer"
+                  className="text-[12px] font-bold text-[#6D28D9] hover:text-[#0B1F4D] transition-colors inline-flex items-center gap-1 cursor-pointer"
                 >
                   <span>First time applying? Open Candidate Master Profile Form</span>
-                  <ArrowRight className="w-3 h-3" />
+                  <ArrowRight className="w-3 h-3 text-[#D4AF37]" />
                 </button>
               </div>
             </form>
@@ -2087,31 +2087,31 @@ const [viewMode,setViewMode]=useState("list");
 
         {/* Final Call to Action */}
         <div className="pt-10 pb-8 hidden lg:flex flex-col items-center justify-center text-center space-y-5 border-t border-slate-100 mt-10">
-          <h3 className="text-2xl font-bold text-slate-800 tracking-tight">Ready to secure the future?</h3>
+          <h3 className="text-2xl font-bold text-[#0B1F4D] tracking-tight">Ready to secure the future?</h3>
           <p className="text-slate-500 max-w-md">Take the next step in your career and join our defense operations team today.</p>
           <button
             onClick={handleApplyClick}
-            className="px-12 py-4 mt-2 bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white font-bold rounded-2xl shadow-xl shadow-indigo-600/20 active:scale-95 transition-all text-lg flex items-center gap-3 cursor-pointer"
+            className="px-12 py-4 mt-2 bg-gradient-to-r from-[#0B1F4D] via-[#173B78] to-[#0B1F4D] hover:from-[#173B78] hover:to-[#0B1F4D] text-white border border-[#D4AF37]/50 font-bold rounded-2xl shadow-xl shadow-[#0B1F4D]/20 active:scale-95 transition-all text-lg flex items-center gap-3 cursor-pointer"
           >
             <span>Apply Now</span>
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-5 h-5 text-[#D4AF37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </button>
         </div>
 
         {/* Sticky Apply Button for Mobile screens */}
-        <div className="sticky bottom-4 left-0 right-0 lg:hidden px-4 py-3 bg-white/85 backdrop-blur-md border border-slate-200 rounded-2xl shadow-lg flex items-center justify-between gap-4">
+        <div className="sticky bottom-4 left-0 right-0 lg:hidden px-4 py-3 bg-white/85 backdrop-blur-md border border-purple-100/80 rounded-2xl shadow-lg flex items-center justify-between gap-4">
           <div>
             <span className="block text-[10px] uppercase font-bold text-slate-400">Position Status</span>
             <span className="text-xs font-bold text-emerald-600">{positionInformation.applicationStatus}</span>
           </div>
           <button
             onClick={handleApplyClick}
-            className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl shadow-sm hover:shadow active:scale-95 transition-all cursor-pointer flex items-center gap-1.5"
+            className="px-5 py-2.5 bg-[#0B1F4D] hover:bg-[#173B78] text-white border border-[#D4AF37]/40 text-xs font-bold rounded-xl shadow-sm hover:shadow active:scale-95 transition-all cursor-pointer flex items-center gap-1.5"
           >
             <span>Apply Now</span>
-            <svg className="w-3.5 h-3.5 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-3.5 h-3.5 text-[#D4AF37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
           </button>

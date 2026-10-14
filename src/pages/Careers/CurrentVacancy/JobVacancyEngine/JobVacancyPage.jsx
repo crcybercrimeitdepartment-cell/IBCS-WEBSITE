@@ -99,7 +99,7 @@ function EmptyState() {
 const FilterField = ({ id, label, icon: Icon, value, options = [], onChange }) => (
   <div className="flex items-center gap-2.5 flex-1 min-w-[130px]">
     {/* Icon squircle */}
-    <div className="w-10 h-10 rounded-xl bg-blue-50/90 border border-blue-100 text-[#1d68f6] flex items-center justify-center shrink-0 shadow-xs">
+    <div className="w-10 h-10 rounded-xl bg-[#F3EEFF] border border-purple-100/80 text-[#6D28D9] flex items-center justify-center shrink-0 shadow-xs">
       <Icon className="w-4 h-4" />
     </div>
 
@@ -113,7 +113,7 @@ const FilterField = ({ id, label, icon: Icon, value, options = [], onChange }) =
           id={id}
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="appearance-none w-full bg-white border border-slate-200/90 rounded-xl pl-3 pr-7 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500/20 cursor-pointer shadow-xs transition truncate"
+          className="appearance-none w-full bg-white border border-slate-200/90 rounded-xl pl-3 pr-7 py-1.5 text-xs sm:text-[13px] font-bold text-[#0B1F4D] hover:border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500/15 focus:border-[#6D28D9] cursor-pointer shadow-xs transition truncate"
         >
           {options.map((opt) => (
             <option key={opt} value={opt}>
@@ -130,7 +130,7 @@ const FilterField = ({ id, label, icon: Icon, value, options = [], onChange }) =
 function FilterBar({ filters, options, onFilterChange, totalCount, filteredCount }) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pt-6 pb-2">
-      <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.04)] p-4 sm:p-5">
+      <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-[0_4px_24px_-4px_rgba(11,31,77,0.04)] p-4 sm:p-5">
         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 xl:gap-4 w-full">
           <FilterField
             id="filter-dept"
@@ -243,26 +243,26 @@ function ApplyDropdownMenu({ target, onClose, onSelectOption }) {
         exit={{ opacity: 0, scale: 0.95 }}
         transition={{ duration: 0.15, ease: 'easeOut' }}
         style={{ top, left, width: menuWidth }}
-        className="pointer-events-auto fixed bg-white/95 backdrop-blur-xl border border-indigo-100 rounded-2xl shadow-2xl shadow-indigo-950/20 p-2 overflow-hidden z-50"
+        className="pointer-events-auto fixed bg-white/95 backdrop-blur-xl border border-purple-100 rounded-2xl shadow-2xl shadow-slate-900/15 p-2 overflow-hidden z-50"
       >
         <div className="px-3 py-2 border-b border-slate-100 mb-1">
           <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Select Option</p>
-          <p className="text-[12px] font-extrabold text-slate-800 truncate">{job.jobTitle}</p>
-          <p className="text-[10px] font-mono text-indigo-600 font-semibold">{job.jobCode}</p>
+          <p className="text-[12px] font-extrabold text-[#0B1F4D] truncate">{job.jobTitle}</p>
+          <p className="text-[10px] font-mono text-[#6D28D9] font-semibold">{job.jobCode}</p>
         </div>
 
         <button
           type="button"
           onClick={() => onSelectOption(job, 'new')}
-          className="w-full text-left p-2.5 rounded-xl hover:bg-indigo-50/80 transition-all flex items-center gap-3 group active:scale-[0.98]"
+          className="w-full text-left p-2.5 rounded-xl hover:bg-[#F3EEFF]/80 transition-all flex items-center gap-3 group active:scale-[0.98]"
         >
-          <div className="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors shadow-sm">
+          <div className="w-8 h-8 rounded-lg bg-[#F3EEFF] text-[#6D28D9] flex items-center justify-center shrink-0 group-hover:bg-[#6D28D9] group-hover:text-white transition-colors shadow-sm">
             <UserPlus className="w-4 h-4" />
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between">
-              <span className="text-[13px] font-bold text-slate-800 group-hover:text-indigo-600">New Registration</span>
-              <span className="text-[9px] font-extrabold bg-indigo-100 text-indigo-700 px-1.5 py-0.5 rounded-full uppercase">New</span>
+              <span className="text-[13px] font-bold text-slate-800 group-hover:text-[#6D28D9]">New Registration</span>
+              <span className="text-[9px] font-extrabold bg-[#F3EEFF] text-[#6D28D9] px-1.5 py-0.5 rounded-full uppercase">New</span>
             </div>
             <p className="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">First time applying? Register & apply</p>
           </div>
@@ -271,15 +271,15 @@ function ApplyDropdownMenu({ target, onClose, onSelectOption }) {
         <button
           type="button"
           onClick={() => onSelectOption(job, 'login')}
-          className="w-full text-left p-2.5 rounded-xl hover:bg-emerald-50/80 transition-all flex items-center gap-3 group active:scale-[0.98]"
+          className="w-full text-left p-2.5 rounded-xl hover:bg-blue-50/80 transition-all flex items-center gap-3 group active:scale-[0.98]"
         >
-          <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-colors shadow-sm">
+          <div className="w-8 h-8 rounded-lg bg-[#EFF6FF] text-[#173B78] flex items-center justify-center shrink-0 group-hover:bg-[#173B78] group-hover:text-white transition-colors shadow-sm">
             <LogIn className="w-4 h-4" />
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between">
-              <span className="text-[13px] font-bold text-slate-800 group-hover:text-emerald-600">Already Registered</span>
-              <span className="text-[9px] font-extrabold bg-emerald-100 text-emerald-700 px-1.5 py-0.5 rounded-full uppercase">Login</span>
+              <span className="text-[13px] font-bold text-slate-800 group-hover:text-[#173B78]">Already Registered</span>
+              <span className="text-[9px] font-extrabold bg-[#EFF6FF] text-[#173B78] px-1.5 py-0.5 rounded-full uppercase">Login</span>
             </div>
             <p className="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">Sign in with Registration ID</p>
           </div>
@@ -323,7 +323,7 @@ function AlreadyRegisteredModal({ data, onClose, onNewRegistration }) {
         className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden my-8"
       >
         {/* Modal Header */}
-        <div className="relative bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 p-6 text-white">
+        <div className="relative bg-gradient-to-br from-[#0B1F4D] via-[#173B78] to-[#0B1F4D] p-6 text-white border-b border-[#D4AF37]/30">
           <button
             onClick={onClose}
             className="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
@@ -332,7 +332,7 @@ function AlreadyRegisteredModal({ data, onClose, onNewRegistration }) {
             <X className="w-4 h-4" />
           </button>
           <div className="flex flex-wrap items-center gap-2 mb-2">
-            <span className="text-[10px] font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-400/30 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+            <span className="text-[10px] font-bold text-[#F7E7A9] bg-[#D4AF37]/20 border border-[#D4AF37]/30 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
               {job.department}
             </span>
             <span className="text-[10px] font-mono text-slate-300 bg-white/10 px-2 py-0.5 rounded-full">
@@ -608,8 +608,8 @@ function GridCard({ job, index = 0, onViewDetails, saved, onSave, onApplyClick }
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, ease: 'easeOut', delay: index * 0.03 }}
-      whileHover={{ y: -3, boxShadow: '0 12px 36px -8px rgba(29,104,246,0.12)' }}
-      className="group relative bg-white border border-slate-200/90 hover:border-blue-200 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col p-5 shadow-[0_2px_12px_rgba(0,0,0,0.03)]"
+      whileHover={{ y: -3, boxShadow: '0 12px 36px -8px rgba(11,31,77,0.12)' }}
+      className="group relative bg-white border border-slate-200/90 hover:border-purple-200 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col p-5 shadow-[0_2px_12px_rgba(0,0,0,0.03)]"
     >
       {/* Top accent */}
       <div className={`absolute top-0 left-0 right-0 h-1 ${theme.stripe}`} />
@@ -627,10 +627,10 @@ function GridCard({ job, index = 0, onViewDetails, saved, onSave, onApplyClick }
       </div>
 
       <div className="space-y-1 mb-4 flex-1">
-        <span className="text-[10px] font-extrabold text-[#4f46e5] bg-[#eff2fe] px-2 py-0.5 rounded-md uppercase tracking-wider inline-block">
+        <span className="text-[10px] font-extrabold text-[#6D28D9] bg-[#F3EEFF] border border-purple-100/80 px-2 py-0.5 rounded-md uppercase tracking-wider inline-block">
           {job.department}
         </span>
-        <h3 className="text-base font-black text-slate-900 tracking-tight leading-snug group-hover:text-blue-600 transition-colors line-clamp-2">
+        <h3 className="text-base font-black text-[#0B1F4D] tracking-tight leading-snug group-hover:text-[#6D28D9] transition-colors line-clamp-2">
           {job.jobTitle}
         </h3>
         <p className="text-xs font-mono font-medium text-slate-400">
@@ -641,15 +641,15 @@ function GridCard({ job, index = 0, onViewDetails, saved, onSave, onApplyClick }
       {/* Meta tags */}
       <div className="grid grid-cols-2 gap-2.5 py-3 border-t border-slate-100 mb-4 text-xs">
         <div className="flex items-center gap-1.5 text-slate-700 font-bold truncate">
-          <MapPin className="w-3.5 h-3.5 text-[#1d68f6] shrink-0" />
+          <MapPin className="w-3.5 h-3.5 text-[#173B78] shrink-0" />
           <span className="truncate">{formattedLocation}</span>
         </div>
         <div className="flex items-center gap-1.5 text-slate-700 font-bold truncate">
-          <Briefcase className="w-3.5 h-3.5 text-[#1d68f6] shrink-0" />
+          <Briefcase className="w-3.5 h-3.5 text-[#173B78] shrink-0" />
           <span className="truncate">{formattedExperience}</span>
         </div>
         <div className="flex items-center gap-1.5 text-slate-700 font-bold truncate">
-          <FileText className="w-3.5 h-3.5 text-[#1d68f6] shrink-0" />
+          <FileText className="w-3.5 h-3.5 text-[#173B78] shrink-0" />
           <span className="truncate">{formattedEmployment}</span>
         </div>
         <div className="text-[11px] text-slate-400 font-medium truncate flex items-center">
@@ -661,7 +661,7 @@ function GridCard({ job, index = 0, onViewDetails, saved, onSave, onApplyClick }
       <div className="flex items-center gap-2 pt-2 border-t border-slate-100">
         <button
           onClick={() => onViewDetails(job)}
-          className="flex-1 py-2 border border-blue-200/90 text-[#1d68f6] hover:bg-blue-50 text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1 cursor-pointer active:scale-95"
+          className="flex-1 py-2 border border-[#173B78]/25 text-[#173B78] hover:bg-[#F3EEFF] hover:border-[#6D28D9]/40 hover:text-[#6D28D9] text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1 cursor-pointer active:scale-95"
         >
           View Details
           <ArrowRight className="w-3.5 h-3.5" />
@@ -672,19 +672,19 @@ function GridCard({ job, index = 0, onViewDetails, saved, onSave, onApplyClick }
           className={`flex-1 py-2 text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1 cursor-pointer active:scale-95 ${
             isApplyDisabled
               ? 'bg-slate-200 text-slate-400 cursor-not-allowed'
-              : 'bg-[#1d68f6] hover:bg-blue-700 text-white shadow-md shadow-blue-500/20'
+              : 'bg-[#0B1F4D] hover:bg-[#173B78] text-white border-b-2 border-[#D4AF37] shadow-md shadow-slate-900/10'
           }`}
         >
           <span>Apply Now</span>
-          <ArrowRight className="w-3.5 h-3.5" />
+          <ArrowRight className="w-3.5 h-3.5 text-amber-300" />
         </button>
         <button
           onClick={onSave}
           title={saved ? 'Saved' : 'Save'}
           className={`p-2 rounded-xl border transition-all cursor-pointer ${
             saved
-              ? 'bg-blue-50 border-blue-200 text-[#1d68f6]'
-              : 'border-slate-200 text-slate-400 hover:text-[#1d68f6] hover:border-blue-200'
+              ? 'bg-[#F3EEFF] border-purple-200 text-[#6D28D9]'
+              : 'border-slate-200 text-slate-400 hover:text-[#6D28D9] hover:border-purple-200'
           }`}
         >
           <Bookmark className="w-3.5 h-3.5" fill={saved ? 'currentColor' : 'none'} />
@@ -708,7 +708,7 @@ function ListCard({ job, index = 0, onViewDetails, saved, onSave, onApplyClick }
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25, delay: index * 0.03 }}
-      className="group relative bg-white rounded-2xl border border-slate-200/90 hover:border-blue-200 shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col xl:flex-row xl:items-center justify-between p-4 sm:p-4.5 gap-4"
+      className="group relative bg-white rounded-2xl border border-slate-200/90 hover:border-purple-200 shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col xl:flex-row xl:items-center justify-between p-4 sm:p-4.5 gap-4"
     >
       {/* Colored Left Border Accent Stripe */}
       <div className={`absolute left-0 top-0 bottom-0 w-1 sm:w-1.5 ${theme.stripe}`} />
@@ -722,10 +722,10 @@ function ListCard({ job, index = 0, onViewDetails, saved, onSave, onApplyClick }
 
         {/* Title & Department */}
         <div className="min-w-0 flex-1">
-          <span className="text-[10px] sm:text-[11px] font-extrabold text-[#4f46e5] bg-[#eff2fe] px-2.5 py-0.5 rounded-md uppercase tracking-wider inline-block mb-1">
+          <span className="text-[10px] sm:text-[11px] font-extrabold text-[#6D28D9] bg-[#F3EEFF] border border-purple-100/80 px-2.5 py-0.5 rounded-md uppercase tracking-wider inline-block mb-1">
             {job.department}
           </span>
-          <h3 className="text-sm sm:text-base font-black text-slate-900 tracking-tight leading-snug group-hover:text-blue-600 transition-colors truncate">
+          <h3 className="text-sm sm:text-base font-black text-[#0B1F4D] tracking-tight leading-snug group-hover:text-[#6D28D9] transition-colors truncate">
             {job.jobTitle}
           </h3>
           <p className="text-xs font-medium text-slate-400 mt-0.5 truncate">
@@ -738,7 +738,7 @@ function ListCard({ job, index = 0, onViewDetails, saved, onSave, onApplyClick }
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 xl:gap-6 flex-1 min-w-0 py-2 xl:py-0 border-t border-b xl:border-none border-slate-100">
         {/* Column 1: Location */}
         <div className="flex items-start gap-2">
-          <MapPin className="w-4 h-4 text-[#1d68f6] shrink-0 mt-0.5" />
+          <MapPin className="w-4 h-4 text-[#173B78] shrink-0 mt-0.5" />
           <div className="min-w-0">
             <p className="text-xs sm:text-[13px] font-extrabold text-slate-800 leading-tight truncate">
               {formattedLocation}
@@ -751,7 +751,7 @@ function ListCard({ job, index = 0, onViewDetails, saved, onSave, onApplyClick }
 
         {/* Column 2: Experience */}
         <div className="flex items-start gap-2">
-          <Briefcase className="w-4 h-4 text-[#1d68f6] shrink-0 mt-0.5" />
+          <Briefcase className="w-4 h-4 text-[#173B78] shrink-0 mt-0.5" />
           <div className="min-w-0">
             <p className="text-xs sm:text-[13px] font-extrabold text-slate-800 leading-tight truncate">
               {formattedExperience}
@@ -764,7 +764,7 @@ function ListCard({ job, index = 0, onViewDetails, saved, onSave, onApplyClick }
 
         {/* Column 3: Employment Type */}
         <div className="flex items-start gap-2">
-          <FileText className="w-4 h-4 text-[#1d68f6] shrink-0 mt-0.5" />
+          <FileText className="w-4 h-4 text-[#173B78] shrink-0 mt-0.5" />
           <div className="min-w-0">
             <p className="text-xs sm:text-[13px] font-extrabold text-slate-800 leading-tight truncate">
               {formattedEmployment}
@@ -792,7 +792,7 @@ function ListCard({ job, index = 0, onViewDetails, saved, onSave, onApplyClick }
         <button
           type="button"
           onClick={() => onViewDetails(job)}
-          className="border border-blue-200/90 text-[#1d68f6] hover:bg-blue-50/70 font-bold px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-[13px] flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer active:scale-95"
+          className="border border-[#173B78]/25 text-[#173B78] hover:bg-[#F3EEFF] hover:border-[#6D28D9]/40 hover:text-[#6D28D9] font-bold px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-[13px] flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer active:scale-95"
         >
           <span>View Details</span>
           <ArrowRight className="w-3.5 h-3.5" />
@@ -805,11 +805,11 @@ function ListCard({ job, index = 0, onViewDetails, saved, onSave, onApplyClick }
           className={`font-bold px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-[13px] flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer active:scale-95 shadow-md ${
             isApplyDisabled
               ? 'bg-slate-200 text-slate-400 cursor-not-allowed shadow-none'
-              : 'bg-[#1d68f6] hover:bg-blue-700 text-white shadow-blue-500/20'
+              : 'bg-[#0B1F4D] hover:bg-[#173B78] text-white border-b-2 border-[#D4AF37] shadow-slate-900/10'
           }`}
         >
           <span>Apply Now</span>
-          <ArrowRight className="w-3.5 h-3.5" />
+          <ArrowRight className="w-3.5 h-3.5 text-amber-300" />
         </button>
 
         <button
@@ -818,8 +818,8 @@ function ListCard({ job, index = 0, onViewDetails, saved, onSave, onApplyClick }
           title={saved ? 'Saved' : 'Save'}
           className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl border flex items-center justify-center transition shrink-0 cursor-pointer ${
             saved
-              ? 'bg-blue-50 border-blue-200 text-[#1d68f6]'
-              : 'border-slate-200 text-slate-400 hover:text-[#1d68f6] hover:border-blue-200'
+              ? 'bg-[#F3EEFF] border-purple-200 text-[#6D28D9]'
+              : 'border-slate-200 text-slate-400 hover:text-[#6D28D9] hover:border-purple-200'
           }`}
         >
           <Bookmark className="w-4 h-4" fill={saved ? 'currentColor' : 'none'} />
@@ -1029,14 +1029,14 @@ function PortalHero({ title, pageTitle, pageSubtitle, searchQuery, onSearchChang
           initial={{ opacity: 0, y: -6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease: 'easeOut' }}
-          className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3 sm:py-1 rounded-full bg-white/95 backdrop-blur-md border border-indigo-100/90 shadow-[0_2px_8px_rgba(99,102,241,0.06)] mb-3 sm:mb-4 max-w-full"
+          className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3 sm:py-1 rounded-full bg-white/95 backdrop-blur-md border border-purple-100/90 shadow-[0_2px_8px_rgba(109,40,217,0.06)] mb-3 sm:mb-4 max-w-full"
         >
           <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
             <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-emerald-500"></span>
             </span>
-            <span className="text-[9px] sm:text-[10px] md:text-[10.5px] font-bold uppercase tracking-wider text-slate-800 whitespace-nowrap">
+            <span className="text-[9px] sm:text-[10px] md:text-[10.5px] font-bold uppercase tracking-wider text-[#0B1F4D] whitespace-nowrap">
               <span className="hidden sm:inline">IB Cyber Security Private Limited</span>
               <span className="sm:hidden">IB Cyber Security Pvt Ltd</span>
             </span>
@@ -1044,8 +1044,8 @@ function PortalHero({ title, pageTitle, pageSubtitle, searchQuery, onSearchChang
 
           <span className="h-2.5 sm:h-3 w-[1px] bg-slate-200 shrink-0" />
 
-          <div className="flex items-center gap-1 text-[9px] sm:text-[10px] md:text-[10.5px] font-semibold text-indigo-600 shrink-0 whitespace-nowrap">
-            <ShieldCheck className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-indigo-600 shrink-0" />
+          <div className="flex items-center gap-1 text-[9px] sm:text-[10px] md:text-[10.5px] font-semibold text-[#6D28D9] shrink-0 whitespace-nowrap">
+            <ShieldCheck className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#6D28D9] shrink-0" />
             <span className="hidden sm:inline">Official Recruitment 2026</span>
             <span className="sm:hidden">Recruitment 2026</span>
           </div>
@@ -1071,10 +1071,10 @@ function PortalHero({ title, pageTitle, pageSubtitle, searchQuery, onSearchChang
           transition={{ duration: 0.5, delay: 0.22, ease: 'easeOut' }}
           className="w-full max-w-2xl mt-5"
         >
-          <div className="relative group p-1.5 sm:p-2 bg-white/95 backdrop-blur-xl border border-slate-200/90 rounded-2xl shadow-[0_10px_30px_-6px_rgba(79,70,229,0.12)] hover:shadow-[0_16px_36px_-8px_rgba(79,70,229,0.18)] focus-within:border-indigo-400 focus-within:ring-4 focus-within:ring-indigo-500/10 transition-all duration-300">
+          <div className="relative group p-1.5 sm:p-2 bg-white/95 backdrop-blur-xl border border-slate-200/90 rounded-2xl shadow-[0_10px_30px_-6px_rgba(11,31,77,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(109,40,217,0.12)] focus-within:border-purple-300 focus-within:ring-4 focus-within:ring-purple-500/10 transition-all duration-300">
             <div className="flex items-center gap-2">
               {/* Search Icon */}
-              <div className="pl-2 sm:pl-3 flex items-center justify-center text-indigo-500 group-focus-within:text-indigo-600 transition-colors">
+              <div className="pl-2 sm:pl-3 flex items-center justify-center text-[#6D28D9] group-focus-within:text-[#0B1F4D] transition-colors">
                 <Search className="w-5 h-5" />
               </div>
 
@@ -1085,7 +1085,7 @@ function PortalHero({ title, pageTitle, pageSubtitle, searchQuery, onSearchChang
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
                 placeholder="Search by title, department, skills, or location…"
-                className="w-full py-2.5 sm:py-3 bg-transparent text-[14px] sm:text-[15px] text-slate-800 placeholder-slate-400 focus:outline-none font-medium"
+                className="w-full py-2.5 sm:py-3 bg-transparent text-[14px] sm:text-[15px] text-[#0B1F4D] placeholder-slate-400 focus:outline-none font-medium"
               />
 
               {/* Clear button if search query exists */}
@@ -1107,10 +1107,10 @@ function PortalHero({ title, pageTitle, pageSubtitle, searchQuery, onSearchChang
                   const input = document.getElementById('portal-search');
                   if (input) input.focus();
                 }}
-                className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white text-xs font-semibold shadow-sm hover:shadow-indigo-500/25 active:scale-95 transition-all cursor-pointer whitespace-nowrap"
+                className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#0B1F4D] via-[#173B78] to-[#0B1F4D] hover:from-[#173B78] hover:to-[#0B1F4D] text-white border border-[#D4AF37]/40 text-xs font-semibold shadow-sm hover:shadow-purple-500/25 active:scale-95 transition-all cursor-pointer whitespace-nowrap"
               >
                 <span>Search</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#D4AF37]" />
               </button>
             </div>
           </div>
@@ -1264,7 +1264,7 @@ function JobPortal({ title = 'Job Vacancy', onNavigate, onBack, onHome }) {
   const handleSelectApplyOption = (job, option) => {
     setApplyTarget(null);
     if (option === 'new') {
-      setActiveSubView({ type: 'register', job });
+      setActiveSubView({ type: 'register', job, openId: Date.now() });
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       setApplyModalData({ job });
@@ -1285,7 +1285,7 @@ function JobPortal({ title = 'Job Vacancy', onNavigate, onBack, onHome }) {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
         onApply={(job) => {
-          setActiveSubView({ type: 'register', job });
+          setActiveSubView({ type: 'register', job, openId: Date.now() });
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
         onHome={onHome}
@@ -1296,6 +1296,7 @@ function JobPortal({ title = 'Job Vacancy', onNavigate, onBack, onHome }) {
   if (activeSubView.type === 'register') {
     return (
       <CandidateMasterProfileFormPage
+        key={`candidate-master-profile-${activeSubView.job?.id || 'new'}-${activeSubView.openId || 0}`}
         job={activeSubView.job}
         onBack={() => {
           setActiveSubView({ type: 'list', job: null });
@@ -1336,11 +1337,11 @@ function JobPortal({ title = 'Job Vacancy', onNavigate, onBack, onHome }) {
 
           {/* Section header with view toggle */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-            {/* Left: Blue Accent + Title & Subtitle */}
+            {/* Left: Navy Accent + Title & Subtitle */}
             <div className="flex items-center gap-3">
-              <div className="w-1.5 h-8 sm:h-9 bg-[#1d68f6] rounded-full shrink-0" />
+              <div className="w-1.5 h-8 sm:h-9 bg-[#0B1F4D] rounded-full shrink-0" />
               <div>
-                <h2 className="text-2xl sm:text-[26px] font-black text-slate-900 tracking-tight leading-none">
+                <h2 className="text-2xl sm:text-[26px] font-black text-[#0B1F4D] tracking-tight leading-none">
                   Open Positions
                 </h2>
                 <p className="text-xs sm:text-sm font-semibold text-slate-400 mt-1">
@@ -1367,8 +1368,8 @@ function JobPortal({ title = 'Job Vacancy', onNavigate, onBack, onHome }) {
                   title="List view"
                   className={`p-2 rounded-lg transition cursor-pointer ${
                     viewMode === 'list'
-                      ? 'bg-[#1d68f6] text-white shadow-sm'
-                      : 'text-slate-400 hover:text-slate-700 bg-transparent'
+                      ? 'bg-[#0B1F4D] text-[#D4AF37] shadow-sm'
+                      : 'text-slate-400 hover:text-[#0B1F4D] bg-transparent'
                   }`}
                 >
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
@@ -1387,8 +1388,8 @@ function JobPortal({ title = 'Job Vacancy', onNavigate, onBack, onHome }) {
                   title="Grid view"
                   className={`p-2 rounded-lg transition cursor-pointer ${
                     viewMode === 'grid'
-                      ? 'bg-[#1d68f6] text-white shadow-sm'
-                      : 'text-slate-400 hover:text-slate-700 bg-transparent'
+                      ? 'bg-[#0B1F4D] text-[#D4AF37] shadow-sm'
+                      : 'text-slate-400 hover:text-[#0B1F4D] bg-transparent'
                   }`}
                 >
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -1405,7 +1406,7 @@ function JobPortal({ title = 'Job Vacancy', onNavigate, onBack, onHome }) {
                 <span className="text-[10px] font-black uppercase tracking-wider text-slate-400 leading-tight">
                   RESULTS
                 </span>
-                <span className="text-sm font-black text-slate-900 leading-tight">
+                <span className="text-sm font-black text-[#0B1F4D] leading-tight">
                   {filteredJobs.length} of {jobListings.length}
                 </span>
               </div>
@@ -1435,7 +1436,7 @@ function JobPortal({ title = 'Job Vacancy', onNavigate, onBack, onHome }) {
               onClose={() => setApplyModalData(null)}
               onNewRegistration={(job) => {
                 setApplyModalData(null);
-                setActiveSubView({ type: 'register', job });
+                setActiveSubView({ type: 'register', job, openId: Date.now() });
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             />

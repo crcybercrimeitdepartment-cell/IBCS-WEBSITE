@@ -399,9 +399,28 @@ export function HeroSection() {
                       <div className="mx-auto max-w-4xl w-full flex flex-col items-center justify-center text-center">
 
 
+                        {/* Eyebrow Pill Tag */}
+                        {currentData.slide.eyebrow && (
+                          <motion.div
+                            key={`${page}-eyebrow`}
+                            initial={{ opacity: 0, y: -10, filter: 'blur(6px)' }}
+                            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            transition={{
+                              duration: reduceMotion ? 0.01 : 0.45,
+                              delay: reduceMotion ? 0 : 0.2,
+                              ease: [0.16, 1, 0.3, 1],
+                            }}
+                            className="mb-2 sm:mb-2.5"
+                          >
+                            <span className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-1 rounded-full text-[9.5px] xs:text-[10px] sm:text-xs font-bold tracking-wider uppercase backdrop-blur-md border ${currentData.theme.badgeBg}`}>
+                              {currentData.slide.eyebrow}
+                            </span>
+                          </motion.div>
+                        )}
+
                         {/* Heading Themed with Wide Format and Word-by-Word Directional Loading Animation */}
                         <h2
-                          className={`font-display text-2xl font-extrabold leading-[1.28] tracking-[-0.03em] xs:text-3xl sm:text-4xl lg:text-5xl my-1.5 pb-2 bg-gradient-to-r ${currentData.theme.gradientTitle} bg-clip-text text-transparent drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] max-w-3xl w-full flex flex-wrap justify-center gap-x-2.5 sm:gap-x-3.5 gap-y-1`}
+                          className={`font-display text-2xl font-extrabold leading-[1.28] tracking-[-0.03em] xs:text-3xl sm:text-4xl lg:text-5xl my-1.5 pb-2 bg-gradient-to-r ${currentData.theme.gradientTitle} bg-clip-text text-transparent drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] max-w-4xl w-full flex flex-wrap justify-center gap-x-2.5 sm:gap-x-3.5 gap-y-1`}
                         >
                           {currentData.slide.title.split(' ').map((word, wIdx) => (
                             <motion.span
@@ -430,9 +449,9 @@ export function HeroSection() {
                             delay: reduceMotion ? 0 : 0.65,
                             ease: [0.16, 1, 0.3, 1],
                           }}
-                          className="mt-3.5 max-w-2xl mx-auto w-full"
+                          className="mt-3 sm:mt-4 max-w-3xl mx-auto w-full"
                         >
-                          <p className={`text-xs leading-6 sm:text-base sm:leading-7 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] font-normal ${currentData.theme.descColor}`}>
+                          <p className={`text-xs leading-relaxed sm:text-base sm:leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] font-normal ${currentData.theme.descColor}`}>
                             {currentData.slide.description}
                           </p>
                         </motion.div>

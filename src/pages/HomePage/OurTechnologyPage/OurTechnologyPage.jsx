@@ -125,7 +125,7 @@ export default function OurTechnologyPage({ onClose }) {
   return (
     <div className="w-full flex flex-col items-center justify-center overflow-x-hidden font-sans pt-4 pb-16 md:pt-8 md:pb-20 relative bg-gradient-to-b from-[#f8fafc] via-[#ffffff] to-[#e0e7ff]">
       {/* Top Header Navigation buttons for standalone page view */}
-      <div className="w-full max-w-7xl px-4 pt-2 pb-4 sm:px-6 lg:px-8 flex items-center justify-start gap-3 z-30">
+      <div className="w-full max-w-7xl mx-auto px-4 pt-2 pb-4 sm:px-6 lg:px-8 flex items-center justify-start gap-3 z-30">
         <button
           type="button"
           onClick={handleBack}
@@ -163,7 +163,7 @@ export default function OurTechnologyPage({ onClose }) {
       </style>
 
       {/* HEADER SECTION */}
-      <div className="max-w-4xl text-center px-6 mb-4 md:mb-6">
+      <div className="w-full max-w-4xl mx-auto text-center px-6 mb-4 md:mb-6">
         <h2
           className="text-[30px] md:text-[36px] lg:text-[48px] text-[#081E52] font-extrabold mb-6 tracking-wide"
           style={{ fontFamily: "'Manrope', sans-serif" }}
@@ -186,7 +186,7 @@ export default function OurTechnologyPage({ onClose }) {
 
       {/* 3D Container with Swipe Support */}
       <div
-        className="relative w-full max-w-[100vw] overflow-x-hidden md:overflow-visible flex items-start justify-center h-[550px] sm:h-[500px] md:h-[480px] pt-2 md:pt-6 select-none touch-pan-y"
+        className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden md:overflow-visible flex items-start justify-center h-[550px] sm:h-[500px] md:h-[480px] pt-2 md:pt-6 select-none touch-pan-y"
         style={{ perspective: '1200px' }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
@@ -249,7 +249,7 @@ export default function OurTechnologyPage({ onClose }) {
             <div
               key={card.uid}
               className={`absolute transition-all duration-[900ms] ease-[cubic-bezier(0.23,1,0.32,1)] cursor-pointer ${isCardExpanded
-                ? 'w-[95vw] md:w-[850px] h-[480px] sm:h-[440px] md:h-[420px]'
+                ? 'w-[92vw] sm:w-[680px] md:w-[760px] max-w-[780px] h-[460px] sm:h-[430px] md:h-[410px]'
                 : 'w-[85vw] sm:w-[360px] h-[380px]'
                 }`}
               style={{
@@ -281,7 +281,7 @@ export default function OurTechnologyPage({ onClose }) {
 
                 {/* Floating Icon Box */}
                 <div className={`absolute transition-all duration-700 z-20 ${isCardExpanded
-                  ? 'top-8 left-6 md:top-10 md:left-10 scale-90 md:scale-100'
+                  ? 'top-6 left-6 sm:top-8 sm:left-8 scale-90 sm:scale-100'
                   : isCenter
                     ? 'top-8 left-1/2 -translate-x-1/2 scale-100'
                     : 'top-16 left-1/2 -translate-x-1/2 scale-100'
@@ -315,7 +315,7 @@ export default function OurTechnologyPage({ onClose }) {
                 </div>
 
                 {/* Expanded State Content */}
-                <div className={`absolute inset-0 p-8 md:p-12 flex flex-col transition-all duration-700 ease-in-out z-10 ${isCardExpanded ? 'opacity-100 scale-100 delay-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
+                <div className={`absolute inset-0 p-6 sm:p-8 md:p-10 flex flex-col transition-all duration-700 ease-in-out z-10 ${isCardExpanded ? 'opacity-100 scale-100 delay-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
 
                   <button
                     onClick={(e) => { e.stopPropagation(); setIsExpanded(false); }}
@@ -324,15 +324,15 @@ export default function OurTechnologyPage({ onClose }) {
                     <X className="w-5 h-5" />
                   </button>
 
-                  <h3 className="font-extrabold text-white tracking-tight text-[22px] sm:text-[26px] leading-[1.3] md:text-4xl drop-shadow-lg mb-6 pl-[70px] md:pl-[84px] pr-12 md:pr-0 mt-1 md:mt-0" style={{ fontFamily: "'Manrope', sans-serif" }}>
+                  <h3 className="font-extrabold text-white tracking-tight text-[22px] sm:text-[26px] md:text-[30px] leading-[1.25] drop-shadow-lg mb-5 sm:mb-6 pl-[64px] sm:pl-[74px] pr-12 sm:pr-14 mt-1 sm:mt-1.5" style={{ fontFamily: "'Manrope', sans-serif" }}>
                     {card.title}
                   </h3>
 
-                  <div className="w-full h-[1px] bg-gradient-to-r from-white/20 to-transparent mb-6"></div>
+                  <div className="w-full h-[1px] bg-gradient-to-r from-white/15 via-white/25 to-white/10 mb-5 sm:mb-6"></div>
 
-                  <div className="w-full relative pl-2 overflow-y-auto pr-2 custom-scrollbar" style={{ maxHeight: "100%" }}>
-                    <div className={`absolute left-0 top-2 bottom-2 w-1 bg-gradient-to-b ${card.themeGradient} rounded-full opacity-80`}></div>
-                    <p className="text-white/80 text-[14px] sm:text-[15px] md:text-[17px] leading-[1.8] font-medium pl-6 drop-shadow-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
+                  <div className="w-full relative px-2 overflow-y-auto custom-scrollbar" style={{ maxHeight: "100%" }}>
+                    <div className={`absolute left-2 top-2 bottom-2 w-1 bg-gradient-to-b ${card.themeGradient} rounded-full opacity-85`}></div>
+                    <p className="text-white/85 text-[14px] sm:text-[15px] md:text-[16px] leading-[1.8] font-medium pl-6 pr-4 sm:pr-6 drop-shadow-sm text-left sm:text-justify" style={{ fontFamily: "'Inter', sans-serif" }}>
                       {card.desc}
                     </p>
                   </div>

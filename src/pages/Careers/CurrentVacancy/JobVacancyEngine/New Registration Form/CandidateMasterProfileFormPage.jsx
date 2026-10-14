@@ -176,7 +176,7 @@ function CustomSelect({ field, value, onChange, controlClassName }) {
         />
 
         {/* Field Icon */}
-        <div className="absolute left-1.5 top-1/2 -translate-y-1/2 flex h-9 w-9 sm:h-11 sm:w-11 lg:h-7 lg:w-7 items-center justify-center rounded-full bg-[#f1f5f9] text-[#071733] z-10 pointer-events-none transition-colors group-focus-within:bg-[#071733] group-focus-within:text-amber-400">
+        <div className="absolute left-1.5 top-1/2 -translate-y-1/2 flex h-9 w-9 sm:h-11 sm:w-11 lg:h-7 lg:w-7 items-center justify-center rounded-full bg-[#F3EEFF] text-[#6D28D9] z-10 pointer-events-none transition-colors group-focus-within:bg-[#0B1F4D] group-focus-within:text-[#D4AF37]">
           {(() => {
             const FieldIcon = getFieldIcon(field.name, field.type)
             return <FieldIcon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-3.5 lg:w-3.5" />
@@ -188,7 +188,7 @@ function CustomSelect({ field, value, onChange, controlClassName }) {
           type="button"
           id={field.name}
           onClick={handleToggle}
-          className={`${controlClassName} ${hasError ? '!border-red-500 !ring-2 !ring-red-100' : ''} flex items-center justify-between text-left cursor-pointer bg-white ${!selectDisplayValue ? 'text-slate-500' : 'text-slate-900 font-medium'
+          className={`${controlClassName} ${hasError ? '!border-red-500 !ring-2 !ring-red-100' : ''} flex items-center justify-between text-left cursor-pointer bg-white ${!selectDisplayValue ? 'text-slate-400' : 'text-[#0B1F4D] font-medium'
             }`}
         >
           <span className="truncate">
@@ -196,7 +196,7 @@ function CustomSelect({ field, value, onChange, controlClassName }) {
           </span>
           <ChevronDown
             size={18}
-            className={`shrink-0 text-slate-500 transition-transform duration-200 ${isOpen ? 'rotate-180 text-[#071733]' : ''
+            className={`shrink-0 text-slate-500 transition-transform duration-200 ${isOpen ? 'rotate-180 text-[#0B1F4D]' : ''
               }`}
           />
         </button>
@@ -223,7 +223,7 @@ function CustomSelect({ field, value, onChange, controlClassName }) {
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     onClick={(e) => e.stopPropagation()}
-                    className="w-full rounded border border-slate-300 bg-white pl-8 pr-2.5 py-1.5 text-xs text-slate-800 outline-none focus:border-[#071733]"
+                    className="w-full rounded border border-slate-300 bg-white pl-8 pr-2.5 py-1.5 text-xs text-slate-800 outline-none focus:border-[#6D28D9]"
                     autoFocus
                   />
                 </div>
@@ -1314,7 +1314,7 @@ function FieldControl({ field, value, onChange, formData = {} }) {
   }
 
   const controlClassName =
-    `h-12 w-full rounded-md border bg-white pl-12 pr-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-[#071733] focus:ring-4 focus:ring-amber-100 read-only:bg-slate-50 read-only:text-slate-500 sm:h-14 sm:pl-14 sm:pr-4 lg:h-10 lg:pl-10 lg:pr-3 lg:text-xs ${
+    `h-12 w-full rounded-md border bg-white pl-12 pr-3 text-sm text-[#0B1F4D] outline-none transition placeholder:text-slate-400 focus:border-[#6D28D9] focus:ring-4 focus:ring-purple-500/15 read-only:bg-slate-50 read-only:text-slate-500 sm:h-14 sm:pl-14 sm:pr-4 lg:h-10 lg:pl-10 lg:pr-3 lg:text-xs ${
       isEmailField ? 'lowercase' : isNameField ? 'uppercase' : ''
     } ${fieldBorderClass || 'border-slate-300'}`
 
@@ -1333,7 +1333,7 @@ function FieldControl({ field, value, onChange, formData = {} }) {
     const FieldIcon = getFieldIcon(field.name, field.type)
     return (
       <div className="relative group">
-        <div className="absolute left-1.5 top-1.5 flex h-9 w-9 sm:h-11 sm:w-11 lg:h-7 lg:w-7 items-center justify-center rounded-full bg-[#f1f5f9] text-[#071733] z-10 pointer-events-none transition-colors group-focus-within:bg-[#071733] group-focus-within:text-amber-400">
+        <div className="absolute left-1.5 top-1.5 flex h-9 w-9 sm:h-11 sm:w-11 lg:h-7 lg:w-7 items-center justify-center rounded-full bg-[#F3EEFF] text-[#6D28D9] z-10 pointer-events-none transition-colors group-focus-within:bg-[#0B1F4D] group-focus-within:text-[#D4AF37]">
           <FieldIcon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-3.5 lg:w-3.5" />
         </div>
         <textarea
@@ -1346,7 +1346,7 @@ function FieldControl({ field, value, onChange, formData = {} }) {
           rows={3}
           className={`min-h-24 w-full resize-y rounded-md border ${
             hasSectionError ? 'border-red-500 ring-2 ring-red-100' : 'border-slate-300'
-          } bg-white pl-12 pr-3 py-3 sm:py-4 lg:py-2 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-[#071733] focus:ring-4 focus:ring-amber-100 sm:pl-14 sm:pr-4 lg:min-h-14 lg:pl-10 lg:text-xs ${isNameField ? 'uppercase' : ''}`}
+          } bg-white pl-12 pr-3 py-3 sm:py-4 lg:py-2 text-sm text-[#0B1F4D] outline-none transition placeholder:text-slate-400 focus:border-[#6D28D9] focus:ring-4 focus:ring-purple-500/15 sm:pl-14 sm:pr-4 lg:min-h-14 lg:pl-10 lg:text-xs ${isNameField ? 'uppercase' : ''}`}
         />
         {hasSectionError && (
           <p className="mt-1 text-xs font-semibold text-red-600 flex items-center gap-1">
@@ -1435,7 +1435,7 @@ function FieldControl({ field, value, onChange, formData = {} }) {
   return (
     <div className="w-full">
       <div className="relative group">
-        <div className="absolute left-1.5 top-1/2 -translate-y-1/2 flex h-9 w-9 sm:h-11 sm:w-11 lg:h-7 lg:w-7 items-center justify-center rounded-full bg-[#f1f5f9] text-[#071733] z-10 pointer-events-none transition-colors group-focus-within:bg-[#071733] group-focus-within:text-amber-400">
+        <div className="absolute left-1.5 top-1/2 -translate-y-1/2 flex h-9 w-9 sm:h-11 sm:w-11 lg:h-7 lg:w-7 items-center justify-center rounded-full bg-[#F3EEFF] text-[#6D28D9] z-10 pointer-events-none transition-colors group-focus-within:bg-[#0B1F4D] group-focus-within:text-[#D4AF37]">
           <FieldIcon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-3.5 lg:w-3.5" />
         </div>
         <input
@@ -1847,11 +1847,11 @@ export function CandidateMasterProfileForm({ section, formData, onChange }) {
   return (
     <div className="w-full min-w-0 px-3 py-5 sm:px-8 sm:py-7 lg:px-6 lg:py-4">
       <div className="mb-5 flex items-start gap-3 border-b border-slate-200 pb-5 sm:mb-7 sm:gap-4 sm:pb-7 lg:mb-4 lg:pb-4">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#071733] text-amber-400 sm:h-16 sm:w-16 lg:h-11 lg:w-11">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#0B1F4D] text-[#D4AF37] border border-[#D4AF37]/30 sm:h-16 sm:w-16 lg:h-11 lg:w-11 shadow-sm">
           <UserRound size={24} />
         </div>
         <div className="min-w-0 flex-1">
-          <h2 className="text-lg font-black leading-6 text-slate-950 sm:text-2xl sm:leading-8 lg:text-xl lg:leading-6">
+          <h2 className="text-lg font-black leading-6 text-[#0B1F4D] sm:text-2xl sm:leading-8 lg:text-xl lg:leading-6">
             Section {section.id}: {section.title}
           </h2>
           <p className="mt-1 text-sm leading-6 text-slate-600 sm:text-base lg:text-xs lg:leading-4">
@@ -2070,20 +2070,10 @@ const initialFormData = applicationSections.reduce((sectionFields, section) => {
 
 export function FormProvider({ children }) {
   const [sectionError, setSectionError] = useState(null)
-  const [currentStep, setCurrentStep] = useState(() => {
-    const saved = localStorage.getItem('jobApplicationDraft')
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved)
-        if (parsed.currentStep && parsed.currentStep >= 1 && parsed.currentStep <= applicationSections.length) {
-          return parsed.currentStep
-        }
-      } catch (e) {
-        console.error('Failed to restore step from draft:', e)
-      }
-    }
-    return 1
-  })
+
+  // Whenever the Candidate Master Profile Form is opened, it must ALWAYS start with
+  // Section 1 (Personal Information) as the default active and visible section.
+  const [currentStep, setCurrentStep] = useState(1)
 
   const [formData, setFormData] = useState(() => {
     const saved = localStorage.getItem('jobApplicationDraft')
@@ -2100,15 +2090,59 @@ export function FormProvider({ children }) {
     return initialFormData
   })
 
+  const [completedSections, setCompletedSections] = useState(() => {
+    const saved = localStorage.getItem('jobApplicationDraft')
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved)
+        if (Array.isArray(parsed.completedSections)) {
+          return new Set(parsed.completedSections)
+        }
+        if (parsed.formData) {
+          const recovered = new Set()
+          for (let s = 1; s <= applicationSections.length; s++) {
+            const val = validateSection(s, parsed.formData)
+            if (val.isValid) {
+              const sec = applicationSections.find((item) => item.id === s)
+              const hasData = sec?.fields?.some((field) => {
+                const name = Array.isArray(field) ? field[1] : field?.name
+                const status = Array.isArray(field) ? field[3] : field?.status
+                if (status === 'Auto-Calculated') return false
+                const v = parsed.formData[name]
+                return typeof v === 'string' ? v.trim().length > 0 : Boolean(v)
+              })
+              if (hasData) {
+                recovered.add(s)
+              }
+            }
+          }
+          return recovered
+        }
+      } catch (e) {
+        console.error('Failed to restore completed sections from draft:', e)
+      }
+    }
+    return new Set()
+  })
+
+  // Whenever FormProvider mounts (form is opened or reopened), always guarantee
+  // that the active section starts on Section 1 without clearing entered form data or drafts.
+  useEffect(() => {
+    setCurrentStep(1)
+    setSectionError(null)
+  }, [])
+
+  // Persist form data draft while keeping the default entry point anchored to Section 1
   useEffect(() => {
     localStorage.setItem(
       'jobApplicationDraft',
       JSON.stringify({
-        currentStep,
+        currentStep: 1,
+        completedSections: Array.from(completedSections),
         formData,
       })
     )
-  }, [currentStep, formData])
+  }, [formData, completedSections])
 
   const focusAndReportField = (fieldName, message) => {
     if (!fieldName) return
@@ -2128,8 +2162,40 @@ export function FormProvider({ children }) {
     }
   }
 
+  const hasSectionData = (secId, data = formData) => {
+    const sec = applicationSections.find((s) => s.id === secId)
+    if (!sec || !sec.fields) return false
+    return sec.fields.some((field) => {
+      const name = Array.isArray(field) ? field[1] : field?.name
+      const status = Array.isArray(field) ? field[3] : field?.status
+      if (status === 'Auto-Calculated') return false
+      if (!name) return false
+      const val = data[name]
+      if (val === undefined || val === null) return false
+      if (typeof val === 'string') return val.trim().length > 0
+      return Boolean(val)
+    })
+  }
+
   const isSectionCompleted = (secId, data = formData) => {
-    return validateSection(secId, data).isValid
+    // 1. Validation check must always pass
+    const validation = validateSection(secId, data)
+    if (!validation.isValid) {
+      return false
+    }
+
+    // 2. Purely optional sections: 2 (Physical & Identification), 5 (Social Media), 7 (Trainer & Certificate)
+    // These must NOT be marked completed when empty unless explicitly completed by the candidate
+    const isPurelyOptionalSection = secId === 2 || secId === 5 || secId === 7
+    if (isPurelyOptionalSection) {
+      if (secId === 7 && data.internshipIfAny === 'No') {
+        return false
+      }
+      return completedSections.has(secId) || hasSectionData(secId, data)
+    }
+
+    // 3. For sections with required fields, validation.isValid guarantees required fields are present
+    return hasSectionData(secId, data)
   }
 
   const canNavigateToStep = (targetStep) => {
@@ -2147,21 +2213,24 @@ export function FormProvider({ children }) {
       return false
     }
 
-    // 2. Target step itself MUST be filled and completed!
-    // (Moving by clicking icon is allowed only to filled and done sections)
-    if (!validateSection(targetStep, formData).isValid) {
-      return false
+    // 2. Can navigate directly to targetStep if it is the immediate next step
+    if (targetStep === currentStep + 1) {
+      return true
     }
 
-    // 3. All intermediate steps between currentStep and targetStep must also be filled and valid!
-    for (let s = currentStep; s <= targetStep; s++) {
-      if (s === 7 && formData.internshipIfAny === 'No') continue
-      if (!validateSection(s, formData).isValid) {
-        return false
+    // 3. Jumping forward across multiple steps (targetStep > currentStep + 1):
+    // Allowed only if targetStep itself is completed AND all intermediate steps are completed
+    if (isSectionCompleted(targetStep, formData)) {
+      for (let s = 1; s < targetStep; s++) {
+        if (s === 7 && formData.internshipIfAny === 'No') continue
+        if (!isSectionCompleted(s, formData)) {
+          return false
+        }
       }
+      return true
     }
 
-    return true
+    return false
   }
 
   const updateField = (event) => {
@@ -2366,18 +2435,22 @@ export function FormProvider({ children }) {
     })
 
     if (name === 'internshipIfAny' && value === 'No') {
+      setCompletedSections((prev) => new Set(prev).add(6))
       setTimeout(() => setCurrentStep(8), 100)
     }
 
     if (name === 'employmentIfAny' && value === 'No') {
+      setCompletedSections((prev) => new Set(prev).add(8))
       setTimeout(() => setCurrentStep(9), 100)
     }
 
     if (name === 'hasBachelorDegree' && value === 'No') {
+      setCompletedSections((prev) => new Set(prev).add(12))
       setTimeout(() => setCurrentStep(13), 100)
     }
 
     if (name === 'hasMasterDegree' && value === 'No') {
+      setCompletedSections((prev) => new Set(prev).add(13))
       setTimeout(() => setCurrentStep(14), 100)
     }
   }
@@ -2390,6 +2463,12 @@ export function FormProvider({ children }) {
     }
 
     setSectionError(null)
+    setCompletedSections((prev) => {
+      const updated = new Set(prev)
+      updated.add(currentStep)
+      return updated
+    })
+
     setCurrentStep((previous) => {
       if (previous === 6 && formData.internshipIfAny === 'No') {
         return 8
@@ -2444,6 +2523,12 @@ export function FormProvider({ children }) {
       if (!canNavigateToStep(step)) {
         return
       }
+
+      setCompletedSections((prev) => {
+        const updated = new Set(prev)
+        updated.add(currentStep)
+        return updated
+      })
     }
 
     // Moving backward
@@ -2457,11 +2542,17 @@ export function FormProvider({ children }) {
     setCurrentStep(step)
   }
 
+  const resetToFirstSection = () => {
+    setSectionError(null)
+    setCurrentStep(1)
+  }
+
   const saveDraft = () => {
     localStorage.setItem(
       'jobApplicationDraft',
       JSON.stringify({
-        currentStep,
+        currentStep: 1,
+        completedSections: Array.from(completedSections),
         formData,
       })
     )
@@ -2470,6 +2561,7 @@ export function FormProvider({ children }) {
 
   const resetForm = () => {
     setFormData(initialFormData)
+    setCompletedSections(new Set())
     setCurrentStep(1)
     setSectionError(null)
     localStorage.removeItem('jobApplicationDraft')
@@ -2482,6 +2574,7 @@ export function FormProvider({ children }) {
     nextStep,
     previousStep,
     goToStep,
+    resetToFirstSection,
     saveDraft,
     resetForm,
     sectionError,
@@ -2489,6 +2582,7 @@ export function FormProvider({ children }) {
     focusAndReportField,
     canNavigateToStep,
     isSectionCompleted,
+    completedSections,
   }
 
   return <FormContext.Provider value={value}>{children}</FormContext.Provider>
@@ -2537,7 +2631,7 @@ export function ProgressBar({ currentStep: propCurrentStep }) {
   return (
     <div className="relative mb-6 sm:mb-8 lg:mb-6 pt-4 sm:pt-6 lg:pt-4">
       {/* Soft Ambient Radial Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(29,104,246,0.04),transparent_70%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(109,40,217,0.04),transparent_70%)] pointer-events-none" />
 
       {/* Header Container */}
       <div className="relative mb-6 text-center sm:mb-8 lg:mb-7">
@@ -2547,7 +2641,7 @@ export function ProgressBar({ currentStep: propCurrentStep }) {
           aria-hidden="true"
         >
           {Array.from({ length: 16 }).map((_, i) => (
-            <span key={`dot-tr-${i}`} className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+            <span key={`dot-tr-${i}`} className="w-1.5 h-1.5 rounded-full bg-purple-300" />
           ))}
         </div>
 
@@ -2557,13 +2651,13 @@ export function ProgressBar({ currentStep: propCurrentStep }) {
           aria-hidden="true"
         >
           {Array.from({ length: 16 }).map((_, i) => (
-            <span key={`dot-bl-${i}`} className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+            <span key={`dot-bl-${i}`} className="w-1.5 h-1.5 rounded-full bg-purple-300" />
           ))}
         </div>
 
         {/* Main Title */}
-        <h2 className="text-xl font-black tracking-tight text-slate-900 sm:text-3xl sm:tracking-normal lg:text-[28px] uppercase">
-          CANDIDATE <span className="text-[#1d68f6]">MASTER</span> PROFILE FORM
+        <h2 className="text-xl font-black tracking-tight text-[#0B1F4D] sm:text-3xl sm:tracking-normal lg:text-[28px] uppercase">
+          CANDIDATE <span className="text-[#6D28D9]">MASTER</span> PROFILE FORM
         </h2>
 
         {/* Subtitle */}
@@ -2571,15 +2665,15 @@ export function ProgressBar({ currentStep: propCurrentStep }) {
           Please fill out all the details carefully. You can save your progress and continue later.
         </p>
 
-        {/* Amber Accent Bar */}
-        <div className="mx-auto mt-2.5 h-1 w-14 sm:w-16 rounded-full bg-amber-500" />
+        {/* Amber/Gold Accent Bar */}
+        <div className="mx-auto mt-2.5 h-1 w-14 sm:w-16 rounded-full bg-[#D4AF37]" />
       </div>
 
       {/* Mobile Step Card (lg:hidden) */}
-      <div className="block lg:hidden px-4 py-4 rounded-xl border border-blue-100 bg-white shadow-sm mb-4 relative overflow-hidden">
+      <div className="block lg:hidden px-4 py-4 rounded-xl border border-purple-100 bg-white shadow-sm mb-4 relative overflow-hidden">
         <div className="flex items-center justify-between mb-3.5">
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center rounded-full bg-blue-500/10 px-3 py-1 text-xs font-black text-[#1d68f6] ring-1 ring-blue-500/20">
+            <span className="inline-flex items-center rounded-full bg-[#F3EEFF] px-3 py-1 text-xs font-black text-[#6D28D9] ring-1 ring-purple-200">
               Step {currentStep} of {steps.length}
             </span>
           </div>
@@ -2588,8 +2682,8 @@ export function ProgressBar({ currentStep: propCurrentStep }) {
           </span>
         </div>
 
-        <h3 className="text-base font-black text-slate-900 mb-3.5 flex items-center gap-2">
-          <span className="w-7 h-7 rounded-lg bg-[#1d68f6] text-white inline-flex items-center justify-center text-xs font-bold shrink-0">
+        <h3 className="text-base font-black text-[#0B1F4D] mb-3.5 flex items-center gap-2">
+          <span className="w-7 h-7 rounded-lg bg-[#0B1F4D] text-[#D4AF37] inline-flex items-center justify-center text-xs font-bold shrink-0">
             {currentStep}
           </span>
           <span>{currentStepName}</span>
@@ -2597,7 +2691,7 @@ export function ProgressBar({ currentStep: propCurrentStep }) {
 
         <div className="relative h-2 w-full rounded-full bg-slate-100 overflow-hidden">
           <div
-            className="h-full rounded-full bg-gradient-to-r from-blue-500 to-[#1d68f6] transition-all duration-500 ease-out shadow-sm"
+            className="h-full rounded-full bg-gradient-to-r from-[#0B1F4D] via-[#173B78] to-[#6D28D9] transition-all duration-500 ease-out shadow-sm"
             style={{ width: `${progressPercentage}%` }}
           />
         </div>
@@ -2623,7 +2717,7 @@ export function ProgressBar({ currentStep: propCurrentStep }) {
 
               return (
                 <div
-                  key={step}
+                  key={`step-indicator-${stepNumber}`}
                   className="relative flex flex-1 flex-col items-center px-0.5 text-center min-w-[60px]"
                 >
                   {/* Connecting Line to next step */}
@@ -2634,7 +2728,7 @@ export function ProgressBar({ currentStep: propCurrentStep }) {
                     >
                       <div
                         className={`h-full w-full transition-colors duration-300 ${
-                          isSectionCompleted?.(stepNumber, formData) ? 'bg-[#1d68f6]' : 'bg-slate-200'
+                          isSectionCompleted?.(stepNumber, formData) ? 'bg-[#0B1F4D]' : 'bg-slate-200'
                         }`}
                       />
                     </div>
@@ -2662,22 +2756,22 @@ export function ProgressBar({ currentStep: propCurrentStep }) {
                     title={`Step ${stepNumber}: ${step}${!isClickable ? ' (Unfilled section - complete required fields first)' : ''}`}
                   >
                     {active ? (
-                      // Active: Horizontal royal blue pill capsule with icon and number
-                      <div className="h-9 min-w-[62px] px-3.5 rounded-full bg-[#1d68f6] text-white flex items-center justify-center gap-2 shadow-md shadow-blue-500/25 ring-2 ring-blue-500/20">
-                        <StepIcon className="w-4 h-4 text-white shrink-0" strokeWidth={2.5} />
+                      // Active: Horizontal navy pill capsule with icon and gold details
+                      <div className="h-9 min-w-[62px] px-3.5 rounded-full bg-[#0B1F4D] text-white flex items-center justify-center gap-2 shadow-md shadow-[#0B1F4D]/25 ring-2 ring-purple-500/25 border border-[#D4AF37]/50">
+                        <StepIcon className="w-4 h-4 text-[#D4AF37] shrink-0" strokeWidth={2.5} />
                         <span className="font-extrabold text-sm text-white leading-none">
                           {stepNumber}
                         </span>
                       </div>
                     ) : isCompleted ? (
-                      // Completed: Royal blue rounded squircle with check icon
-                      <div className="w-9 h-9 rounded-xl bg-[#1d68f6] text-white flex items-center justify-center shadow-sm border border-[#1d68f6]">
-                        <Check className="w-4 h-4 text-white stroke-[2.5]" />
+                      // Completed: Navy rounded squircle with gold check icon
+                      <div className="w-9 h-9 rounded-xl bg-[#173B78] text-[#D4AF37] flex items-center justify-center shadow-sm border border-[#173B78]">
+                        <Check className="w-4 h-4 text-[#D4AF37] stroke-[2.5]" />
                       </div>
                     ) : (
-                      // Inactive: White squircle with soft blue border and slate number
-                      <div className={`w-9 h-9 rounded-xl border border-blue-100/90 bg-white text-slate-700 font-bold text-xs sm:text-[13px] flex items-center justify-center shadow-[0_2px_8px_rgba(37,99,235,0.06)] ${
-                        isClickable ? 'group-hover:border-blue-200 group-hover:text-[#1d68f6]' : ''
+                      // Inactive: White squircle with soft border and hover purple
+                      <div className={`w-9 h-9 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs sm:text-[13px] flex items-center justify-center shadow-[0_2px_8px_rgba(11,31,77,0.04)] ${
+                        isClickable ? 'group-hover:border-purple-300 group-hover:text-[#6D28D9]' : ''
                       }`}>
                         {stepNumber}
                       </div>
@@ -2688,7 +2782,7 @@ export function ProgressBar({ currentStep: propCurrentStep }) {
                   <span
                     className={`mt-2.5 max-w-[80px] text-[10px] leading-[1.25] text-center transition-colors ${
                       active
-                        ? 'font-extrabold text-slate-950'
+                        ? 'font-extrabold text-[#0B1F4D]'
                         : isCompleted
                           ? 'font-semibold text-slate-800'
                           : 'font-medium text-slate-600'
@@ -2712,7 +2806,7 @@ export function ProgressBar({ currentStep: propCurrentStep }) {
 
 export function SectionNavigation({
   currentStep = 1,
-  totalSteps = 15,
+  totalSteps = 18,
   onPrevious,
   onSaveDraft,
   isSubmitting = false,
@@ -2739,7 +2833,7 @@ export function SectionNavigation({
         <button
           type="button"
           onClick={onSaveDraft}
-          className="inline-flex h-12 w-full items-center justify-center gap-3 rounded-md border border-slate-300 bg-white px-5 font-bold text-slate-800 transition hover:border-amber-400 hover:bg-amber-50 sm:h-14 md:w-auto md:px-6 lg:h-10 lg:px-5 lg:text-sm cursor-pointer"
+          className="inline-flex h-12 w-full items-center justify-center gap-3 rounded-md border border-slate-300 bg-white px-5 font-bold text-slate-800 transition hover:border-[#D4AF37] hover:bg-[#F3EEFF]/40 sm:h-14 md:w-auto md:px-6 lg:h-10 lg:px-5 lg:text-sm cursor-pointer"
         >
           <Save size={18} />
           Save & Exit
@@ -2748,10 +2842,10 @@ export function SectionNavigation({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex h-12 w-full items-center justify-center gap-3 rounded-md bg-[#071733] px-6 font-black text-amber-400 shadow-lg shadow-slate-300 transition hover:bg-[#0b2148] disabled:cursor-not-allowed disabled:opacity-60 sm:h-14 md:w-auto md:px-8 lg:h-10 lg:px-6 lg:text-sm cursor-pointer"
+          className="inline-flex h-12 w-full items-center justify-center gap-3 rounded-md bg-[#0B1F4D] hover:bg-[#173B78] px-6 font-black text-white border border-[#D4AF37]/40 shadow-lg shadow-[#0B1F4D]/15 transition disabled:cursor-not-allowed disabled:opacity-60 sm:h-14 md:w-auto md:px-8 lg:h-10 lg:px-6 lg:text-sm cursor-pointer active:scale-95"
         >
-          {isLastStep ? 'Submit Application' : 'Save & Continue'}
-          <ArrowRight size={18} />
+          <span>{isLastStep ? 'Submit Application' : 'Save & Continue'}</span>
+          <ArrowRight size={18} className="text-[#D4AF37]" />
         </button>
       </div>
     </div>
@@ -2767,7 +2861,7 @@ const footerCards = [
     icon: ShieldCheck,
     title: 'Secure',
     text: 'Your data is encrypted and protected.',
-    color: 'bg-[#071733] text-amber-400',
+    color: 'bg-[#0B1F4D] text-[#D4AF37]',
   },
   {
     icon: BadgeCheck,
@@ -2779,13 +2873,13 @@ const footerCards = [
     icon: FileBadge,
     title: 'Easy to Fill',
     text: 'Simple and structured application process.',
-    color: 'bg-orange-500 text-white',
+    color: 'bg-[#173B78] text-[#F7E7A9]',
   },
   {
     icon: Headphones,
     title: 'Need Help?',
     text: 'Contact our support team anytime.',
-    color: 'bg-violet-600 text-white',
+    color: 'bg-[#6D28D9] text-white',
   },
 ]
 
@@ -2954,20 +3048,20 @@ export function PreviewPage({ onBackToEdit, onSubmitSuccess, appliedJob }) {
           return (
             <div key={section.id}>
               {showHeader && (
-                <div className="mb-4 mt-8 rounded-lg bg-[#061326] px-5 py-3 text-center first:mt-0">
-                  <h2 className="text-xs font-black uppercase tracking-[0.2em] text-amber-400 sm:text-sm">
+                <div className="mb-4 mt-8 rounded-lg bg-[#0B1F4D] border border-[#D4AF37]/30 px-5 py-3 text-center first:mt-0 shadow-sm">
+                  <h2 className="text-xs font-black uppercase tracking-[0.2em] text-[#D4AF37] sm:text-sm">
                     {section.formTitle}
                   </h2>
                 </div>
               )}
 
               <div className="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-                <div className="border-b border-slate-100 bg-slate-50 px-5 py-3">
+                <div className="border-b border-slate-100 bg-[#F8FAFC] px-5 py-3">
                   <div className="flex items-center gap-2">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500 text-[11px] font-black text-white">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#0B1F4D] text-[11px] font-black text-[#D4AF37]">
                       {section.id}
                     </span>
-                    <h3 className="text-sm font-bold text-slate-800">
+                    <h3 className="text-sm font-bold text-[#0B1F4D]">
                       {section.title}
                     </h3>
                   </div>
@@ -3100,10 +3194,10 @@ export function PreviewPage({ onBackToEdit, onSubmitSuccess, appliedJob }) {
           <button
             type="button"
             onClick={handleFinalSubmit}
-            className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#061326] px-6 py-3 text-sm font-black text-amber-400 shadow-md transition hover:bg-[#0b2148] active:scale-[0.98] sm:w-auto cursor-pointer"
+            className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#0B1F4D] hover:bg-[#173B78] px-6 py-3 text-sm font-black text-white border border-[#D4AF37]/40 shadow-md transition active:scale-[0.98] sm:w-auto cursor-pointer"
           >
-            <Send size={16} />
-            Submit Application
+            <Send size={16} className="text-[#D4AF37]" />
+            <span>Submit Application</span>
           </button>
         </div>
       </div>
@@ -3132,17 +3226,17 @@ export function SuccessPage({ onContinue, appliedJob }) {
       className="relative min-h-screen flex items-center justify-center bg-slate-50 px-4 overflow-hidden"
       style={{
         backgroundImage:
-          'radial-gradient(at 0% 0%, rgba(245, 158, 11, 0.08) 0px, transparent 50%), radial-gradient(at 50% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.08) 0px, transparent 50%)',
+          'radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.08) 0px, transparent 50%), radial-gradient(at 50% 0%, rgba(109, 40, 217, 0.08) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(212, 175, 55, 0.08) 0px, transparent 50%)',
       }}
     >
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-indigo-400/5 blur-[100px] pointer-events-none animate-pulse" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-purple-400/5 blur-[100px] pointer-events-none animate-pulse" />
       <div
         className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-amber-400/5 blur-[100px] pointer-events-none animate-pulse"
         style={{ animationDelay: '2s' }}
       />
 
-      <div className="relative overflow-hidden w-full max-w-md rounded-3xl border border-slate-200/60 bg-white/80 backdrop-blur-xl p-10 text-center shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)]">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-amber-500 to-indigo-500" />
+      <div className="relative overflow-hidden w-full max-w-md rounded-3xl border border-slate-200/60 bg-white/80 backdrop-blur-xl p-10 text-center shadow-[0_20px_50px_rgba(11,_31,_77,_0.07)]">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D4AF37] via-[#173B78] to-[#6D28D9]" />
 
         <div className="mx-auto mb-8 relative flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-tr from-emerald-50 to-teal-50/50 text-emerald-500 shadow-[0_10px_30px_rgba(16,_185,_129,_0.15)] ring-1 ring-emerald-500/10">
           <span className="absolute inset-0 rounded-full border border-emerald-400/30 animate-ping opacity-40" />
@@ -3150,14 +3244,14 @@ export function SuccessPage({ onContinue, appliedJob }) {
           <Check size={40} className="stroke-[3.5] relative z-10 drop-shadow-sm" />
         </div>
 
-        <h1 className="text-3xl font-black text-[#061326] tracking-tight leading-snug">
+        <h1 className="text-3xl font-black text-[#0B1F4D] tracking-tight leading-snug">
           Application Submitted<br />
-          <span className="bg-gradient-to-r from-[#061326] via-indigo-950 to-[#061326] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#0B1F4D] via-[#173B78] to-[#0B1F4D] bg-clip-text text-transparent">
             Successfully!
           </span>
         </h1>
 
-        <div className="mx-auto my-6 h-0.5 w-12 bg-gradient-to-r from-amber-400 to-indigo-500 rounded-full" />
+        <div className="mx-auto my-6 h-0.5 w-12 bg-gradient-to-r from-[#D4AF37] to-[#6D28D9] rounded-full" />
 
         <p className="text-slate-500 text-sm font-medium leading-relaxed max-w-xs mx-auto">
           Thank you for your submission. Your profile has been securely received and is under initial screening.
@@ -3165,7 +3259,7 @@ export function SuccessPage({ onContinue, appliedJob }) {
 
         {appliedJob && (
           <div className="mt-4 p-3 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-600">
-            <span className="font-bold text-slate-800">{appliedJob.jobTitle}</span> ({appliedJob.jobCode})
+            <span className="font-bold text-[#0B1F4D]">{appliedJob.jobTitle}</span> ({appliedJob.jobCode})
           </div>
         )}
 
@@ -3173,10 +3267,10 @@ export function SuccessPage({ onContinue, appliedJob }) {
           <button
             type="button"
             onClick={handleContinue}
-            className="group relative inline-flex items-center justify-center w-full gap-2.5 px-8 py-3.5 text-sm font-bold text-white rounded-xl bg-gradient-to-r from-[#061326] via-indigo-950 to-[#061326] shadow-[0_10px_25px_rgba(6,_19,_38,_0.2)] hover:shadow-[0_15px_30px_rgba(6,_19,_38,_0.3)] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+            className="group relative inline-flex items-center justify-center w-full gap-2.5 px-8 py-3.5 text-sm font-bold text-white rounded-xl bg-gradient-to-r from-[#0B1F4D] via-[#173B78] to-[#0B1F4D] border border-[#D4AF37]/40 shadow-[0_10px_25px_rgba(11,_31,_77,_0.2)] hover:shadow-[0_15px_30px_rgba(11,_31,_77,_0.3)] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
           >
             <span>Return to Job Vacancies</span>
-            <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1 text-amber-400" />
+            <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1 text-[#D4AF37]" />
           </button>
         </div>
       </div>
@@ -3192,6 +3286,13 @@ function CandidateMasterProfilePageContent({ job: propJob, onBack, onHome }) {
   const location = useLocation()
   const appliedJob = propJob || location.state?.job || null
   const [viewMode, setViewMode] = useState('form') // 'form' | 'preview' | 'success'
+  const { resetToFirstSection } = useFormContext()
+
+  useEffect(() => {
+    setViewMode('form')
+    resetToFirstSection?.()
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })

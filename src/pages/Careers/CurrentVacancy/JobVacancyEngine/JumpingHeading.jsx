@@ -35,6 +35,13 @@ export default function JumpingHeading({ title = 'Job Vacancy', className = '' }
         { id: 'portal', text: 'Portal', isGradient: true },
       ];
     }
+    if (title === 'Remote Job') {
+      return [
+        { id: 'remote', text: 'Remote', isGradient: false },
+        { id: 'job', text: 'Job', isGradient: false },
+        { id: 'portal', text: 'Portal', isGradient: true },
+      ];
+    }
     if (title === 'Internship') {
       return [
         { id: 'internship', text: 'Internship', isGradient: false },
@@ -101,10 +108,10 @@ export default function JumpingHeading({ title = 'Job Vacancy', className = '' }
   if (shouldReduceMotion) {
     return (
       <h1
-        className={`text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.18] max-w-3xl ${className}`}
+        className={`text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0B1F4D] leading-[1.18] max-w-3xl ${className}`}
       >
         {title}{' '}
-        <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-800 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-[#173B78] via-[#6D28D9] to-[#0B1F4D] bg-clip-text text-transparent">
           Portal
         </span>
       </h1>
@@ -124,7 +131,7 @@ export default function JumpingHeading({ title = 'Job Vacancy', className = '' }
         duration: 0.55,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className={`relative text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.18] max-w-3xl select-none ${className}`}
+      className={`relative text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0B1F4D] leading-[1.18] max-w-3xl select-none ${className}`}
     >
       <span className="inline-flex flex-wrap items-center justify-center gap-x-2.5 sm:gap-x-3.5">
         {wordsConfig.map((wordConfig, wIdx) => {
@@ -153,7 +160,7 @@ export default function JumpingHeading({ title = 'Job Vacancy', className = '' }
                       scaleX: 1.15,
                       scaleY: 0.85,
                       rotate: 15,
-                      filter: 'drop-shadow(0 0 14px rgba(99,102,241,0.85))',
+                      filter: 'drop-shadow(0 0 14px rgba(109,40,217,0.75))',
                     }}
                     animate={{
                       opacity: [0, 1, 1, 1, 1],
@@ -163,11 +170,11 @@ export default function JumpingHeading({ title = 'Job Vacancy', className = '' }
                       scaleY: [0.85, 1.18, 0.88, 1.04, 1],
                       rotate: [15, 4, -3, 1, 0],
                       filter: [
-                        'drop-shadow(0 0 14px rgba(99,102,241,0.85))',
-                        'drop-shadow(0 0 16px rgba(79,70,229,0.75))',
-                        'drop-shadow(0 0 8px rgba(99,102,241,0.4))',
-                        'drop-shadow(0 0 0px rgba(99,102,241,0))',
-                        'drop-shadow(0 0 0px rgba(99,102,241,0))',
+                        'drop-shadow(0 0 14px rgba(109,40,217,0.75))',
+                        'drop-shadow(0 0 16px rgba(23,59,120,0.65))',
+                        'drop-shadow(0 0 8px rgba(109,40,217,0.35))',
+                        'drop-shadow(0 0 0px rgba(109,40,217,0))',
+                        'drop-shadow(0 0 0px rgba(109,40,217,0))',
                       ],
                     }}
                     transition={{
@@ -181,8 +188,8 @@ export default function JumpingHeading({ title = 'Job Vacancy', className = '' }
                     }}
                     className={`relative inline-block will-change-transform ${
                       isWordGradient
-                        ? 'bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-800 bg-clip-text text-transparent'
-                        : 'text-slate-900'
+                        ? 'bg-gradient-to-r from-[#173B78] via-[#6D28D9] to-[#0B1F4D] bg-clip-text text-transparent'
+                        : 'text-[#0B1F4D]'
                     }`}
                   >
                     {char}

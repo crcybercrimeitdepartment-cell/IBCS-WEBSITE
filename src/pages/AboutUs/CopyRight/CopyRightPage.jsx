@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Home } from 'lucide-react';
 import { COPYRIGHT_CARDS } from './CopyRightPageData';
 import Device from './Device';
@@ -248,6 +248,13 @@ export function CopyrightCardItem({ item, onSelectCard }) {
 export default function Copyright({ onClose }) {
   const [globalKey, setGlobalKey] = useState(0);
   const [selectedCard, setSelectedCard] = useState(null);
+  const [replayCount, setReplayCount] = useState(0);
+
+  useEffect(() => {
+    if (selectedCard) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }
+  }, [selectedCard]);
 
   const handleBack = () => {
     if (selectedCard) {
@@ -269,11 +276,11 @@ export default function Copyright({ onClose }) {
 
   if (selectedCard) {
     return (
-      <div className="min-h-screen w-full bg-gradient-to-b from-[#EBF7F8] via-[#F4FCFD] to-[#EBF7F8] px-3 py-3 sm:px-6 sm:py-4 lg:px-12 select-none overflow-x-hidden">
+      <div className="min-h-screen w-full bg-gradient-to-b from-[#EBF7F8] via-[#F4FCFD] to-[#EBF7F8] py-3 sm:py-4 select-none overflow-x-hidden">
         <style>{EMBEDDED_STYLES}</style>
 
         {/* Top Header Navigation Bar */}
-        <div className="w-full max-w-7xl mx-auto mb-2 flex items-center justify-start gap-3 z-50 relative">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-2 flex items-center justify-start gap-3 z-50 relative">
           <button
             type="button"
             onClick={handleBack}
@@ -293,21 +300,21 @@ export default function Copyright({ onClose }) {
         </div>
 
         {/* Interactive Device Simulation */}
-        <div className="max-w-7xl mx-auto">
-          <Device activeItem={selectedCard} />
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Device activeItem={selectedCard} replayCount={replayCount} />
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-[#EBF7F8] via-[#F4FCFD] to-[#EBF7F8] px-3 py-6 sm:px-6 sm:py-10 lg:px-12 select-none overflow-x-hidden">
+    <div className="min-h-screen w-full bg-gradient-to-b from-[#EBF7F8] via-[#F4FCFD] to-[#EBF7F8] py-6 sm:py-10 select-none overflow-x-hidden">
       
       {/* Inject Embedded Animation Styles */}
       <style>{EMBEDDED_STYLES}</style>
 
       {/* Top Header Navigation Bar */}
-      <div className="w-full max-w-7xl mx-auto mb-6 flex items-center justify-start gap-3 z-50 relative">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 flex items-center justify-start gap-3 z-50 relative">
         <button
           type="button"
           onClick={handleBack}
@@ -329,7 +336,7 @@ export default function Copyright({ onClose }) {
       {/* ========================================================= */}
       {/* SECTION 1: COPYRIGHT (Header & Description Section)       */}
       {/* ========================================================= */}
-      <section className="max-w-7xl mx-auto mb-8 sm:mb-12 lg:mb-16 text-center space-y-3 sm:space-y-4 px-2">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12 lg:mb-16 text-center space-y-3 sm:space-y-4">
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-neutral-900 capitalize">
           Copyright
         </h1>
@@ -343,7 +350,7 @@ export default function Copyright({ onClose }) {
       {/* ========================================================= */}
       {/* SECTION 2: RESPONSIVE 16 COPYRIGHT CARDS GRID             */}
       {/* ========================================================= */}
-      <section className="max-w-7xl mx-auto">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Fully Responsive Grid: 1 col (mobile), 2 cols (tablet), 3-4 cols (desktop) */}
         <div
           key={globalKey}
@@ -363,9 +370,9 @@ export default function Copyright({ onClose }) {
       </section>
 
       {/* Footer */}
-      <footer className="max-w-7xl mx-auto mt-12 sm:mt-16 lg:mt-20 pt-6 border-t border-neutral-200 text-center text-[11px] sm:text-xs text-neutral-400 font-mono">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 lg:mt-20 pt-6 border-t border-neutral-200 text-center text-[11px] sm:text-xs text-neutral-400 font-mono">
         © {new Date().getFullYear()} Copyright Policy &amp; Intellectual Property Protection Directory • Mobile Responsive &amp; Dynamic
-      </footer>
+      </div>
 
     </div>
   );

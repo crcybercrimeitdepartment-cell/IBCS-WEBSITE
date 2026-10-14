@@ -64,14 +64,16 @@ button { font: inherit; }
   padding: clamp(40px, 5vw, 72px) 0 40px;
 }
 .page-intro {
-  width: min(1120px, calc(100% - 64px));
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 32px);
   text-align: center;
   perspective: 1200px;
 }
 .page-intro h1 {
   max-width: 980px;
-  margin: 0 auto 24px;
+  margin: 0 auto 20px;
   color: #081E52;
   font-size: clamp(26px, 3vw, 40px);
   line-height: 1.25;
@@ -100,23 +102,27 @@ button { font: inherit; }
   width: 100%;
   max-width: 1400px;
   margin: 32px auto 0;
+  padding: 0 clamp(16px, 4vw, 32px);
+  box-sizing: border-box;
   background: transparent;
   opacity: 0;
   animation: scaleInPremium 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.6s;
 }
 .gallery-row {
   position: relative;
+  width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   overscroll-behavior-x: contain;
   scrollbar-width: thin;
   scrollbar-color: #62766b transparent;
   background: radial-gradient(ellipse at 50% 52%, rgb(133 164 150 / 11%), transparent 67%);
+  text-align: center;
 }
 .gallery-row:focus-visible { outline: 1px solid #8b9f93; outline-offset: -1px; }
 .gallery-hint { display: none; margin: 0 20px 8px; color: #596b60; font-size: 12px; line-height: 1.6; text-align: center; }
 .gallery-hint span { margin-left: 8px; }
-.scene-track { position: relative; margin: 0 auto; overflow: clip; }
+.scene-track { position: relative; margin: 0 auto; overflow: clip; display: block; }
 .scene {
   position: absolute;
   top: 0;
@@ -340,12 +346,15 @@ const sceneWidth = 1400
 const sceneHeight = 600
 
 function cardX(column, selectedColumn) {
-  const start = (sceneWidth - ((columns - 1) * 176 + 244)) / 2
+  // Transformed visual width of a resting card is 233px.
+  // 6 cards with 5 intervals of 176px + 233px = 1113px total span.
+  // start = (1400 - 1113) / 2 = 143.5px gives exactly equal margins on both left and right!
+  const start = 143.5
   const x = start + column * 176
   if (selectedColumn === null) return x
   return column === selectedColumn
-    ? Math.max(32, Math.min(x - 50, sceneWidth - 378))
-    : x + (column < selectedColumn ? -40 : 70)
+    ? x
+    : x + (column < selectedColumn ? -45 : 45)
 }
 
 function CardRow({ row, scale, opened, onToggle }) {
@@ -387,7 +396,12 @@ function CardRow({ row, scale, opened, onToggle }) {
   }, [opened, rowOpened])
 
   useEffect(() => {
-    if (!rowOpened) return
+    if (!rowOpened) {
+      if (scroller.current && !window.matchMedia('(max-width: 768px)').matches) {
+        scroller.current.scrollTo({ left: 0, behavior: 'smooth' })
+      }
+      return
+    }
     const container = scroller.current
     const x = cardX(opened % columns, opened % columns) * scale
     container.scrollTo({
@@ -540,8 +554,14 @@ export default function SoftwareDevelopmentProductEngineeringPage({ onClose }) {
   useEffect(() => {
     const observer = new ResizeObserver(([entry]) => {
       const width = entry.contentRect.width
-      // Preserve the stack while fitting an expanded card inside narrow screens.
-      setScale(Math.min(1, Math.max(.82, width / sceneWidth), (width - 32) / (346 * 1.025)))
+      if (width < 768) {
+        // Mobile view: maintain readable card dimensions with responsive swipe
+        setScale(Math.min(1, Math.max(0.68, (width - 24) / 460)))
+      } else {
+        // Tablet & Desktop: scale entire scene cleanly so both left and right have equal margins without clipping
+        const availableWidth = width - 48
+        setScale(Math.min(1, Math.max(0.55, availableWidth / sceneWidth)))
+      }
     })
     if (viewport.current) {
       observer.observe(viewport.current)

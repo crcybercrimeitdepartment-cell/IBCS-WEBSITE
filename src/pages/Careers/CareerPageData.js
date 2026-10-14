@@ -15,6 +15,12 @@ export const beamGradients = {
 };
 
 /**
+ * Careers Page Description from IBCS_Careers_Page_Description_Aligned.docx
+ */
+export const careersPageDescription =
+  "Explore career opportunities at IBCS and take the next step toward building a rewarding professional future in technology. Discover current vacancies, review recruitment rules and eligibility criteria, access official recruitment advertisements, and stay updated with the latest announcements and notices. Our Careers Portal enables candidates to submit applications online, complete required document verification, track application status, and share their resumes for future opportunities. We aim to make recruitment information accessible, organised, and transparent, helping aspiring professionals connect their skills, knowledge, and ambitions with emerging opportunities across software development, artificial intelligence, cybersecurity, and other technology domains.";
+
+/**
  * 1. Main Home Career Cards Data (8 Categories)
  */
 export const careerCardsData = [

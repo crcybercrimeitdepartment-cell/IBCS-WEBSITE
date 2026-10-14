@@ -32,9 +32,9 @@ import { GlobalInfrastructureManagedServicesData } from '../pages/HomePage/Globa
 import { DevOpsContinuousDeliveryData } from '../pages/HomePage/DevOpsContinuousDeliveryPage/DevOpsContinuousDeliveryPageData';
 import { DigitalExperienceDesignData } from '../pages/HomePage/DigitalExperienceDesignPage/DigitalExperienceDesignPageData';
 import { RegulatoryComplianceGovernanceData } from '../pages/HomePage/RegulatoryComplianceGovernancePage/RegulatoryComplianceGovernancePageData';
-import { QuantumSecurityCryptographyData } from '../pages/HomePage/QuantumSecurityCryptographyPage/QuantumSecurityCryptographyData';
+import { AiInnovationResearchAdvancedIntelligenceAutomationData } from '../pages/HomePage/AiInnovationResearchAdvancedIntelligenceAutomationPage/AiInnovationResearchAdvancedIntelligenceAutomationData';
 import { IotSmartEdgeSystemsData } from '../pages/HomePage/IotSmartEdgeSystemsPage/IotSmartEdgeSystemsData';
-import { BlockchainDecentralisedTechData } from '../pages/HomePage/BlockchainDecentralisedTechPage/BlockchainDecentralisedTechData';
+import { NextGenerationDigitalInnovationDecentralisedIntelligenceData } from '../pages/HomePage/NextGenerationDigitalInnovationDecentralisedIntelligencePage/NextGenerationDigitalInnovationDecentralisedIntelligenceData';
 
 export const navigationItems = [
   { label: 'Home', href: '#home' },
@@ -70,9 +70,9 @@ export const sectionsData = [
   DevOpsContinuousDeliveryData,
   DigitalExperienceDesignData,
   RegulatoryComplianceGovernanceData,
-  QuantumSecurityCryptographyData,
+  AiInnovationResearchAdvancedIntelligenceAutomationData,
   IotSmartEdgeSystemsData,
-  BlockchainDecentralisedTechData,
+  NextGenerationDigitalInnovationDecentralisedIntelligenceData,
 ];
 
 // Initial sample notification list
@@ -81,16 +81,20 @@ const initialNotifications = [
   { id: 2, title: 'New Product Suite Live', detail: '240 Enterprise AI & Cyber Security platforms released.', time: '1h ago', unread: false },
 ];
 
-export default function Header() {
+// Module-level in-memory flag (no localStorage/sessionStorage used)
+// Resets strictly when the browser page is reloaded or freshly opened.
+let hasWelcomeMessageHiddenOnce = false;
+
+export default function Header({ onOpenItServicesPage, activePage }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [notifications, setNotifications] = useState(initialNotifications);
-  const [showTopMeta, setShowTopMeta] = useState(true);
+  
+  // Dedicated one-way visibility state for temporary lines (Line 1 & Line 3)
+  const [showWelcomeMessage, setShowWelcomeMessage] = useState(() => !hasWelcomeMessageHiddenOnce);
   const searchInputRef = useRef(null);
-  const metaTimerRef = useRef(null);
-  const wasAtTopRef = useRef(true);
   const unreadCount = notifications.filter((n) => n.unread).length;
 
   // Flatten all cards with parent section metadata for search
@@ -133,41 +137,21 @@ export default function Header() {
     return () => { document.body.style.overflow = ''; };
   }, [isMenuOpen]);
 
-  // Handle top meta auto-hide: shows on initial load & when scrolling back to top (<= 10px).
-  // Does NOT force hide when scrolling down; automatically hides after 5 seconds.
+  // One-way lifecycle: on initial load/refresh, show temporary lines for 4.5 seconds,
+  // then hide them permanently for the lifetime of this page instance.
+  // There are ZERO scroll listeners or restoration checks.
   useEffect(() => {
-    let wasBelowTop = false;
+    if (hasWelcomeMessageHiddenOnce) {
+      setShowWelcomeMessage(false);
+      return;
+    }
 
-    const triggerShow = () => {
-      setShowTopMeta(true);
-      if (metaTimerRef.current) clearTimeout(metaTimerRef.current);
-      metaTimerRef.current = setTimeout(() => {
-        setShowTopMeta(false);
-      }, 5000);
-    };
+    const timer = setTimeout(() => {
+      hasWelcomeMessageHiddenOnce = true;
+      setShowWelcomeMessage(false);
+    }, 4500);
 
-    // Initial trigger on mount / page refresh
-    triggerShow();
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY || document.documentElement.scrollTop || 0;
-
-      if (currentScrollY <= 10) {
-        if (wasBelowTop) {
-          wasBelowTop = false;
-          triggerShow();
-        }
-      } else {
-        wasBelowTop = true;
-        // Do NOT force hide on scroll down. Let the 5-second timer hide it automatically.
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (metaTimerRef.current) clearTimeout(metaTimerRef.current);
-    };
+    return () => clearTimeout(timer);
   }, []);
 
   // Handle Mark All Notifications Read
@@ -181,15 +165,15 @@ export default function Header() {
       <div className="bg-[#040A1A] text-center px-2 sm:px-4 py-1.5 border-b border-[#D4AF37]/20 w-full overflow-hidden">
         <div className="w-full max-w-[1480px] mx-auto px-2 sm:px-4 flex flex-col items-center justify-center text-center">
 
-          {/* Welcome Heading (Shows on page load/refresh, hides after 5s) */}
+          {/* Line 1: Temporary Welcome Heading (Auto-hides after 4.5s, stays permanently hidden) */}
           <div
-            className={`grid transition-[grid-template-rows,opacity,margin] duration-500 ease-in-out w-full overflow-hidden ${showTopMeta ? 'grid-rows-[1fr] opacity-100 mb-0.5' : 'grid-rows-[0fr] opacity-0 mb-0 pointer-events-none'
+            className={`grid transition-[grid-template-rows,opacity,margin] duration-500 ease-in-out w-full overflow-hidden ${showWelcomeMessage ? 'grid-rows-[1fr] opacity-100 mb-0.5' : 'grid-rows-[0fr] opacity-0 mb-0 pointer-events-none'
               }`}
           >
             <div className="overflow-hidden min-h-0 w-full py-0.5">
               <h1 className="font-display text-[9px] xs:text-[10px] sm:text-xs md:text-sm font-extrabold tracking-tight sm:tracking-wider text-white uppercase flex items-center justify-center gap-1.5 sm:gap-2 px-1">
                 <span className="navbar-live-dot shrink-0 my-auto" aria-hidden="true" />
-                <CenterAssembledText key={showTopMeta ? 'welcome-active' : 'welcome-inactive'} text="WELCOME TO IB CYBER SECURITY PRIVATE LIMITED" />
+                <CenterAssembledText text="WELCOME TO IB CYBER SECURITY PRIVATE LIMITED" />
               </h1>
             </div>
           </div>
@@ -201,9 +185,9 @@ export default function Header() {
             </p>
           </div>
 
-          {/* Registration & Establishment Meta (Shows on page load/refresh, hides after 5s) */}
+          {/* Line 3: Temporary Registration & Establishment Meta (Auto-hides after 4.5s, stays permanently hidden) */}
           <div
-            className={`grid transition-[grid-template-rows,opacity,margin] duration-500 ease-in-out w-full overflow-hidden ${showTopMeta ? 'grid-rows-[1fr] opacity-100 mt-0.5' : 'grid-rows-[0fr] opacity-0 mt-0 pointer-events-none'
+            className={`grid transition-[grid-template-rows,opacity,margin] duration-500 ease-in-out w-full overflow-hidden ${showWelcomeMessage ? 'grid-rows-[1fr] opacity-100 mt-0.5' : 'grid-rows-[0fr] opacity-0 mt-0 pointer-events-none'
               }`}
           >
             <div className="overflow-hidden min-h-0 w-full py-0.5">
@@ -247,11 +231,24 @@ export default function Header() {
           <nav className="hidden xl:flex flex-1 items-center justify-center gap-1.5 xl:gap-2.5 2xl:gap-4 px-1 sm:px-2 mx-auto min-w-0" aria-label="Primary navigation">
             {navigationItems.map((item) => {
               const parts = item.label.split(' ');
+              const isItServices = item.label === 'IT Services' || item.href === '#it-services';
+              const isActive = (isItServices && activePage === 'it-services');
               return (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="group relative px-2 xl:px-2.5 py-1.5 text-[11.5px] xl:text-[12px] 2xl:text-[13px] font-bold text-white/95 transition-all duration-300 hover:text-[#FFF8DC] focus-ring text-center whitespace-nowrap shrink-0 flex items-center justify-center"
+                  onClick={(e) => {
+                    if (isItServices) {
+                      e.preventDefault();
+                      window.location.hash = '#it-services';
+                      if (onOpenItServicesPage) {
+                        onOpenItServicesPage();
+                      } else {
+                        window.dispatchEvent(new HashChangeEvent('hashchange'));
+                      }
+                    }
+                  }}
+                  className={`group relative px-2 xl:px-2.5 py-1.5 text-[11.5px] xl:text-[12px] 2xl:text-[13px] font-bold text-white/95 transition-all duration-300 hover:text-[#FFF8DC] focus-ring text-center whitespace-nowrap shrink-0 flex items-center justify-center cursor-pointer ${isActive ? "text-[#FFF8DC]" : ""}`}
                 >
                   {parts.length > 1 ? (
                     <span className="flex flex-col items-center leading-[1.18] text-center z-10">
@@ -262,8 +259,10 @@ export default function Header() {
                     <span className="leading-tight z-10">{item.label}</span>
                   )}
 
-                  {/* Center-to-both-sides expanding glowing line hover effect */}
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2.5px] bg-gradient-to-r from-[#D4AF37] via-[#FFF8DC] to-[#E5C158] rounded-full opacity-0 shadow-[0_0_10px_rgba(212,175,55,0.9)] group-hover:w-full group-hover:opacity-100 transition-all duration-300 ease-out" />
+                  {/* Center-to-both-sides expanding glowing line hover & active effect */}
+                  <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2.5px] bg-gradient-to-r from-[#D4AF37] via-[#FFF8DC] to-[#E5C158] rounded-full shadow-[0_0_10px_rgba(212,175,55,0.9)] transition-all duration-300 ease-out ${
+                    isActive ? "w-full opacity-100" : "w-0 opacity-0 group-hover:w-full group-hover:opacity-100"
+                  }`} />
                 </a>
               );
             })}
@@ -440,19 +439,36 @@ export default function Header() {
 
             {/* Navigation Items Cards */}
             <nav className="mx-auto flex max-w-2xl flex-col space-y-2.5 pb-8" aria-label="Mobile navigation">
-              {navigationItems.map((item, index) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center justify-between rounded-xl bg-[#081E52] border border-[#D4AF37]/20 px-4 py-3.5 font-display text-sm font-bold text-white transition-all hover:bg-[#0c2b7a] hover:text-[#FFF8DC] focus-ring active:scale-[0.99] shadow-sm"
-                >
-                  <span className="text-[14px] font-bold text-white">{item.label}</span>
-                  <span className="text-xs font-extrabold text-[#E5C158] font-mono tracking-wider">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                </a>
-              ))}
+              {navigationItems.map((item, index) => {
+                const isItServices = item.label === 'IT Services' || item.href === '#it-services';
+                const isActive = (isItServices && activePage === 'it-services');
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={(e) => {
+                      setIsMenuOpen(false);
+                      if (isItServices) {
+                        e.preventDefault();
+                        window.location.hash = '#it-services';
+                        if (onOpenItServicesPage) {
+                          onOpenItServicesPage();
+                        } else {
+                          window.dispatchEvent(new HashChangeEvent('hashchange'));
+                        }
+                      }
+                    }}
+                    className={`flex items-center justify-between rounded-xl bg-[#081E52] border border-[#D4AF37]/20 px-4 py-3.5 font-display text-sm font-bold text-white transition-all hover:bg-[#0c2b7a] hover:text-[#FFF8DC] focus-ring active:scale-[0.99] shadow-sm cursor-pointer ${
+                      isActive ? "ring-2 ring-[#D4AF37] bg-[#0c2b7a]" : ""
+                    }`}
+                  >
+                    <span className="text-[14px] font-bold text-white">{item.label}</span>
+                    <span className="text-xs font-extrabold text-[#E5C158] font-mono tracking-wider">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                  </a>
+                );
+              })}
 
               {/* Bottom CTAs */}
               <div className="pt-3 grid grid-cols-2 gap-3">

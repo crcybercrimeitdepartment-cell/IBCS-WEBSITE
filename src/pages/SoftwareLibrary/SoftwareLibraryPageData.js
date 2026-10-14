@@ -1,3 +1,6 @@
+export const softwareLibraryDescription =
+  "Explore the Software Library of IB Cyber Security Private Limited (IBCS), featuring a diverse range of software products designed for cybersecurity, cyber threat intelligence, cyber crime investigation, digital forensics, police and law enforcement, government operations, cyber awareness, victim support, artificial intelligence, data analytics, enterprise solutions, and public cyber services. Discover product introductions, features, capabilities, supported platforms, demonstrations, and technical documentation. Access relevant download options and explore product licensing, maintenance, updates, renewals, and purchase opportunities through a centralized platform designed to simplify software discovery and product access.";
+
 export const softwareProducts = [
   { id: 1, name: 'Commercial Software Products' },
   { id: 2, name: 'Cybersecurity Software Products' },

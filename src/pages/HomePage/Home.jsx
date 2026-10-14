@@ -45,12 +45,12 @@ import DevOpsContinuousDeliverySection from './DevOpsContinuousDeliveryPage/DevO
 import DigitalExperienceDesignSection from './DigitalExperienceDesignPage/DigitalExperienceDesignSection';
 // 20. Regulatory Compliance & Risk Governance
 import RegulatoryComplianceGovernanceSection from './RegulatoryComplianceGovernancePage/RegulatoryComplianceGovernanceSection';
-// 21. Quantum Security & Advanced Cryptography
-import QuantumSecurityCryptographySection from './QuantumSecurityCryptographyPage/QuantumSecurityCryptographySection';
+// 21. AI Innovation, Research & Advanced Intelligence Automation
+import AiInnovationResearchAdvancedIntelligenceAutomationSection from './AiInnovationResearchAdvancedIntelligenceAutomationPage/AiInnovationResearchAdvancedIntelligenceAutomationSection';
 // 22. IoT, Smart Systems & Edge Computing
 import IotSmartEdgeSystemsSection from './IotSmartEdgeSystemsPage/IotSmartEdgeSystemsSection';
-// 23. Blockchain & Decentralised Technologies
-import BlockchainDecentralisedTechSection from './BlockchainDecentralisedTechPage/BlockchainDecentralisedTechSection';
+// 23. Next-Generation Digital Innovation & Decentralised Intelligence
+import NextGenerationDigitalInnovationDecentralisedIntelligenceSection from './NextGenerationDigitalInnovationDecentralisedIntelligencePage/NextGenerationDigitalInnovationDecentralisedIntelligenceSection';
 import RevealSection from '../../components/common/RevealSection';
 
 
@@ -75,7 +75,10 @@ export default function Home({
   onOpenDigitalExpPage,
   onOpenRegulatoryPage,
   onOpenCybersecurityPage,
-  onOpenIntroductionPage
+  onOpenIntroductionPage,
+  onOpenAiInnovationPage,
+  onOpenIotPage,
+  onOpenNextGenPage
 }) {
   return (
     <>
@@ -186,19 +189,19 @@ export default function Home({
         <RegulatoryComplianceGovernanceSection onOpenPage={onOpenRegulatoryPage} />
       </RevealSection>
 
-      {/* 21. Quantum Security & Advanced Cryptography */}
+      {/* 21. AI Innovation, Research & Advanced Intelligence Automation */}
       <RevealSection>
-        <QuantumSecurityCryptographySection />
+        <AiInnovationResearchAdvancedIntelligenceAutomationSection onOpenPage={onOpenAiInnovationPage} />
       </RevealSection>
 
       {/* 22. IoT, Smart Systems & Edge Computing */}
       <RevealSection>
-        <IotSmartEdgeSystemsSection />
+        <IotSmartEdgeSystemsSection onOpenPage={onOpenIotPage} />
       </RevealSection>
 
-      {/* 23. Blockchain & Decentralised Technologies */}
+      {/* 23. Next-Generation Digital Innovation & Decentralised Intelligence */}
       <RevealSection>
-        <BlockchainDecentralisedTechSection />
+        <NextGenerationDigitalInnovationDecentralisedIntelligenceSection onOpenPage={onOpenNextGenPage} />
       </RevealSection>
     </>
   );

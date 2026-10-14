@@ -13,6 +13,15 @@ import {
 } from 'lucide-react';
 import { heroContent, productCardsData } from './SoftwareProductPageData';
 
+import ProductIntroductionPage from './Product Introduction/ProductIntroductionPage';
+import PurposeUseCasesPage from './Purpose & Use Cases/PurposeUseCasesPage';
+import VisionMissionPage from './Vision & Mission/VisionMissionPage';
+import ProductRoadmapPage from './Product Roadmap/ProductRoadmapPage';
+import TechnologyArchitecturePage from './Technology & Architecture/TechnologyArchitecturePage';
+import SecurityCompliancePage from './Security & Compliance/SecurityCompliancePage';
+import IntegrationsAPIsPage from './Integrations & APIs/IntegrationsAPIsPage';
+import ProductBenefitsImpactPage from './Product Benefits & Impact/ProductBenefitsImpactPage';
+
 // Icon Map Resolver
 const iconMap = {
   sparkles: Sparkles,
@@ -124,7 +133,7 @@ function PhotoFrames() {
 /* =========================================================================
    3. DESKTOP CARDS DASHBOARD (8 Product Cards + Live Dynamic Clock)
    ========================================================================= */
-function DesktopCards() {
+function DesktopCards({ onCardClick }) {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   // Real-time live clock ticking every second
@@ -173,13 +182,16 @@ function DesktopCards() {
           {productCardsData.map((card) => {
             const Icon = iconMap[card.iconType] || Sparkles;
             return (
-              <div
+              <button
+                type="button"
                 key={card.id}
-                className="bg-white rounded xs:rounded-md sm:rounded-xl p-1 xs:p-1.5 sm:p-2 border border-slate-200/90 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-slate-300 transition-all duration-200 flex flex-col justify-between text-left h-[42px] xs:h-[50px] sm:h-[68px] md:h-[80px]"
+                onClick={() => onCardClick && onCardClick(card)}
+                title={card.description}
+                className="bg-white rounded xs:rounded-md sm:rounded-xl p-1 xs:p-1.5 sm:p-2 border border-slate-200/90 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-sky-400 hover:scale-[1.03] active:scale-95 transition-all duration-200 flex flex-col justify-between text-left h-[42px] xs:h-[50px] sm:h-[68px] md:h-[80px] cursor-pointer group"
               >
                 {/* Icon + Badge */}
-                <div className="flex items-center justify-between">
-                  <div className={`w-3.5 h-3.5 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 rounded xs:rounded-md sm:rounded-lg ${card.color} flex items-center justify-center border shrink-0 shadow-xs`}>
+                <div className="flex items-center justify-between w-full">
+                  <div className={`w-3.5 h-3.5 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 rounded xs:rounded-md sm:rounded-lg ${card.color} flex items-center justify-center border shrink-0 shadow-xs group-hover:scale-110 transition-transform`}>
                     <Icon size={9} className="xs:w-2.5 xs:h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5" />
                   </div>
                   <span className={`text-[5.5px] xs:text-[6.5px] sm:text-[7.5px] md:text-[8.5px] font-bold px-1 sm:px-1.5 py-0.2 rounded-full shrink-0 ${card.badgeColor}`}>
@@ -188,15 +200,15 @@ function DesktopCards() {
                 </div>
 
                 {/* Title and Tagline */}
-                <div className="mt-0.5">
-                  <h3 className="text-[6.5px] xs:text-[7.5px] sm:text-[9px] md:text-[10.5px] font-bold text-slate-800 tracking-tight leading-tight truncate">
+                <div className="mt-0.5 w-full">
+                  <h3 className="text-[6.5px] xs:text-[7.5px] sm:text-[9px] md:text-[10.5px] font-bold text-slate-800 tracking-tight leading-tight truncate group-hover:text-blue-600 transition-colors">
                     {card.title}
                   </h3>
                   <p className="text-[5.5px] xs:text-[6.5px] sm:text-[7.5px] md:text-[8.5px] text-slate-400 font-medium truncate hidden xs:block">
                     {card.tagline}
                   </p>
                 </div>
-              </div>
+              </button>
             );
           })}
         </div>
@@ -208,7 +220,7 @@ function DesktopCards() {
           <Sparkles size={9} className="text-amber-500" /> Executive Architecture
         </span>
         <span className="bg-slate-100 text-slate-600 px-1.5 py-0.2 rounded-full font-medium text-[6px] xs:text-[7px] sm:text-[8.5px]">
-          8 Modules
+          8 Modules (Click to Open)
         </span>
       </div>
     </div>
@@ -218,7 +230,7 @@ function DesktopCards() {
 /* =========================================================================
    4. COMPUTER MONITOR (White Display, Glowing Green Light, Aluminum Chin)
    ========================================================================= */
-function Computer() {
+function Computer({ onCardClick }) {
   return (
     <div className="relative flex flex-col items-center select-none z-20 w-full max-w-[740px] px-2 sm:px-4">
       {/* Wall Shadow behind monitor */}
@@ -233,7 +245,7 @@ function Computer() {
           
           {/* White Screen Display Area */}
           <div className="relative w-full aspect-[16/10] bg-white rounded-t-[8px] xs:rounded-t-[12px] sm:rounded-t-[16px] overflow-hidden flex items-center justify-center border border-slate-300/80 shadow-inner">
-            <DesktopCards />
+            <DesktopCards onCardClick={onCardClick} />
 
             {/* Glossy Sheen Overlay */}
             <div 
@@ -443,6 +455,54 @@ function DeskSurface() {
    7. MAIN ASSEMBLED EXPORT COMPONENT (SoftwareProduct)
    ========================================================================= */
 export default function SoftwareProduct({ onClose }) {
+  const [activeSubpage, setActiveSubpage] = useState(null);
+
+  // Sync active subpage with URL hash
+  useEffect(() => {
+    const syncHash = () => {
+      const hash = window.location.hash.replace('#', '');
+      const validSlugs = [
+        'product-introduction',
+        'purpose-use-cases',
+        'vision-mission',
+        'product-roadmap',
+        'technology-architecture',
+        'security-compliance',
+        'integrations-apis',
+        'product-benefits-impact',
+      ];
+      if (validSlugs.includes(hash)) {
+        setActiveSubpage(hash);
+      } else if (
+        hash === 'software-products' ||
+        hash === 'software-products-page' ||
+        hash === 'software-product-page' ||
+        hash === ''
+      ) {
+        setActiveSubpage(null);
+      }
+    };
+
+    syncHash();
+    window.addEventListener('hashchange', syncHash);
+    return () => window.removeEventListener('hashchange', syncHash);
+  }, []);
+
+  const handleCardClick = (card) => {
+    const slug = card.slug;
+    if (slug) {
+      setActiveSubpage(slug);
+      window.location.hash = `#${slug}`;
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleCloseSubpage = () => {
+    setActiveSubpage(null);
+    window.location.hash = '#software-products';
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  };
+
   const handleBack = () => {
     if (window.history.length > 1) {
       window.history.back();
@@ -459,10 +519,36 @@ export default function SoftwareProduct({ onClose }) {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   };
 
+  // Render Subpage if active
+  if (activeSubpage === 'product-introduction') {
+    return <ProductIntroductionPage onClose={handleCloseSubpage} />;
+  }
+  if (activeSubpage === 'purpose-use-cases') {
+    return <PurposeUseCasesPage onClose={handleCloseSubpage} />;
+  }
+  if (activeSubpage === 'vision-mission') {
+    return <VisionMissionPage onClose={handleCloseSubpage} />;
+  }
+  if (activeSubpage === 'product-roadmap') {
+    return <ProductRoadmapPage onClose={handleCloseSubpage} />;
+  }
+  if (activeSubpage === 'technology-architecture') {
+    return <TechnologyArchitecturePage onClose={handleCloseSubpage} />;
+  }
+  if (activeSubpage === 'security-compliance') {
+    return <SecurityCompliancePage onClose={handleCloseSubpage} />;
+  }
+  if (activeSubpage === 'integrations-apis') {
+    return <IntegrationsAPIsPage onClose={handleCloseSubpage} />;
+  }
+  if (activeSubpage === 'product-benefits-impact') {
+    return <ProductBenefitsImpactPage onClose={handleCloseSubpage} />;
+  }
+
   return (
     <div className="min-h-screen w-full relative flex flex-col justify-between overflow-x-hidden bg-gradient-to-b from-[#EBF7F8] via-[#E7F3F5] to-[#DFEFF2]">
       {/* Top Header Navigation buttons */}
-      <div className="w-full max-w-[1300px] mx-auto px-6 pt-6 flex items-center justify-start gap-3 z-50 relative">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 flex items-center justify-start gap-3 z-50 relative">
         <button
           type="button"
           onClick={handleBack}
@@ -504,7 +590,7 @@ export default function SoftwareProduct({ onClose }) {
 
           {/* iMac Computer Monitor with 8 Cards */}
           <div className="relative z-20 mb-0 w-full flex justify-center">
-            <Computer />
+            <Computer onCardClick={handleCardClick} />
           </div>
         </div>
 

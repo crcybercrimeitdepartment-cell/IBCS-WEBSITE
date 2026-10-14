@@ -3,11 +3,14 @@
  * IB Cyber Security Private Limited
  */
 
+export const itServicesDescription =
+  "IBCS IT Services delivers technology-driven solutions that help businesses build, secure, manage, and optimise their digital infrastructure. From software development, cloud computing, and AI integration to cybersecurity, network management, and IT infrastructure support, we provide scalable and reliable services tailored to diverse business requirements. Our focus is on strengthening operational efficiency, enhancing digital security, and supporting sustainable business growth through innovative technology.";
+
 export const globalInfrastructurePageData = {
   header: {
     badge: "IB Cyber Security Private Limited",
     title: "Global Infrastructure & Managed Services",
-    subtitle: "IB Cyber Security Private Limited provides technology infrastructure and managed services designed to support secure, reliable, scalable, and continuously available digital environments. Our capabilities span cloud infrastructure, data centres, network management, cybersecurity operations, application infrastructure, monitoring, backup, disaster recovery, technical support, and managed technology operations. We combine modern infrastructure technologies, automation, security engineering, and operational expertise to help organisations maintain dependable digital environments. Our approach focuses on performance, availability, security, scalability, and continuous improvement, enabling businesses, government institutions, enterprises, and technology platforms to operate efficiently while adapting to evolving infrastructure requirements, workloads, technologies, and digital transformation needs."
+    subtitle: "IBCS IT Services delivers technology-driven solutions that help businesses build, secure, manage, and optimise their digital infrastructure. From software development, cloud computing, and AI integration to cybersecurity, network management, and IT infrastructure support, we provide scalable and reliable services tailored to diverse business requirements. Our focus is on strengthening operational efficiency, enhancing digital security, and supporting sustainable business growth through innovative technology."
   }
 };
 
