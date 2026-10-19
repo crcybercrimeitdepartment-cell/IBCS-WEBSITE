@@ -51,7 +51,7 @@ export default function ApisIntegrationDigitalConnectivityPage({ onClose }) {
           <h2 className="text-xl md:text-2xl font-semibold text-[#0FA4AF] mt-2">
             APIs, Integration &amp; Digital Connectivity
           </h2>
-          <div className="text-gray-700 text-sm md:text-base leading-relaxed flex flex-col gap-3 mx-auto mt-2">
+          <div className="text-gray-700 text-sm md:text-base leading-relaxed flex flex-col gap-3 mx-auto mt-2 text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
             <p>
               Modern software products rarely operate in isolation. Our API and integration technologies help applications, databases, cloud services and digital platforms communicate through structured and secure technology interfaces.
             </p>
@@ -107,7 +107,7 @@ export default function ApisIntegrationDigitalConnectivityPage({ onClose }) {
                         <h2 className="text-white text-2xl font-bold mb-3 tracking-tight drop-shadow-md">
                           {activeCardInRow.title}
                         </h2>
-                        <p className="text-gray-200 text-sm leading-relaxed drop-shadow pb-2">
+                        <p className="text-gray-200 text-sm leading-relaxed drop-shadow pb-2 text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
                           {activeCardInRow.description}
                         </p>
                       </div>
@@ -166,7 +166,7 @@ export default function ApisIntegrationDigitalConnectivityPage({ onClose }) {
                   </h2>
                   
                   {card.description && (
-                    <p className="text-gray-100 text-[15px] leading-relaxed drop-shadow pr-4 pb-2">
+                    <p className="text-gray-100 text-[15px] leading-relaxed drop-shadow pr-4 pb-2 text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
                       {card.description}
                     </p>
                   )}

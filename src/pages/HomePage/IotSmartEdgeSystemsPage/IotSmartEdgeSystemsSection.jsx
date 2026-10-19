@@ -78,7 +78,7 @@ function IotEdgeTelemetrySVG() {
 export default function IotSmartEdgeSystemsSection({ onOpenPage }) {
   const handleCtaClick = (e) => {
     e.preventDefault();
-    window.location.hash = '#iot-smart-edge-systems';
+    window.location.hash = '#iot-page';
     if (onOpenPage) {
       onOpenPage();
     }

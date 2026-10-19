@@ -120,7 +120,7 @@ export default function GlobalInfrastructureManagedServicesSection({ onOpenPage 
               className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#081E52] mb-5 text-center lg:text-left"
             />
 
-            <div className="space-y-3.5 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#081E52]/85 font-medium mb-6 text-center lg:text-left">
+            <div className="space-y-3.5 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#081E52]/85 font-medium mb-6 text-center lg:text-left text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               <p>
                 <strong className="font-bold text-[#081E52]">IBCS IT Services</strong> delivers technology-driven solutions that help businesses build, secure, manage, and optimise their digital infrastructure. From software development, cloud computing, and AI integration to cybersecurity, network management, and IT infrastructure support, we provide scalable and reliable services tailored to diverse business requirements. Our focus is on strengthening operational efficiency, enhancing digital security, and supporting sustainable business growth through innovative technology.
               </p>

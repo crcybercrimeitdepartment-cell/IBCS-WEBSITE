@@ -7,6 +7,7 @@ import {
   Phone,
   Headphones,
 } from 'lucide-react';
+import brandLogo from '../assets/logos/ibcs-brand-logo.png';
 
 
 /* =========================================================================
@@ -14,14 +15,12 @@ import {
    ========================================================================= */
 function FooterBrandBadge() {
   return (
-    <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#E5C158] via-[#0C2B7A] to-[#040E26] p-[1.5px] shadow-[0_0_15px_rgba(212,175,55,0.3)] flex items-center justify-center shrink-0">
-      <div className="w-full h-full rounded-[10px] bg-gradient-to-br from-[#081E52] to-[#040E26] flex items-center justify-center relative overflow-hidden">
-        {/* Subtle Gold Triangle Accent matching Logo */}
-        <div className="absolute top-0 left-0 w-3 h-3 bg-[#D4AF37] clip-path-polygon opacity-80" />
-        <span className="font-display font-black text-white text-[13px] sm:text-[14px] tracking-tight relative z-10">
-          IBCS
-        </span>
-      </div>
+    <div className="relative flex items-center justify-center shrink-0 rounded-full p-1 bg-white ring-2 ring-[#D4AF37] shadow-[0_0_15px_rgba(212,175,55,0.4)] group-hover:shadow-[0_0_22px_rgba(229,193,88,0.7)] group-hover:scale-105 transition-all duration-300 overflow-hidden w-10 h-10 sm:w-11 sm:h-11">
+      <img
+        src={brandLogo}
+        alt="IB Cyber Security Logo"
+        className="w-full h-full rounded-full object-contain shrink-0"
+      />
     </div>
   );
 }
@@ -1267,8 +1266,17 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-3 flex flex-col xl:flex-row items-center justify-between gap-3 text-[11px] sm:text-[11.5px] text-white/65 font-medium">
           
           {/* Copyright */}
-          <div className="whitespace-nowrap text-center xl:text-left">
-            &copy; {currentYear} <span className="text-white font-semibold">IB CYBER SECURITY PRIVATE LIMITED</span>. All Rights Reserved.
+          <div className="flex items-center gap-2 whitespace-nowrap text-center xl:text-left">
+            <div className="w-5 h-5 rounded-full p-0.5 bg-white ring-1 ring-[#D4AF37] flex items-center justify-center shrink-0 overflow-hidden">
+              <img
+                src={brandLogo}
+                alt="IBCS Logo"
+                className="w-full h-full rounded-full object-contain"
+              />
+            </div>
+            <span>
+              &copy; {currentYear} <span className="text-white font-semibold">IB CYBER SECURITY PRIVATE LIMITED</span>. All Rights Reserved.
+            </span>
           </div>
 
           {/* Social Icons & Back to Top Button */}

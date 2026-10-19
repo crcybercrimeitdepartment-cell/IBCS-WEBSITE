@@ -18,6 +18,7 @@ const floatingIcons = [
 export default function IntroductionSection({ onOpenPage }) {
   const handleCtaClick = (e) => {
     e.preventDefault();
+    window.location.hash = '#introduction-page';
     if (onOpenPage) {
       onOpenPage();
     } else {

@@ -795,8 +795,8 @@ export default function SoftwareArchitectureProductEngineeringPage({ onClose }) 
           </h1>
 
           <div
-            className="space-y-3.5 text-[14px] lg:text-[16px] leading-relaxed text-black font-normal px-2 max-w-3xl mx-auto relative z-10"
-            style={{ fontFamily: "'Inter', sans-serif" }}
+            className="space-y-3.5 text-[14px] lg:text-[16px] leading-relaxed text-black font-normal px-2 max-w-3xl mx-auto relative z-10 text-justify"
+            style={{ fontFamily: "'Inter', sans-serif", textAlign: 'justify', textJustify: 'inter-word' }}
           >
             <p>
               We design software architectures that provide the technical foundation for scalable and maintainable software products. Architecture decisions cover application components, data systems, APIs, security, infrastructure and integrations.

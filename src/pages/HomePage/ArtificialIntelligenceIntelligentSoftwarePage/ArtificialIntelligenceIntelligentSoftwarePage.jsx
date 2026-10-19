@@ -1026,8 +1026,8 @@ export default function ArtificialIntelligenceIntelligentSoftwarePage({ onClose 
       <div className="w-full max-w-[880px] mx-auto text-center px-3 sm:px-4 pt-1 sm:pt-3 pb-3 sm:pb-6 relative z-20 shrink-0">
         <h1
           id="main-heading"
-          className="text-2xl sm:text-3xl lg:text-[40px] font-extrabold text-[#081E52] tracking-tight leading-tight mb-3 sm:mb-4"
-          style={{ fontFamily: "'Manrope', sans-serif" }}
+          className="text-2xl sm:text-3xl lg:text-[40px] font-extrabold text-[#081E52] tracking-tight leading-[1.38] sm:leading-[1.38] lg:leading-[1.38] mb-3 sm:mb-4"
+          style={{ fontFamily: "'Manrope', sans-serif", lineHeight: 1.38 }}
         >
           Artificial Intelligence &amp; Intelligent Software
         </h1>
@@ -1104,8 +1104,12 @@ export default function ArtificialIntelligenceIntelligentSoftwarePage({ onClose 
             {/* In-Depth Authentic Description */}
             <div className="w-full flex-1 flex items-start">
               <p
-                className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal"
-                style={{ fontFamily: "'Inter', sans-serif" }}
+                className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal text-justify"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  textAlign: 'justify',
+                  textJustify: 'inter-word',
+                }}
               >
                 {activeItem.description}
               </p>

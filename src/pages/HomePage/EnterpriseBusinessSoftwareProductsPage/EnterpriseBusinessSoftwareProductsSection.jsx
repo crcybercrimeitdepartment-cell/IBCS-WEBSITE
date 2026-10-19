@@ -217,7 +217,7 @@ export default function EnterpriseBusinessSoftwareProductsSection({ onOpenPage }
             />
 
             {/* Original Paragraphs (100% UNTOUCHED TEXT) */}
-            <div className="space-y-4 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#081E52]/85 font-medium mb-7 text-center lg:text-left">
+            <div className="space-y-4 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#081E52]/85 font-medium mb-7 text-center lg:text-left text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               <p>
                 We develop software products designed to help businesses and organisations manage operations, information, workflows and digital processes. Our enterprise technology capabilities cover management systems, automation, analytics, communication, productivity and organisational software.
               </p>

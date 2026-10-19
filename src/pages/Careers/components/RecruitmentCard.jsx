@@ -1,8 +1,8 @@
 import React from 'react';
-import { Briefcase, ChevronRight } from 'lucide-react';
+import { Briefcase } from 'lucide-react';
 import { getIcon } from './iconRegistry';
 
-export default function RecruitmentCard({ item, onSelect, index, totalCards = 16 }) {
+export default function RecruitmentCard({ item, index, totalCards = 16 }) {
   const IconComponent = getIcon(item.icon, Briefcase);
   const accent = item.accentColor || "#D4AF37";
 
@@ -47,20 +47,9 @@ export default function RecruitmentCard({ item, onSelect, index, totalCards = 16
       className="relative flex flex-col animate-card-entrance"
       style={{ animationDelay: entranceDelay }}
     >
-      <div
-        onClick={() => onSelect(item)}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            onSelect(item);
-          }
-        }}
-        className="group relative flex flex-col justify-between cursor-pointer focus:outline-none p-2 sm:p-2.5 select-none transition-all duration-300"
-      >
+      <div className="group relative flex flex-col justify-between p-2 sm:p-2.5 select-none transition-all duration-300">
         <svg 
-          className="absolute inset-0 w-full h-full pointer-events-none overflow-visible z-20 transition-transform duration-300 group-hover:scale-[1.01]" 
+          className="absolute inset-0 w-full h-full pointer-events-none overflow-visible z-10 transition-transform duration-300 group-hover:scale-[1.01]" 
           viewBox="0 0 300 360" 
           preserveAspectRatio="none"
           fill="none"
@@ -123,9 +112,9 @@ export default function RecruitmentCard({ item, onSelect, index, totalCards = 16
           </g>
         </svg>
 
-        <div className="relative mx-3 my-3 bg-white rounded-[26px] p-6 sm:p-7 flex flex-col items-center justify-between text-center shadow-md group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-300 border border-slate-200/80 group-hover:border-[#D4AF37] min-h-[320px] sm:min-h-[350px]">
+        <div className="relative z-20 mx-3 my-3 bg-white rounded-[26px] p-6 sm:p-7 flex flex-col items-center justify-center text-center shadow-md group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-300 border border-slate-200/80 group-hover:border-[#D4AF37] min-h-[320px] sm:min-h-[350px]">
           {/* Ribbon */}
-          <div className="absolute -top-3.5 right-4 sm:right-5 z-20">
+          <div className="absolute -top-3.5 right-4 sm:right-5 z-40">
             <div className="relative">
               <div 
                 className="px-6 py-2 text-white font-sans tracking-wide uppercase transform -skew-x-[22deg] shadow-md flex items-center justify-center transition-all duration-300 group-hover:-skew-x-[16deg] group-hover:scale-105 rounded-sm bg-gradient-to-r from-[#081E52] to-[#0c2b7a]"
@@ -140,7 +129,7 @@ export default function RecruitmentCard({ item, onSelect, index, totalCards = 16
           </div>
 
           {/* Icon */}
-          <div className="w-full flex flex-col items-center mt-5 mb-2">
+          <div className="w-full flex flex-col items-center mt-3 mb-3">
             <div 
               className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3 shadow-sm bg-slate-50 border border-slate-200 text-[#081E52] group-hover:border-[#D4AF37] group-hover:text-[#081E52]"
             >
@@ -149,23 +138,13 @@ export default function RecruitmentCard({ item, onSelect, index, totalCards = 16
           </div>
 
           {/* Title & Short Description */}
-          <div className="w-full flex flex-col items-center my-auto px-1">
+          <div className="w-full flex flex-col items-center px-1">
             <h3 className="font-black text-sm sm:text-[15px] uppercase tracking-wider mb-2 line-clamp-2 transition-colors duration-200 text-slate-800 group-hover:text-[#081E52]">
               {item.title}
             </h3>
-            <p className="text-slate-500 text-xs sm:text-[13px] leading-relaxed font-normal text-center line-clamp-2 max-w-[240px]">
+            <p className="text-slate-500 text-xs sm:text-[13px] leading-relaxed font-normal text-center line-clamp-3 max-w-[240px]">
               {item.shortDescription}
             </p>
-          </div>
-
-          {/* Action Link */}
-          <div className="w-full pt-3 mt-2 border-t border-slate-100 flex items-center justify-center">
-            <span 
-              className="inline-flex items-center gap-1 text-[11px] font-bold tracking-wide uppercase transition-all duration-300 group-hover:gap-2 text-[#081E52] group-hover:text-[#D4AF37]"
-            >
-              <span>Explore Details</span>
-              <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-            </span>
           </div>
         </div>
       </div>

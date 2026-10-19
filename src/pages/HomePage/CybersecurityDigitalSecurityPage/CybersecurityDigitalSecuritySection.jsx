@@ -197,7 +197,7 @@ export default function CybersecurityDigitalSecuritySection({ onOpenPage }) {
             </h3>
 
             {/* Description Paragraphs */}
-            <div className="space-y-4 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#081E52]/85 font-medium mb-8 text-center lg:text-left">
+            <div className="space-y-4 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#081E52]/85 font-medium mb-8 text-center lg:text-left text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               <p>
                 Cybersecurity is a core technology area within IB Cyber Security Private Limited. We develop security-focused software products designed to help organisations address application, infrastructure, data and digital security requirements through modern technology.
               </p>

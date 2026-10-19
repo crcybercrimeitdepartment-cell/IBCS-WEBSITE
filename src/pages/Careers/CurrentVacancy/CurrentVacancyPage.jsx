@@ -11,8 +11,8 @@ import VacancyCard1Page from './VacancyCard1/VacancyCard1Page';
 import VacancyCard2Page from './VacancyCard2/VacancyCard2Page';
 
 export default function CurrentVacancyPage({ subRoute, onNavigate, onBack, onHome }) {
-  if (subRoute === 'job-vacancy' || subRoute === 'job') {
-    return <JobVacancyPage onNavigate={onNavigate} onBack={onBack} onHome={onHome} />;
+  if (subRoute === 'job-vacancy' || subRoute === 'job' || subRoute === 'job-detail-preview' || subRoute === 'job-preview') {
+    return <JobVacancyPage subRoute={subRoute} onNavigate={onNavigate} onBack={onBack} onHome={onHome} />;
   }
   if (subRoute === 'full-time' || subRoute === 'fulltime') {
     return <FullTimePage onNavigate={onNavigate} onBack={onBack} onHome={onHome} />;

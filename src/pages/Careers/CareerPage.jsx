@@ -15,7 +15,8 @@ import CheckApplicationStatusPage from './CheckApplicationStatus/CheckApplicatio
 import SubmitResumePage from './SubmitResume/SubmitResumePage';
 
 function getViewFromHash() {
-  const hash = window.location.hash.replace(/^#\/?/, '').replace(/\/$/, '').toLowerCase();
+  const rawHash = window.location.hash.replace(/^#\/?/, '').replace(/\/$/, '').toLowerCase();
+  const hash = rawHash.split('?')[0];
 
   const currentVacancySubroutes = [
     'job-vacancy', 'job', 
@@ -24,7 +25,8 @@ function getViewFromHash() {
     'internship', 'intern', 
     'remote-job', 'remote', 
     'post-vacancy', 'post',
-    'vacancy-card-1', 'vacancy-card-2'
+    'vacancy-card-1', 'vacancy-card-2',
+    'job-detail-preview', 'job-preview'
   ];
 
   if (currentVacancySubroutes.includes(hash)) {
@@ -128,7 +130,7 @@ export default function CareerPage({ onClose }) {
 
   const isFullWidthVacancyView =
     currentView === 'vacancies' &&
-    ['job-vacancy', 'job', 'full-time', 'fulltime', 'part-time', 'parttime', 'remote-job', 'remote'].includes(currentSubRoute);
+    ['job-vacancy', 'job', 'full-time', 'fulltime', 'part-time', 'parttime', 'remote-job', 'remote', 'job-detail-preview', 'job-preview'].includes(currentSubRoute);
 
   if (isFullWidthVacancyView) {
     return (

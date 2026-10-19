@@ -257,12 +257,12 @@ export default function CybersecurityDigitalSecurityPage({ onClose }) {
         </h1>
 
         {/* Frosted Glass Description Container */}
-        <div className="mt-4 sm:mt-5 w-full max-w-3xl bg-white/80 backdrop-blur-xl border border-white/90 shadow-[0_12px_40px_rgba(0,0,0,0.04)] rounded-2xl sm:rounded-3xl p-4 sm:p-7 flex flex-col gap-2.5 sm:gap-3.5 text-center transition-all duration-300 hover:shadow-[0_16px_50px_rgba(0,0,0,0.06)]">
-          <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal antialiased" style={{ textWrap: 'pretty' }}>
+        <div className="mt-4 sm:mt-5 w-full max-w-3xl bg-white/80 backdrop-blur-xl border border-white/90 shadow-[0_12px_40px_rgba(0,0,0,0.04)] rounded-2xl sm:rounded-3xl p-4 sm:p-7 flex flex-col gap-2.5 sm:gap-3.5 text-justify transition-all duration-300 hover:shadow-[0_16px_50px_rgba(0,0,0,0.06)]" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
+          <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal antialiased text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
             Cybersecurity is a core technology area within <strong className="font-semibold text-slate-900">IB Cyber Security Private Limited</strong>. We develop security-focused software products designed to help organisations address application, infrastructure, data and digital security requirements through modern technology.
           </p>
           <div className="h-px w-20 sm:w-24 bg-gradient-to-r from-transparent via-slate-300 to-transparent mx-auto" />
-          <p className="text-[10.5px] sm:text-xs text-slate-500 leading-relaxed font-normal antialiased" style={{ textWrap: 'pretty' }}>
+          <p className="text-[10.5px] sm:text-xs text-slate-500 leading-relaxed font-normal antialiased text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
             Our cybersecurity product development combines security engineering, monitoring, analytics, automation and intelligent technologies. From threat intelligence and vulnerability management to privacy and incident management, our security products are designed to support organisations in building more secure and resilient digital environments.
           </p>
         </div>

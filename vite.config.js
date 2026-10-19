@@ -4,8 +4,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
-    include: ['react-pageflip', 'page-flip'],
+    include: ['react-pageflip', 'page-flip', 'three'],
   },
-  server: { host: true },
 });
 

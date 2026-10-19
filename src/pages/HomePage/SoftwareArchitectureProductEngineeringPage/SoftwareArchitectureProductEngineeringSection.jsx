@@ -185,7 +185,7 @@ export default function SoftwareArchitectureProductEngineeringSection({ onOpenPa
             />
 
             {/* Descriptions from original text */}
-            <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#081E52]/85 font-medium mb-6 text-center lg:text-left">
+            <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#081E52]/85 font-medium mb-6 text-center lg:text-left text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               <p>
                 Strong software products begin with strong engineering foundations. We design software architecture and product engineering systems that support performance, security, scalability, maintainability and long-term product evolution.
               </p>

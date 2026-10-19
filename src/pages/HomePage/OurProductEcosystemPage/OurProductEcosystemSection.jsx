@@ -153,7 +153,7 @@ function HomeProductCard({ item, index }) {
       aria-expanded={isPinned || isPeeking}
     >
       {/* 1. Underneath Content Panel (Revealed on Hover / Click / Peeking) */}
-      <div className="under-content">
+      <div className="under-content" lang="en">
         <h3
           className="text-[17px] font-extrabold text-[#081E52] leading-snug tracking-tight mb-2 group-hover:text-[#0FA4AF] transition-colors shrink-0"
           style={{ fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif" }}
@@ -162,16 +162,18 @@ function HomeProductCard({ item, index }) {
           {item.title}
         </h3>
 
-        <div className="flex-1 min-w-0 overflow-y-auto pr-1.5 custom-card-scroll">
+        <div className="flex-1 min-w-0 overflow-y-auto custom-card-scroll">
           <p
-            className="text-[12px] text-slate-600 leading-[1.65] font-medium"
+            lang="en"
+            className="text-[12px] text-slate-600 leading-[1.65] font-medium hyphens-auto"
             style={{
               textAlign: 'justify',
               textJustify: 'inter-word',
-              hyphens: 'none',
-              WebkitHyphens: 'none',
+              hyphens: 'auto',
+              WebkitHyphens: 'auto',
+              msHyphens: 'auto',
               wordBreak: 'normal',
-              overflowWrap: 'normal',
+              overflowWrap: 'break-word',
             }}
           >
             {item.description}
@@ -360,7 +362,7 @@ export default function OurProductEcosystemSection({ onOpenPage }) {
           right: 0;
           left: 124px;
           background: linear-gradient(to bottom right, #ffffff, #FCFDFD, #F8FAFB);
-          padding: 1rem 1.125rem;
+          padding: 1rem 1rem;
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
@@ -370,6 +372,13 @@ export default function OurProductEcosystemSection({ onOpenPage }) {
           transform: translateZ(0);
           pointer-events: none;
           transition: opacity 0.3s ease-out;
+        }
+
+        @media (max-width: 639px) {
+          .home-profile-card .under-content {
+            left: 112px;
+            padding: 0.875rem 0.875rem;
+          }
         }
 
         /* Open / Active State via .is-pinned & .is-peeking */

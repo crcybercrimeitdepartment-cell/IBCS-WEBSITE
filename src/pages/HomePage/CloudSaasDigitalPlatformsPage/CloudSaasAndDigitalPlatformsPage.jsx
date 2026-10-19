@@ -315,7 +315,7 @@ export default function CloudSaasAndDigitalPlatformsPage({ onClose }) {
    />
   </div>
   
-  <div className="mt-6 md:mt-10 w-full max-w-[960px] space-y-4 sm:space-y-6 font-sans text-[14px] sm:text-[15px] lg:text-[16px] text-black font-medium text-center leading-relaxed">
+  <div className="mt-6 md:mt-10 w-full max-w-[960px] space-y-4 sm:space-y-6 font-sans text-[14px] sm:text-[15px] lg:text-[16px] text-black font-medium text-justify leading-relaxed" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
    <motion.p
     variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
     transition={{ duration: 0.7, ease: "easeOut" }}
@@ -433,7 +433,7 @@ export default function CloudSaasAndDigitalPlatformsPage({ onClose }) {
  initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
  className="flex flex-col flex-1"
  >
- <p className="text-white/55 text-[12px] md:text-[13px] leading-relaxed line-clamp-3 pr-8">
+ <p className="text-white/55 text-[12px] md:text-[13px] leading-relaxed line-clamp-3 pr-8 text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
  {card.description}
  </p>
  <button
@@ -466,7 +466,7 @@ export default function CloudSaasAndDigitalPlatformsPage({ onClose }) {
  {/* Details Content Container (No scroll, dynamic height) */}
  <div className="flex-1 px-5 md:px-6 pb-4">
  {/* Overview */}
- <p className="text-white/80 text-[14px] leading-[1.75] mb-5 text-left tracking-normal break-words">
+ <p className="text-white/80 text-[14px] leading-[1.75] mb-5 text-justify tracking-normal break-words" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
  {card.details.overview}
  </p>
 

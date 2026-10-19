@@ -174,8 +174,13 @@ export const graphicDesignerData = {
 
   // 11. Training & Probation
   trainingAndProbation: {
-    trainingPeriod: "Duration: 60 to 90 Days. No stipend or salary will be provided during the training period.",
+    trainingPeriod: "Duration: 60 to 90 Days",
+    trainingStipend: "No stipend will be provided during the training period",
+    trainingSalary: "No salary will be provided during the training period",
     probationPeriod: "Duration: 6 Months to 1 Year",
+    probationSalary: "Applicable as per employment terms during probation",
+    postProbationSalary: "Full CTC as per compensation structure upon confirmation",
+    internshipPeriod: "Not Applicable (Mandatory minimum 6-month prior Graphic Design internship experience required under Eligibility Criteria)",
     internshipDuration: "Not Applicable (Mandatory minimum 6-month prior Graphic Design internship experience required under Eligibility Criteria)",
     internshipStipend: "Not Applicable"
   },

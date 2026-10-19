@@ -180,12 +180,12 @@ export default function ApisIntegrationDigitalConnectivitySection({ onOpenPage }
             <div className="hidden lg:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[1.5px] bg-[#00A8B5]/25" />
 
             {/* Original Paragraph 1 (Untouched) */}
-            <p className="text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#002D33]/85 font-medium pr-0 lg:pr-4">
+            <p className="text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#002D33]/85 font-medium pr-0 lg:pr-4 text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Modern software products rarely operate in isolation. Our API and integration technologies help applications, databases, cloud services and digital platforms communicate through structured and secure technology interfaces.
             </p>
 
             {/* Original Paragraph 2 (Untouched) */}
-            <p className="text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#002D33]/85 font-medium pl-0 lg:pl-4">
+            <p className="text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#002D33]/85 font-medium pl-0 lg:pl-4 text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               We develop APIs, middleware, connectors and interoperability products that enable software ecosystems to exchange information and functionality. These technologies can support enterprise applications, SaaS platforms, government systems, cybersecurity products and other digital products requiring reliable system connectivity.
             </p>
           </motion.div>

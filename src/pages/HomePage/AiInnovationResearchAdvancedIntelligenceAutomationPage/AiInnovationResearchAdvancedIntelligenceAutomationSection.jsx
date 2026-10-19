@@ -134,7 +134,7 @@ function AiInnovationIntelligenceLatticeSVG() {
 export default function AiInnovationResearchAdvancedIntelligenceAutomationSection({ onOpenPage }) {
   const handleCtaClick = (e) => {
     e.preventDefault();
-    window.location.hash = '#ai-innovation-research-advanced-intelligence-automation';
+    window.location.hash = '#ai-innovation-page';
     if (onOpenPage) {
       onOpenPage();
     }

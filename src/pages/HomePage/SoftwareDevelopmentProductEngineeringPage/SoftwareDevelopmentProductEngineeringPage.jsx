@@ -87,13 +87,18 @@ button { font: inherit; }
 .page-description {
   max-width: 1040px;
   margin: 0 auto;
-  color: #0FA4AF;
+  color: #334155;
   font-size: clamp(15px, 1.2vw, 17px);
   line-height: 1.8;
+  text-align: center;
 }
 .page-description p {
-  margin: 0;
+  margin: 0 0 14px;
   opacity: 0;
+  text-align: center;
+}
+.page-description p:last-child {
+  margin-bottom: 0;
 }
 .page-description p:nth-child(1) { animation: fadeInUpPremium 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.2s; }
 .page-description p:nth-child(2) { animation: fadeInUpPremium 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.4s; }
@@ -307,12 +312,17 @@ button { font: inherit; }
   scrollbar-width: thin;
   scrollbar-color: #65756b transparent;
   scrollbar-gutter: stable;
-  padding: 4px 10px 4px 0;
+  padding: 4px 0;
   color: #000;
   font-size: var(--detail-font-size, 14px);
   line-height: 1.6;
-  overflow-wrap: anywhere;
-  text-align: left;
+  overflow-wrap: break-word;
+  word-break: normal;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
   opacity: 0;
   transform: translateY(8px);
   visibility: hidden;
@@ -324,7 +334,16 @@ button { font: inherit; }
   visibility: visible;
   transition: opacity 400ms ease 100ms, transform 400ms ease 100ms, visibility 0s 0s;
 }
-.card-details-content p { margin: 0; }
+.card-details-content p {
+  margin: 0;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
 .card-details-content p + p { margin-top: 1em; }
 .card-details-content:focus-visible { outline: 2px solid #385d4b; outline-offset: -2px; border-radius: 4px; }
 @media (max-width: 1147px) {
@@ -487,7 +506,7 @@ function CardRow({ row, scale, opened, onToggle }) {
                   onPointerLeave={(event) => { if (event.pointerType !== 'touch') setHovered(null) }}
                   onClick={() => { if (window.matchMedia('(max-width: 768px)').matches) onToggle(index) }}
                 >
-                  <article className={`card pattern-${index % 3} ${selectedColumn !== null && !selected ? 'is-dimmed' : ''}`}>
+                  <article className={`card pattern-${index % 3} ${selectedColumn !== null && !selected ? 'is-dimmed' : ''}`} lang="en">
                     <div className="card-face">
                       <span className="card-number">{card.number} <span>/ SOFTWARE SOLUTIONS</span></span>
                       <span className="icon-container"><ProductIcon index={index} className="product-icon" /></span>
@@ -496,8 +515,8 @@ function CardRow({ row, scale, opened, onToggle }) {
                       <div className="card-body">
                         <span className="card-support">{card.summary}</span>
                         <div className="card-details-content" id={`product-content-${card.number}`} tabIndex={expanded ? 0 : -1}
-                          role="region" aria-label={`${card.name} description`}>
-                          {card.description.replace(/\.\s+(?=[A-Z])/g, '.\n').split('\n').map((paragraph, i) => <p key={i}>{paragraph}</p>)}
+                          role="region" aria-label={`${card.name} description`} lang="en">
+                          {card.description.replace(/\.\s+(?=[A-Z])/g, '.\n').split('\n').map((paragraph, i) => <p key={i} lang="en">{paragraph}</p>)}
                         </div>
                       </div>
 
@@ -588,7 +607,7 @@ export default function SoftwareDevelopmentProductEngineeringPage({ onClose }) {
   };
 
   return (
-    <main className="software-page relative">
+    <main className="software-page relative" lang="en">
       <style>{sectionStyles}</style>
 
       {/* Top Header Navigation buttons for standalone page view */}

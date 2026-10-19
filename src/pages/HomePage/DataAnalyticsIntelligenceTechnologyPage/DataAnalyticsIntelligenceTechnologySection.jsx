@@ -204,7 +204,7 @@ export default function DataAnalyticsIntelligenceTechnologySection({ onOpenPage 
             </h3>
 
             {/* Description Paragraphs */}
-            <div className="space-y-4 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#081E52]/85 font-medium mb-8 text-center lg:text-left">
+            <div className="space-y-4 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#081E52]/85 font-medium mb-8 text-center lg:text-left text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               <p>
                 Data is a foundational component of modern software products. At IB Cyber Security Private Limited, we develop data-driven technology products that help organisations process, manage, analyse and understand information through software.
               </p>

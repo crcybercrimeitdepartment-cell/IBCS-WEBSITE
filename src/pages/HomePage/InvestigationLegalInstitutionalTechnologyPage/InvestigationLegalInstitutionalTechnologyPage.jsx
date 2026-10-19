@@ -90,7 +90,7 @@ const RecipeCard = ({
                   className="flex-1 overflow-y-auto pr-2 custom-scrollbar [transform:translateZ(1px)] hover:overscroll-contain"
                   onClick={(e) => e.stopPropagation()}
                 >
-                   <p className="text-gray-800 text-[12px] font-semibold tracking-wide leading-[1.7]">
+                   <p className="text-gray-800 text-[12px] font-semibold tracking-wide leading-[1.7] text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
                      {description}
                    </p>
                 </div>
@@ -147,13 +147,13 @@ export default function InvestigationLegalInstitutionalTechnologyPage({ onClose 
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 text-left text-gray-700 text-[15px] md:text-[16px] leading-[1.8] max-w-5xl mx-auto font-medium">
           <div className="relative">
-            <p>
+            <p className="text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               We develop specialised software products for lawful investigation, legal technology, case management and institutional workflows. These products are designed to help authorised organisations manage complex information, records, documents, cases and reporting processes through structured digital systems.
             </p>
           </div>
 
           <div className="relative">
-            <p>
+            <p className="text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Our technology can support investigation management, evidence-related workflows, intelligence analysis, complaint management and legal information systems. All such products are intended for lawful and authorised use and remain subject to applicable laws, regulations, permissions, institutional policies and access controls.
             </p>
           </div>

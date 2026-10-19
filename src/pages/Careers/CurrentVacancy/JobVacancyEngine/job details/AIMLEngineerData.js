@@ -112,8 +112,13 @@ export const aimlEngineerData = {
     ]
   },
   "trainingAndProbation": {
-    "trainingPeriod": "Duration: 60 to 90 Days. No stipend or salary provided during training period.",
+    "trainingPeriod": "Duration: 60 to 90 Days",
+    "trainingStipend": "No stipend provided during training period",
+    "trainingSalary": "No salary provided during training period",
     "probationPeriod": "Duration: 6 Months to 1 Year",
+    "probationSalary": "Applicable as per employment terms during probation",
+    "postProbationSalary": "Full CTC as per compensation structure upon confirmation",
+    "internshipPeriod": "Not Applicable (Mandatory minimum 6-month prior AI/ML internship required)",
     "internshipDuration": "Not Applicable (Mandatory minimum 6-month prior AI/ML internship required)",
     "internshipStipend": "Not Applicable"
   },

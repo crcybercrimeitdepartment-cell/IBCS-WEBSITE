@@ -14,10 +14,12 @@
   html {
     scroll-behavior: smooth;
     background-color: #F8FAFC;
+    overflow-x: clip;
   }
 
   body {
-    @apply m-0 min-w-[320px] overflow-x-hidden bg-[#F8FAFC] font-sans text-slate-900 antialiased;
+    @apply m-0 min-w-[320px] bg-[#F8FAFC] font-sans text-slate-900 antialiased;
+    overflow-x: clip;
   }
 
   ::selection {
@@ -277,6 +279,45 @@
   animation: loader-progress 1.4s ease-in-out infinite;
 }
 
+/* Futuristic Cockpit Content Visor Scroller */
+.custom-cockpit-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(56, 189, 248, 0.75) rgba(3, 14, 34, 0.45);
+}
+
+.custom-cockpit-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-cockpit-scrollbar::-webkit-scrollbar-track {
+  background: rgba(3, 14, 34, 0.45);
+  border-radius: 9999px;
+  margin: 4px 0;
+  border: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+.custom-cockpit-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
+  border-radius: 9999px;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.custom-cockpit-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00f0ff 0%, #38bdf8 100%);
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.95);
+}
+
+.custom-cockpit-scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.custom-cockpit-scrollbar::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -299,4 +340,288 @@
   .navbar-marquee-item[aria-hidden='true'] {
     display: none;
   }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   PEARL WATER CAPSULE BUTTON (LIVING LIQUID WAVES + 3D GLASS PEARL)
+   ═══════════════════════════════════════════════════════════════════════════════ */
+.pearl-button,
+.button.pearl-button {
+  --white: #ffffff;
+  --bg-tank: #271775;
+  --indigo-main: #4F39F6;
+  --radius: 100px;
+  outline: none;
+  cursor: pointer;
+  border: 0;
+  position: relative;
+  border-radius: var(--radius);
+  background: radial-gradient(120% 120% at 50% 15%, #3e26b8 0%, var(--bg-tank) 70%, #150942 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    inset 0 0.35rem 0.9rem rgba(255, 255, 255, 0.5),
+    inset 0 -0.15rem 0.4rem rgba(0, 0, 0, 0.5),
+    inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.35),
+    0 2rem 2.8rem rgba(79, 57, 246, 0.4),
+    0 0.8rem 1.2rem -0.4rem rgba(79, 57, 246, 0.6);
+  overflow: hidden;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  max-width: calc(100vw - 2rem);
+  width: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.water-tank {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.water-wave {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 250%;
+  height: 60%;
+  background-repeat: repeat-x;
+  background-size: 50% 100%;
+  pointer-events: none;
+  transition: height 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform, height;
+}
+
+.wave-back {
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath fill='%238E7CFF' fill-opacity='0.55' d='M0,50 C240,15 420,85 600,50 C780,15 960,85 1200,50 L1200,120 L0,120 Z'/%3E%3C/svg%3E");
+  animation: waveScrollBack 7s linear infinite;
+  opacity: 0.65;
+}
+
+.wave-mid {
+  z-index: 2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath fill='%236355F9' fill-opacity='0.78' d='M0,35 C200,80 380,10 600,42 C820,78 1000,15 1200,35 L1200,120 L0,120 Z'/%3E%3C/svg%3E");
+  animation: waveScrollMid 4.8s linear infinite reverse;
+  opacity: 0.85;
+}
+
+.wave-front {
+  z-index: 3;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath fill='%234F39F6' fill-opacity='0.95' d='M0,45 C180,95 380,0 600,45 C820,95 1020,0 1200,45 L1200,120 L0,120 Z'/%3E%3C/svg%3E");
+  animation: waveScrollFront 3.4s linear infinite;
+}
+
+@keyframes waveScrollFront {
+  0% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-25%, -4px, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes waveScrollMid {
+  0% { transform: translate3d(-50%, 0, 0); }
+  50% { transform: translate3d(-25%, 3px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes waveScrollBack {
+  0% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-25%, -3px, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.water-bubble {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.25) 55%, transparent 100%);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  z-index: 4;
+}
+
+.bubble-1 {
+  left: 22%;
+  width: 7px;
+  height: 7px;
+  animation: bubbleRise 3.4s infinite ease-in;
+}
+
+.bubble-2 {
+  left: 54%;
+  width: 5px;
+  height: 5px;
+  animation: bubbleRise 4.2s 1.2s infinite ease-in;
+}
+
+.bubble-3 {
+  left: 80%;
+  width: 8px;
+  height: 8px;
+  animation: bubbleRise 3.8s 0.6s infinite ease-in;
+}
+
+@keyframes bubbleRise {
+  0% {
+    transform: translate3d(0, 8px, 0) scale(0.5);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.9;
+  }
+  75% {
+    opacity: 0.85;
+    transform: translate3d(3px, -36px, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(-2px, -52px, 0) scale(1.3);
+    opacity: 0;
+  }
+}
+
+.pearl-button .wrap,
+.button.pearl-button .wrap {
+  font-size: clamp(17px, 4.5vw, 25px);
+  font-weight: 700;
+  color: #ffffff;
+  padding: clamp(16px, 3.5vw, 26px) clamp(28px, 5vw, 54px);
+  border-radius: inherit;
+  position: relative;
+  overflow: hidden;
+  z-index: 5;
+  white-space: nowrap;
+}
+
+.pearl-button .wrap p span:nth-child(2),
+.button.pearl-button .wrap p span:nth-child(2) {
+  display: none;
+}
+
+.pearl-button:hover .wrap p span:nth-child(1),
+.button.pearl-button:hover .wrap p span:nth-child(1) {
+  display: none;
+}
+
+.pearl-button:hover .wrap p span:nth-child(2),
+.button.pearl-button:hover .wrap p span:nth-child(2) {
+  display: inline-block;
+}
+
+.pearl-button .wrap p,
+.button.pearl-button .wrap p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  transition: all 0.25s ease;
+  transform: translateY(2%);
+  -webkit-mask-image: linear-gradient(to bottom, white 60%, rgba(255, 255, 255, 0.85));
+  mask-image: linear-gradient(to bottom, white 60%, rgba(255, 255, 255, 0.85));
+}
+
+.pearl-button .wrap::before,
+.pearl-button .wrap::after,
+.button.pearl-button .wrap::before,
+.button.pearl-button .wrap::after {
+  content: "";
+  position: absolute;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.pearl-button .wrap::before,
+.button.pearl-button .wrap::before {
+  left: -15%;
+  right: -15%;
+  bottom: 25%;
+  top: -100%;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.16);
+  z-index: 6;
+}
+
+.pearl-button .wrap::after,
+.button.pearl-button .wrap::after {
+  left: 6%;
+  right: 6%;
+  top: 10%;
+  bottom: 42%;
+  border-radius: 24px 24px 0 0;
+  box-shadow: inset 0 12px 10px -10px rgba(255, 255, 255, 0.95);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
+  z-index: 7;
+}
+
+.pearl-button:hover,
+.button.pearl-button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 0.35rem 0.6rem rgba(255, 255, 255, 0.6),
+    inset 0 -0.15rem 0.4rem rgba(0, 0, 0, 0.45),
+    inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.4),
+    0 2.5rem 3.5rem rgba(79, 57, 246, 0.52),
+    0 1rem 1.5rem -0.4rem rgba(79, 57, 246, 0.7);
+}
+
+.pearl-button:hover .water-wave,
+.button.pearl-button:hover .water-wave {
+  height: 82%;
+}
+
+.pearl-button:hover .wave-front,
+.button.pearl-button:hover .wave-front {
+  animation-duration: 2.5s;
+}
+
+.pearl-button:hover .wave-mid,
+.button.pearl-button:hover .wave-mid {
+  animation-duration: 3.6s;
+}
+
+.pearl-button:hover .wave-back,
+.button.pearl-button:hover .wave-back {
+  animation-duration: 5s;
+}
+
+.pearl-button:hover .wrap::before,
+.button.pearl-button:hover .wrap::before {
+  transform: translateY(-5%);
+}
+
+.pearl-button:hover .wrap::after,
+.button.pearl-button:hover .wrap::after {
+  opacity: 0.6;
+  transform: translateY(4%);
+}
+
+.pearl-button:hover .wrap p,
+.button.pearl-button:hover .wrap p {
+  transform: translateY(-4%);
+}
+
+.pearl-button:active,
+.button.pearl-button:active {
+  transform: translateY(4px) scale(0.985);
+  box-shadow:
+    inset 0 0.35rem 0.6rem rgba(255, 255, 255, 0.65),
+    inset 0 -0.15rem 0.4rem rgba(0, 0, 0, 0.55),
+    inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.3),
+    0 1.4rem 2rem rgba(79, 57, 246, 0.35),
+    0 0.6rem 0.9rem -0.3rem rgba(79, 57, 246, 0.5);
+}
+
+.pearl-button:active .water-wave,
+.button.pearl-button:active .water-wave {
+  height: 90%;
 }

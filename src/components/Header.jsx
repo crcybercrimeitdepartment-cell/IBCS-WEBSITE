@@ -9,8 +9,9 @@ import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUpRight, Bell, CheckCheck, FileText, HelpCircle, Image, Menu, PhoneCall, PlayCircle, Search, UserPlus, X } from 'lucide-react';
 import LogoMark from './LogoMark';
-import brandLogo from '../assets/IBCS_BRAND_Transparent.png';
+import brandLogo from '../assets/logos/ibcs-brand-logo.png';
 import CenterAssembledText from './CenterAssembledText';
+import SearchBar from './SearchBar/SearchBar';
 
 import { SoftwareDevelopmentProductEngineeringPageData } from '../pages/HomePage/SoftwareDevelopmentProductEngineeringPage/SoftwareDevelopmentProductEngineeringPageData';
 import { OurTechnologyData } from '../pages/HomePage/OurTechnologyPage/OurTechnologyPageData';
@@ -85,51 +86,132 @@ const initialNotifications = [
 // Resets strictly when the browser page is reloaded or freshly opened.
 let hasWelcomeMessageHiddenOnce = false;
 
-export default function Header({ onOpenItServicesPage, activePage }) {
+export default function Header({ onOpenItServicesPage, onOpenContactUsPage, activePage }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const [notifications, setNotifications] = useState(initialNotifications);
+  const [currentHash, setCurrentHash] = useState(() => (typeof window !== 'undefined' ? (window.location.hash || '') : ''));
+
+  useEffect(() => {
+    const handleHashSync = () => {
+      setCurrentHash(window.location.hash || '');
+    };
+    window.addEventListener('hashchange', handleHashSync);
+    window.addEventListener('popstate', handleHashSync);
+    window.addEventListener('sectionchange', handleHashSync);
+    return () => {
+      window.removeEventListener('hashchange', handleHashSync);
+      window.removeEventListener('popstate', handleHashSync);
+      window.removeEventListener('sectionchange', handleHashSync);
+    };
+  }, []);
+
+  const isItemActive = (item) => {
+    const hash = (currentHash || '').toLowerCase().replace(/^#\/?/, '').trim();
+    const itemHref = item.href.toLowerCase().replace(/^#\/?/, '').trim();
+
+    if (itemHref === 'home') {
+      const isStandaloneOrDetail = [
+        'about-us',
+        'about',
+        'software-products',
+        'published-software',
+        'software-launches',
+        'upcoming-software',
+        'software-library',
+        'it-services',
+        'itservices',
+        'skill-development',
+        'skill-dev',
+        'careers',
+        'career',
+        'contact',
+        'contact-us',
+        'gallery',
+        'follow',
+        'copyright',
+        'meaning-behind-our-name',
+      ].some((p) => hash.startsWith(p) || activePage === p);
+
+      return !isStandaloneOrDetail;
+    }
+
+    if (itemHref === 'about-us') {
+      return (
+        activePage === 'about-us' ||
+        hash === 'about-us' ||
+        hash === 'about' ||
+        hash === 'about-us-page' ||
+        hash.startsWith('copyright') ||
+        hash.startsWith('meaning')
+      );
+    }
+
+    if (itemHref === 'software-products') {
+      return (
+        activePage === 'software-products' ||
+        hash === 'software-products' ||
+        hash === 'software-products-page' ||
+        hash === 'product-introduction' ||
+        hash === 'purpose-use-cases' ||
+        hash === 'vision-mission' ||
+        hash === 'product-roadmap' ||
+        hash === 'technology-architecture' ||
+        hash === 'security-compliance' ||
+        hash === 'integrations-apis' ||
+        hash === 'product-benefits-impact'
+      );
+    }
+
+    if (itemHref === 'published-software') {
+      return hash === 'published-software';
+    }
+
+    if (itemHref === 'software-launches') {
+      return hash === 'software-launches';
+    }
+
+    if (itemHref === 'upcoming-software') {
+      return hash === 'upcoming-software';
+    }
+
+    if (itemHref === 'software-library') {
+      return activePage === 'software-library' || hash === 'software-library' || hash === 'software-library-page';
+    }
+
+    if (itemHref === 'it-services') {
+      return activePage === 'it-services' || hash.startsWith('it-services') || hash.startsWith('itservices');
+    }
+
+    if (itemHref === 'skill-development') {
+      return (
+        activePage === 'skill-development' ||
+        hash === 'skill-development' ||
+        hash === 'skill-development-page' ||
+        hash === 'skill-dev'
+      );
+    }
+
+    if (itemHref === 'careers') {
+      return (
+        activePage === 'careers' ||
+        hash.startsWith('career') ||
+        hash.startsWith('vacancies') ||
+        hash.startsWith('current-vacancies') ||
+        hash.startsWith('job-')
+      );
+    }
+
+    return hash === itemHref;
+  };
+
+  const isContactActive = activePage === 'contact' || (currentHash || '').toLowerCase().includes('contact');
+  const isGalleryActive = activePage === 'gallery' || (currentHash || '').toLowerCase().includes('gallery');
+  const isFollowActive = activePage === 'follow' || (currentHash || '').toLowerCase().includes('follow');
   
   // Dedicated one-way visibility state for temporary lines (Line 1 & Line 3)
   const [showWelcomeMessage, setShowWelcomeMessage] = useState(() => !hasWelcomeMessageHiddenOnce);
-  const searchInputRef = useRef(null);
   const unreadCount = notifications.filter((n) => n.unread).length;
-
-  // Flatten all cards with parent section metadata for search
-  const allSearchableItems = sectionsData.flatMap((section) => {
-    if (!section) return [];
-    const cards = Array.isArray(section.cards)
-      ? section.cards
-      : Array.isArray(section)
-        ? section
-        : [];
-    return cards.map((card) => ({
-      ...card,
-      sectionTitle: section.eyebrow || card.title || '',
-      sectionSlug: section.slug || '',
-    }));
-  });
-
-  // Filter search results dynamically
-  const filteredResults = searchQuery.trim()
-    ? allSearchableItems.filter(
-      (item) =>
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.sectionTitle.toLowerCase().includes(searchQuery.toLowerCase())
-    ).slice(0, 6)
-    : [];
-
-  // Focus search input when search popover opens
-  useEffect(() => {
-    if (isSearchOpen) {
-      setTimeout(() => searchInputRef.current?.focus(), 100);
-    } else {
-      setSearchQuery('');
-    }
-  }, [isSearchOpen]);
 
   // Prevent body overflow when mobile menu is open
   useEffect(() => {
@@ -160,8 +242,8 @@ export default function Header({ onOpenItServicesPage, activePage }) {
   };
 
   return (
-    <header id="home" className="sticky inset-x-0 top-0 z-[9999] scroll-mt-0 bg-[#040A1A] shadow-lg w-full max-w-full">
-      {/* Company Header Announcement Bar */}
+    <>
+      {/* Company Header Announcement Bar (Normal document flow - scrolls away) */}
       <div className="bg-[#040A1A] text-center px-2 sm:px-4 py-1.5 border-b border-[#D4AF37]/20 w-full overflow-hidden">
         <div className="w-full max-w-[1480px] mx-auto px-2 sm:px-4 flex flex-col items-center justify-center text-center">
 
@@ -204,8 +286,12 @@ export default function Header({ onOpenItServicesPage, activePage }) {
 
 
 
-      {/* Sticky Navigation Menu Bar (Underneath Announcement Banner) */}
-      <div className="relative border-b border-[#D4AF37]/25 bg-[#081E52]/95 shadow-[0_8px_30px_-24px_rgba(8,30,82,.85)] backdrop-blur-xl w-full max-w-full">
+      {/* Sticky Navigation Menu Bar (Sticky at top: 0 across the entire page) */}
+      <header
+        id="home"
+        className="sticky inset-x-0 top-0 z-[9999] scroll-mt-0 border-b border-[#D4AF37]/25 bg-[#081E52]/95 shadow-[0_8px_30px_-24px_rgba(8,30,82,.85)] backdrop-blur-xl w-full max-w-full"
+        style={{ position: 'sticky', top: 0, zIndex: 9999 }}
+      >
         {/* Main Navigation Menu Bar (UNDERNEATH Heading & Description) */}
         <div className="w-full max-w-[1480px] mx-auto px-3 sm:px-5 lg:px-6 flex h-14 sm:h-16 items-center justify-between gap-1.5 sm:gap-2">
           {/* Logo & Brand Name */}
@@ -232,7 +318,7 @@ export default function Header({ onOpenItServicesPage, activePage }) {
             {navigationItems.map((item) => {
               const parts = item.label.split(' ');
               const isItServices = item.label === 'IT Services' || item.href === '#it-services';
-              const isActive = (isItServices && activePage === 'it-services');
+              const isActive = isItemActive(item);
               return (
                 <a
                   key={item.label}
@@ -270,71 +356,8 @@ export default function Header({ onOpenItServicesPage, activePage }) {
 
           {/* Right Side Action Area: Search, Help, Follow, Gallery, Tender, Contact Us */}
           <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
-            {/* 1. Search Icon & Floating Popover */}
-            <div className="relative">
-              <button
-                type="button"
-                onClick={() => {
-                  setIsSearchOpen((prev) => !prev);
-                  setIsNotificationOpen(false);
-                }}
-                className="relative grid h-7 w-7 sm:h-8 sm:w-8 place-items-center text-white/90 transition-colors hover:bg-white/10 hover:text-[#E5C158] rounded-lg focus:outline-none shrink-0"
-                aria-label={isSearchOpen ? 'Close search' : 'Open search'}
-                title="Search"
-              >
-                {isSearchOpen ? <X className="h-4 w-4 text-white" /> : <Search className="h-4 w-4" />}
-              </button>
-
-              {/* Floating Search Popup Box */}
-              {isSearchOpen && (
-                <div className="absolute right-0 top-full mt-2.5 w-[210px] xs:w-[230px] sm:w-80 md:w-96 rounded-xl sm:rounded-2xl border border-[#D4AF37]/40 bg-[#081E52] p-1.5 sm:p-2.5 shadow-[0_12px_36px_rgba(0,0,0,0.6)] backdrop-blur-2xl z-50 before:absolute before:-top-2 before:right-2.5 before:h-0 before:w-0 before:border-b-8 before:border-b-[#081E52] before:border-l-8 before:border-l-transparent before:border-r-8 before:border-r-transparent">
-                  {/* Search Input Bar with Gold Submit Button */}
-                  <form onSubmit={(e) => e.preventDefault()} className="flex items-center overflow-hidden rounded-lg sm:rounded-xl border border-[#D4AF37]/35 bg-[#040A1A]">
-                    <input
-                      ref={searchInputRef}
-                      type="text"
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      placeholder="Type to search..."
-                      className="w-full bg-transparent px-2.5 py-1 text-[11px] sm:text-sm text-white placeholder-[#FFF8DC]/60 focus:outline-none"
-                    />
-                    <button
-                      type="submit"
-                      className="grid h-7 w-7.5 sm:h-9 sm:w-11 shrink-0 place-items-center bg-[#D4AF37] text-[#040A1A] font-bold transition-colors hover:bg-[#E5C158] focus:outline-none"
-                      aria-label="Submit search"
-                    >
-                      <Search className="h-3 w-3 sm:h-4 sm:w-4 stroke-[2.5]" />
-                    </button>
-                  </form>
-
-                  {/* Dynamic Search Results Dropdown List */}
-                  {searchQuery.trim() && (
-                    <div className="mt-2.5 max-h-72 overflow-y-auto space-y-1.5 border-t border-[#D4AF37]/25 pt-2">
-                      {filteredResults.length > 0 ? (
-                        filteredResults.map((item) => (
-                          <a
-                            key={item.id}
-                            href={`#${item.sectionSlug}`}
-                            onClick={() => setIsSearchOpen(false)}
-                            className="group flex flex-col rounded-xl border border-[#D4AF37]/20 bg-white/[0.03] p-2 sm:p-2.5 transition-colors hover:border-[#E5C158]/60 hover:bg-[#D4AF37]/15"
-                          >
-                            <div className="flex items-center justify-between">
-                              <span className="font-display text-xs font-bold text-white group-hover:text-[#E5C158]">{item.title}</span>
-                              <span className="text-[9px] font-bold uppercase tracking-wider text-[#D4AF37]">{item.sectionTitle}</span>
-                            </div>
-                            <p className="mt-0.5 line-clamp-1 text-[11px] text-white/80">{item.description}</p>
-                          </a>
-                        ))
-                      ) : (
-                        <div className="py-6 text-center text-xs text-[#FFF8DC]/70">
-                          No results for &quot;{searchQuery}&quot;
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
+            {/* 1. Global Navbar SearchBar Component (Inline in Navbar with attached suggestions dropdown) */}
+            <SearchBar />
 
             {/* 2. Help Icon */}
             <a
@@ -349,7 +372,7 @@ export default function Header({ onOpenItServicesPage, activePage }) {
             {/* 3. Follow Icon */}
             <a
               href="#follow"
-              className="hidden lg:grid h-7 w-7 sm:h-8 sm:w-8 place-items-center text-white/90 transition-colors hover:bg-white/10 hover:text-[#E5C158] rounded-lg focus:outline-none shrink-0"
+              className={`hidden lg:grid h-7 w-7 sm:h-8 sm:w-8 place-items-center text-white/90 transition-colors hover:bg-white/10 hover:text-[#E5C158] rounded-lg focus:outline-none shrink-0 ${isFollowActive ? "text-[#E5C158] bg-white/10" : ""}`}
               title="Follow"
               aria-label="Follow"
             >
@@ -359,7 +382,7 @@ export default function Header({ onOpenItServicesPage, activePage }) {
             {/* 4. Gallery Icon */}
             <a
               href="#gallery"
-              className="hidden lg:grid h-7 w-7 sm:h-8 sm:w-8 place-items-center text-white/90 transition-colors hover:bg-white/10 hover:text-[#E5C158] rounded-lg focus:outline-none shrink-0"
+              className={`hidden lg:grid h-7 w-7 sm:h-8 sm:w-8 place-items-center text-white/90 transition-colors hover:bg-white/10 hover:text-[#E5C158] rounded-lg focus:outline-none shrink-0 ${isGalleryActive ? "text-[#E5C158] bg-white/10" : ""}`}
               title="Gallery"
               aria-label="Gallery"
             >
@@ -379,7 +402,13 @@ export default function Header({ onOpenItServicesPage, activePage }) {
             {/* 6. Contact Us CTA Button */}
             <a
               href="#contact"
-              className="group inline-flex items-center gap-1 rounded-md bg-[#D4AF37] px-2.5 sm:px-3 py-1 text-[11px] sm:text-[11.5px] font-bold text-[#040A1A] transition-all hover:bg-[#E5C158] shrink-0 shadow-[0_0_15px_rgba(212,175,55,0.4)] whitespace-nowrap"
+              onClick={(e) => {
+                if (onOpenContactUsPage) {
+                  e.preventDefault();
+                  onOpenContactUsPage();
+                }
+              }}
+              className={`group inline-flex items-center gap-1 rounded-md bg-[#D4AF37] px-2.5 sm:px-3 py-1 text-[11px] sm:text-[11.5px] font-bold text-[#040A1A] transition-all hover:bg-[#E5C158] shrink-0 shadow-[0_0_15px_rgba(212,175,55,0.4)] whitespace-nowrap cursor-pointer ${isContactActive ? "ring-2 ring-white/90 shadow-[0_0_20px_rgba(212,175,55,0.7)]" : ""}`}
             >
               <span>Contact Us</span>
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -405,6 +434,24 @@ export default function Header({ onOpenItServicesPage, activePage }) {
             id="mobile-navigation"
             className="absolute top-full left-0 right-0 w-full min-h-[calc(100vh-60px)] max-h-[calc(100vh-60px)] overflow-y-auto bg-[#040A1A] border-t border-[#D4AF37]/30 px-4 py-5 shadow-2xl xl:hidden z-[999999]"
           >
+            {/* Search Trigger for Mobile Users */}
+            <div className="mb-4 max-w-2xl mx-auto">
+              <button
+                type="button"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  window.dispatchEvent(new CustomEvent('open-ibcs-search'));
+                }}
+                className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-[#081E52] border border-[#D4AF37]/40 text-white/80 hover:text-white hover:border-[#D4AF37] transition-all text-xs font-semibold shadow-sm cursor-pointer"
+              >
+                <span className="flex items-center gap-2.5">
+                  <Search className="w-4 h-4 text-[#E5C158]" />
+                  <span>Search across entire website...</span>
+                </span>
+                <kbd className="text-[10px] bg-white/10 px-2 py-0.5 rounded text-[#FFF8DC] font-mono border border-white/10">Search</kbd>
+              </button>
+            </div>
+
             {/* Quick Action Buttons Grid on Mobile Drawer */}
             <div className="grid grid-cols-4 gap-2.5 pb-4 border-b border-white/10 mb-4 max-w-2xl mx-auto">
               <a
@@ -417,14 +464,14 @@ export default function Header({ onOpenItServicesPage, activePage }) {
               <a
                 href="#follow"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl bg-[#081E52] border border-[#D4AF37]/25 text-[11px] font-bold text-white hover:bg-[#0c2b7a] transition-colors shadow-sm"
+                className={`flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl bg-[#081E52] border border-[#D4AF37]/25 text-[11px] font-bold text-white hover:bg-[#0c2b7a] transition-colors shadow-sm ${isFollowActive ? "ring-2 ring-[#D4AF37] bg-[#0c2b7a]" : ""}`}
               >
                 <UserPlus className="h-4 w-4 text-[#E5C158]" /> Follow
               </a>
               <a
                 href="#gallery"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl bg-[#081E52] border border-[#D4AF37]/25 text-[11px] font-bold text-white hover:bg-[#0c2b7a] transition-colors shadow-sm"
+                className={`flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl bg-[#081E52] border border-[#D4AF37]/25 text-[11px] font-bold text-white hover:bg-[#0c2b7a] transition-colors shadow-sm ${isGalleryActive ? "ring-2 ring-[#D4AF37] bg-[#0c2b7a]" : ""}`}
               >
                 <Image className="h-4 w-4 text-[#E5C158]" /> Gallery
               </a>
@@ -441,7 +488,7 @@ export default function Header({ onOpenItServicesPage, activePage }) {
             <nav className="mx-auto flex max-w-2xl flex-col space-y-2.5 pb-8" aria-label="Mobile navigation">
               {navigationItems.map((item, index) => {
                 const isItServices = item.label === 'IT Services' || item.href === '#it-services';
-                const isActive = (isItServices && activePage === 'it-services');
+                const isActive = isItemActive(item);
                 return (
                   <a
                     key={item.label}
@@ -474,8 +521,14 @@ export default function Header({ onOpenItServicesPage, activePage }) {
               <div className="pt-3 grid grid-cols-2 gap-3">
                 <a
                   href="#contact"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 rounded-xl border border-[#D4AF37]/45 bg-[#081E52] px-4 py-3.5 text-xs font-extrabold text-white shadow-md transition-all hover:bg-[#0c2b7a] active:scale-[0.98]"
+                  onClick={(e) => {
+                    setIsMenuOpen(false);
+                    if (onOpenContactUsPage) {
+                      e.preventDefault();
+                      onOpenContactUsPage();
+                    }
+                  }}
+                  className={`flex items-center justify-center gap-2 rounded-xl border border-[#D4AF37]/45 bg-[#081E52] px-4 py-3.5 text-xs font-extrabold text-white shadow-md transition-all hover:bg-[#0c2b7a] active:scale-[0.98] cursor-pointer ${isContactActive ? "ring-2 ring-[#D4AF37] bg-[#0c2b7a]" : ""}`}
                 >
                   <PhoneCall className="h-4 w-4 text-[#E5C158]" /> Contact Us
                 </a>
@@ -490,7 +543,7 @@ export default function Header({ onOpenItServicesPage, activePage }) {
             </nav>
           </div>
         )}
-      </div>
-    </header>
+      </header>
+    </>
   );
 }

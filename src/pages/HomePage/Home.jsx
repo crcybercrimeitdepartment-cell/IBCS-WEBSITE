@@ -1,4 +1,33 @@
+import { useEffect } from 'react';
 import HeroSection from './HeroSectionPage/HeroSection';
+
+export const HOMEPAGE_SECTION_IDS = [
+  'home',
+  'introduction',
+  'products-platforms',
+  'our-technology',
+  'our-product-ecosystem',
+  'cybersecurity-digital-security',
+  'artificial-intelligence-intelligent-software',
+  'cloud-saas-digital-platforms',
+  'data-analytics-intelligence-technology',
+  'software-architecture-product-engineering',
+  'product-development-lifecycle',
+  'apis-integration-digital-connectivity',
+  'enterprise-business-software-products',
+  'government-public-technology',
+  'investigation-legal-institutional-technology',
+  'education-training-skill-development-technology',
+  'intellectual-property',
+  'software-commercialisation-section',
+  'global-infrastructure-managed-services',
+  'devops-continuous-delivery',
+  'digital-experience-design',
+  'regulatory-compliance-governance',
+  'ai-innovation-research-advanced-intelligence-automation',
+  'iot-smart-edge-systems',
+  'next-generation-digital-innovation-decentralised-intelligence',
+];
 
 // 0. Introduction
 import IntroductionSection from './IntroductionPage/IntroductionSection';
@@ -78,11 +107,122 @@ export default function Home({
   onOpenIntroductionPage,
   onOpenAiInnovationPage,
   onOpenIotPage,
-  onOpenNextGenPage
+  onOpenNextGenPage,
+  isActive = true,
 }) {
+  useEffect(() => {
+    let ticking = false;
+    let isProgrammatic = false;
+    let programmaticTimer = null;
+
+    const handleHashChange = () => {
+      // Pause scroll tracking temporarily when hash changes via user action/navigation
+      isProgrammatic = true;
+      if (programmaticTimer) clearTimeout(programmaticTimer);
+      programmaticTimer = setTimeout(() => {
+        isProgrammatic = false;
+      }, 1000);
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handleHashChange);
+
+    const onScroll = () => {
+      if (isProgrammatic || (window.__IBCS_NAV_LOCK && Date.now() < window.__IBCS_NAV_LOCK)) return;
+      if (!isActive) return;
+
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          ticking = false;
+          if (isProgrammatic || (window.__IBCS_NAV_LOCK && Date.now() < window.__IBCS_NAV_LOCK)) return;
+          if (!isActive) return;
+
+          const currentHash = (window.location.hash || '').toLowerCase();
+          const isDetailPageHash =
+            currentHash.endsWith('-page') ||
+            [
+              '#about-us',
+              '#about',
+              '#software-products',
+              '#published-software',
+              '#software-launches',
+              '#upcoming-software',
+              '#software-library',
+              '#it-services',
+              '#skill-development',
+              '#careers',
+              '#contact',
+              '#gallery',
+              '#follow',
+              '#copyright',
+              '#meaning',
+            ].some((p) => currentHash.startsWith(p));
+          if (isDetailPageHash) return;
+
+          const scrollY = window.scrollY || window.pageYOffset;
+          if (scrollY < 120) {
+            const current = (window.location.hash || '').replace('#', '');
+            if (current !== 'home' && current !== '') {
+              window.history.replaceState(
+                { scrollY: 0, sectionId: 'home' },
+                '',
+                `${window.location.pathname}${window.location.search}#home`
+              );
+              window.dispatchEvent(new CustomEvent('sectionchange', { detail: { sectionId: 'home' } }));
+            }
+            return;
+          }
+
+          const triggerPoint = scrollY + window.innerHeight * 0.35;
+          let currentSectionId = null;
+
+          for (let i = HOMEPAGE_SECTION_IDS.length - 1; i >= 0; i--) {
+            const id = HOMEPAGE_SECTION_IDS[i];
+            const el = document.getElementById(id);
+            if (!el) continue;
+
+            const rect = el.getBoundingClientRect();
+            // Ignore elements with zero dimension (hidden or display: none)
+            if (rect.height === 0 && rect.width === 0) continue;
+
+            // Compute true absolute document Y coordinate, immune to offsetParent and CSS transforms
+            const elementTop = rect.top + scrollY;
+            if (elementTop <= triggerPoint) {
+              currentSectionId = id;
+              break;
+            }
+          }
+
+          if (currentSectionId) {
+            const current = (window.location.hash || '').replace('#', '');
+            if (current !== currentSectionId) {
+              window.history.replaceState(
+                { scrollY, sectionId: currentSectionId },
+                '',
+                `${window.location.pathname}${window.location.search}#${currentSectionId}`
+              );
+              window.dispatchEvent(new CustomEvent('sectionchange', { detail: { sectionId: currentSectionId } }));
+            }
+          }
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('popstate', handleHashChange);
+      if (programmaticTimer) clearTimeout(programmaticTimer);
+    };
+  }, [isActive]);
+
   return (
     <>
-      <HeroSection />
+      <div id="home">
+        <HeroSection />
+      </div>
 
       {/* 0. Introduction (Priority above-the-fold) */}
       <RevealSection priority>

@@ -30,7 +30,7 @@ const Card = ({ card }) => {
         <h3 className="text-2xl font-bold mb-4 leading-snug drop-shadow-md">
           {card.title}
         </h3>
-        <p className="text-[14.5px] text-gray-300 leading-relaxed font-light">
+        <p className="text-[14.5px] text-gray-300 leading-relaxed font-light text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
           {card.description}
         </p>
       </div>
@@ -78,7 +78,7 @@ export default function EnterpriseBusinessSoftwareProductsPage({ onClose }) {
           Enterprise &amp; Business <br className="hidden sm:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#0FA4AF] via-[#006670] to-[#003135]">Software Products</span>
         </h1>
-        <div className="text-gray-700 text-base md:text-lg leading-relaxed font-normal max-w-4xl space-y-6 px-4">
+        <div className="text-gray-700 text-base md:text-lg leading-relaxed font-normal max-w-4xl space-y-6 px-4 text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
           <p>
             We develop software products designed to help businesses and organisations manage operations, information, workflows and digital processes. Our enterprise technology capabilities cover management systems, automation, analytics, communication, productivity and organisational software.
           </p>

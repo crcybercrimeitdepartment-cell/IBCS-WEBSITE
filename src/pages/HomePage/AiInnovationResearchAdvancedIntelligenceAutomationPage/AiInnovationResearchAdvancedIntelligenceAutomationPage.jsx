@@ -111,6 +111,7 @@ const AI_INNOVATION_PAGE_STYLES = `
   color: #000;
   font-size: clamp(14px, 1.5vw, 16px);
   line-height: 1.625;
+  text-align: center;
 }
 
 .notice-board {
@@ -271,7 +272,9 @@ const AI_INNOVATION_PAGE_STYLES = `
 .paper-card__heading {
   display: flex;
   flex: 0 0 auto;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 11px;
   min-height: 52px;
   padding-bottom: 10px;
@@ -289,6 +292,7 @@ const AI_INNOVATION_PAGE_STYLES = `
   font-size: clamp(14px, 1.35vw, 18px);
   font-weight: 700;
   line-height: 1.25;
+  text-align: center;
 }
 
 .paper-card__description {
@@ -300,6 +304,7 @@ const AI_INNOVATION_PAGE_STYLES = `
   overscroll-behavior: contain;
   font-size: 15px;
   line-height: 1.55;
+  text-align: center;
   scrollbar-color: rgba(105, 78, 55, .62) transparent;
   scrollbar-width: thin;
 }
@@ -417,11 +422,11 @@ export function PaperCard({ title, description = '', icon, paper = 'white', pin 
     <article ref={cardRef} className={`paper-card paper-card--${paper}${isVisible ? ' paper-card--placed' : ''}`} style={{ '--pin-color': pin, '--paper-tilt': tilt, '--appear-delay': `${(order % 4) * 120}ms` }}>
       <span className="paper-card__pin" aria-hidden="true" />
       {paper === 'notebook' && <span className="paper-card__holes" aria-hidden="true" />}
-      <div className="paper-card__heading">
+      <div className="paper-card__heading justify-center items-center text-center">
         <Icon className="paper-card__icon" size={26} strokeWidth={1.8} aria-hidden="true" />
-        <h2>{title}</h2>
+        <h2 style={{ textAlign: 'center' }}>{title}</h2>
       </div>
-      <p className="paper-card__description" tabIndex={0} aria-label={`${title} description`}>{description}</p>
+      <p className="paper-card__description text-center" style={{ textAlign: 'center' }} tabIndex={0} aria-label={`${title} description`}>{description}</p>
     </article>
   );
 }
@@ -525,11 +530,11 @@ export default function AiInnovationResearchAdvancedIntelligenceAutomationPage({
       </div>
 
       {showHeader && (
-        <header className="ai-innovation-page__header">
+        <header className="ai-innovation-page__header text-center">
           <AnimatedHeading title={title} />
           {Array.isArray(description)
-            ? description.map((paragraph, index) => <p key={index}>{paragraph}</p>)
-            : <p>{description}</p>}
+            ? description.map((paragraph, index) => <p key={index} className="text-center" style={{ textAlign: 'center' }}>{paragraph}</p>)
+            : <p className="text-center" style={{ textAlign: 'center' }}>{description}</p>}
         </header>
       )}
       <NoticeBoard cards={displayCards} />

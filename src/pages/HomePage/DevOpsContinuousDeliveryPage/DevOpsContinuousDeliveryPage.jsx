@@ -220,11 +220,9 @@ export default function DevOpsContinuousDeliveryPage({ onClose }) {
           {devOpsHeaderData.title}
         </h1>
 
-        <div className="bg-white/70 backdrop-blur-md border border-white/80 rounded-2xl p-4 sm:p-5 shadow-xs max-w-4xl mx-auto">
-          <p className="text-slate-700 text-xs sm:text-sm md:text-[15px] leading-relaxed font-medium text-center">
-            {devOpsHeaderData.description}
-          </p>
-        </div>
+        <p className="text-slate-700 text-xs sm:text-sm md:text-[15px] leading-relaxed font-medium text-center max-w-4xl mx-auto" style={{ textAlign: 'center' }}>
+          {devOpsHeaderData.description}
+        </p>
       </motion.div>
 
       {/* ── ARC CONTAINER ── */}
@@ -337,11 +335,6 @@ export default function DevOpsContinuousDeliveryPage({ onClose }) {
                   <h3 className="text-[11px] sm:text-xs md:text-[14px] font-extrabold text-center leading-tight mt-1.5 md:mt-2 mb-1 text-white tracking-tight">
                     {card.title}
                   </h3>
-
-                  {/* Category Badge */}
-                  <span className="text-[8px] md:text-[9.5px] font-semibold text-white/80 uppercase tracking-wider text-center px-1">
-                    {card.badge}
-                  </span>
 
                   {/* Separator Line */}
                   <div className="w-6 md:w-8 h-[2px] bg-white/30 rounded-full my-1" />
@@ -456,15 +449,11 @@ export default function DevOpsContinuousDeliveryPage({ onClose }) {
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-[#081E52] tracking-tight text-center">
                   {cards[active]?.title}
                 </h3>
-
-                <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#003135]/10 text-[#081E52] border border-[#003135]/15">
-                  {cards[active]?.badge}
-                </span>
               </div>
 
               {/* Verbatim Complete Description */}
               <div className="w-full bg-slate-50/70 border border-slate-200/70 rounded-2xl p-4 sm:p-5 md:p-6 shadow-inner">
-                <p className="text-sm sm:text-[15px] md:text-base text-slate-700 leading-relaxed text-center sm:text-left font-medium">
+                <p className="text-sm sm:text-[15px] md:text-base text-slate-700 leading-relaxed text-justify font-medium" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
                   {cards[active]?.content}
                 </p>
               </div>

@@ -21,6 +21,7 @@ export default function AnimatedSectionHeading({
   children,
   as = 'h2',
   className = '',
+  style,
   highlightWords = [],
   highlightClassName = 'text-[#D4AF37]',
   viewport = { once: true, amount: 0.05, margin: '150px 0px 50px 0px' },
@@ -108,6 +109,7 @@ export default function AnimatedSectionHeading({
     <Component
       id={id}
       className={className}
+      style={style}
       aria-label={decodedText}
       initial={priority || reduceMotion ? 'visible' : 'hidden'}
       whileInView="visible"

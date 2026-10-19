@@ -440,7 +440,7 @@ export default function NextGenerationDigitalInnovationDecentralisedIntelligence
 
   const handleCtaClick = (e) => {
     e.preventDefault();
-    window.location.hash = '#next-generation-digital-innovation-decentralised-intelligence';
+    window.location.hash = '#nextgen-page';
     if (onOpenPage) {
       onOpenPage();
     }

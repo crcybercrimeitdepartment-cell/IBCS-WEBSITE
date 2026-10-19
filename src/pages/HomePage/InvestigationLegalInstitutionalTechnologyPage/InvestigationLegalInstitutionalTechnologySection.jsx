@@ -107,7 +107,7 @@ export default function InvestigationLegalInstitutionalTechnologySection({ onOpe
             className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#081E52] mb-5 text-center"
           />
 
-          <p className="text-[15px] sm:text-[16px] leading-relaxed text-[#081E52]/85 font-medium text-center max-w-3xl">
+          <p className="text-[15px] sm:text-[16px] leading-relaxed text-[#081E52]/85 font-medium text-center max-w-3xl text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
             We develop specialised software products for lawful investigation, legal technology, case management and institutional workflows. These products are designed to help authorised organisations manage complex information, records, documents, cases and reporting processes through structured digital systems.
           </p>
         </div>
@@ -125,7 +125,7 @@ export default function InvestigationLegalInstitutionalTechnologySection({ onOpe
             </div>
             <div>
               <h4 className="text-sm font-bold text-[#081E52] mb-1">Investigation &amp; Case Workflow</h4>
-              <p className="text-xs text-[#081E52]/80 leading-relaxed font-medium">
+              <p className="text-xs text-[#081E52]/80 leading-relaxed font-medium text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
                 Supporting structured evidence-related workflows, complaint management, case dossiers and verified intelligence pipelines.
               </p>
             </div>
@@ -137,7 +137,7 @@ export default function InvestigationLegalInstitutionalTechnologySection({ onOpe
             </div>
             <div>
               <h4 className="text-sm font-bold text-[#081E52] mb-1">Lawful Use &amp; Access Controls</h4>
-              <p className="text-xs text-[#081E52]/80 leading-relaxed font-medium">
+              <p className="text-xs text-[#081E52]/80 leading-relaxed font-medium text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
                 All software products are built for lawful, authorised institutional deployment subject to governing regulations and strict permissions.
               </p>
             </div>

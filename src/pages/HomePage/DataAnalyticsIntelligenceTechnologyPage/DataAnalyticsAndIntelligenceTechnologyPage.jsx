@@ -468,7 +468,7 @@ export default function DataAnalyticsAndIntelligenceTechnologyPage({ onClose }) 
                           <h3 className="text-[22px] sm:text-[24px] lg:text-[26px] font-extrabold text-[#0a1526] leading-[1.15] tracking-tight mb-4 z-10 relative">
                             {card.title}
                           </h3>
-                          <p className="text-[14px] text-slate-500 font-medium leading-relaxed z-10 relative pr-2">
+                          <p className="text-[14px] text-slate-500 font-medium leading-relaxed z-10 relative pr-2 text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
                             {card.desc}
                           </p>
                         </div>
@@ -513,7 +513,7 @@ export default function DataAnalyticsAndIntelligenceTechnologyPage({ onClose }) 
                               <span className="w-1.5 h-1.5 rounded-full bg-white/80 animate-pulse" />
                               Overview & Capabilities
                             </div>
-                            <p className="text-[12.5px] text-white/95 leading-relaxed font-medium">
+                            <p className="text-[12.5px] text-white/95 leading-relaxed font-medium text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
                               {card.content}
                             </p>
                           </div>

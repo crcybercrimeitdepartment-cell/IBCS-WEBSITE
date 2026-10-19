@@ -206,8 +206,13 @@ export const juniorPythonFullStackDeveloperData = {
 
   // 11. Training & Probation
   trainingAndProbation: {
-    trainingPeriod: "Duration: 60 to 90 Days. No stipend or salary will be provided during the training period.",
+    trainingPeriod: "Duration: 60 to 90 Days",
+    trainingStipend: "No stipend will be provided during the training period",
+    trainingSalary: "No salary will be provided during the training period",
     probationPeriod: "Duration: 6 Months to 1 Year. The probation period will be governed by applicable company policies and employment terms.",
+    probationSalary: "Applicable as per employment terms during probation",
+    postProbationSalary: "Full CTC as per compensation structure upon confirmation",
+    internshipPeriod: "Not Applicable. The position does not include an internship program. However, candidates must meet the mandatory minimum 6-month relevant internship experience requirement specified under the Eligibility Criteria.",
     internshipDuration: "Not Applicable. The position does not include an internship program. However, candidates must meet the mandatory minimum 6-month relevant internship experience requirement specified under the Eligibility Criteria.",
     internshipStipend: "Not Applicable. No internship stipend is applicable to this position."
   },

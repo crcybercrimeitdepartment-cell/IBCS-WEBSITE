@@ -51,7 +51,7 @@ export const Card3D = ({
           <span className={`block ${theme.text} font-black text-[17.5px] sm:text-[19px] leading-tight`}>
             {title}
           </span>
-          <span className={`block ${theme.textSub} text-[13px] sm:text-[13.5px] leading-[1.55] mt-[10px] sm:mt-[12px]`}>
+          <span className={`block ${theme.textSub} text-[13px] sm:text-[13.5px] leading-[1.55] mt-[10px] sm:mt-[12px] text-justify`} style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
             {description}
           </span>
         </div>
@@ -101,7 +101,7 @@ export default function GovernmentPublicTechnologyPage({ onClose }) {
         </h1>
 
         <div className="relative max-w-4xl mx-auto text-left md:text-center p-6 md:p-10 bg-white/70 backdrop-blur-xl rounded-[30px] md:rounded-[40px] shadow-[0_20px_40px_rgba(0,0,0,0.04)] border border-white/80 overflow-hidden">
-          <div className="space-y-6 text-slate-700 text-base md:text-lg font-medium leading-relaxed">
+          <div className="space-y-6 text-slate-700 text-base md:text-lg font-medium leading-relaxed text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
             <p>{pageContent.paragraph1}</p>
             <p>{pageContent.paragraph2}</p>
           </div>

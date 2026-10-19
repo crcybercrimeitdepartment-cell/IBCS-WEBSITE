@@ -2198,6 +2198,25 @@ export function FormProvider({ children }) {
     return hasSectionData(secId, data)
   }
 
+  const isStepSequentiallyCompleted = (secId, data = formData) => {
+    if (!secId || secId < 1 || secId > applicationSections.length) return false
+    // A step that is currently active or ahead of the active step is not completed yet
+    if (secId >= currentStep) return false
+    if (!isSectionCompleted(secId, data)) return false
+
+    // A step can only show as completed if all prior steps (1 to secId - 1)
+    // are also completed in sequential order.
+    for (let s = 1; s < secId; s++) {
+      if (s === 7 && data.internshipIfAny === 'No') continue
+
+      if (!isSectionCompleted(s, data)) {
+        return false
+      }
+    }
+
+    return true
+  }
+
   const canNavigateToStep = (targetStep) => {
     if (targetStep === currentStep) return true
     if (targetStep === 7 && formData.internshipIfAny === 'No') return false
@@ -2217,12 +2236,17 @@ export function FormProvider({ children }) {
     if (targetStep === currentStep + 1) {
       return true
     }
+    // Handle skipped step 7 when internship is 'No'
+    if (currentStep === 6 && targetStep === 8 && formData.internshipIfAny === 'No') {
+      return true
+    }
 
     // 3. Jumping forward across multiple steps (targetStep > currentStep + 1):
-    // Allowed only if targetStep itself is completed AND all intermediate steps are completed
+    // Only allowed if targetStep itself has data AND all intermediate steps are valid
     if (isSectionCompleted(targetStep, formData)) {
-      for (let s = 1; s < targetStep; s++) {
+      for (let s = currentStep; s < targetStep; s++) {
         if (s === 7 && formData.internshipIfAny === 'No') continue
+
         if (!isSectionCompleted(s, formData)) {
           return false
         }
@@ -2582,6 +2606,7 @@ export function FormProvider({ children }) {
     focusAndReportField,
     canNavigateToStep,
     isSectionCompleted,
+    isStepSequentiallyCompleted,
     completedSections,
   }
 
@@ -2618,11 +2643,9 @@ const STEP_ICONS = [
 export function ProgressBar({ currentStep: propCurrentStep }) {
   const formContext = useFormContext()
   const currentStep = propCurrentStep ?? formContext?.currentStep ?? 1
-  const goToStep = formContext?.goToStep
   const formData = formContext?.formData || {}
-  const canNavigateToStep = formContext?.canNavigateToStep
   const isSectionCompleted = formContext?.isSectionCompleted
-  const focusAndReportField = formContext?.focusAndReportField
+  const isStepSequentiallyCompleted = formContext?.isStepSequentiallyCompleted
 
   const progressPercentage = (currentStep / steps.length) * 100
   const currentStepName = steps[currentStep - 1]
@@ -2707,18 +2730,21 @@ export function ProgressBar({ currentStep: propCurrentStep }) {
       {/* Desktop Stepper Track (18 Steps) */}
       <div className="hidden lg:block">
         <div className="w-full overflow-x-auto no-scrollbar py-2">
-          <div className="min-w-[1140px] w-full flex flex-row items-start justify-between relative px-2">
+          <div className="min-w-[1420px] w-full flex flex-row items-start justify-between relative px-3">
             {steps.map((step, index) => {
               const stepNumber = index + 1
-              const isCompleted = Boolean(isSectionCompleted?.(stepNumber, formData)) && stepNumber !== currentStep
+              const isSequentiallyDone = Boolean(
+                isStepSequentiallyCompleted
+                  ? isStepSequentiallyCompleted(stepNumber, formData)
+                  : isSectionCompleted?.(stepNumber, formData)
+              )
+              const isCompleted = isSequentiallyDone && stepNumber !== currentStep
               const active = stepNumber === currentStep
-              const isClickable = Boolean(canNavigateToStep?.(stepNumber))
               const StepIcon = STEP_ICONS[index] || User
-
               return (
                 <div
                   key={`step-indicator-${stepNumber}`}
-                  className="relative flex flex-1 flex-col items-center px-0.5 text-center min-w-[60px]"
+                  className="relative flex flex-1 flex-col items-center px-1 text-center min-w-[76px]"
                 >
                   {/* Connecting Line to next step */}
                   {index < steps.length - 1 && (
@@ -2728,32 +2754,16 @@ export function ProgressBar({ currentStep: propCurrentStep }) {
                     >
                       <div
                         className={`h-full w-full transition-colors duration-300 ${
-                          isSectionCompleted?.(stepNumber, formData) ? 'bg-[#0B1F4D]' : 'bg-slate-200'
+                          stepNumber < currentStep && isSequentiallyDone ? 'bg-[#0B1F4D]' : 'bg-slate-200'
                         }`}
                       />
                     </div>
                   )}
 
-                  {/* Step Badge */}
-                  <button
-                    type="button"
-                    onClick={() => {
-                      if (!isClickable) {
-                        if (stepNumber > currentStep) {
-                          const currentValidation = validateSection(currentStep, formData)
-                          if (!currentValidation.isValid) {
-                            focusAndReportField?.(currentValidation.field, currentValidation.message)
-                          }
-                        }
-                        return
-                      }
-                      goToStep?.(stepNumber)
-                    }}
-                    aria-disabled={!isClickable}
-                    className={`relative z-10 transition-all duration-200 group focus:outline-none ${
-                      isClickable ? 'cursor-pointer hover:scale-105' : 'cursor-not-allowed opacity-75'
-                    }`}
-                    title={`Step ${stepNumber}: ${step}${!isClickable ? ' (Unfilled section - complete required fields first)' : ''}`}
+                  {/* Step Badge (Read-only progress indicator) */}
+                  <div
+                    className="relative z-10 transition-all duration-200 select-none cursor-default"
+                    title={`Step ${stepNumber}: ${step}`}
                   >
                     {active ? (
                       // Active: Horizontal navy pill capsule with icon and gold details
@@ -2769,18 +2779,16 @@ export function ProgressBar({ currentStep: propCurrentStep }) {
                         <Check className="w-4 h-4 text-[#D4AF37] stroke-[2.5]" />
                       </div>
                     ) : (
-                      // Inactive: White squircle with soft border and hover purple
-                      <div className={`w-9 h-9 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs sm:text-[13px] flex items-center justify-center shadow-[0_2px_8px_rgba(11,31,77,0.04)] ${
-                        isClickable ? 'group-hover:border-purple-300 group-hover:text-[#6D28D9]' : ''
-                      }`}>
+                      // Inactive: White squircle with soft border
+                      <div className="w-9 h-9 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs sm:text-[13px] flex items-center justify-center shadow-[0_2px_8px_rgba(11,31,77,0.04)]">
                         {stepNumber}
                       </div>
                     )}
-                  </button>
+                  </div>
 
                   {/* Step Label */}
                   <span
-                    className={`mt-2.5 max-w-[80px] text-[10px] leading-[1.25] text-center transition-colors ${
+                    className={`mt-2.5 w-full max-w-[74px] text-[10px] leading-[1.25] text-center break-words select-none transition-colors ${
                       active
                         ? 'font-extrabold text-[#0B1F4D]'
                         : isCompleted

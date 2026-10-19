@@ -230,6 +230,8 @@ body {
   line-height: 1.75;
   color: #334155;
   font-weight: 450;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .hero-desc-paragraph strong {
@@ -697,6 +699,8 @@ body {
   line-height: 1.7;
   color: var(--text-body);
   font-weight: 450;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .expanded-chips-row {
@@ -1460,7 +1464,7 @@ function CardItem({
 
               {/* Verbatim Description Container */}
               <div className="expanded-full-desc-container">
-                <p className="expanded-full-desc">
+                <p className="expanded-full-desc" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
                   {card.description}
                 </p>
               </div>
@@ -1715,12 +1719,12 @@ export default function GlobalInfrastructureManagedServicesPage({ onClose }) {
 
         {/* Glassmorphism Overview Container */}
         <div className="hero-card-container">
-          <div className="hero-description-wrap">
-            <p className="hero-desc-paragraph">
+          <div className="hero-description-wrap" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
+            <p className="hero-desc-paragraph" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               <strong>IB Cyber Security Private Limited</strong> provides technology infrastructure and managed services designed to support secure, reliable, scalable, and continuously available digital environments. Our capabilities span cloud infrastructure, data centres, network management, cybersecurity operations, application infrastructure, monitoring, backup, disaster recovery, technical support, and managed technology operations.
             </p>
             <div className="hero-desc-divider" />
-            <p className="hero-desc-paragraph">
+            <p className="hero-desc-paragraph" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               We combine modern infrastructure technologies, automation, security engineering, and operational expertise to help organisations maintain dependable digital environments. Our approach focuses on performance, availability, security, scalability, and continuous improvement, enabling businesses, government institutions, enterprises, and technology platforms to operate efficiently while adapting to evolving infrastructure requirements, workloads, technologies, and digital transformation needs.
             </p>
           </div>

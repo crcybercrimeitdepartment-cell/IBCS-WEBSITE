@@ -1216,6 +1216,14 @@ const Icons = {
       <path d="M2 11.5v6.25A2.25 2.25 0 004.25 20h15.5A2.25 2.25 0 0022 17.75V11.5a.75.75 0 00-.75-.75h-6.5a1.75 1.75 0 01-3.5 0h-6.5a.75.75 0 00-.75.75z" />
     </svg>
   ),
+  Salary: (
+    <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6 3h12" />
+      <path d="M6 8h12" />
+      <path d="m6 13 8.5 8" />
+      <path d="M6 13h3a4 4 0 0 0 0-8" />
+    </svg>
+  ),
   WorkMode: (
     <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -1906,10 +1914,14 @@ const [viewMode,setViewMode]=useState("list");
         {/* 11. Training & Probation */}
         <StackedSection title="11. Training & Probation" index={11}>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <InfoCard label="Training Period" value={trainingAndProbation.trainingPeriod} icon={Icons.Duration} />
-            <InfoCard label="Probation Period" value={trainingAndProbation.probationPeriod} icon={Icons.Duration} />
-            <InfoCard label="Internship Duration" value={trainingAndProbation.internshipDuration} icon={Icons.Duration} />
-            <InfoCard label="Internship Stipend" value={trainingAndProbation.internshipStipend} icon={Icons.Status} />
+            <InfoCard label="Training Period" value={trainingAndProbation.trainingPeriod} icon={Icons.Duration} variant="blue" />
+            <InfoCard label="Training Stipend" value={trainingAndProbation.trainingStipend} icon={Icons.Status} variant="green" />
+            <InfoCard label="Training Salary" value={trainingAndProbation.trainingSalary} icon={Icons.Salary} variant="purple" />
+            <InfoCard label="Probation Period" value={trainingAndProbation.probationPeriod} icon={Icons.Duration} variant="blue" />
+            <InfoCard label="Probation Salary" value={trainingAndProbation.probationSalary} icon={Icons.Salary} variant="purple" />
+            <InfoCard label="Post-Probation Salary" value={trainingAndProbation.postProbationSalary} icon={Icons.Salary} variant="green" />
+            <InfoCard label="Internship Period" value={trainingAndProbation.internshipPeriod || trainingAndProbation.internshipDuration} icon={Icons.Duration} variant="orange" />
+            <InfoCard label="Internship Stipend" value={trainingAndProbation.internshipStipend} icon={Icons.Status} variant="green" />
           </div>
         </StackedSection>
 

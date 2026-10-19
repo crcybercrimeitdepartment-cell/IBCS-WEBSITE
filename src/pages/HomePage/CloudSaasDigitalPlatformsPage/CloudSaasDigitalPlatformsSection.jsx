@@ -183,7 +183,7 @@ export default function CloudSaasDigitalPlatformsSection({ onOpenPage }) {
             </h3>
 
             {/* ORIGINAL EXACT DESCRIPTION PARAGRAPHS (UNTOUCHED) */}
-            <div className="space-y-4 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#002D33]/85 font-medium text-center lg:text-left">
+            <div className="space-y-4 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#002D33]/85 font-medium text-center lg:text-left text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               <p>
                 We design and develop cloud-based software products and Software-as-a-Service platforms built for scalable digital environments. Our cloud product engineering approach combines application architecture, databases, APIs, security, automation and distributed technologies to create reliable digital platforms.
               </p>

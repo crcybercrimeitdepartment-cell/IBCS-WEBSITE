@@ -360,7 +360,12 @@ export const jobVacancyData = {
   // 11. Training & Probation
   trainingAndProbation: {
     trainingPeriod: "4 Weeks of specialized cybersecurity onboarding training.",
+    trainingStipend: "No stipend provided during training period",
+    trainingSalary: "No salary provided during training period",
     probationPeriod: "6 months probation period with progress evaluation.",
+    probationSalary: "Applicable as per employment terms during probation",
+    postProbationSalary: "Full CTC as per compensation structure upon confirmation",
+    internshipPeriod: "Not Applicable",
     internshipDuration: "Not Applicable",
     internshipStipend: "Not Applicable"
   },

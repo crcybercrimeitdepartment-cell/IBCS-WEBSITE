@@ -636,7 +636,9 @@ export default function IntroductionPage({ onClose }) {
   }, []);
 
   const handleBack = () => {
-    if (onClose) {
+    if (window.history.length > 1) {
+      window.history.back();
+    } else if (onClose) {
       onClose();
     } else {
       window.location.hash = '#introduction';
@@ -863,7 +865,15 @@ export default function IntroductionPage({ onClose }) {
 
                   {/* Scrollable Full Description Container */}
                   <div className="mt-3 sm:mt-3.5 max-h-[170px] sm:max-h-[190px] lg:max-h-[210px] overflow-y-auto px-1 custom-card-scroll pointer-events-auto bg-transparent">
-                    <p className="text-[12px] sm:text-[12.5px] lg:text-[13px] leading-[1.65] font-normal text-slate-600 group-hover:text-white/95 transition-colors duration-300 drop-shadow-sm select-text">
+                    <p
+                      className="text-[12px] sm:text-[12.5px] lg:text-[13px] leading-[1.65] font-normal text-slate-600 group-hover:text-white/95 transition-colors duration-300 drop-shadow-sm select-text text-justify"
+                      style={{
+                        textAlign: 'justify',
+                        textJustify: 'inter-word',
+                        hyphens: 'none',
+                        WebkitHyphens: 'none',
+                      }}
+                    >
                       {card.description}
                     </p>
                   </div>

@@ -1,10 +1,10 @@
-import hero1 from '../../../assets/1.png';
-import hero2 from '../../../assets/2.png';
-import hero3 from '../../../assets/3.png';
-import hero4 from '../../../assets/4.png';
-import hero5 from '../../../assets/5.png';
-import hero6 from '../../../assets/6.png';
-import hero7 from '../../../assets/7.png';
+import hero1 from '../../../assets/homepage/hero-section/hero-slide-1.png';
+import hero2 from '../../../assets/homepage/hero-section/hero-slide-2.png';
+import hero3 from '../../../assets/homepage/hero-section/hero-slide-3.png';
+import hero4 from '../../../assets/homepage/hero-section/hero-slide-4.png';
+import hero5 from '../../../assets/homepage/hero-section/hero-slide-5.png';
+import hero6 from '../../../assets/homepage/hero-section/hero-slide-6.png';
+import hero7 from '../../../assets/homepage/hero-section/hero-slide-7.png';
 
 export const heroSlides = [
   {

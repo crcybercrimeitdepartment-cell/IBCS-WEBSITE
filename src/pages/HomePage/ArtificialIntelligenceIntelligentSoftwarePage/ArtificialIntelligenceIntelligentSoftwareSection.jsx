@@ -996,7 +996,8 @@ export default function ArtificialIntelligenceIntelligentSoftwareSection({ onOpe
         <div className="w-full max-w-[880px] mx-auto text-center pt-2 pb-4 sm:pb-6 relative z-20 shrink-0">
           <AnimatedSectionHeading
             text="Artificial Intelligence & Intelligent Software"
-            className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#081E52] tracking-tight leading-tight mb-4 text-center"
+            className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#081E52] tracking-tight leading-[1.38] sm:leading-[1.38] lg:leading-[1.38] mb-4 text-center"
+            style={{ lineHeight: 1.38 }}
           />
 
           <motion.div
@@ -1079,8 +1080,12 @@ export default function ArtificialIntelligenceIntelligentSoftwareSection({ onOpe
               {/* Description */}
               <div className="w-full flex-1 flex items-start">
                 <p
-                  className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
+                  className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal text-justify"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    textAlign: 'justify',
+                    textJustify: 'inter-word',
+                  }}
                 >
                   {activeItem.description}
                 </p>

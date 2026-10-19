@@ -1,6 +1,6 @@
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import Header from './components/Header';
-import Home from './pages/HomePage/Home';
+import Home, { HOMEPAGE_SECTION_IDS } from './pages/HomePage/Home';
 import Footer from './components/Footer';
 import PageLoader from './components/common/PageLoader';
 import ScrollToTop from './components/common/ScrollToTop';
@@ -42,6 +42,7 @@ const MeaningBehindOurNamePage = lazy(() => import('./pages/AboutUs/MeaningBehin
 const SkillDevelopmentPage = lazy(() => import('./pages/SkillDevelopment/SkillDevelopmentPage.jsx'));
 const SoftwareLibraryPage = lazy(() => import('./pages/SoftwareLibrary/SoftwareLibraryPage'));
 const ITServicesPage = lazy(() => import('./pages/IT Services/ITServicesPage'));
+const ContactUsPage = lazy(() => import('./pages/ContactUs/ContactUsPage'));
 
 // Root App Component
 export default function App() {
@@ -80,6 +81,7 @@ export default function App() {
   const [isIotPageOpen, setIsIotPageOpen] = useState(false);
   const [isNextGenPageOpen, setIsNextGenPageOpen] = useState(false);
   const [isItServicesPageOpen, setIsItServicesPageOpen] = useState(false);
+  const [isContactUsPageOpen, setIsContactUsPageOpen] = useState(false);
 
   // Initial fast platform loading transition
   useEffect(() => {
@@ -145,10 +147,20 @@ export default function App() {
                                                           ? 'iot'
                                                         : isNextGenPageOpen
                                                           ? 'nextgen'
+                                                        : isIntroductionPageOpen
+                                                          ? 'introduction-page'
                                                         : isSoftwareLibraryPageOpen
                                                          ? 'software-library'
+                                                         : isSkillDevPageOpen
+                                                           ? 'skill-development'
                                                          : isItServicesPageOpen
                                                            ? 'it-services'
+                                                         : isContactUsPageOpen
+                                                           ? 'contact'
+                                                           : isCopyrightPageOpen
+                                                             ? 'copyright'
+                                                             : isMeaningPageOpen
+                                                               ? 'meaning-behind-our-name'
                                                           : 'home';
 
   const isAnyDetailPageOpen =
@@ -185,9 +197,21 @@ export default function App() {
     isAiInnovationPageOpen ||
     isIotPageOpen ||
     isNextGenPageOpen ||
-    isItServicesPageOpen;
+    isItServicesPageOpen ||
+    isContactUsPageOpen;
 
-    const resetAll = () => {
+    const lastHomepageScrollRef = useRef(0);
+
+  const saveHomepageScrollBeforeDetail = () => {
+    if (!isAnyDetailPageOpen) {
+      const scrollY = window.scrollY || window.pageYOffset || 0;
+      lastHomepageScrollRef.current = scrollY;
+      const currentHash = window.location.hash || '#home';
+      window.history.replaceState({ scrollY, sectionId: currentHash.replace('#', '') }, '');
+    }
+  };
+
+  const resetAll = () => {
     setIsSdpePageOpen(false);
     setIsIpPageOpen(false);
     setIsSpcPageOpen(false);
@@ -222,11 +246,27 @@ export default function App() {
     setIsIotPageOpen(false);
     setIsNextGenPageOpen(false);
     setIsItServicesPageOpen(false);
+    setIsContactUsPageOpen(false);
   };
 
   useEffect(() => {
     const handleHash = () => {
       const rawHash = (window.location.hash || '').toLowerCase().trim();
+
+      const isHomepageHash =
+        rawHash === '' ||
+        rawHash === '#' ||
+        rawHash === '#home' ||
+        rawHash === '#/home' ||
+        rawHash === '#featured-technology' ||
+        HOMEPAGE_SECTION_IDS.includes(rawHash.replace(/^#\/?/, '')) ||
+        ['sdpe', 'software-development-product-engineering', 'ai-innovation', 'iot', 'nextgen', 'cybersecurity'].includes(rawHash.replace(/^#\/?/, ''));
+
+      if (!isHomepageHash) {
+        saveHomepageScrollBeforeDetail();
+      }
+
+      // 1. Standalone pages
       if (
         rawHash === '#it-services' ||
         rawHash === '#/it-services' ||
@@ -241,176 +281,311 @@ export default function App() {
         return;
       }
 
-      if (window.location.hash === '#sdpe-page') {
-        resetAll(); setIsSdpePageOpen(true);
-      } else if (window.location.hash === '#ip-page') {
-        resetAll(); setIsIpPageOpen(true);
-      } else if (window.location.hash === '#spc-page') {
-        resetAll(); setIsSpcPageOpen(true);
-      } else if (window.location.hash === '#pdl-page' || window.location.hash === '#product-development-lifecycle-page') {
-        resetAll(); setIsPdlPageOpen(true);
-      } else if (window.location.hash === '#our-product-ecosystem-page' || window.location.hash === '#ope-page') {
-        resetAll(); setIsOpePageOpen(true);
-      } else if (window.location.hash === '#our-technology-page' || window.location.hash === '#ot-page') {
-        resetAll(); setIsOtPageOpen(true);
-      } else if (
-        window.location.hash === '#artificial-intelligence-intelligent-software-page' ||
-        window.location.hash === '#ai-page'
+      if (
+        rawHash === '#contact' ||
+        rawHash === '#/contact' ||
+        rawHash === '#contact-us' ||
+        rawHash === '#/contact-us' ||
+        rawHash === '#contact-us-page' ||
+        rawHash === '#/contact-us-page' ||
+        rawHash === '#contactus' ||
+        rawHash.startsWith('#contact')
       ) {
-        resetAll(); setIsAiPageOpen(true);
-      } else if (
-        window.location.hash === '#cloud-saas-digital-platforms-page' ||
-        window.location.hash === '#cloud-saas-page'
-      ) {
-        resetAll(); setIsCloudPageOpen(true);
-      } else if (
-        window.location.hash === '#data-analytics-intelligence-technology-page' ||
-        window.location.hash === '#da-page'
-      ) {
-        resetAll(); setIsDaPageOpen(true);
-      } else if (
-        window.location.hash === '#apis-integration-page' ||
-        window.location.hash === '#apis-integration-digital-connectivity-page' ||
-        window.location.hash === '#apis-integration-digital-connectivity'
-      ) {
-        resetAll(); setIsApisPageOpen(true);
-      } else if (window.location.hash === '#education-training-page' || window.location.hash === '#education-training-skill-development-technology-page') {
-        resetAll(); setIsEduPageOpen(true);
-      } else if (window.location.hash === '#enterprise-business-page' || window.location.hash === '#enterprise-business-software-products-page') {
-        resetAll(); setIsEntPageOpen(true);
-      } else if (window.location.hash === '#government-public-page' || window.location.hash === '#government-public-technology-page') {
-        resetAll(); setIsGovPageOpen(true);
-      } else if (window.location.hash === '#investigation-legal-page' || window.location.hash === '#investigation-legal-institutional-technology-page') {
-        resetAll(); setIsInvPageOpen(true);
-      } else if (window.location.hash === '#software-architecture-page' || window.location.hash === '#software-architecture-product-engineering-page') {
-        resetAll(); setIsArchPageOpen(true);
-      } else if (window.location.hash === '#global-infrastructure-page' || window.location.hash === '#global-infrastructure-managed-services-page') {
-        resetAll(); setIsGlobalInfraPageOpen(true);
-      } else if (window.location.hash === '#devops-page' || window.location.hash === '#devops-continuous-delivery-page') {
-        resetAll(); setIsDevOpsPageOpen(true);
-      } else if (window.location.hash === '#digital-experience-page' || window.location.hash === '#digital-experience-design-page') {
-        resetAll(); setIsDigitalExpPageOpen(true);
-      } else if (window.location.hash === '#regulatory-compliance-page' || window.location.hash === '#regulatory-compliance-governance-page') {
-        resetAll(); setIsRegulatoryPageOpen(true);
-      } else if (
-        window.location.hash === '#software-products' ||
-        window.location.hash === '#software-products-page' ||
-        window.location.hash === '#software-product-page' ||
-        window.location.hash === '#product-introduction' ||
-        window.location.hash === '#purpose-use-cases' ||
-        window.location.hash === '#vision-mission' ||
-        window.location.hash === '#product-roadmap' ||
-        window.location.hash === '#technology-architecture' ||
-        window.location.hash === '#security-compliance' ||
-        window.location.hash === '#integrations-apis' ||
-        window.location.hash === '#product-benefits-impact'
-      ) {
-        resetAll(); setIsSoftwareProductPageOpen(true);
-      } else if (window.location.hash === '#about-us' || window.location.hash === '#about-us-page' || window.location.hash === '#about') {
-        resetAll(); setIsAboutUsPageOpen(true);
-      } else if (window.location.hash === '#gallery' || window.location.hash === '#gallery-page') {
-        resetAll(); setIsGalleryPageOpen(true);
-      } else if (window.location.hash === '#follow' || window.location.hash === '#follow-page' || window.location.hash === '#follow-us') {
-        resetAll(); setIsFollowPageOpen(true);
-      } else if (
-        window.location.hash === '#careers' ||
-        window.location.hash === '#career' ||
-        window.location.hash === '#careers-page' ||
-        window.location.hash === '#career-page' ||
-        window.location.hash.startsWith('#/vacancies') ||
-        window.location.hash.startsWith('#/current-vacancies') ||
-        window.location.hash.startsWith('#/job-vacancy') ||
-        window.location.hash.startsWith('#/full-time') ||
-        window.location.hash.startsWith('#/part-time') ||
-        window.location.hash.startsWith('#/internship') ||
-        window.location.hash.startsWith('#/remote-job') ||
-        window.location.hash.startsWith('#/post-vacancy') ||
-        window.location.hash.startsWith('#/policies') ||
-        window.location.hash.startsWith('#/recruitment-policies') ||
-        window.location.hash.startsWith('#/rules') ||
-        window.location.hash.startsWith('#/verification') ||
-        window.location.hash.startsWith('#/document-verification') ||
-        window.location.hash.startsWith('#/department') ||
-        window.location.hash.startsWith('#/portal') ||
-        window.location.hash.startsWith('#/online-portal') ||
-        window.location.hash.startsWith('#/online-application-portal') ||
-        window.location.hash.startsWith('#/advertisement') ||
-        window.location.hash.startsWith('#/press') ||
-        window.location.hash.startsWith('#/notices') ||
-        window.location.hash.startsWith('#/status') ||
-        window.location.hash.startsWith('#/application-status') ||
-        window.location.hash.startsWith('#/check-status') ||
-        window.location.hash.startsWith('#/resume') ||
-        window.location.hash.startsWith('#/submit-resume')
-      ) {
-        resetAll(); setIsCareerPageOpen(true);
-      } else if (
-        window.location.hash === '#cybersecurity-digital-security-page' ||
-        window.location.hash === '#cybersecurity-page' ||
-        window.location.hash === '#cybersecurity'
-      ) {
-        resetAll(); setIsCybersecurityPageOpen(true);
-      } else if (
-        window.location.hash === '#copyright-page' ||
-        window.location.hash === '#copyright' ||
-        window.location.hash === '#copyright-policy' ||
-        window.location.hash === '#about-us-copyright'
-      ) {
-        resetAll(); setIsCopyrightPageOpen(true);
-      } else if (
-        window.location.hash === '#meaning-behind-our-name-page' ||
-        window.location.hash === '#meaning-behind-our-name' ||
-        window.location.hash === '#meaning-page' ||
-        window.location.hash === '#meaning-behind-our-name-card'
-      ) {
-        resetAll(); setIsMeaningPageOpen(true);
-      } else if (
-        window.location.hash === '#skill-development-page' ||
-        window.location.hash === '#skill-development' ||
-        window.location.hash === '#skill-dev' ||
-        window.location.hash === '#skill-dev-page'
-      ) {
-        resetAll(); setIsSkillDevPageOpen(true);
-      } else if (
-        window.location.hash === '#introduction-page' ||
-        window.location.hash === '#introduction'
-      ) {
-        resetAll(); setIsIntroductionPageOpen(true);
-      } else if (
-        window.location.hash === '#software-library-page' ||
-        window.location.hash === '#software-library' ||
-        window.location.hash === '#software-library-section'
-      ) {
-        resetAll(); setIsSoftwareLibraryPageOpen(true);
-      } else if (
-        window.location.hash === '#ai-innovation-research-advanced-intelligence-automation' ||
-        window.location.hash === '#ai-innovation-research-advanced-intelligence-automation-page' ||
-        window.location.hash === '#ai-innovation-page' ||
-        window.location.hash === '#ai-innovation'
-      ) {
-        resetAll(); setIsAiInnovationPageOpen(true);
-      } else if (
-        window.location.hash === '#iot-smart-edge-systems' ||
-        window.location.hash === '#iot-smart-edge-systems-page' ||
-        window.location.hash === '#iot-page' ||
-        window.location.hash === '#iot'
-      ) {
-        resetAll(); setIsIotPageOpen(true);
-      } else if (
-        window.location.hash === '#next-generation-digital-innovation-decentralised-intelligence' ||
-        window.location.hash === '#next-generation-digital-innovation-decentralised-intelligence-page' ||
-        window.location.hash === '#nextgen-page' ||
-        window.location.hash === '#next-generation-digital-innovation' ||
-        window.location.hash === '#blockchain-page'
-      ) {
-        resetAll(); setIsNextGenPageOpen(true);
-      } else {
         resetAll();
+        setIsContactUsPageOpen(true);
+        return;
       }
+
+      if (
+        rawHash === '#software-products' ||
+        rawHash === '#software-products-page' ||
+        rawHash === '#software-product-page' ||
+        rawHash === '#product-introduction' ||
+        rawHash === '#purpose-use-cases' ||
+        rawHash === '#vision-mission' ||
+        rawHash === '#product-roadmap' ||
+        rawHash === '#technology-architecture' ||
+        rawHash === '#security-compliance' ||
+        rawHash === '#integrations-apis' ||
+        rawHash === '#product-benefits-impact'
+      ) {
+        resetAll();
+        setIsSoftwareProductPageOpen(true);
+        return;
+      }
+
+      if (rawHash === '#about-us' || rawHash === '#about-us-page' || rawHash === '#about') {
+        resetAll();
+        setIsAboutUsPageOpen(true);
+        return;
+      }
+
+      if (rawHash === '#gallery' || rawHash === '#gallery-page') {
+        resetAll();
+        setIsGalleryPageOpen(true);
+        return;
+      }
+
+      if (rawHash === '#follow' || rawHash === '#follow-page' || rawHash === '#follow-us') {
+        resetAll();
+        setIsFollowPageOpen(true);
+        return;
+      }
+
+      if (
+        rawHash === '#careers' ||
+        rawHash === '#career' ||
+        rawHash === '#careers-page' ||
+        rawHash === '#career-page' ||
+        rawHash.startsWith('#/vacancies') ||
+        rawHash.startsWith('#/current-vacancies') ||
+        rawHash.startsWith('#/job-vacancy') ||
+        rawHash.startsWith('#/job-detail-preview') ||
+        rawHash.startsWith('#/job-preview') ||
+        rawHash.startsWith('#/full-time') ||
+        rawHash.startsWith('#/part-time') ||
+        rawHash.startsWith('#/internship') ||
+        rawHash.startsWith('#/remote-job') ||
+        rawHash.startsWith('#/post-vacancy') ||
+        rawHash.startsWith('#/policies') ||
+        rawHash.startsWith('#/recruitment-policies') ||
+        rawHash.startsWith('#/rules') ||
+        rawHash.startsWith('#/verification') ||
+        rawHash.startsWith('#/document-verification') ||
+        rawHash.startsWith('#/department') ||
+        rawHash.startsWith('#/portal') ||
+        rawHash.startsWith('#/online-portal') ||
+        rawHash.startsWith('#/online-application-portal') ||
+        rawHash.startsWith('#/advertisement') ||
+        rawHash.startsWith('#/press') ||
+        rawHash.startsWith('#/notices') ||
+        rawHash.startsWith('#/status') ||
+        rawHash.startsWith('#/application-status') ||
+        rawHash.startsWith('#/check-status') ||
+        rawHash.startsWith('#/resume') ||
+        rawHash.startsWith('#/submit-resume')
+      ) {
+        resetAll();
+        setIsCareerPageOpen(true);
+        return;
+      }
+
+      if (
+        rawHash === '#copyright-page' ||
+        rawHash === '#copyright' ||
+        rawHash === '#copyright-policy' ||
+        rawHash === '#about-us-copyright'
+      ) {
+        resetAll();
+        setIsCopyrightPageOpen(true);
+        return;
+      }
+
+      if (
+        rawHash === '#meaning-behind-our-name-page' ||
+        rawHash === '#meaning-behind-our-name' ||
+        rawHash === '#meaning-page' ||
+        rawHash === '#meaning-behind-our-name-card'
+      ) {
+        resetAll();
+        setIsMeaningPageOpen(true);
+        return;
+      }
+
+      if (
+        rawHash === '#skill-development-page' ||
+        rawHash === '#skill-development' ||
+        rawHash === '#skill-dev' ||
+        rawHash === '#skill-dev-page'
+      ) {
+        resetAll();
+        setIsSkillDevPageOpen(true);
+        return;
+      }
+
+      if (
+        rawHash === '#software-library-page' ||
+        rawHash === '#software-library' ||
+        rawHash === '#software-library-section'
+      ) {
+        resetAll();
+        setIsSoftwareLibraryPageOpen(true);
+        return;
+      }
+
+      // 2. Section Detail Pages (Unique dedicated pages with zero section collision)
+      if (rawHash === '#sdpe-page') {
+        resetAll();
+        setIsSdpePageOpen(true);
+        return;
+      }
+      if (rawHash === '#ip-page') {
+        resetAll();
+        setIsIpPageOpen(true);
+        return;
+      }
+      if (rawHash === '#spc-page') {
+        resetAll();
+        setIsSpcPageOpen(true);
+        return;
+      }
+      if (rawHash === '#pdl-page' || rawHash === '#product-development-lifecycle-page') {
+        resetAll();
+        setIsPdlPageOpen(true);
+        return;
+      }
+      if (rawHash === '#our-product-ecosystem-page' || rawHash === '#ope-page') {
+        resetAll();
+        setIsOpePageOpen(true);
+        return;
+      }
+      if (rawHash === '#our-technology-page' || rawHash === '#ot-page') {
+        resetAll();
+        setIsOtPageOpen(true);
+        return;
+      }
+      if (rawHash === '#artificial-intelligence-intelligent-software-page' || rawHash === '#ai-page') {
+        resetAll();
+        setIsAiPageOpen(true);
+        return;
+      }
+      if (rawHash === '#cloud-saas-digital-platforms-page' || rawHash === '#cloud-saas-page') {
+        resetAll();
+        setIsCloudPageOpen(true);
+        return;
+      }
+      if (rawHash === '#data-analytics-intelligence-technology-page' || rawHash === '#da-page') {
+        resetAll();
+        setIsDaPageOpen(true);
+        return;
+      }
+      if (rawHash === '#apis-integration-page' || rawHash === '#apis-integration-digital-connectivity-page') {
+        resetAll();
+        setIsApisPageOpen(true);
+        return;
+      }
+      if (rawHash === '#education-training-page' || rawHash === '#education-training-skill-development-technology-page') {
+        resetAll();
+        setIsEduPageOpen(true);
+        return;
+      }
+      if (rawHash === '#enterprise-business-page' || rawHash === '#enterprise-business-software-products-page') {
+        resetAll();
+        setIsEntPageOpen(true);
+        return;
+      }
+      if (rawHash === '#government-public-page' || rawHash === '#government-public-technology-page') {
+        resetAll();
+        setIsGovPageOpen(true);
+        return;
+      }
+      if (rawHash === '#investigation-legal-page' || rawHash === '#investigation-legal-institutional-technology-page') {
+        resetAll();
+        setIsInvPageOpen(true);
+        return;
+      }
+      if (rawHash === '#software-architecture-page' || rawHash === '#software-architecture-product-engineering-page') {
+        resetAll();
+        setIsArchPageOpen(true);
+        return;
+      }
+      if (rawHash === '#global-infrastructure-page' || rawHash === '#global-infrastructure-managed-services-page') {
+        resetAll();
+        setIsGlobalInfraPageOpen(true);
+        return;
+      }
+      if (rawHash === '#devops-page' || rawHash === '#devops-continuous-delivery-page') {
+        resetAll();
+        setIsDevOpsPageOpen(true);
+        return;
+      }
+      if (rawHash === '#digital-experience-page' || rawHash === '#digital-experience-design-page') {
+        resetAll();
+        setIsDigitalExpPageOpen(true);
+        return;
+      }
+      if (rawHash === '#regulatory-compliance-page' || rawHash === '#regulatory-compliance-governance-page') {
+        resetAll();
+        setIsRegulatoryPageOpen(true);
+        return;
+      }
+      if (rawHash === '#ai-innovation-page' || rawHash === '#ai-innovation-research-advanced-intelligence-automation-page') {
+        resetAll();
+        setIsAiInnovationPageOpen(true);
+        return;
+      }
+      if (rawHash === '#iot-page' || rawHash === '#iot-smart-edge-systems-page') {
+        resetAll();
+        setIsIotPageOpen(true);
+        return;
+      }
+      if (
+        rawHash === '#nextgen-page' ||
+        rawHash === '#next-generation-digital-innovation-decentralised-intelligence-page' ||
+        rawHash === '#blockchain-page'
+      ) {
+        resetAll();
+        setIsNextGenPageOpen(true);
+        return;
+      }
+      if (rawHash === '#cybersecurity-digital-security-page' || rawHash === '#cybersecurity-page') {
+        resetAll();
+        setIsCybersecurityPageOpen(true);
+        return;
+      }
+      if (rawHash === '#introduction-page') {
+        resetAll();
+        setIsIntroductionPageOpen(true);
+        return;
+      }
+
+      // 3. Homepage and Section scrolling
+      window.__IBCS_NAV_LOCK = Date.now() + 1000;
+      resetAll();
+
+      if (
+        rawHash === '' ||
+        rawHash === '#' ||
+        rawHash === '#home' ||
+        rawHash === '#/home' ||
+        rawHash === '#featured-technology'
+      ) {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        return;
+      }
+
+      let cleanId = rawHash.replace(/^#\/?/, '');
+      if (cleanId === 'sdpe' || cleanId === 'software-development-product-engineering') {
+        cleanId = 'products-platforms';
+      } else if (cleanId === 'ai-innovation') {
+        cleanId = 'ai-innovation-research-advanced-intelligence-automation';
+      } else if (cleanId === 'iot') {
+        cleanId = 'iot-smart-edge-systems';
+      } else if (cleanId === 'nextgen') {
+        cleanId = 'next-generation-digital-innovation-decentralised-intelligence';
+      } else if (cleanId === 'cybersecurity') {
+        cleanId = 'cybersecurity-digital-security';
+      }
+
+      setTimeout(() => {
+        const targetElement = document.getElementById(cleanId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          // Graceful fallback for unrecognized hashes: keep clean #home
+          window.history.replaceState({ scrollY: 0, sectionId: 'home' }, '', `${window.location.pathname}${window.location.search}#home`);
+          window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        }
+      }, 50);
     };
+
     handleHash();
     window.addEventListener('hashchange', handleHash);
-    return () => window.removeEventListener('hashchange', handleHash);
+    window.addEventListener('popstate', handleHash);
+    return () => {
+      window.removeEventListener('hashchange', handleHash);
+      window.removeEventListener('popstate', handleHash);
+    };
   }, []);
 
   useEffect(() => {
@@ -429,7 +604,7 @@ export default function App() {
         clearTimeout(timer2);
       };
     }
-  }, [isAnyDetailPageOpen, isSdpePageOpen, isIpPageOpen, isSpcPageOpen, isPdlPageOpen, isOpePageOpen, isOtPageOpen, isAiPageOpen, isCloudPageOpen, isDaPageOpen, isApisPageOpen, isEduPageOpen, isEntPageOpen, isGovPageOpen, isInvPageOpen, isArchPageOpen, isGlobalInfraPageOpen, isDevOpsPageOpen, isDigitalExpPageOpen, isRegulatoryPageOpen, isSoftwareProductPageOpen, isAboutUsPageOpen, isGalleryPageOpen, isFollowPageOpen, isCareerPageOpen, isCybersecurityPageOpen, isCopyrightPageOpen, isSkillDevPageOpen, isIntroductionPageOpen, isSoftwareLibraryPageOpen, isAiInnovationPageOpen, isIotPageOpen, isNextGenPageOpen, isItServicesPageOpen]);
+  }, [isAnyDetailPageOpen, isSdpePageOpen, isIpPageOpen, isSpcPageOpen, isPdlPageOpen, isOpePageOpen, isOtPageOpen, isAiPageOpen, isCloudPageOpen, isDaPageOpen, isApisPageOpen, isEduPageOpen, isEntPageOpen, isGovPageOpen, isInvPageOpen, isArchPageOpen, isGlobalInfraPageOpen, isDevOpsPageOpen, isDigitalExpPageOpen, isRegulatoryPageOpen, isSoftwareProductPageOpen, isAboutUsPageOpen, isGalleryPageOpen, isFollowPageOpen, isCareerPageOpen, isCybersecurityPageOpen, isCopyrightPageOpen, isSkillDevPageOpen, isIntroductionPageOpen, isSoftwareLibraryPageOpen, isAiInnovationPageOpen, isIotPageOpen, isNextGenPageOpen, isItServicesPageOpen, isContactUsPageOpen]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
@@ -437,79 +612,46 @@ export default function App() {
     document.body.scrollTop = 0;
   };
 
-  const openSdpe = () => { setIsSdpePageOpen(true); scrollToTop(); };
-  const openIp = () => { setIsIpPageOpen(true); scrollToTop(); };
-  const openSpc = () => { setIsSpcPageOpen(true); scrollToTop(); };
-  const openPdl = () => { setIsPdlPageOpen(true); scrollToTop(); };
-  const openOpe = () => { setIsOpePageOpen(true); scrollToTop(); };
-  const openOt = () => { setIsOtPageOpen(true); scrollToTop(); };
-  const openAi = () => { setIsAiPageOpen(true); scrollToTop(); };
-  const openCloud = () => { setIsCloudPageOpen(true); scrollToTop(); };
-  const openDa = () => { setIsDaPageOpen(true); scrollToTop(); };
-  const openApis = () => { setIsApisPageOpen(true); scrollToTop(); };
-  const openEdu = () => { setIsEduPageOpen(true); scrollToTop(); };
-  const openEnt = () => { setIsEntPageOpen(true); scrollToTop(); };
-  const openGov = () => { setIsGovPageOpen(true); scrollToTop(); };
-  const openInv = () => { setIsInvPageOpen(true); scrollToTop(); };
-  const openArch = () => { setIsArchPageOpen(true); scrollToTop(); };
-  const openGlobalInfra = () => { setIsGlobalInfraPageOpen(true); scrollToTop(); };
-  const openDevOps = () => { setIsDevOpsPageOpen(true); scrollToTop(); };
-  const openDigitalExp = () => { setIsDigitalExpPageOpen(true); scrollToTop(); };
-  const openRegulatory = () => { setIsRegulatoryPageOpen(true); scrollToTop(); };
-  const openAiInnovation = () => { setIsAiInnovationPageOpen(true); scrollToTop(); };
-  const openIot = () => { setIsIotPageOpen(true); scrollToTop(); };
-  const openNextGen = () => { setIsNextGenPageOpen(true); scrollToTop(); };
-  const openCybersecurity = () => { setIsCybersecurityPageOpen(true); scrollToTop(); };
-  const openIntroduction = () => { setIsIntroductionPageOpen(true); scrollToTop(); };
-  const openCopyright = () => { setIsCopyrightPageOpen(true); scrollToTop(); window.location.hash = '#copyright-page'; };
-
-  const openSoftwareProduct = () => { setIsSoftwareProductPageOpen(true); scrollToTop(); };
-  const openAboutUs = () => { setIsAboutUsPageOpen(true); scrollToTop(); };
+  const openSdpe = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsSdpePageOpen(true); scrollToTop(); if (window.location.hash !== '#sdpe-page') window.location.hash = '#sdpe-page'; };
+  const openIp = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsIpPageOpen(true); scrollToTop(); if (window.location.hash !== '#ip-page') window.location.hash = '#ip-page'; };
+  const openSpc = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsSpcPageOpen(true); scrollToTop(); if (window.location.hash !== '#spc-page') window.location.hash = '#spc-page'; };
+  const openPdl = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsPdlPageOpen(true); scrollToTop(); if (window.location.hash !== '#pdl-page') window.location.hash = '#pdl-page'; };
+  const openOpe = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsOpePageOpen(true); scrollToTop(); if (window.location.hash !== '#our-product-ecosystem-page') window.location.hash = '#our-product-ecosystem-page'; };
+  const openOt = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsOtPageOpen(true); scrollToTop(); if (window.location.hash !== '#our-technology-page') window.location.hash = '#our-technology-page'; };
+  const openAi = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsAiPageOpen(true); scrollToTop(); if (window.location.hash !== '#artificial-intelligence-intelligent-software-page') window.location.hash = '#artificial-intelligence-intelligent-software-page'; };
+  const openCloud = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsCloudPageOpen(true); scrollToTop(); if (window.location.hash !== '#cloud-saas-digital-platforms-page') window.location.hash = '#cloud-saas-digital-platforms-page'; };
+  const openDa = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsDaPageOpen(true); scrollToTop(); if (window.location.hash !== '#data-analytics-intelligence-technology-page') window.location.hash = '#data-analytics-intelligence-technology-page'; };
+  const openApis = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsApisPageOpen(true); scrollToTop(); if (window.location.hash !== '#apis-integration-digital-connectivity-page') window.location.hash = '#apis-integration-digital-connectivity-page'; };
+  const openEdu = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsEduPageOpen(true); scrollToTop(); if (window.location.hash !== '#education-training-page') window.location.hash = '#education-training-page'; };
+  const openEnt = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsEntPageOpen(true); scrollToTop(); if (window.location.hash !== '#enterprise-business-page') window.location.hash = '#enterprise-business-page'; };
+  const openGov = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsGovPageOpen(true); scrollToTop(); if (window.location.hash !== '#government-public-page') window.location.hash = '#government-public-page'; };
+  const openInv = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsInvPageOpen(true); scrollToTop(); if (window.location.hash !== '#investigation-legal-page') window.location.hash = '#investigation-legal-page'; };
+  const openArch = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsArchPageOpen(true); scrollToTop(); if (window.location.hash !== '#software-architecture-page') window.location.hash = '#software-architecture-page'; };
+  const openGlobalInfra = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsGlobalInfraPageOpen(true); scrollToTop(); if (window.location.hash !== '#global-infrastructure-managed-services-page') window.location.hash = '#global-infrastructure-managed-services-page'; };
+  const openDevOps = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsDevOpsPageOpen(true); scrollToTop(); if (window.location.hash !== '#devops-continuous-delivery-page') window.location.hash = '#devops-continuous-delivery-page'; };
+  const openDigitalExp = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsDigitalExpPageOpen(true); scrollToTop(); if (window.location.hash !== '#digital-experience-design-page') window.location.hash = '#digital-experience-design-page'; };
+  const openRegulatory = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsRegulatoryPageOpen(true); scrollToTop(); if (window.location.hash !== '#regulatory-compliance-governance-page') window.location.hash = '#regulatory-compliance-governance-page'; };
+  const openAiInnovation = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsAiInnovationPageOpen(true); scrollToTop(); if (window.location.hash !== '#ai-innovation-page') window.location.hash = '#ai-innovation-page'; };
+  const openIot = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsIotPageOpen(true); scrollToTop(); if (window.location.hash !== '#iot-page') window.location.hash = '#iot-page'; };
+  const openNextGen = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsNextGenPageOpen(true); scrollToTop(); if (window.location.hash !== '#nextgen-page') window.location.hash = '#nextgen-page'; };
+  const openCybersecurity = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsCybersecurityPageOpen(true); scrollToTop(); if (window.location.hash !== '#cybersecurity-digital-security-page') window.location.hash = '#cybersecurity-digital-security-page'; };
+  const openIntroduction = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsIntroductionPageOpen(true); scrollToTop(); if (window.location.hash !== '#introduction-page') window.location.hash = '#introduction-page'; };
+  const openCopyright = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsCopyrightPageOpen(true); scrollToTop(); if (window.location.hash !== '#copyright-page') window.location.hash = '#copyright-page'; };
+  const openMeaning = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsMeaningPageOpen(true); scrollToTop(); if (window.location.hash !== '#meaning-behind-our-name-page') window.location.hash = '#meaning-behind-our-name-page'; };
+  const openSkillDev = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsSkillDevPageOpen(true); scrollToTop(); if (window.location.hash !== '#skill-development-page') window.location.hash = '#skill-development-page'; };
+  const openSoftwareProduct = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsSoftwareProductPageOpen(true); scrollToTop(); if (window.location.hash !== '#software-products') window.location.hash = '#software-products'; };
+  const openAboutUs = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsAboutUsPageOpen(true); scrollToTop(); if (window.location.hash !== '#about-us') window.location.hash = '#about-us'; };
+  const openGallery = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsGalleryPageOpen(true); scrollToTop(); if (window.location.hash !== '#gallery') window.location.hash = '#gallery'; };
+  const openFollow = () => { saveHomepageScrollBeforeDetail(); resetAll(); setIsFollowPageOpen(true); scrollToTop(); if (window.location.hash !== '#follow') window.location.hash = '#follow'; };
 
   const closePageAndScrollTo = (sectionId) => {
-    setIsSdpePageOpen(false);
-    setIsIpPageOpen(false);
-    setIsSpcPageOpen(false);
-    setIsPdlPageOpen(false);
-    setIsOpePageOpen(false);
-    setIsOtPageOpen(false);
-    setIsAiPageOpen(false);
-    setIsCloudPageOpen(false);
-    setIsDaPageOpen(false);
-    setIsApisPageOpen(false);
-    setIsEduPageOpen(false);
-    setIsEntPageOpen(false);
-    setIsGovPageOpen(false);
-    setIsInvPageOpen(false);
-    setIsArchPageOpen(false);
-    setIsGlobalInfraPageOpen(false);
-    setIsDevOpsPageOpen(false);
-    setIsDigitalExpPageOpen(false);
-    setIsRegulatoryPageOpen(false);
-    setIsSoftwareProductPageOpen(false);
-    setIsAboutUsPageOpen(false);
-    setIsGalleryPageOpen(false);
-    setIsFollowPageOpen(false);
-    setIsCareerPageOpen(false);
-    setIsCybersecurityPageOpen(false);
-    setIsCopyrightPageOpen(false);
-    setIsSkillDevPageOpen(false);
-    setIsIntroductionPageOpen(false);
-    setIsSoftwareLibraryPageOpen(false);
-    setIsAiInnovationPageOpen(false);
-    setIsIotPageOpen(false);
-    setIsNextGenPageOpen(false);
-
-    setIsItServicesPageOpen(false);
-
-    window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${sectionId}`);
-
-    requestAnimationFrame(() => {
-      const elem = document.getElementById(sectionId);
-      if (elem) {
-        elem.scrollIntoView({ behavior: 'instant' });
-      }
-    });
+    window.__IBCS_NAV_LOCK = Date.now() + 1000;
+    resetAll();
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.hash = '#' + sectionId;
+    }
   };
 
   const handleCloseSdpePage = () => closePageAndScrollTo('products-platforms');
@@ -537,10 +679,20 @@ export default function App() {
   const handleCloseFollowPage = () => closePageAndScrollTo('home');
   const handleCloseCareerPage = () => closePageAndScrollTo('home');
   const handleCloseCybersecurityPage = () => closePageAndScrollTo('cybersecurity-digital-security');
-  const handleCloseCopyrightPage = () => { window.location.hash = '#about-us'; };
-  const openMeaning = () => { setIsMeaningPageOpen(true); scrollToTop(); window.location.hash = '#meaning-behind-our-name-page'; };
-  const handleCloseMeaningPage = () => { window.location.hash = '#about-us'; };
-  const openSkillDev = () => { setIsSkillDevPageOpen(true); scrollToTop(); window.location.hash = '#skill-development-page'; };
+  const handleCloseCopyrightPage = () => {
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.hash = '#about-us';
+    }
+  };
+  const handleCloseMeaningPage = () => {
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.hash = '#about-us';
+    }
+  };
   const handleCloseSkillDevPage = () => closePageAndScrollTo('home');
   const handleCloseIntroductionPage = () => closePageAndScrollTo('introduction');
   const handleCloseSoftwareLibraryPage = () => closePageAndScrollTo('home');
@@ -558,14 +710,26 @@ export default function App() {
 
   const handleCloseItServicesPage = () => closePageAndScrollTo('home');
 
+  const openContactUs = () => {
+    resetAll();
+    setIsContactUsPageOpen(true);
+    scrollToTop();
+    if (window.location.hash !== '#contact') {
+      window.location.hash = '#contact';
+    }
+  };
+
+  const handleCloseContactUsPage = () => closePageAndScrollTo('home');
+
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-900">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 overflow-x-clip w-full max-w-full">
       <ScrollToTop routeKey={activePageKey} />
       {isInitialLoading && <PageLoader message="Initializing Platform..." />}
-      <Header onOpenItServicesPage={openItServices} activePage={activePageKey} />
-      <main className="min-h-screen">
+      <Header onOpenItServicesPage={openItServices} onOpenContactUsPage={openContactUs} activePage={activePageKey} />
+      <main className={isAnyDetailPageOpen ? 'w-full' : 'min-h-screen'}>
         <div className={isAnyDetailPageOpen ? 'hidden' : 'block'}>
           <Home
+            isActive={!isAnyDetailPageOpen}
             onOpenSdpePage={openSdpe}
             onOpenIpPage={openIp}
             onOpenSpcPage={openSpc}
@@ -628,6 +792,7 @@ export default function App() {
           {isIotPageOpen && <IotSmartEdgeSystemsPage onClose={handleCloseIotPage} />}
           {isNextGenPageOpen && <NextGenerationDigitalInnovationDecentralisedIntelligencePage onClose={handleCloseNextGenPage} />}
           {isItServicesPageOpen && <ITServicesPage onClose={handleCloseItServicesPage} />}
+          {isContactUsPageOpen && <ContactUsPage onClose={handleCloseContactUsPage} />}
         </Suspense>
       </main>
 

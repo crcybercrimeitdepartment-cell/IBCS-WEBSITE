@@ -193,8 +193,13 @@ export const hrExecutiveData = {
 
   // 11. Training & Probation
   trainingAndProbation: {
-    trainingPeriod: "Duration: 60 to 90 Days. No stipend or salary will be provided during the training period.",
+    trainingPeriod: "Duration: 60 to 90 Days",
+    trainingStipend: "No stipend will be provided during the training period",
+    trainingSalary: "No salary will be provided during the training period",
     probationPeriod: "Duration: 6 Months",
+    probationSalary: "Applicable as per employment terms during probation",
+    postProbationSalary: "Full CTC as per compensation structure upon confirmation",
+    internshipPeriod: "Not Applicable",
     internshipDuration: "Not Applicable",
     internshipStipend: "Not Applicable"
   },

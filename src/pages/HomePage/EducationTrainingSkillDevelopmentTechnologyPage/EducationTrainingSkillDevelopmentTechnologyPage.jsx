@@ -182,7 +182,7 @@ export default function EducationTrainingSkillDevelopmentTechnologyPage({ onClos
           line-height: 2;
           color: #000000;
           font-weight: 600;
-          text-align: left;
+          text-align: center;
           padding-top: 0.2em;
           padding-right: 0.5em;
           background: linear-gradient(transparent calc(2em - 2px), var(--paper-line) calc(2em - 2px), var(--paper-line) 2em) 0 0 / 100% 2em var(--bg-color);
@@ -350,7 +350,7 @@ export default function EducationTrainingSkillDevelopmentTechnologyPage({ onClos
 
                     {/* Detailed Content */}
                     <div className="h-[2px] w-full bg-[#2c2c2c] opacity-10 mb-2 mt-2 z-[2] shrink-0 rounded-full"></div>
-                    <div className="card-body-text text-sm md:text-base z-[2]">
+                    <div className="card-body-text text-sm md:text-base z-[2] text-center" style={{ textAlign: 'center' }}>
                       {card.content}
                     </div>
 

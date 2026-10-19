@@ -1,10 +1,11 @@
 import Cloudinary from './Cloudinary';
 import ComingSoonPage from './ComingSoonPage';
-const heroImageBg = '/heroImage.png';
-const heroImageMobileBg = '/heroImage-mobile.jpg';
+import heroImageBg from '../../../../assets/pages/careers/hero-section/careers-hero-desktop.png';
+import heroImageMobileBg from '../../../../assets/pages/careers/hero-section/careers-hero-mobile.jpg';
 import JumpingHeading from './JumpingHeading';
 import JobDetailPage from './JobDetailPage';
 import CandidateMasterProfileFormPage from './New Registration Form/CandidateMasterProfileFormPage';
+import JobDetailPreviewPage from './JobDetailPreview/JobDetailPreviewPage';
 
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { useNavigate } from './router-compat';
@@ -970,14 +971,14 @@ function PortalHero({ title, pageTitle, pageSubtitle, searchQuery, onSearchChang
     >
       <style>{`
         .portal-hero-banner {
-          background-image: url('/heroImage-mobile.jpg');
+          background-image: url('${heroImageMobileBg}');
           background-size: cover;
           background-position: center bottom;
           background-repeat: no-repeat;
         }
         @media (min-width: 640px) {
           .portal-hero-banner {
-            background-image: url('/heroImage.png');
+            background-image: url('${heroImageBg}');
             background-position: center;
           }
         }
@@ -1202,10 +1203,20 @@ function ViewToggle({ mode, active, onClick, title, children }) {
   );
 }
 
-function JobPortal({ title = 'Job Vacancy', onNavigate, onBack, onHome }) {
+function JobPortal({ title = 'Job Vacancy', subRoute, onNavigate, onBack, onHome }) {
   const navigate = useNavigate();
 
-  const [activeSubView, setActiveSubView] = useState({ type: 'list', job: null });
+  const [activeSubView, setActiveSubView] = useState(() => {
+    const hash = typeof window !== 'undefined' ? window.location.hash || '' : '';
+    const isPreviewHash = hash.includes('job-detail-preview') || hash.includes('job-preview') || subRoute === 'job-detail-preview' || subRoute === 'job-preview';
+    if (isPreviewHash) {
+      const searchParams = new URLSearchParams(typeof window !== 'undefined' ? (window.location.search || (hash.includes('?') ? hash.split('?')[1] : '')) : '');
+      const queryCode = searchParams.get('jobCode') || searchParams.get('code') || searchParams.get('id');
+      const matchedJob = queryCode ? jobListings.find((j) => j.id === queryCode || j.jobCode === queryCode) : jobListings[0];
+      return { type: 'preview', job: matchedJob || jobListings[0], entryPoint: 'vacancy-list' };
+    }
+    return { type: 'list', job: null };
+  });
   const [heroSearch, setHeroSearch]  = useState('');
   const [viewMode, setViewMode]      = useState('list'); // 'list' | 'grid'
   const [filters, setFilters] = useState({
@@ -1258,16 +1269,24 @@ function JobPortal({ title = 'Job Vacancy', onNavigate, onBack, onHome }) {
   const handleApplyClick = (job, e) => {
     e.stopPropagation();
     const rect = e.currentTarget.getBoundingClientRect();
-    setApplyTarget((prev) => (prev?.job?.id === job.id ? null : { job, rect }));
+    setApplyTarget((prev) => (prev?.job?.id === job.id ? null : { job, rect, entryPoint: 'vacancy-list' }));
   };
 
   const handleSelectApplyOption = (job, option) => {
+    const entryPoint = applyTarget?.entryPoint || 'vacancy-list';
     setApplyTarget(null);
     if (option === 'new') {
-      setActiveSubView({ type: 'register', job, openId: Date.now() });
+      // FLOW A: Listing-Level Apply Now -> New Registration -> JobDetailPreviewPage
+      if (entryPoint === 'vacancy-list') {
+        setActiveSubView({ type: 'preview', job, entryPoint: 'vacancy-list', openId: Date.now() });
+      } else {
+        // FLOW B / Direct: Existing Registration Form
+        setActiveSubView({ type: 'register', job, entryPoint, openId: Date.now() });
+      }
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      setApplyModalData({ job });
+      // Already Registered -> Opens modal only
+      setApplyModalData({ job, entryPoint });
     }
   };
 
@@ -1276,6 +1295,7 @@ function JobPortal({ title = 'Job Vacancy', onNavigate, onBack, onHome }) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // FLOW B: Detailed Job Information Page (Unchanged Flow)
   if (activeSubView.type === 'detail') {
     return (
       <JobDetailPage
@@ -1285,7 +1305,9 @@ function JobPortal({ title = 'Job Vacancy', onNavigate, onBack, onHome }) {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
         onApply={(job) => {
-          setActiveSubView({ type: 'register', job, openId: Date.now() });
+          // FLOW B: Detailed Job Page Apply -> New Registration -> DIRECTLY TO REGISTRATION FORM
+          // Intermediate JobDetailPreviewPage MUST NOT appear in this flow
+          setActiveSubView({ type: 'register', job, entryPoint: 'job-details', openId: Date.now() });
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
         onHome={onHome}
@@ -1293,13 +1315,39 @@ function JobPortal({ title = 'Job Vacancy', onNavigate, onBack, onHome }) {
     );
   }
 
+  // FLOW A: Intermediate JobDetailPreviewPage
+  if (activeSubView.type === 'preview') {
+    return (
+      <JobDetailPreviewPage
+        job={activeSubView.job}
+        onBack={() => {
+          setActiveSubView({ type: 'list', job: null });
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+        onApply={(job) => {
+          // Bottom Apply Now on Preview Page -> Navigate to Candidate Registration Form
+          setActiveSubView({ type: 'register', job, entryPoint: 'preview', openId: Date.now() });
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+        onHome={onHome}
+      />
+    );
+  }
+
+  // Registration Form (CandidateMasterProfileFormPage)
   if (activeSubView.type === 'register') {
     return (
       <CandidateMasterProfileFormPage
         key={`candidate-master-profile-${activeSubView.job?.id || 'new'}-${activeSubView.openId || 0}`}
         job={activeSubView.job}
         onBack={() => {
-          setActiveSubView({ type: 'list', job: null });
+          if (activeSubView.entryPoint === 'preview') {
+            setActiveSubView({ type: 'preview', job: activeSubView.job, entryPoint: 'vacancy-list' });
+          } else if (activeSubView.entryPoint === 'job-details') {
+            setActiveSubView({ type: 'detail', job: activeSubView.job });
+          } else {
+            setActiveSubView({ type: 'list', job: null });
+          }
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
         onHome={onHome}
@@ -1435,8 +1483,13 @@ function JobPortal({ title = 'Job Vacancy', onNavigate, onBack, onHome }) {
               data={applyModalData}
               onClose={() => setApplyModalData(null)}
               onNewRegistration={(job) => {
+                const ep = applyModalData.entryPoint || 'vacancy-list';
                 setApplyModalData(null);
-                setActiveSubView({ type: 'register', job, openId: Date.now() });
+                if (ep === 'vacancy-list') {
+                  setActiveSubView({ type: 'preview', job, entryPoint: 'vacancy-list', openId: Date.now() });
+                } else {
+                  setActiveSubView({ type: 'register', job, entryPoint: ep, openId: Date.now() });
+                }
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             />

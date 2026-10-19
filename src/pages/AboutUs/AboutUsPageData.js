@@ -1,3 +1,5 @@
+import helpIllustration from '../../assets/pages/about-us/support-section/help-illustration.jpg';
+
 // Comprehensive Structured Data for the About Us Center Page
 export const heroData = {
   title: "About Us",
@@ -5,7 +7,7 @@ export const heroData = {
   searchPlaceholder: "Search topics like mission, history, identity, legal compliance...",
   ctaText: "EXPLORE TOPICS",
   ctaAlert: "Explore our 18 comprehensive organizational topics below.",
-  illustrationSrc: "/help_illustration_left.jpg",
+  illustrationSrc: helpIllustration,
   illustrationAlt: "About Us corporate illustration",
   brandName: "About Us",
   popularSearches: ["Mission & Vision", "History", "Identity", "What We Do", "Legal & Compliance", "Partnership"]

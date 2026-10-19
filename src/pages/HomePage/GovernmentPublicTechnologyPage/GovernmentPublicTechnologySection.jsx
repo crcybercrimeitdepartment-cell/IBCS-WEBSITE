@@ -130,7 +130,7 @@ export default function GovernmentPublicTechnologySection({ onOpenPage }) {
             />
 
             {/* Descriptions from original text */}
-            <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#081E52]/85 font-medium mb-6 text-center lg:text-left">
+            <div className="space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#081E52]/85 font-medium mb-6 text-center lg:text-left text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               <p>
                 We develop software products and digital platforms designed to support government departments, public authorities and institutional users in their digital transformation initiatives. Our government technology products can address administration, information management, citizen services, workflow automation, reporting and institutional operations.
               </p>

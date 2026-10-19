@@ -1,5 +1,50 @@
-import React, { useState, useEffect } from 'react';
-import { Home, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
+import { Home, Sparkles, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
+
+/* ── Lazy-loaded 20 Service Module Pages ── */
+const SoftwareDevelopmentServices = lazy(() => import('./SoftwareDevelopmentServices/SoftwareDevelopmentServicesPage.jsx'));
+const WebDevelopmentServices = lazy(() => import('./WebDevelopmentServices/WebDevelopmentServicesPage.jsx'));
+const MobileApplicationDevelopmentServices = lazy(() => import('./MobileApplicationDevelopmentServices/MobileApplicationDevelopmentServicesPage.jsx'));
+const CybersecurityServices = lazy(() => import('./CybersecurityServices/CybersecurityServicesPage.jsx'));
+const ITConsultingServices = lazy(() => import('./ITConsultingServices/ITConsultingServicesPage.jsx'));
+const CloudComputingServices = lazy(() => import('./CloudComputingServices/CloudComputingServicesPage.jsx'));
+const DevOpsAutomationServices = lazy(() => import('./DevOpsAutomationServices/DevOpsAutomationServicesPage.jsx'));
+const NetworkInfrastructureServices = lazy(() => import('./NetworkInfrastructureServices/NetworkInfrastructureServicesPage.jsx'));
+const ITInfrastructureManagementServices = lazy(() => import('./ITInfrastructureManagementServices/ITInfrastructureManagementServicesPage.jsx'));
+const DatabaseManagementServices = lazy(() => import('./DatabaseManagementServices/DatabaseManagementServicesPage.jsx'));
+const AIMachineLearningServices = lazy(() => import('./AIMachineLearningServices/AIMachineLearningServicesPage.jsx'));
+const DataAnalyticsBusinessIntelligenceServices = lazy(() => import('./DataAnalyticsBusinessIntelligenceServices/DataAnalyticsBusinessIntelligenceServicesPage.jsx'));
+const UIUXDesignServices = lazy(() => import('./UIUXDesignServices/UIUXDesignServicesPage.jsx'));
+const APIDevelopmentIntegrationServices = lazy(() => import('./APIDevelopmentIntegrationServices/APIDevelopmentIntegrationServicesPage.jsx'));
+const QualityAssuranceSoftwareTestingServices = lazy(() => import('./QualityAssuranceSoftwareTestingServices/QualityAssuranceSoftwareTestingServicesPage.jsx'));
+const TechnicalSupportITMaintenanceServices = lazy(() => import('./TechnicalSupportITMaintenanceServices/TechnicalSupportITMaintenanceServicesPage.jsx'));
+const ITAuditComplianceServices = lazy(() => import('./ITAuditComplianceServices/ITAuditComplianceServicesPage.jsx'));
+const DigitalForensicsIncidentResponseServices = lazy(() => import('./DigitalForensicsIncidentResponseServices/DigitalForensicsIncidentResponseServicesPage.jsx'));
+const DataBackupDisasterRecoveryServices = lazy(() => import('./DataBackupDisasterRecoveryServices/DataBackupDisasterRecoveryServicesPage.jsx'));
+const ITProcurementDeploymentServices = lazy(() => import('./ITProcurementDeploymentServices/ITProcurementDeploymentServicesPage.jsx'));
+
+const serviceComponents = {
+  '01': SoftwareDevelopmentServices,
+  '02': WebDevelopmentServices,
+  '03': MobileApplicationDevelopmentServices,
+  '04': CybersecurityServices,
+  '05': ITConsultingServices,
+  '06': CloudComputingServices,
+  '07': DevOpsAutomationServices,
+  '08': NetworkInfrastructureServices,
+  '09': ITInfrastructureManagementServices,
+  '10': DatabaseManagementServices,
+  '11': AIMachineLearningServices,
+  '12': DataAnalyticsBusinessIntelligenceServices,
+  '13': UIUXDesignServices,
+  '14': APIDevelopmentIntegrationServices,
+  '15': QualityAssuranceSoftwareTestingServices,
+  '16': TechnicalSupportITMaintenanceServices,
+  '17': ITAuditComplianceServices,
+  '18': DigitalForensicsIncidentResponseServices,
+  '19': DataBackupDisasterRecoveryServices,
+  '20': ITProcurementDeploymentServices,
+};
 
 /* ── Gear-tooth path generator ── */
 function gearPath(cx, cy, outerR, innerR, teeth, rotation = 0) {
@@ -92,9 +137,83 @@ const animationStyles = `
   .anim-reveal-left { animation: revealLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards; }
   .anim-reveal-right { animation: revealRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards; }
   .anim-shooting-beam { stroke-dasharray: 200; stroke-dashoffset: 200; animation: shootPulse 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+  /* Mobile Card Loading Animations: Title emerging out from icon */
+  @keyframes mobileCardEntrance {
+    0% {
+      opacity: 0;
+      transform: translateY(12px) scale(0.97);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes mobileIconPop {
+    0% {
+      opacity: 0;
+      transform: scale(0.2) rotate(-22deg);
+    }
+    68% {
+      opacity: 1;
+      transform: scale(1.18) rotate(4deg);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
+  @keyframes mobileTitleUnfurl {
+    0% {
+      opacity: 0;
+      transform: translateX(-32px);
+      clip-path: inset(0 100% 0 0);
+    }
+    40% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+      clip-path: inset(0 0% 0 0);
+    }
+  }
+
+  @keyframes mobileChevronSlide {
+    0% {
+      opacity: 0;
+      transform: translateX(-12px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .anim-mobile-card-entrance {
+    animation: mobileCardEntrance 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .anim-mobile-icon-pop {
+    animation: mobileIconPop 0.48s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+  .anim-mobile-title-unfurl {
+    animation: mobileTitleUnfurl 0.52s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .anim-mobile-chevron-slide {
+    animation: mobileChevronSlide 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
 `;
 
 export default function ITServicesPage({ onClose }) {
+  const getHashServiceId = () => {
+    const hash = window.location.hash || '';
+    const match = hash.match(/#it-services[/-](\d{2})/i);
+    return match ? match[1] : null;
+  };
+
+  const [selectedServiceId, setSelectedServiceId] = useState(getHashServiceId);
   const [page, setPage] = useState(0);
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -102,10 +221,19 @@ export default function ITServicesPage({ onClose }) {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
+
+    const onHashChange = () => {
+      setSelectedServiceId(getHashServiceId());
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
 
   const handleBack = () => {
-    if (window.history.length > 1) {
+    if (selectedServiceId) {
+      setSelectedServiceId(null);
+      window.location.hash = '#it-services';
+    } else if (window.history.length > 1) {
       window.history.back();
     } else if (onClose) {
       onClose();
@@ -121,6 +249,13 @@ export default function ITServicesPage({ onClose }) {
   };
 
   const currentItems = allItems.slice(page * 10, (page + 1) * 10);
+  const mobileSortedItems = [...currentItems].sort((a, b) => parseInt(a.id, 10) - parseInt(b.id, 10));
+
+  const handleSelectService = (id) => {
+    setSelectedServiceId(id);
+    window.location.hash = `#it-services/${id}`;
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  };
 
   // Random active item effect
   useEffect(() => {
@@ -141,6 +276,36 @@ export default function ITServicesPage({ onClose }) {
 
   const rArc = 160;
   const rPill = 275;
+
+  if (selectedServiceId && serviceComponents[selectedServiceId]) {
+    const ActiveComponent = serviceComponents[selectedServiceId];
+    return (
+      <Suspense
+        fallback={
+          <div className="min-h-screen w-full flex flex-col items-center justify-center bg-[#070e1c] text-white">
+            <Loader2 className="w-10 h-10 text-cyan-400 animate-spin mb-4" />
+            <span className="text-sm font-semibold tracking-wider text-slate-300">
+              Loading IT Service Module...
+            </span>
+          </div>
+        }
+      >
+        <ActiveComponent
+          onClose={() => {
+            setSelectedServiceId(null);
+            window.location.hash = '#it-services';
+            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+          }}
+          onHome={() => {
+            setSelectedServiceId(null);
+            if (onClose) onClose();
+            window.location.hash = '#home';
+            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+          }}
+        />
+      </Suspense>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#eaf6ff] via-[#dff2ff] to-[#e6f4ff] text-slate-900 font-sans selection:bg-[#0066ff] selection:text-white pb-16 pt-3 overflow-x-hidden relative">
@@ -167,16 +332,16 @@ export default function ITServicesPage({ onClose }) {
       </div>
 
       {/* Page Header Section */}
-      <header className="w-full max-w-4xl mx-auto text-center px-4 sm:px-6 mb-6 sm:mb-8">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3">
-          <Sparkles className="w-3.5 h-3.5 text-blue-600 animate-pulse" />
+      <header className="w-full max-w-4xl mx-auto text-center px-4 sm:px-6 mb-3 sm:mb-6">
+        <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-700 text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2">
+          <Sparkles className="w-3 h-3 text-blue-600 animate-pulse" />
           <span>IBCS TECHNOLOGY CAPABILITIES</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-[#081E52] tracking-tight mb-3">
+        <h1 className="font-display text-2xl sm:text-4xl md:text-5xl font-black text-[#081E52] tracking-tight mb-2">
           IT SERVICES
         </h1>
-        <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full mx-auto mb-4 shadow-sm" />
-        <p className="text-sm sm:text-base md:text-[16px] text-slate-600 leading-relaxed font-medium max-w-2xl mx-auto">
+        <div className="h-0.5 w-16 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full mx-auto mb-2.5 shadow-sm" />
+        <p className="text-xs sm:text-sm md:text-[15px] text-slate-600 leading-relaxed font-medium max-w-2xl mx-auto">
           Empowering your business with cutting-edge technology solutions. Explore our comprehensive range of IT services designed to drive innovation, enhance security, and accelerate growth.
         </p>
       </header>
@@ -308,6 +473,11 @@ export default function ITServicesPage({ onClose }) {
             return (
               <div
                 key={`pill-${item.id}`}
+                onClick={() => {
+                  setSelectedServiceId(item.id);
+                  window.location.hash = `#it-services/${item.id}`;
+                  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+                }}
                 className={`group absolute flex items-center h-[50px] cursor-pointer transition-all duration-300 ${
                   item.side === 'left'
                     ? '-translate-x-[calc(100%-25px)] -translate-y-1/2'
@@ -387,53 +557,196 @@ export default function ITServicesPage({ onClose }) {
         </div>
       </section>
 
-      {/* ── Mobile Responsive Card Grid (< 768px) ── */}
-      <section className="block md:hidden px-4 sm:px-6 max-w-xl mx-auto w-full">
-        {/* Mobile Page Switcher */}
-        <div className="flex items-center justify-between bg-white rounded-2xl p-3 mb-5 border border-blue-200/60 shadow-sm">
+      {/* ── Mobile Responsive Stage (< 768px: Animated Gear Hub + Sequential Capsule Cards) ── */}
+      <section className="block md:hidden px-3 sm:px-6 max-w-md mx-auto w-full select-none">
+        {/* 1. Animated Gear Hub (Compact Mobile Hero) */}
+        <div className="relative w-[170px] h-[170px] mx-auto flex items-center justify-center my-1 select-none">
+          {/* Concentric dashed orbit circles with colored satellite dots */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 170 170" fill="none">
+            <circle cx="85" cy="85" r="70" stroke="#cbd5e1" strokeWidth="1.2" strokeDasharray="3 4" opacity="0.85" />
+            <circle cx="85" cy="85" r="80" stroke="#94a3b8" strokeWidth="1" strokeDasharray="2 4" opacity="0.5" />
+            <circle cx="28" cy="42" r="3" fill="#3b82f6" />
+            <circle cx="144" cy="48" r="3" fill="#f97316" />
+            <circle cx="152" cy="112" r="3" fill="#ec4899" />
+            <circle cx="118" cy="154" r="3" fill="#10b981" />
+            <circle cx="32" cy="128" r="3" fill="#06b6d4" />
+          </svg>
+
+          {/* Central Disc with Monitor and Rotating Gears */}
+          <div
+            className="w-[130px] h-[130px] rounded-full bg-white z-10 flex items-center justify-center shadow-md border border-slate-200/90"
+            style={{
+              boxShadow: '0 8px 24px -4px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(226, 232, 240, 0.8)'
+            }}
+          >
+            <svg className="w-[92px] h-[92px]" viewBox="0 0 100 100">
+              <g transform="translate(0, 0)">
+                {/* Monitor Body */}
+                <rect x="16" y="24" width="68" height="46" rx="4" stroke="#081E52" strokeWidth="2.5" fill="#ffffff" />
+                <rect x="17.5" y="25.5" width="65" height="27" rx="2" fill="#eff6ff" />
+                <line x1="16" y1="54" x2="84" y2="54" stroke="#081E52" strokeWidth="2.5" />
+                <circle cx="50" cy="62" r="2.2" fill="#3b82f6" stroke="#081E52" strokeWidth="1.8" />
+                {/* Stand */}
+                <line x1="42" y1="70" x2="42" y2="78" stroke="#081E52" strokeWidth="2.5" />
+                <line x1="58" y1="70" x2="58" y2="78" stroke="#081E52" strokeWidth="2.5" />
+                <line x1="36" y1="78" x2="64" y2="78" stroke="#081E52" strokeWidth="2.5" strokeLinecap="round" />
+
+                {/* Big Gear - Royal Blue */}
+                <g className="gear-1" style={{ transformOrigin: '44px 36px' }}>
+                  <path d={gearPath(44, 36, 15, 11, 8, 0.2)} fill="#3b82f6" stroke="#081E52" strokeWidth="2" strokeLinejoin="round" />
+                  <circle cx="44" cy="36" r="3" fill="#ffffff" stroke="#081E52" strokeWidth="2" />
+                </g>
+
+                {/* Medium Gear - Vibrant Orange */}
+                <g className="gear-2" style={{ transformOrigin: '29px 18px' }}>
+                  <path d={gearPath(29, 18, 9.5, 7, 8, 0.5)} fill="#f97316" stroke="#081E52" strokeWidth="2" strokeLinejoin="round" />
+                  <circle cx="29" cy="18" r="1.8" fill="#ffffff" stroke="#081E52" strokeWidth="2" />
+                </g>
+
+                {/* Small Gear - Fuchsia Pink */}
+                <g className="gear-3" style={{ transformOrigin: '50px 14px' }}>
+                  <path d={gearPath(50, 14, 7, 4.5, 6, 0.1)} fill="#ec4899" stroke="#081E52" strokeWidth="2" strokeLinejoin="round" />
+                  <circle cx="50" cy="14" r="1.3" fill="#ffffff" stroke="#081E52" strokeWidth="2" />
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        {/* 2. Top Status / Filter Pill Bar */}
+        <div className="flex items-center justify-between bg-white rounded-full px-3.5 py-1.5 my-2 border border-blue-200/60 shadow-2xs">
           <button
             type="button"
             onClick={() => setPage(0)}
             disabled={page === 0}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all disabled:opacity-40 bg-slate-100 hover:enabled:bg-blue-600 hover:enabled:text-white"
+            className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold transition-all disabled:opacity-40 bg-slate-100 hover:enabled:bg-blue-600 hover:enabled:text-white cursor-pointer"
           >
-            <ChevronLeft className="w-3.5 h-3.5" />
+            <ChevronLeft className="w-3 h-3" />
             <span>01 - 10</span>
           </button>
-          <span className="text-xs font-mono font-bold text-slate-700">
+          <span className="text-[11.5px] font-mono font-extrabold text-[#081E52]">
             {page === 0 ? 'Page 1 of 2' : 'Page 2 of 2'}
           </span>
           <button
             type="button"
             onClick={() => setPage(1)}
             disabled={page === 1}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all disabled:opacity-40 bg-slate-100 hover:enabled:bg-blue-600 hover:enabled:text-white"
+            className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold transition-all disabled:opacity-40 bg-slate-100 hover:enabled:bg-blue-600 hover:enabled:text-white cursor-pointer"
           >
             <span>11 - 20</span>
-            <ChevronRight className="w-3.5 h-3.5" />
+            <ChevronRight className="w-3 h-3" />
           </button>
         </div>
 
-        {/* 10 Services List */}
-        <div className="space-y-3">
-          {currentItems.map((item) => (
-            <div
-              key={`m-card-${item.id}`}
-              className="flex items-center gap-3.5 p-3.5 bg-white/95 rounded-2xl border border-blue-100 shadow-sm hover:shadow-md transition-all active:scale-[0.99]"
-            >
-              <div
-                className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm shrink-0 shadow-sm"
-                style={{ backgroundColor: item.color }}
+        {/* 3. Sequentially Sorted Service Cards (01 to 10 or 11 to 20) with Card Loading Animation */}
+        <div key={`m-card-list-p${page}`} className="flex flex-col gap-2 w-full my-2">
+          {mobileSortedItems.map((item, index) => {
+            const cardDelay = index * 0.045;
+            const titleDelay = cardDelay + 0.08;
+            const chevronDelay = titleDelay + 0.12;
+
+            return (
+              <button
+                key={`m-card-p${page}-${item.id}`}
+                type="button"
+                onClick={() => handleSelectService(item.id)}
+                className="anim-mobile-card-entrance flex items-center justify-between w-full p-1.5 pr-3.5 bg-white rounded-full border border-slate-200/90 shadow-2xs hover:bg-slate-50 transition-all active:scale-[0.98] cursor-pointer text-left group overflow-hidden"
+                style={{
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
+                  animationDelay: `${cardDelay}s`,
+                }}
               >
-                {item.id}
-              </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-bold text-slate-900 leading-snug">
-                  {item.label.replace('\n', ' ')}
-                </h3>
-              </div>
-            </div>
-          ))}
+                <div className="flex items-center gap-2.5 min-w-0 flex-1 overflow-hidden">
+                  {/* Number Badge with Halo - Pops In */}
+                  <div
+                    className="anim-mobile-icon-pop w-[36px] h-[36px] rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-105 z-10"
+                    style={{
+                      backgroundColor: `${item.color}15`,
+                      border: `1.5px solid ${item.color}35`,
+                      animationDelay: `${cardDelay}s`,
+                    }}
+                  >
+                    <div
+                      className="w-[26px] h-[26px] rounded-full flex items-center justify-center text-white font-extrabold text-xs shadow-xs"
+                      style={{
+                        backgroundColor: item.color,
+                        boxShadow: `0 2px 6px ${item.color}40`,
+                      }}
+                    >
+                      {item.id}
+                    </div>
+                  </div>
+
+                  {/* Title - Unfurls / Emerges out from the Icon */}
+                  <div
+                    className="anim-mobile-title-unfurl min-w-0 flex-1 overflow-hidden"
+                    style={{
+                      animationDelay: `${titleDelay}s`,
+                      transformOrigin: 'left center',
+                    }}
+                  >
+                    <span className="block text-[12px] font-bold text-slate-800 leading-snug group-hover:text-blue-700 transition-colors truncate">
+                      {item.label.replace('\n', ' ')}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Right Chevron - Slides in */}
+                <ChevronRight
+                  size={15}
+                  className="anim-mobile-chevron-slide shrink-0 text-slate-400 group-hover:text-blue-600 transition-colors ml-1"
+                  strokeWidth={2.2}
+                  style={{
+                    animationDelay: `${chevronDelay}s`,
+                  }}
+                />
+              </button>
+            );
+          })}
+        </div>
+
+        {/* 4. Floating Bottom Pagination Dock */}
+        <div className="w-full flex items-center justify-center mt-3 pb-2 z-30">
+          <div
+            className="inline-flex items-center gap-2.5 bg-white rounded-full px-3 py-1.5 shadow-md border border-slate-200"
+            style={{
+              boxShadow: '0 8px 24px -4px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(241, 245, 249, 0.9)',
+            }}
+          >
+            <button
+              type="button"
+              onClick={() => {
+                setPage(0);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              disabled={page === 0}
+              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed active:scale-95 transition-all text-xs font-bold text-slate-700 cursor-pointer shadow-xs"
+            >
+              <ChevronLeft size={13} strokeWidth={2.4} />
+              <span>01 - 10</span>
+            </button>
+
+            <span className="text-xs font-extrabold text-[#081E52] px-1.5 font-mono">
+              {page === 0 ? 'Page 1 of 2' : 'Page 2 of 2'}
+            </span>
+
+            <button
+              type="button"
+              onClick={() => {
+                setPage(1);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              disabled={page === 1}
+              className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full text-white font-bold text-xs disabled:opacity-40 disabled:cursor-not-allowed transition-all cursor-pointer active:scale-95 hover:brightness-105"
+              style={{
+                background: page === 1 ? '#94a3b8' : 'linear-gradient(135deg, #1877F2 0%, #0c57c4 100%)',
+                boxShadow: page === 1 ? 'none' : '0 4px 12px rgba(24, 119, 242, 0.35)',
+              }}
+            >
+              <span>11 - 20</span>
+              <ChevronRight size={13} strokeWidth={2.4} />
+            </button>
+          </div>
         </div>
       </section>
 

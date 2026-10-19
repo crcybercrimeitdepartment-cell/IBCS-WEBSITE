@@ -16,7 +16,7 @@ import {
   sponsorBrands,
   coursesData
 } from './AboutUsPageData';
-import helpIllustrationLeft from '../../assets/help_illustration_left.jpg';
+import helpIllustrationLeft from '../../assets/pages/about-us/support-section/help-illustration.jpg';
 export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPage }) {
   const handleBack = () => {
     if (window.history.length > 1) {
@@ -487,11 +487,6 @@ export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPag
           </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="py-2.5 text-center text-[11px] text-[#64748B] select-none">
-        © 2025 About Us — All rights reserved.
-      </footer>
     </div>
   );
 }

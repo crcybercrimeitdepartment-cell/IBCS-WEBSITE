@@ -127,7 +127,7 @@ export default function DevOpsContinuousDeliverySection({ onOpenPage }) {
             className="font-display text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.15] tracking-tight text-[#081E52] mb-5 text-center"
           />
 
-          <div className="space-y-3.5 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#081E52]/85 font-medium text-center max-w-3xl">
+          <div className="space-y-3.5 text-[14.5px] sm:text-[15.5px] leading-relaxed text-[#081E52]/85 font-medium text-center max-w-3xl text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
             <p>
               <strong className="font-bold text-[#081E52]">IB Cyber Security Private Limited</strong> follows modern DevOps and continuous delivery practices to build, test, secure, deploy, and continuously improve software products efficiently. Our approach brings together development, infrastructure, security, automation, testing, and operations throughout the product lifecycle.
             </p>

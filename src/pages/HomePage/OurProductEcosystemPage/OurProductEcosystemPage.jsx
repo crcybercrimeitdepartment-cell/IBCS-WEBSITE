@@ -463,7 +463,7 @@ function ProductCard({ item, index }) {
       aria-expanded={isPinned || isPeeking}
     >
       {/* 1. Underneath Content Panel (Revealed on Open) */}
-      <div className="under-content">
+      <div className="under-content" lang="en">
         <h3
           className="text-[17px] sm:text-[18.5px] font-extrabold text-slate-900 leading-snug tracking-tight mb-2.5 group-hover:text-teal-800 transition-colors shrink-0"
           style={{ fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif" }}
@@ -472,16 +472,18 @@ function ProductCard({ item, index }) {
           {item.title}
         </h3>
 
-        <div className="flex-1 min-w-0 overflow-y-auto pr-2 custom-card-scroll">
+        <div className="flex-1 min-w-0 overflow-y-auto custom-card-scroll">
           <p
-            className="text-[11.5px] sm:text-[12.2px] text-slate-600 leading-[1.62] w-full"
+            lang="en"
+            className="text-[11.5px] sm:text-[12.2px] text-slate-600 leading-[1.62] w-full hyphens-auto"
             style={{
               textAlign: 'justify',
               textJustify: 'inter-word',
-              hyphens: 'none',
-              WebkitHyphens: 'none',
+              hyphens: 'auto',
+              WebkitHyphens: 'auto',
+              msHyphens: 'auto',
               wordBreak: 'normal',
-              overflowWrap: 'normal',
+              overflowWrap: 'break-word',
             }}
           >
             {item.description}
@@ -674,7 +676,7 @@ export default function OurProductEcosystemPage({ onClose }) {
           right: 0;
           left: 124px;
           background: linear-gradient(to bottom right, #ffffff, #FCFDFD, #F8FAFB);
-          padding: 1rem 1.125rem;
+          padding: 1rem 1rem;
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
