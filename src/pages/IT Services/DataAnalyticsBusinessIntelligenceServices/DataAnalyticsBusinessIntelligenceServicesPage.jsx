@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Home } from 'lucide-react';
 import { dataAnalyticsText } from './DataAnalyticsBusinessIntelligenceServicesPageData.js';
-import biAnalyticsBg from '../../../assets/pages/it-services/data-analytics-bi/bi-analytics-hero-bg.jpg';
+import { biAnalyticsHeroBg as biAnalyticsBg } from '../../../components/CloudinaryLinks';
 
 // Parse all 54 individual capabilities from data array
 const servicesList = [];

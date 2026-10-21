@@ -1,10 +1,7 @@
 import React from 'react';
-import { useNavigate } from './router-compat';
-import { ArrowLeft, Home } from 'lucide-react';
 const SEO = () => null;
 
 const ComingSoonPage = () => {
-  const navigate = useNavigate();
 
   return (
     <>

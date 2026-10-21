@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowRight, TrendingUp, Cloud, FileKey, Building2, Globe2 } from 'lucide-react';
+import { ArrowRight, Cloud, FileKey, Building2, Globe2 } from 'lucide-react';
 import SectionDecorativeBackground from '../../../components/common/SectionDecorativeBackground';
 import AnimatedSectionHeading from '../../../components/common/AnimatedSectionHeading';
 

@@ -5,7 +5,6 @@ import {
   X,
   Search,
   ChevronRight,
-  ExternalLink,
   Boxes,
   ClipboardCheck,
   Users,

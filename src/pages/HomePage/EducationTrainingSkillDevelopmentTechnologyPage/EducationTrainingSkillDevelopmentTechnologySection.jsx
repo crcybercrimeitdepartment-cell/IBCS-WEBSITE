@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowRight, GraduationCap, BookOpen, Award, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, BookOpen, Award } from 'lucide-react';
 import SectionDecorativeBackground from '../../../components/common/SectionDecorativeBackground';
 import AnimatedSectionHeading from '../../../components/common/AnimatedSectionHeading';
 

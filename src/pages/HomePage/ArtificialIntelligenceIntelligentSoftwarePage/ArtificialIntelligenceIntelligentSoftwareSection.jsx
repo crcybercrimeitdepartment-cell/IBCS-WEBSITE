@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import AnimatedSectionHeading from '../../../components/common/AnimatedSectionHeading';
 import { artificialIntelligenceData } from './ArtificialIntelligenceIntelligentSoftwareDataPage';
 

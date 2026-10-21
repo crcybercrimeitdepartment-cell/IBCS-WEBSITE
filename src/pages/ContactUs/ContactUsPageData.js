@@ -8,7 +8,7 @@ import {
   GraduationCap, 
   Sparkles 
 } from 'lucide-react';
-import contactWallpaper from '../../assets/pages/contact-us/banner/contact-wallpaper.jpg';
+import { contactWallpaper } from '../../components/CloudinaryLinks';
 
 export const DEFAULT_WALLPAPER = contactWallpaper;
 

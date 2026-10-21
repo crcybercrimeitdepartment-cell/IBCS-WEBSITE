@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowRight, ShieldCheck, FileSpreadsheet, CheckCheck, AlertCircle } from 'lucide-react';
+import { ArrowRight, CheckCheck, FileSpreadsheet } from 'lucide-react';
 import SectionDecorativeBackground from '../../../components/common/SectionDecorativeBackground';
 import AnimatedSectionHeading from '../../../components/common/AnimatedSectionHeading';
 

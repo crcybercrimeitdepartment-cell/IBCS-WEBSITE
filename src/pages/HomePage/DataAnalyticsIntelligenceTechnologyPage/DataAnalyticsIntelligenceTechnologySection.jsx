@@ -9,10 +9,6 @@ import {
   Brain,
   Sparkles,
   FileText,
-  CheckCircle2,
-  ShieldCheck,
-  Activity,
-  Layers,
 } from 'lucide-react';
 
 /* =========================================================================

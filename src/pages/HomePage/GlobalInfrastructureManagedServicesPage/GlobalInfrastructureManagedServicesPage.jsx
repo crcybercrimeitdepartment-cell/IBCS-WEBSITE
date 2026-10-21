@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
-import ReactDOM from 'react-dom/client'
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   ShieldCheck, 
   Cloud, 
@@ -13,20 +12,12 @@ import {
   TrendingUp, 
   BarChart3, 
   Zap, 
-  ArrowDown, 
   ArrowUp, 
-  Shield, 
-  Lock, 
-  Cpu, 
-  Globe, 
-  Layers, 
   X,
   Home,
   ChevronLeft,
-  ChevronRight,
-  Play,
-  Pause
-} from 'lucide-react'
+  ChevronRight
+} from 'lucide-react';
 import { securityCardsData } from './GlobalInfrastructureManagedServicesPageData';
 
 // Icon registry mapping

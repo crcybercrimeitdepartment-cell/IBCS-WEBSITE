@@ -1,5 +1,4 @@
 import Cloudinary from './Cloudinary';
-import ComingSoonPage from './ComingSoonPage';
 
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { useNavigate, useLocation } from './router-compat';
@@ -9,7 +8,6 @@ import {
   LogIn,
   CheckCircle2,
   X,
-  Copy,
   Check,
   ArrowRight,
   Users,
@@ -28,7 +26,7 @@ import {
 } from 'lucide-react';
 const heroImg = Cloudinary.heroimg;
 const heroBg = Cloudinary.jobVacancyBg;
-import { portalConfig, jobListings, filterOptions } from './JobVacancyPageData';
+import { jobListings } from './JobVacancyPageData';
 import { hrAdminData } from './job details/HRAdminData';
 import { hrExecutiveData } from './job details/HRExecutiveData';
 import { hrAssistantManagerData } from './job details/HRAssistantManagerData';

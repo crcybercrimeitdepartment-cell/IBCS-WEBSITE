@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as Icons from 'lucide-react';
 import { ChevronLeft, ChevronRight, Home } from 'lucide-react';
 import { servicesList } from './UIUXDesignServicesPageData.js';

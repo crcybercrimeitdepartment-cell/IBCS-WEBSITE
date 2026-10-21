@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, ArrowLeft, Home, X, Sparkles, ChevronRight
+  ArrowRight, Home, Sparkles
 } from 'lucide-react';
 import { introductionPageData } from './IntroductionPageData';
 

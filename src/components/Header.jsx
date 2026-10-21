@@ -5,37 +5,11 @@
  * inline close button toggle (X), and floating "Type to search..." popup with blue button.
  */
 
-import { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowUpRight, Bell, CheckCheck, FileText, HelpCircle, Image, Menu, PhoneCall, PlayCircle, Search, UserPlus, X } from 'lucide-react';
-import LogoMark from './LogoMark';
-import brandLogo from '../assets/logos/ibcs-brand-logo.png';
+import { useEffect, useState } from 'react';
+import { ArrowUpRight, Bell, FileText, HelpCircle, Image, Menu, PhoneCall, Search, UserPlus, X } from 'lucide-react';
+import { brandLogo } from './CloudinaryLinks';
 import CenterAssembledText from './CenterAssembledText';
 import SearchBar from './SearchBar/SearchBar';
-
-import { SoftwareDevelopmentProductEngineeringPageData } from '../pages/HomePage/SoftwareDevelopmentProductEngineeringPage/SoftwareDevelopmentProductEngineeringPageData';
-import { OurTechnologyData } from '../pages/HomePage/OurTechnologyPage/OurTechnologyPageData';
-import { OurProductEcosystemData } from '../pages/HomePage/OurProductEcosystemPage/OurProductEcosystemPageData';
-import { CybersecurityDigitalSecurityData } from '../pages/HomePage/CybersecurityDigitalSecurityPage/CybersecurityDigitalSecurityPageData';
-import { ArtificialIntelligenceIntelligentSoftwareData } from '../pages/HomePage/ArtificialIntelligenceIntelligentSoftwarePage/ArtificialIntelligenceIntelligentSoftwareDataPage';
-import { CloudSaasDigitalPlatformsData } from '../pages/HomePage/CloudSaasDigitalPlatformsPage/CloudSaasAndDigitalPlatformsPageData';
-import { DataAnalyticsIntelligenceTechnologyData } from '../pages/HomePage/DataAnalyticsIntelligenceTechnologyPage/DataAnalyticsAndIntelligenceTechnologyPageData';
-import { SoftwareArchitectureProductEngineeringData } from '../pages/HomePage/SoftwareArchitectureProductEngineeringPage/SoftwareArchitectureProductEngineeringPageData';
-import { ProductDevelopmentLifecyclePageData } from '../pages/HomePage/ProductDevelopmentLifecyclePage/ProductDevelopmentLifecyclePageData';
-import { ApisIntegrationDigitalConnectivityData } from '../pages/HomePage/ApisIntegrationDigitalConnectivityPage/ApisIntegrationDigitalConnectivityPageData';
-import { EnterpriseBusinessSoftwareProductsData } from '../pages/HomePage/EnterpriseBusinessSoftwareProductsPage/EnterpriseBusinessSoftwareProductsPageData';
-import { GovernmentPublicTechnologyData } from '../pages/HomePage/GovernmentPublicTechnologyPage/GovernmentPublicTechnologyPageData';
-import { InvestigationLegalInstitutionalTechnologyData } from '../pages/HomePage/InvestigationLegalInstitutionalTechnologyPage/InvestigationLegalInstitutionalTechnologyPageData';
-import { EducationTrainingSkillDevelopmentTechnologyData } from '../pages/HomePage/EducationTrainingSkillDevelopmentTechnologyPage/EducationTrainingSkillDevelopmentTechnologyPageData';
-import { IntellectualPropertyPageData } from '../pages/HomePage/IntellectualPropertyPage/IntellectualPropertyPageData';
-import { SoftwareProductCommercialisationPageData } from '../pages/HomePage/SoftwareProductCommercialisationPage/SoftwareProductCommercialisationPageData';
-import { GlobalInfrastructureManagedServicesData } from '../pages/HomePage/GlobalInfrastructureManagedServicesPage/GlobalInfrastructureManagedServicesPageData';
-import { DevOpsContinuousDeliveryData } from '../pages/HomePage/DevOpsContinuousDeliveryPage/DevOpsContinuousDeliveryPageData';
-import { DigitalExperienceDesignData } from '../pages/HomePage/DigitalExperienceDesignPage/DigitalExperienceDesignPageData';
-import { RegulatoryComplianceGovernanceData } from '../pages/HomePage/RegulatoryComplianceGovernancePage/RegulatoryComplianceGovernancePageData';
-import { AiInnovationResearchAdvancedIntelligenceAutomationData } from '../pages/HomePage/AiInnovationResearchAdvancedIntelligenceAutomationPage/AiInnovationResearchAdvancedIntelligenceAutomationData';
-import { IotSmartEdgeSystemsData } from '../pages/HomePage/IotSmartEdgeSystemsPage/IotSmartEdgeSystemsData';
-import { NextGenerationDigitalInnovationDecentralisedIntelligenceData } from '../pages/HomePage/NextGenerationDigitalInnovationDecentralisedIntelligencePage/NextGenerationDigitalInnovationDecentralisedIntelligenceData';
 
 export const navigationItems = [
   { label: 'Home', href: '#home' },
@@ -48,32 +22,6 @@ export const navigationItems = [
   { label: 'IT Services', href: '#it-services' },
   { label: 'Skill Development', href: '#skill-development' },
   { label: 'Careers', href: '#careers' },
-];
-
-export const sectionsData = [
-  SoftwareDevelopmentProductEngineeringPageData,
-  OurTechnologyData,
-  OurProductEcosystemData,
-  CybersecurityDigitalSecurityData,
-  ArtificialIntelligenceIntelligentSoftwareData,
-  CloudSaasDigitalPlatformsData,
-  DataAnalyticsIntelligenceTechnologyData,
-  SoftwareArchitectureProductEngineeringData,
-  ProductDevelopmentLifecyclePageData,
-  ApisIntegrationDigitalConnectivityData,
-  EnterpriseBusinessSoftwareProductsData,
-  GovernmentPublicTechnologyData,
-  InvestigationLegalInstitutionalTechnologyData,
-  EducationTrainingSkillDevelopmentTechnologyData,
-  IntellectualPropertyPageData,
-  SoftwareProductCommercialisationPageData,
-  GlobalInfrastructureManagedServicesData,
-  DevOpsContinuousDeliveryData,
-  DigitalExperienceDesignData,
-  RegulatoryComplianceGovernanceData,
-  AiInnovationResearchAdvancedIntelligenceAutomationData,
-  IotSmartEdgeSystemsData,
-  NextGenerationDigitalInnovationDecentralisedIntelligenceData,
 ];
 
 // Initial sample notification list

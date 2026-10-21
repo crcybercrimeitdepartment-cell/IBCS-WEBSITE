@@ -4,11 +4,7 @@ import {
   X,
   LifeBuoy,
   FileText,
-  ThumbsUp,
-  ThumbsDown,
   CheckCircle,
-  ChevronDown,
-  ChevronUp,
   Home
 } from 'lucide-react';
 import {
@@ -16,7 +12,7 @@ import {
   sponsorBrands,
   coursesData
 } from './AboutUsPageData';
-import helpIllustrationLeft from '../../assets/pages/about-us/support-section/help-illustration.jpg';
+import { helpIllustration as helpIllustrationLeft } from '../../components/CloudinaryLinks';
 export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPage }) {
   const handleBack = () => {
     if (window.history.length > 1) {

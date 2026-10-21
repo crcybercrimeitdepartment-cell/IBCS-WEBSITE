@@ -27,8 +27,6 @@ import {
   Server,
   Workflow,
   Globe,
-  Lock,
-  GitBranch,
   Home,
 } from 'lucide-react';
 import { technologySections } from './TechnologyArchitecturePageData';

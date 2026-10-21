@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   Search,
   CheckCircle2,
@@ -15,20 +15,13 @@ import {
   Gauge,
   Compass,
   Target,
-  ChevronLeft,
-  ChevronRight,
-  Wifi,
-  BatteryCharging,
   Smartphone,
   Brain,
   Terminal,
   Code2,
   Database,
-  Server,
   Workflow,
   Globe,
-  Lock,
-  GitBranch,
   Home,
 } from 'lucide-react';
 import { technologySections } from './ProductBenefitsImpactPageData';

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, StrictMode } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   ArrowLeft, 
   ArrowRight, 

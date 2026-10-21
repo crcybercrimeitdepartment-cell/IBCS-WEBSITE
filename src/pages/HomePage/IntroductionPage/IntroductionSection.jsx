@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Cpu, ShieldCheck, Cloud, Layers, Lock, Activity, CheckCircle2, Database, Server, Zap } from 'lucide-react';
-import AnimatedSectionHeading from '../../../components/common/AnimatedSectionHeading';
 
 
 // Truly scattered 3D floating icons (varying depth sizes, non-circular 2D positions, zero laptop overlap)

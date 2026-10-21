@@ -1,7 +1,8 @@
 import Cloudinary from './Cloudinary';
-import ComingSoonPage from './ComingSoonPage';
-import heroImageBg from '../../../../assets/pages/careers/hero-section/careers-hero-desktop.png';
-import heroImageMobileBg from '../../../../assets/pages/careers/hero-section/careers-hero-mobile.jpg';
+import { 
+  careersHeroDesktop as heroImageBg, 
+  careersHeroMobile as heroImageMobileBg 
+} from '../../../../components/CloudinaryLinks';
 import JumpingHeading from './JumpingHeading';
 import JobDetailPage from './JobDetailPage';
 import CandidateMasterProfileFormPage from './New Registration Form/CandidateMasterProfileFormPage';
@@ -9,16 +10,16 @@ import JobDetailPreviewPage from './JobDetailPreview/JobDetailPreviewPage';
 
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { useNavigate } from './router-compat';
-import { motion, useScroll, useSpring, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
-  UserPlus, LogIn, CheckCircle2, X, Copy, Check, ArrowRight, Search, Shield, Sparkles,
-  Briefcase, MapPin, Building2, TrendingUp, ShieldCheck, Zap,
+  UserPlus, LogIn, CheckCircle2, X, Check, ArrowRight, Search, Shield, Sparkles,
+  Briefcase, MapPin, Building2, ShieldCheck,
   FileText, ArrowUpDown, ChevronDown, Bookmark, Users, UserCog, Code2, Smartphone, PenTool, Server, Award,
   Home
 } from 'lucide-react';
 const heroImg = Cloudinary.heroimg;
 const heroBg = Cloudinary.jobVacancyBg;
-import { portalConfig, jobListings, filterOptions, jobVacancyData } from './JobVacancyPageData';
+import { portalConfig, jobListings, filterOptions } from './JobVacancyPageData';
 
 
 // --- EmptyState.jsx ---

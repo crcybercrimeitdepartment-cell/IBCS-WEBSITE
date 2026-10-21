@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, X, ShieldAlert } from "lucide-react";
+import { Home, X } from "lucide-react";
 import { 
   cardData as cardsData, 
   digitalExperiencePageData 

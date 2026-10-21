@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowRight, Layers, Cpu, Boxes, Database } from 'lucide-react';
+import { ArrowRight, Cpu, Boxes, Database } from 'lucide-react';
 import SectionDecorativeBackground from '../../../components/common/SectionDecorativeBackground';
 import AnimatedSectionHeading from '../../../components/common/AnimatedSectionHeading';
 

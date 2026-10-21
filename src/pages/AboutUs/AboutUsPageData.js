@@ -1,4 +1,4 @@
-import helpIllustration from '../../assets/pages/about-us/support-section/help-illustration.jpg';
+import { helpIllustration } from '../../components/CloudinaryLinks';
 
 // Comprehensive Structured Data for the About Us Center Page
 export const heroData = {

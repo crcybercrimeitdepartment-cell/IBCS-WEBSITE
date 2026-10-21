@@ -1,10 +1,12 @@
-import hero1 from '../../../assets/homepage/hero-section/hero-slide-1.png';
-import hero2 from '../../../assets/homepage/hero-section/hero-slide-2.png';
-import hero3 from '../../../assets/homepage/hero-section/hero-slide-3.png';
-import hero4 from '../../../assets/homepage/hero-section/hero-slide-4.png';
-import hero5 from '../../../assets/homepage/hero-section/hero-slide-5.png';
-import hero6 from '../../../assets/homepage/hero-section/hero-slide-6.png';
-import hero7 from '../../../assets/homepage/hero-section/hero-slide-7.png';
+import {
+  heroSlide1 as hero1,
+  heroSlide2 as hero2,
+  heroSlide3 as hero3,
+  heroSlide4 as hero4,
+  heroSlide5 as hero5,
+  heroSlide6 as hero6,
+  heroSlide7 as hero7,
+} from '../../../components/CloudinaryLinks';
 
 export const heroSlides = [
   {

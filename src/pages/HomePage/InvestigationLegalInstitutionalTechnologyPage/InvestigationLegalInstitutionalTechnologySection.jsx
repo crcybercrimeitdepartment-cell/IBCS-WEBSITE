@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowRight, Scale, FileSearch, ShieldCheck, FolderGit2, Binary } from 'lucide-react';
+import { ArrowRight, FolderGit2, ShieldCheck } from 'lucide-react';
 import SectionDecorativeBackground from '../../../components/common/SectionDecorativeBackground';
 import AnimatedSectionHeading from '../../../components/common/AnimatedSectionHeading';
 

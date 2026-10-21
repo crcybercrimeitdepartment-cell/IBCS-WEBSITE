@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowRight, GitPullRequest, ShieldCheck, Zap, Repeat } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Zap } from 'lucide-react';
 import SectionDecorativeBackground from '../../../components/common/SectionDecorativeBackground';
 import AnimatedSectionHeading from '../../../components/common/AnimatedSectionHeading';
 

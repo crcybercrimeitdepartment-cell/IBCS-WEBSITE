@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView, AnimatePresence, LayoutGroup } from 'framer-motion';
-import { Lightbulb, Target, Box, ChevronDown, X, Home } from 'lucide-react';
+import { Lightbulb, Target, Box, ChevronDown, Home } from 'lucide-react';
 import { stages, introData } from './ProductDevelopmentLifecyclePageData';
 
 const themes = [

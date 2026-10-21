@@ -9,7 +9,6 @@ import {
   Activity,
   Bug,
   BarChart3,
-  Lock,
 } from 'lucide-react';
 
 /* =========================================================================

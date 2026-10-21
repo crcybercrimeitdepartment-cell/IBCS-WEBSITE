@@ -12,7 +12,6 @@ import {
   X, 
   Bell, 
   Columns2,
-  Code2,
   Folder,
   FolderOpen,
   FileText,

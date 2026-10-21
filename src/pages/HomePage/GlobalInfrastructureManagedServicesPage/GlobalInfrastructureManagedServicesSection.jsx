@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowRight, Server, Globe, Cpu, CheckCircle, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Globe, CheckCircle } from 'lucide-react';
 import SectionDecorativeBackground from '../../../components/common/SectionDecorativeBackground';
 import AnimatedSectionHeading from '../../../components/common/AnimatedSectionHeading';
 

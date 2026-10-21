@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Home } from 'lucide-react';
 import { technologySections } from './PurposeUseCasesPageData';
 

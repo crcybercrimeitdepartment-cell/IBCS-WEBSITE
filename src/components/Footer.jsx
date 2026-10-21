@@ -5,9 +5,8 @@ import {
   MapPin,
   Mail,
   Phone,
-  Headphones,
 } from 'lucide-react';
-import brandLogo from '../assets/logos/ibcs-brand-logo.png';
+import { brandLogo } from './CloudinaryLinks';
 
 
 /* =========================================================================
