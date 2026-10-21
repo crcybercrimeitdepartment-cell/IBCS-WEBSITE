@@ -1533,7 +1533,7 @@ export default function GlobalInfrastructureManagedServicesPage({ onClose }) {
     if (onClose) {
       onClose();
     } else {
-      window.history.back();
+      window.location.hash = '#global-infrastructure-managed-services';
     }
   };
 

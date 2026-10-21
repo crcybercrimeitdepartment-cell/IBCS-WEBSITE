@@ -18,24 +18,6 @@ const CARD_STYLES = `
     box-sizing: border-box;
   }
   html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100vh;
-    background-color: #ffffff;
-    font-family: 'Outfit', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-  }
-  #root {
-    width: 100%;
-    min-height: 100vh;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-  }
-  html, body {
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
@@ -726,7 +708,7 @@ export function NextGenerationDigitalInnovationDecentralisedIntelligencePage({
     if (onClose) {
       onClose();
     } else {
-      window.history.back();
+      window.location.hash = '#next-generation-digital-innovation-decentralised-intelligence';
     }
   };
 

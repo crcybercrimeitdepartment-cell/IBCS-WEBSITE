@@ -62,8 +62,11 @@ export const Card3D = ({
 
 export default function GovernmentPublicTechnologyPage({ onClose }) {
   const handleBack = () => {
-    if (onClose) onClose();
-    window.history.back();
+    if (onClose) {
+      onClose();
+    } else {
+      window.location.hash = '#government-public-technology';
+    }
   };
 
   const handleHome = () => {

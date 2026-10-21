@@ -84,8 +84,11 @@ export default function RegulatoryComplianceGovernancePage({ onClose }) {
   const [selectedCard, setSelectedCard] = useState(null);
 
   const handleBack = () => {
-    if (onClose) onClose();
-    window.history.back();
+    if (onClose) {
+      onClose();
+    } else {
+      window.location.hash = '#regulatory-compliance-governance';
+    }
   };
 
   const handleHome = () => {

@@ -40,8 +40,11 @@ const Card = ({ card }) => {
 
 export default function EnterpriseBusinessSoftwareProductsPage({ onClose }) {
   const handleBack = () => {
-    if (onClose) onClose();
-    window.history.back();
+    if (onClose) {
+      onClose();
+    } else {
+      window.location.hash = '#enterprise-business-software-products';
+    }
   };
 
   const handleHome = () => {

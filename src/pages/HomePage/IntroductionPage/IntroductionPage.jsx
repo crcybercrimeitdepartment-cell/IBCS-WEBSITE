@@ -636,9 +636,7 @@ export default function IntroductionPage({ onClose }) {
   }, []);
 
   const handleBack = () => {
-    if (window.history.length > 1) {
-      window.history.back();
-    } else if (onClose) {
+    if (onClose) {
       onClose();
     } else {
       window.location.hash = '#introduction';

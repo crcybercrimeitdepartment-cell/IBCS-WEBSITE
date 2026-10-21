@@ -16,6 +16,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Home,
+  ArrowLeft,
 } from 'lucide-react';
 import { SECURITY_CARDS } from './CybersecurityDigitalSecurityPageData';
 
@@ -44,12 +45,11 @@ export default function CybersecurityDigitalSecurityPage({ onClose }) {
     if (onClose) {
       onClose();
     } else {
-      window.history.back();
+      window.location.hash = '#cybersecurity-digital-security';
     }
   };
 
   const handleHome = () => {
-    if (onClose) onClose();
     window.location.hash = '#home';
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   };
@@ -210,15 +210,15 @@ export default function CybersecurityDigitalSecurityPage({ onClose }) {
         }
       `}</style>
 
-      {/* Ambient Light Gradient & Color Glow Orbs */}
-      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white via-[#f1f5f9] to-[#e2e8f0] pointer-events-none" />
-      <div className="fixed top-12 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-cyan-400/15 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="fixed top-20 right-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-purple-400/15 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="fixed bottom-10 left-1/3 w-80 h-80 bg-indigo-400/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      {/* Ambient Light Gradient & Color Glow Orbs - strictly behind page content */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white via-[#f1f5f9] to-[#e2e8f0] pointer-events-none -z-20" />
+      <div className="absolute top-12 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-cyan-400/15 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-20 right-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-purple-400/15 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-10 left-1/3 w-80 h-80 bg-indigo-400/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
       {/* Subtle Background Tech Grid */}
       <div
-        className="fixed inset-0 opacity-[0.035] pointer-events-none"
+        className="absolute inset-0 opacity-[0.035] pointer-events-none -z-10"
         style={{
           backgroundImage: `radial-gradient(#0f172a 1px, transparent 1px)`,
           backgroundSize: '24px 24px',
@@ -226,43 +226,70 @@ export default function CybersecurityDigitalSecurityPage({ onClose }) {
       />
 
       {/* Top Header Navigation Bar (Global Back & Home Buttons) */}
-      <div className="w-full max-w-[1300px] mx-auto px-4 sm:px-6 pt-4 sm:pt-6 flex items-center justify-between z-50 relative pointer-events-auto">
-        <div className="flex items-center gap-3">
-          <button
-            type="button"
-            onClick={handleBack}
-            className="inline-flex items-center gap-2 rounded-xl bg-[#081E52] hover:bg-[#0c2b7a] border border-[#D4AF37]/40 text-white px-4 py-2 text-xs sm:text-sm font-bold text-white transition-all cursor-pointer shadow-sm active:scale-95"
-          >
-            ← Back
-          </button>
+      <div style={{ width: '100%', maxWidth: '1380px', display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px', padding: '16px 16px 0', zIndex: 30, position: 'relative' }}>
+        <button
+          type="button"
+          onClick={handleBack}
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            padding: '8px 18px',
+            borderRadius: '12px',
+            background: '#081E52',
+            color: '#ffffff',
+            border: '1px solid rgba(212, 175, 55, 0.4)',
+            fontSize: '13px',
+            fontWeight: '700',
+            cursor: 'pointer',
+            boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+          }}
+        >
+          <ArrowLeft size={16} />
+          <span>Back</span>
+        </button>
 
-          <button
-            type="button"
-            onClick={handleHome}
-            className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 text-xs sm:text-sm font-bold text-[#040A1A] transition-all cursor-pointer shadow-sm active:scale-95"
-          >
-            <Home className="w-4 h-4 text-[#040A1A]" />
-            <span>Home</span>
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={handleHome}
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            padding: '8px 18px',
+            borderRadius: '12px',
+            background: '#D4AF37',
+            color: '#040A1A',
+            border: '1px solid #D4AF37',
+            fontSize: '13px',
+            fontWeight: '700',
+            cursor: 'pointer',
+            boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+          }}
+        >
+          <Home size={16} />
+          <span>Home</span>
+        </button>
       </div>
 
-      {/* Hero Header Section */}
-      <header className="relative z-20 pt-4 sm:pt-6 pb-2 sm:pb-4 text-center max-w-4xl px-4 sm:px-6 flex flex-col items-center w-full">
-
-
-        {/* Main Title with Rich Gradient Accent */}
-        <h1 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
-          Cybersecurity & <span className="bg-gradient-to-r from-cyan-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Digital Security</span>
+      {/* Page Header: Dark Navy (#003135), 30px -> 36px -> 48px, Manrope */}
+      <header className="w-full max-w-4xl mx-auto flex flex-col items-center text-center mb-6 sm:mb-8 px-4 z-20">
+        <h1
+          className="text-[30px] sm:text-[36px] lg:text-[48px] font-bold tracking-tight leading-[1.18] text-center max-w-4xl mb-4 font-['Manrope']"
+          style={{ color: '#003135' }}
+        >
+          Cybersecurity &amp; Digital Security
         </h1>
 
-        {/* Frosted Glass Description Container */}
-        <div className="mt-4 sm:mt-5 w-full max-w-3xl bg-white/80 backdrop-blur-xl border border-white/90 shadow-[0_12px_40px_rgba(0,0,0,0.04)] rounded-2xl sm:rounded-3xl p-4 sm:p-7 flex flex-col gap-2.5 sm:gap-3.5 text-justify transition-all duration-300 hover:shadow-[0_16px_50px_rgba(0,0,0,0.06)]" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
-          <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal antialiased text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
-            Cybersecurity is a core technology area within <strong className="font-semibold text-slate-900">IB Cyber Security Private Limited</strong>. We develop security-focused software products designed to help organisations address application, infrastructure, data and digital security requirements through modern technology.
+        {/* Description: Pure Black (#000000), 14px -> 16px, Inter */}
+        <div
+          className="space-y-3.5 max-w-3xl text-center text-[14px] md:text-[16px] leading-relaxed font-normal font-['Inter']"
+          style={{ color: '#000000' }}
+        >
+          <p>
+            Cybersecurity is a core technology area within <strong className="font-semibold text-[#003135]">IB Cyber Security Private Limited</strong>. We develop security-focused software products designed to help organisations address application, infrastructure, data and digital security requirements through modern technology.
           </p>
-          <div className="h-px w-20 sm:w-24 bg-gradient-to-r from-transparent via-slate-300 to-transparent mx-auto" />
-          <p className="text-[10.5px] sm:text-xs text-slate-500 leading-relaxed font-normal antialiased text-justify" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
+          <p>
             Our cybersecurity product development combines security engineering, monitoring, analytics, automation and intelligent technologies. From threat intelligence and vulnerability management to privacy and incident management, our security products are designed to support organisations in building more secure and resilient digital environments.
           </p>
         </div>

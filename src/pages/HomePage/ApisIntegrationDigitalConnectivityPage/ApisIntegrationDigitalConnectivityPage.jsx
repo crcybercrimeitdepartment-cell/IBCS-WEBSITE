@@ -8,14 +8,12 @@ export default function ApisIntegrationDigitalConnectivityPage({ onClose }) {
   const handleBack = () => {
     if (onClose) {
       onClose();
+    } else {
+      window.location.hash = '#apis-integration-digital-connectivity';
     }
-    window.history.back();
   };
 
   const handleHome = () => {
-    if (onClose) {
-      onClose();
-    }
     window.location.hash = '#home';
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   };

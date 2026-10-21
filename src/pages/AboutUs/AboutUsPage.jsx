@@ -135,7 +135,6 @@ export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPag
           padding: 0;
           width: 100%;
           min-height: 100%;
-          background-color: #001C1F;
           color: #1E293B;
         }
 

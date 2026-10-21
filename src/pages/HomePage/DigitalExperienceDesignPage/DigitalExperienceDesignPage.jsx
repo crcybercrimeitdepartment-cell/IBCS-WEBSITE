@@ -340,8 +340,11 @@ export default function DigitalExperienceDesignPage({ onClose }) {
  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
 
  const handleBack = () => {
-   if (onClose) onClose();
-   window.history.back();
+   if (onClose) {
+     onClose();
+   } else {
+     window.location.hash = '#digital-experience-design';
+   }
  };
 
  const handleHome = () => {

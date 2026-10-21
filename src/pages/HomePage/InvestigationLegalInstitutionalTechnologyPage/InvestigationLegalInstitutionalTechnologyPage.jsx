@@ -105,8 +105,11 @@ const RecipeCard = ({
 
 export default function InvestigationLegalInstitutionalTechnologyPage({ onClose }) {
   const handleBack = () => {
-    if (onClose) onClose();
-    window.history.back();
+    if (onClose) {
+      onClose();
+    } else {
+      window.location.hash = '#investigation-legal-institutional-technology';
+    }
   };
 
   const handleHome = () => {

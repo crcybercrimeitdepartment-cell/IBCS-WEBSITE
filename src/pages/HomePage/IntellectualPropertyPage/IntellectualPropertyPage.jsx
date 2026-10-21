@@ -312,9 +312,7 @@ export default function IntellectualPropertyPage({ onClose }) {
   };
 
   const handleBack = () => {
-    if (window.history.length > 1) {
-      window.history.back();
-    } else if (onClose) {
+    if (onClose) {
       onClose();
     } else {
       window.location.hash = '#intellectual-property';

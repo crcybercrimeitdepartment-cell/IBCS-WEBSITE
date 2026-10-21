@@ -59,6 +59,9 @@ export default function Header({ onOpenItServicesPage, onOpenContactUsPage, acti
     const itemHref = item.href.toLowerCase().replace(/^#\/?/, '').trim();
 
     if (itemHref === 'home') {
+      if (activePage && activePage !== 'home') {
+        return false;
+      }
       const isStandaloneOrDetail = [
         'about-us',
         'about',
@@ -79,7 +82,33 @@ export default function Header({ onOpenItServicesPage, onOpenContactUsPage, acti
         'follow',
         'copyright',
         'meaning-behind-our-name',
-      ].some((p) => hash.startsWith(p) || activePage === p);
+        'cybersecurity',
+        'cybersecurity-digital-security',
+        'ai-innovation',
+        'iot',
+        'nextgen',
+        'blockchain',
+        'sdpe',
+        'ip',
+        'spc',
+        'pdl',
+        'ope',
+        'ot',
+        'ai',
+        'cloud',
+        'da',
+        'apis',
+        'edu',
+        'ent',
+        'gov',
+        'inv',
+        'arch',
+        'global-infra',
+        'devops',
+        'digital-exp',
+        'regulatory',
+        'introduction',
+      ].some((p) => hash.startsWith(p) || (activePage && activePage.startsWith(p)));
 
       return !isStandaloneOrDetail;
     }
@@ -192,7 +221,7 @@ export default function Header({ onOpenItServicesPage, onOpenContactUsPage, acti
   return (
     <>
       {/* Company Header Announcement Bar (Normal document flow - scrolls away) */}
-      <div className="bg-[#040A1A] text-center px-2 sm:px-4 py-1.5 border-b border-[#D4AF37]/20 w-full overflow-hidden">
+      <div className="relative z-[100] bg-[#040A1A] text-center px-2 sm:px-4 py-1.5 border-b border-[#D4AF37]/20 w-full overflow-hidden">
         <div className="w-full max-w-[1480px] mx-auto px-2 sm:px-4 flex flex-col items-center justify-center text-center">
 
           {/* Line 1: Temporary Welcome Heading (Auto-hides after 4.5s, stays permanently hidden) */}
@@ -237,7 +266,7 @@ export default function Header({ onOpenItServicesPage, onOpenContactUsPage, acti
       {/* Sticky Navigation Menu Bar (Sticky at top: 0 across the entire page) */}
       <header
         id="home"
-        className="sticky inset-x-0 top-0 z-[9999] scroll-mt-0 border-b border-[#D4AF37]/25 bg-[#081E52]/95 shadow-[0_8px_30px_-24px_rgba(8,30,82,.85)] backdrop-blur-xl w-full max-w-full"
+        className="sticky inset-x-0 top-0 z-[9999] scroll-mt-0 border-b border-[#D4AF37]/25 bg-[#081E52] shadow-[0_8px_30px_-24px_rgba(8,30,82,.85)] backdrop-blur-xl w-full max-w-full"
         style={{ position: 'sticky', top: 0, zIndex: 9999 }}
       >
         {/* Main Navigation Menu Bar (UNDERNEATH Heading & Description) */}

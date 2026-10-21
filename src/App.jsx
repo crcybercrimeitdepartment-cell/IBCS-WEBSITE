@@ -528,7 +528,14 @@ export default function App() {
         setIsNextGenPageOpen(true);
         return;
       }
-      if (rawHash === '#cybersecurity-digital-security-page' || rawHash === '#cybersecurity-page') {
+      const normalizedCyberHash = rawHash.replace(/%20/g, '-').replace(/\s+/g, '-');
+      if (
+        normalizedCyberHash === '#cybersecurity-digital-security-page' ||
+        normalizedCyberHash === '#cybersecurity-page' ||
+        normalizedCyberHash === '#cybersecurity' ||
+        rawHash === '#cybersecurity-digital-security-page' ||
+        rawHash === '#cybersecurity-page'
+      ) {
         resetAll();
         setIsCybersecurityPageOpen(true);
         return;
@@ -647,10 +654,18 @@ export default function App() {
   const closePageAndScrollTo = (sectionId) => {
     window.__IBCS_NAV_LOCK = Date.now() + 1000;
     resetAll();
-    if (window.history.length > 1) {
-      window.history.back();
+    const target = sectionId || 'home';
+    if (window.location.hash === '#' + target) {
+      setTimeout(() => {
+        const el = document.getElementById(target);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        }
+      }, 50);
     } else {
-      window.location.hash = '#' + sectionId;
+      window.location.hash = '#' + target;
     }
   };
 

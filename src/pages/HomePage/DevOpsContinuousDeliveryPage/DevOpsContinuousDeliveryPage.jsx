@@ -71,8 +71,11 @@ export default function DevOpsContinuousDeliveryPage({ onClose }) {
   );
 
   const handleBack = () => {
-    if (onClose) onClose();
-    window.history.back();
+    if (onClose) {
+      onClose();
+    } else {
+      window.location.hash = '#devops-continuous-delivery';
+    }
   };
 
   const handleHome = () => {

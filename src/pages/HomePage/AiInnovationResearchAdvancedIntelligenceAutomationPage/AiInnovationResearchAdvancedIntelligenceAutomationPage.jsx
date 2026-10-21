@@ -487,7 +487,7 @@ export default function AiInnovationResearchAdvancedIntelligenceAutomationPage({
     if (onClose) {
       onClose();
     } else {
-      window.history.back();
+      window.location.hash = '#ai-innovation-research-advanced-intelligence-automation';
     }
   };
 

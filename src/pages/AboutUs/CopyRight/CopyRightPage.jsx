@@ -10,7 +10,6 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: #EBF7F8;
 }
 
 @keyframes ringDrawIn {

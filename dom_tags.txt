@@ -1,0 +1,50 @@
+<div id="root">
+<div class="min-h-screen bg-[#F8FAFC] text-slate-900 overflow-x-clip w-full max-w-full">
+<div class="bg-[#040A1A] text-center px-2 sm:px-4 py-1.5 border-b border-[#D4AF37]/20 w-full overflow-hidden">
+<div class="w-full max-w-[1480px] mx-auto px-2 sm:px-4 flex flex-col items-center justify-center text-center">
+<div class="grid transition-[grid-template-rows,opacity,margin] duration-500 ease-in-out w-full overflow-hidden grid-rows-[1fr] opacity-100 mb-0.5">
+<div class="overflow-hidden min-h-0 w-full py-0.5">
+<h1 class="font-display text-[9px] xs:text-[10px] sm:text-xs md:text-sm font-extrabold tracking-tight sm:tracking-wider text-white uppercase flex items-center justify-center gap-1.5 sm:gap-2 px-1">
+<span class="navbar-live-dot shrink-0 my-auto" aria-hidden="true">
+<span class="inline-flex items-center justify-center whitespace-nowrap py-0.5 ">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-1.60656px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-4.3418px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-9.86058px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-20.4092px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-39.9774px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-76.5152px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-146.791px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-283.942px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(-461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(461px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(283.942px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(146.791px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(76.5152px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(39.9774px);">
+<span class="inline-block whitespace-pre will-change-transform" style="opacity: 0; transform: translateX(20.4092px);">

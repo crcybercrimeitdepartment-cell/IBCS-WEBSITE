@@ -104,8 +104,11 @@ export default function EducationTrainingSkillDevelopmentTechnologyPage({ onClos
   const { currentIndex: activeIndex, maxIndex, scrollToIndex, slideLeft, slideRight } = useNativeScroll(scrollContainerRef, CYBER_LAW_LEGAL_AWARENESS_CARDS.length);
 
   const handleBack = () => {
-    if (onClose) onClose();
-    window.history.back();
+    if (onClose) {
+      onClose();
+    } else {
+      window.location.hash = '#education-training-skill-development-technology';
+    }
   };
 
   const handleHome = () => {

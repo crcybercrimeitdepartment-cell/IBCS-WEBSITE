@@ -742,12 +742,14 @@ export default function SoftwareArchitectureProductEngineeringPage({ onClose }) 
   }, []);
 
   const handleBack = () => {
-    if (onClose) onClose();
-    window.history.back();
+    if (onClose) {
+      onClose();
+    } else {
+      window.location.hash = '#software-architecture-product-engineering';
+    }
   };
 
   const handleHome = () => {
-    if (onClose) onClose();
     window.location.hash = '#home';
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   };
