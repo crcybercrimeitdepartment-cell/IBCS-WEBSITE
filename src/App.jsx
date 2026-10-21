@@ -296,19 +296,30 @@ export default function App() {
         return;
       }
 
-      if (
-        rawHash === '#software-products' ||
-        rawHash === '#software-products-page' ||
-        rawHash === '#software-product-page' ||
-        rawHash === '#product-introduction' ||
-        rawHash === '#purpose-use-cases' ||
-        rawHash === '#vision-mission' ||
-        rawHash === '#product-roadmap' ||
-        rawHash === '#technology-architecture' ||
-        rawHash === '#security-compliance' ||
-        rawHash === '#integrations-apis' ||
-        rawHash === '#product-benefits-impact'
-      ) {
+      let cleanSoftwareHash = '';
+      try {
+        cleanSoftwareHash = decodeURIComponent(rawHash || '').toLowerCase().replace(/^#\/?/, '').replace(/\/$/, '').replace(/\s+/g, '-').trim();
+      } catch {
+        cleanSoftwareHash = (rawHash || '').toLowerCase().replace(/^#\/?/, '').replace(/\/$/, '').replace(/\s+/g, '-').trim();
+      }
+      const softwareProductSlugs = [
+        'software-products',
+        'software-products-page',
+        'software-product-page',
+        'published-software',
+        'software-launches',
+        'upcoming-software',
+        'product-introduction',
+        'purpose-use-cases',
+        'vision-mission',
+        'product-roadmap',
+        'technology-architecture',
+        'security-compliance',
+        'integrations-apis',
+        'product-benefits-impact',
+      ];
+
+      if (softwareProductSlugs.includes(cleanSoftwareHash)) {
         resetAll();
         setIsSoftwareProductPageOpen(true);
         return;

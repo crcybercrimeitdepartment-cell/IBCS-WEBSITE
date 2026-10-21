@@ -414,10 +414,13 @@ export const useUIProtection = ({
       e.preventDefault();
     };
 
+    let snippingAttemptDetected = false;
+
     // SEC-005 to SEC-010: Keyboard Shortcut Protection
     const handleKeyDown = (e) => {
       // 1. Intercept PrintScreen FIRST before any interactive field exemption!
       if (protectPrintScreen && checkIsPrintScreenKey(e)) {
+        snippingAttemptDetected = true;
         e.preventDefault();
         e.stopPropagation();
         triggerScreenshotShield();
@@ -472,6 +475,7 @@ export const useUIProtection = ({
     const handleKeyUp = (e) => {
       if (!protectPrintScreen) return;
       if (checkIsPrintScreenKey(e)) {
+        snippingAttemptDetected = true;
         e.preventDefault();
         e.stopPropagation();
         triggerScreenshotShield();
@@ -486,9 +490,10 @@ export const useUIProtection = ({
 
     const handleWindowFocus = () => {
       document.body.classList.remove('ibcs-capture-blur');
-      if (protectPrintScreen) {
+      if (protectPrintScreen && snippingAttemptDetected) {
         // If user attempted out-of-focus snipping, wipe clipboard again upon returning
         triggerBurstClipboardWipe();
+        snippingAttemptDetected = false;
       }
     };
 
@@ -499,8 +504,9 @@ export const useUIProtection = ({
         }
       } else {
         document.body.classList.remove('ibcs-capture-blur');
-        if (protectPrintScreen) {
+        if (protectPrintScreen && snippingAttemptDetected) {
           triggerBurstClipboardWipe();
+          snippingAttemptDetected = false;
         }
       }
     };
@@ -573,18 +579,16 @@ export class ErrorBoundary extends React.Component {
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError() {
-    return { hasError: true };
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
   }
 
   componentDidCatch(error, errorInfo) {
-    if (import.meta.env.DEV) {
-      console.error('[Security ErrorBoundary Log]:', error, errorInfo);
-    }
+    console.error('[Security ErrorBoundary Log]:', error, errorInfo);
   }
 
   handleReload = () => {
-    this.setState({ hasError: false });
+    this.setState({ hasError: false, error: null });
     window.location.reload();
   };
 
@@ -600,9 +604,17 @@ export class ErrorBoundary extends React.Component {
             !
           </div>
           <h2 className="text-xl font-bold text-slate-800 mb-2">Something went wrong</h2>
-          <p className="text-sm text-slate-600 mb-6 leading-relaxed">
+          <p className="text-sm text-slate-600 mb-4 leading-relaxed">
             An unexpected error occurred while rendering this section. Please refresh the page or return home.
           </p>
+          {this.state.error && (
+            <div className="w-full text-left bg-red-50 text-red-800 p-3 rounded mb-4 overflow-auto max-h-48 border border-red-200 font-mono text-xs">
+              <div className="font-bold mb-1">{this.state.error.message || String(this.state.error)}</div>
+              {this.state.error.stack && (
+                <div className="text-[11px] opacity-80 whitespace-pre-wrap">{this.state.error.stack}</div>
+              )}
+            </div>
+          )}
           <div className="flex gap-3">
             <button
               onClick={this.handleReload}
@@ -627,39 +639,9 @@ export class ErrorBoundary extends React.Component {
 
 /**
  * SEC-014: Visual Watermark Component
- * Displays a non-intrusive, diagonal watermark across sensitive content areas.
+ * Watermark permanently disabled per user requirement.
  */
-export const SecurityWatermark = ({
-  username = 'Official IBCS Portal',
-  email = '',
-  timestamp = '',
-  enabled = false,
-  opacity = 0.035,
-}) => {
-  if (!enabled) return null;
-
-  const displayTime = timestamp || new Date().toLocaleDateString();
-  const label = `CONFIDENTIAL • ${username} ${email ? `• ${email}` : ''} • ${displayTime}`;
-
-  return (
-    <div
-      className="fixed inset-0 pointer-events-none z-[99999] overflow-hidden select-none"
-      style={{ opacity }}
-      aria-hidden="true"
-    >
-      <div className="w-[250vw] h-[250vh] -ml-[75vw] -mt-[75vh] flex flex-wrap transform rotate-[-25deg] content-start">
-        {Array.from({ length: 48 }).map((_, i) => (
-          <div
-            key={i}
-            className="p-12 font-mono text-xs md:text-sm font-semibold text-slate-900 whitespace-nowrap tracking-wider"
-          >
-            {label}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+export const SecurityWatermark = () => null;
 
 /**
  * SEC-012 & SEC-015: Protected UI Wrapper Component

@@ -460,7 +460,13 @@ export default function SoftwareProduct({ onClose }) {
   // Sync active subpage with URL hash
   useEffect(() => {
     const syncHash = () => {
-      const hash = window.location.hash.replace('#', '');
+      const raw = window.location.hash || '';
+      let hash = '';
+      try {
+        hash = decodeURIComponent(raw).toLowerCase().replace(/^#\/?/, '').replace(/\/$/, '').replace(/\s+/g, '-').trim();
+      } catch {
+        hash = raw.toLowerCase().replace(/^#\/?/, '').replace(/\/$/, '').replace(/\s+/g, '-').trim();
+      }
       const validSlugs = [
         'product-introduction',
         'purpose-use-cases',
@@ -477,6 +483,9 @@ export default function SoftwareProduct({ onClose }) {
         hash === 'software-products' ||
         hash === 'software-products-page' ||
         hash === 'software-product-page' ||
+        hash === 'published-software' ||
+        hash === 'software-launches' ||
+        hash === 'upcoming-software' ||
         hash === ''
       ) {
         setActiveSubpage(null);
@@ -488,12 +497,12 @@ export default function SoftwareProduct({ onClose }) {
     return () => window.removeEventListener('hashchange', syncHash);
   }, []);
 
-  const handleCardClick = (card) => {
-    const slug = card.slug;
+  const handleCardClick = (cardOrSlug) => {
+    const slug = typeof cardOrSlug === 'string' ? cardOrSlug : cardOrSlug?.slug;
     if (slug) {
       setActiveSubpage(slug);
       window.location.hash = `#${slug}`;
-      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }
   };
 

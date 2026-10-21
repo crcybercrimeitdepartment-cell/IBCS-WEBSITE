@@ -156,6 +156,14 @@ export default function Home({
               '#follow',
               '#copyright',
               '#meaning',
+              '#product-introduction',
+              '#purpose-use-cases',
+              '#vision-mission',
+              '#product-roadmap',
+              '#technology-architecture',
+              '#security-compliance',
+              '#integrations-apis',
+              '#product-benefits-impact',
             ].some((p) => currentHash.startsWith(p));
           if (isDetailPageHash) return;
 

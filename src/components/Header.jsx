@@ -24,6 +24,8 @@ export const navigationItems = [
   { label: 'Careers', href: '#careers' },
 ];
 
+
+
 // Initial sample notification list
 const initialNotifications = [
   { id: 1, title: 'MCA Registration Verified', detail: 'Registration No. 1010 official verification complete.', time: '10m ago', unread: false },
@@ -295,7 +297,12 @@ export default function Header({ onOpenItServicesPage, onOpenContactUsPage, acti
             {navigationItems.map((item) => {
               const parts = item.label.split(' ');
               const isItServices = item.label === 'IT Services' || item.href === '#it-services';
+              const isSoftwareProducts = item.label === 'Software Products' || item.href === '#software-products';
+              const isPublished = item.href === '#published-software';
+              const isLaunches = item.href === '#software-launches';
+              const isUpcoming = item.href === '#upcoming-software';
               const isActive = isItemActive(item);
+
               return (
                 <a
                   key={item.label}
@@ -309,6 +316,14 @@ export default function Header({ onOpenItServicesPage, onOpenContactUsPage, acti
                       } else {
                         window.dispatchEvent(new HashChangeEvent('hashchange'));
                       }
+                    } else if (isSoftwareProducts || isPublished) {
+                      e.preventDefault();
+                      window.location.hash = '#software-products';
+                      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+                    } else if (isLaunches || isUpcoming) {
+                      e.preventDefault();
+                      window.location.hash = '#product-roadmap';
+                      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
                     }
                   }}
                   className={`group relative px-2 xl:px-2.5 py-1.5 text-[11.5px] xl:text-[12px] 2xl:text-[13px] font-bold text-white/95 transition-all duration-300 hover:text-[#FFF8DC] focus-ring text-center whitespace-nowrap shrink-0 flex items-center justify-center cursor-pointer ${isActive ? "text-[#FFF8DC]" : ""}`}
@@ -465,6 +480,7 @@ export default function Header({ onOpenItServicesPage, onOpenContactUsPage, acti
             <nav className="mx-auto flex max-w-2xl flex-col space-y-2.5 pb-8" aria-label="Mobile navigation">
               {navigationItems.map((item, index) => {
                 const isItServices = item.label === 'IT Services' || item.href === '#it-services';
+                const isSoftwareProducts = item.label === 'Software Products' || item.href === '#software-products';
                 const isActive = isItemActive(item);
                 return (
                   <a
@@ -480,6 +496,12 @@ export default function Header({ onOpenItServicesPage, onOpenContactUsPage, acti
                         } else {
                           window.dispatchEvent(new HashChangeEvent('hashchange'));
                         }
+                      } else if (item.href === '#published-software') {
+                        e.preventDefault();
+                        window.location.hash = '#software-products';
+                      } else if (item.href === '#software-launches' || item.href === '#upcoming-software') {
+                        e.preventDefault();
+                        window.location.hash = '#product-roadmap';
                       }
                     }}
                     className={`flex items-center justify-between rounded-xl bg-[#081E52] border border-[#D4AF37]/20 px-4 py-3.5 font-display text-sm font-bold text-white transition-all hover:bg-[#0c2b7a] hover:text-[#FFF8DC] focus-ring active:scale-[0.99] shadow-sm cursor-pointer ${

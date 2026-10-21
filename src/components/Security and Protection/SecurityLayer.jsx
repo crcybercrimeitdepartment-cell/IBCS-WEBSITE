@@ -66,8 +66,8 @@ import URLProtectionLayer, {
  */
 
 export const SECURITY_CONFIG = {
-  // MASTER SWITCH: Inactive by default per configuration ("dont use it now")
-  enabled: false,
+  // MASTER SWITCH: Active throughout the website
+  enabled: true,
 
   // Feature-level granular switches
   features: {
@@ -85,31 +85,31 @@ export const SECURITY_CONFIG = {
     copyPasteProtection: true,
     printProtection: true,
     protectPrintScreen: true,
-    blurOnCapture: true,
+    blurOnCapture: false,
 
     // Error & Diagnostics (SEC-016)
     errorBoundaryEnabled: true,
 
-    // Visual Deterrence (SEC-014) - Disabled by default
+    // Visual Deterrence (SEC-014) - Disabled as requested
     watermarkEnabled: false,
 
     // Sensitive Content Masking (SEC-013)
     maskSensitiveData: true,
 
-    // URL, Navigation & Route Protection (30-Feature System)
-    urlProtection: true,
-    routeProtection: true,
-    directAccessProtection: false, // Default false to allow direct page linking & refreshing
+    // URL, Navigation & Route Protection (Disabled to allow completely normal navigation without 404 blocks)
+    urlProtection: false,
+    routeProtection: false,
+    directAccessProtection: false,
     deepLinkProtection: false,
-    browserHistoryProtection: true,
-    validateQueries: false, // Default false to support search & filter queries smoothly
+    browserHistoryProtection: false,
+    validateQueries: false,
   },
 
-  // Watermark configuration (disabled by default)
+  // Watermark configuration (subtle and elegant)
   watermark: {
     username: 'IB Cyber Security Official',
     email: '',
-    opacity: 0.03,
+    opacity: 0.025,
   },
 
   // URL & Navigation configuration

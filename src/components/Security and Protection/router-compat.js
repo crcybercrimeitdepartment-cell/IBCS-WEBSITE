@@ -117,10 +117,10 @@ export const Link = ({ to, children, className = '', onClick, replace = false, .
 
   const href = typeof to === 'string' && to.startsWith('/') ? `#${to.slice(1)}` : to;
 
-  return (
-    <a href={href} className={className} onClick={handleClick} {...props}>
-      {children}
-    </a>
+  return React.createElement(
+    'a',
+    { href, className, onClick: handleClick, ...props },
+    children
   );
 };
 
