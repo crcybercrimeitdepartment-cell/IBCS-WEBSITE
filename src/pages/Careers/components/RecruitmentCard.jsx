@@ -47,7 +47,10 @@ export default function RecruitmentCard({ item, index, totalCards = 16 }) {
       className="relative flex flex-col animate-card-entrance"
       style={{ animationDelay: entranceDelay }}
     >
-      <div className="group relative flex flex-col justify-between p-2 sm:p-2.5 select-none transition-all duration-300">
+      <div 
+        onClick={() => { window.location.hash = '#coming-soon'; }}
+        className="group relative flex flex-col justify-between p-2 sm:p-2.5 select-none transition-all duration-300 cursor-pointer"
+      >
         <svg 
           className="absolute inset-0 w-full h-full pointer-events-none overflow-visible z-10 transition-transform duration-300 group-hover:scale-[1.01]" 
           viewBox="0 0 300 360" 

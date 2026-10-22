@@ -21,20 +21,30 @@ export default function CurrentVacancyPage({ subRoute, onNavigate, onBack, onHom
     return <PartTimePage onNavigate={onNavigate} onBack={onBack} onHome={onHome} />;
   }
   if (subRoute === 'internship' || subRoute === 'intern') {
-    return <InternshipPage onNavigate={onNavigate} />;
+    return <InternshipPage onNavigate={onNavigate} onBack={onBack} onHome={onHome} />;
   }
   if (subRoute === 'remote-job' || subRoute === 'remote') {
     return <RemoteJobPage onNavigate={onNavigate} onBack={onBack} onHome={onHome} />;
   }
   if (subRoute === 'post-vacancy' || subRoute === 'post') {
-    return <PostVacancyPage onNavigate={onNavigate} />;
+    return <PostVacancyPage onNavigate={onNavigate} onBack={onBack} onHome={onHome} />;
   }
   if (subRoute === 'vacancy-card-1') {
-    return <VacancyCard1Page onNavigate={onNavigate} />;
+    return <VacancyCard1Page onNavigate={onNavigate} onBack={onBack} onHome={onHome} />;
   }
   if (subRoute === 'vacancy-card-2') {
-    return <VacancyCard2Page onNavigate={onNavigate} />;
+    return <VacancyCard2Page onNavigate={onNavigate} onBack={onBack} onHome={onHome} />;
   }
+
+  const handleCardClick = (item) => {
+    if (['04', '06', '07', '08'].includes(item.id) || ['internship', 'post-vacancy', 'vacancy-card-1', 'vacancy-card-2'].includes(item.view)) {
+      window.location.hash = `#/${item.view}`;
+      return;
+    }
+    if (item.view) {
+      onNavigate?.(item.view);
+    }
+  };
 
   return (
     <div className="w-full max-w-7xl xl:max-w-[1380px] animate-fadeIn flex flex-col items-center">
@@ -60,7 +70,7 @@ export default function CurrentVacancyPage({ subRoute, onNavigate, onBack, onHom
               iconName={item.iconName}
               iconColor={item.iconColor}
               blobColor={item.blobColor}
-              onClick={item.view ? () => onNavigate?.(item.view) : undefined}
+              onClick={() => handleCardClick(item)}
               className="animate-stagger-card"
               style={{ animationDelay: `${index * 80}ms` }}
             />

@@ -67,6 +67,7 @@ export const careerCardsData = [
     iconName: 'Megaphone',
     iconColor: 'text-[#D4AF37]',
     blobColor: 'fill-[#D4AF37]/25',
+    view: 'advertisements',
   },
   {
     id: 'press',
@@ -75,6 +76,7 @@ export const careerCardsData = [
     iconName: 'Newspaper',
     iconColor: 'text-[#E5C158]',
     blobColor: 'fill-[#D4AF37]/25',
+    view: 'press',
   },
   {
     id: 'status',
@@ -83,6 +85,7 @@ export const careerCardsData = [
     iconName: 'UserCheck',
     iconColor: 'text-[#D4AF37]',
     blobColor: 'fill-[#D4AF37]/25',
+    view: 'status',
   },
   {
     id: 'resume',
@@ -91,6 +94,7 @@ export const careerCardsData = [
     iconName: 'FileUp',
     iconColor: 'text-[#E5C158]',
     blobColor: 'fill-[#D4AF37]/25',
+    view: 'resume',
   },
 ];
 

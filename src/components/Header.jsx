@@ -316,14 +316,19 @@ export default function Header({ onOpenItServicesPage, onOpenContactUsPage, acti
                       } else {
                         window.dispatchEvent(new HashChangeEvent('hashchange'));
                       }
-                    } else if (isSoftwareProducts || isPublished) {
+                    } else if (isSoftwareProducts) {
                       e.preventDefault();
                       window.location.hash = '#software-products';
                       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-                    } else if (isLaunches || isUpcoming) {
+                    } else if (isPublished) {
                       e.preventDefault();
-                      window.location.hash = '#product-roadmap';
-                      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+                      window.location.hash = '#published-software';
+                    } else if (isLaunches) {
+                      e.preventDefault();
+                      window.location.hash = '#software-launches';
+                    } else if (isUpcoming) {
+                      e.preventDefault();
+                      window.location.hash = '#upcoming-software';
                     }
                   }}
                   className={`group relative px-2 xl:px-2.5 py-1.5 text-[11.5px] xl:text-[12px] 2xl:text-[13px] font-bold text-white/95 transition-all duration-300 hover:text-[#FFF8DC] focus-ring text-center whitespace-nowrap shrink-0 flex items-center justify-center cursor-pointer ${isActive ? "text-[#FFF8DC]" : ""}`}
@@ -498,10 +503,13 @@ export default function Header({ onOpenItServicesPage, onOpenContactUsPage, acti
                         }
                       } else if (item.href === '#published-software') {
                         e.preventDefault();
-                        window.location.hash = '#software-products';
-                      } else if (item.href === '#software-launches' || item.href === '#upcoming-software') {
+                        window.location.hash = '#published-software';
+                      } else if (item.href === '#software-launches') {
                         e.preventDefault();
-                        window.location.hash = '#product-roadmap';
+                        window.location.hash = '#software-launches';
+                      } else if (item.href === '#upcoming-software') {
+                        e.preventDefault();
+                        window.location.hash = '#upcoming-software';
                       }
                     }}
                     className={`flex items-center justify-between rounded-xl bg-[#081E52] border border-[#D4AF37]/20 px-4 py-3.5 font-display text-sm font-bold text-white transition-all hover:bg-[#0c2b7a] hover:text-[#FFF8DC] focus-ring active:scale-[0.99] shadow-sm cursor-pointer ${

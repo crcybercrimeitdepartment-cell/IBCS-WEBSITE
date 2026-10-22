@@ -120,12 +120,14 @@ export function Pendrive({
   animDelay = 0,
   compact = false,
   className = '',
+  onClick,
 }) {
   const lines = getTitleLines(title, compact);
 
   return (
     <div
-      className={`relative inline-flex items-center justify-center select-none pointer-events-none ${
+      onClick={onClick}
+      className={`relative inline-flex items-center justify-center select-none cursor-pointer ${
         compact ? 'py-0.5 px-0.5' : 'py-2 px-1'
       } ${className}`}
     >
@@ -136,7 +138,7 @@ export function Pendrive({
       />
 
       <div
-        className={`pendrive-pure-css relative flex items-center cursor-pointer pointer-events-auto ${
+        className={`pendrive-pure-css relative flex items-center cursor-pointer ${
           compact ? 'pendrive-compact' : ''
         }`}
       >
@@ -1404,20 +1406,22 @@ export default function Softwarelibrary({ onClose }) {
       {/* 1. DESKTOP VIEW: RETRO CRT WORKSTATION */}
       <div className="hidden lg:flex w-full justify-center">
         <RetroComputer>
-          <div className="w-full flex-1 flex items-center justify-center pointer-events-none py-1">
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-3 gap-x-2 place-items-center pointer-events-none">
+          <div className="w-full flex-1 flex items-center justify-center py-1">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-3 gap-x-2 place-items-center">
               {desktopProducts.map((product, index) => (
                 <div
                   key={`desktop-${cardsReloadKey}-${currentPage}-${product.id}`}
-                  className="pendrive-card-enter flex items-center justify-center w-full pointer-events-none"
+                  onClick={() => { window.location.hash = '#coming-soon'; }}
+                  className="pendrive-card-enter flex items-center justify-center w-full cursor-pointer hover:scale-[1.03] transition-transform duration-200"
                   style={{ animationDelay: `${index * 85}ms` }}
                 >
-                  <div className="inline-flex items-center justify-center pointer-events-none">
+                  <div className="inline-flex items-center justify-center cursor-pointer">
                     <Pendrive
                       title={product.name}
                       animDelay={index * 85}
                       orientation="horizontal"
                       rotationDirection="right"
+                      onClick={() => { window.location.hash = '#coming-soon'; }}
                     />
                   </div>
                 </div>
@@ -1484,16 +1488,18 @@ export default function Softwarelibrary({ onClose }) {
             {mobileProducts.map((product, index) => (
               <div
                 key={`mobile-${cardsReloadKey}-${currentPage}-${product.id}`}
-                className="pendrive-card-enter flex items-center justify-center w-full pointer-events-none"
+                onClick={() => { window.location.hash = '#coming-soon'; }}
+                className="pendrive-card-enter flex items-center justify-center w-full cursor-pointer active:scale-95 transition-transform duration-150"
                 style={{ animationDelay: `${index * 55}ms` }}
               >
-                <div className="inline-flex items-center justify-center pointer-events-none">
+                <div className="inline-flex items-center justify-center cursor-pointer">
                   <Pendrive
                     title={product.name}
                     compact={true}
                     animDelay={index * 55}
                     orientation="horizontal"
                     rotationDirection="right"
+                    onClick={() => { window.location.hash = '#coming-soon'; }}
                   />
                 </div>
               </div>

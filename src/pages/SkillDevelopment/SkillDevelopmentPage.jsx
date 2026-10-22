@@ -504,7 +504,10 @@ export function Card({ skill }) {
   const isInternship = skill.title.toLowerCase().includes('internship');
 
   return (
-    <div className="group relative flex flex-col items-center justify-center text-center p-2.5 sm:p-4 md:p-6 rounded-[1.6rem] sm:rounded-[2rem] md:rounded-[2.4rem] bg-gradient-to-b from-[#081E52] via-[#06173F] to-[#040A1A] border-[2.5px] sm:border-[3px] border-[#D4AF37]/50 shadow-[0_8px_25px_rgba(4,10,26,0.6)] hover:shadow-[0_16px_36px_rgba(212,175,55,0.35)] hover:border-[#E5C158] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer h-full min-h-[185px] sm:min-h-[200px] md:min-h-[225px] overflow-hidden">
+    <div
+      onClick={() => { window.location.hash = '#coming-soon'; }}
+      className="group relative flex flex-col items-center justify-center text-center p-2.5 sm:p-4 md:p-6 rounded-[1.6rem] sm:rounded-[2rem] md:rounded-[2.4rem] bg-gradient-to-b from-[#081E52] via-[#06173F] to-[#040A1A] border-[2.5px] sm:border-[3px] border-[#D4AF37]/50 shadow-[0_8px_25px_rgba(4,10,26,0.6)] hover:shadow-[0_16px_36px_rgba(212,175,55,0.35)] hover:border-[#E5C158] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer h-full min-h-[185px] sm:min-h-[200px] md:min-h-[225px] overflow-hidden"
+    >
       {/* 3 Heavy Dense Continuous Falling Snow Spray Layers */}
       <div className="absolute inset-0 dense-snow-layer-1 pointer-events-none rounded-[1.5rem] opacity-90" />
       <div className="absolute inset-0 dense-snow-layer-2 pointer-events-none rounded-[1.5rem] opacity-85" />

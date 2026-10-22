@@ -27,6 +27,7 @@ export default function OnlineApplicationPortalPage() {
             fromColor={item.fromColor}
             toColor={item.toColor}
             iconName={item.iconName}
+            onClick={() => { window.location.hash = '#coming-soon'; }}
             className="animate-stagger-card"
             style={{ animationDelay: `${index * 40}ms` }}
           />

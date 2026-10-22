@@ -542,7 +542,7 @@ function UnlockedScreen({ onLock, wallpaper = DEFAULT_WALLPAPER }) {
             return (
               <button
                 key={app.id}
-                onClick={() => setActiveDirectory(app)}
+                onClick={() => { window.location.hash = '#coming-soon'; }}
                 className="flex flex-col items-center gap-2 group cursor-pointer"
               >
                 <div className={`w-16 h-16 rounded-2xl ${app.bg} flex items-center justify-center text-white shadow-xl ${app.shadow} group-hover:scale-105 transition duration-200 border border-white/20`}>
@@ -720,11 +720,7 @@ function LockScreen({
                 onClick={(e) => {
                   e.stopPropagation();
                   onUserInteraction && onUserInteraction();
-                  if (onSelectApp) {
-                    onSelectApp(app);
-                  } else {
-                    setInternalActiveDirectory(app);
-                  }
+                  window.location.hash = '#coming-soon';
                 }}
                 className="group flex flex-col items-center focus:outline-none cursor-pointer transition-transform duration-200"
               >
@@ -1251,7 +1247,7 @@ const PhoneScreenContent = ({ offsetTop = 0, timeString = "08:43", batteryLevel 
               key={app.id}
               onClick={(e) => {
                 e.stopPropagation();
-                onSelectApp && onSelectApp(app);
+                window.location.hash = '#coming-soon';
               }}
               className="flex flex-col items-center gap-1.5 focus:outline-none cursor-pointer group"
             >

@@ -43,6 +43,7 @@ const SkillDevelopmentPage = lazy(() => import('./pages/SkillDevelopment/SkillDe
 const SoftwareLibraryPage = lazy(() => import('./pages/SoftwareLibrary/SoftwareLibraryPage'));
 const ITServicesPage = lazy(() => import('./pages/IT Services/ITServicesPage'));
 const ContactUsPage = lazy(() => import('./pages/ContactUs/ContactUsPage'));
+const ComingSoonPage = lazy(() => import('./components/ComingSoonPage'));
 
 // Root App Component
 export default function App() {
@@ -82,6 +83,8 @@ export default function App() {
   const [isNextGenPageOpen, setIsNextGenPageOpen] = useState(false);
   const [isItServicesPageOpen, setIsItServicesPageOpen] = useState(false);
   const [isContactUsPageOpen, setIsContactUsPageOpen] = useState(false);
+  const [isComingSoonPageOpen, setIsComingSoonPageOpen] = useState(false);
+  const [comingSoonTitle, setComingSoonTitle] = useState('Coming Soon');
 
   // Initial fast platform loading transition
   useEffect(() => {
@@ -91,7 +94,9 @@ export default function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  const activePageKey = isSdpePageOpen
+  const activePageKey = isComingSoonPageOpen
+    ? 'coming-soon'
+    : isSdpePageOpen
     ? 'sdpe'
     : isIpPageOpen
       ? 'ip'
@@ -198,7 +203,8 @@ export default function App() {
     isIotPageOpen ||
     isNextGenPageOpen ||
     isItServicesPageOpen ||
-    isContactUsPageOpen;
+    isContactUsPageOpen ||
+    isComingSoonPageOpen;
 
     const lastHomepageScrollRef = useRef(0);
 
@@ -247,6 +253,7 @@ export default function App() {
     setIsNextGenPageOpen(false);
     setIsItServicesPageOpen(false);
     setIsContactUsPageOpen(false);
+    setIsComingSoonPageOpen(false);
   };
 
   useEffect(() => {
@@ -296,6 +303,74 @@ export default function App() {
         return;
       }
 
+      // Coming Soon and redirects
+      const isComingSoonHash =
+        rawHash === '#coming-soon' ||
+        rawHash === '#/coming-soon' ||
+        rawHash === '#comingsoon' ||
+        rawHash.startsWith('#coming-soon') ||
+        rawHash.startsWith('#/coming-soon') ||
+        rawHash === '#help' ||
+        rawHash === '#/help' ||
+        rawHash === '#tender' ||
+        rawHash === '#/tender' ||
+        rawHash === '#published-software' ||
+        rawHash === '#/published-software' ||
+        rawHash === '#software-launches' ||
+        rawHash === '#/software-launches' ||
+        rawHash === '#upcoming-software' ||
+        rawHash === '#/upcoming-software' ||
+        rawHash.startsWith('#/advertisement') ||
+        rawHash.startsWith('#advertisement') ||
+        rawHash.startsWith('#/press') ||
+        rawHash.startsWith('#press') ||
+        rawHash.startsWith('#/notices') ||
+        rawHash.startsWith('#notices') ||
+        rawHash.startsWith('#/status') ||
+        rawHash.startsWith('#status') ||
+        rawHash.startsWith('#/application-status') ||
+        rawHash.startsWith('#application-status') ||
+        rawHash.startsWith('#/check-status') ||
+        rawHash.startsWith('#check-status') ||
+        rawHash.startsWith('#/resume') ||
+        rawHash.startsWith('#resume') ||
+        rawHash.startsWith('#/submit-resume') ||
+        rawHash.startsWith('#submit-resume') ||
+        rawHash.startsWith('#/internship') ||
+        rawHash.startsWith('#internship') ||
+        rawHash.startsWith('#/intern') ||
+        rawHash.startsWith('#intern') ||
+        rawHash.startsWith('#/post-vacancy') ||
+        rawHash.startsWith('#post-vacancy') ||
+        rawHash.startsWith('#/post') ||
+        rawHash.startsWith('#post') ||
+        rawHash.startsWith('#/vacancy-card-1') ||
+        rawHash.startsWith('#vacancy-card-1') ||
+        rawHash.startsWith('#/vacancy-card-2') ||
+        rawHash.startsWith('#vacancy-card-2');
+
+      if (isComingSoonHash) {
+        let title = 'Coming Soon';
+        if (rawHash.includes('help')) title = 'Help & Support';
+        else if (rawHash.includes('tender')) title = 'Tender Notices';
+        else if (rawHash.includes('published-software')) title = 'Published Software';
+        else if (rawHash.includes('software-launches')) title = 'Software Launches';
+        else if (rawHash.includes('upcoming-software')) title = 'Upcoming Software';
+        else if (rawHash.includes('advertisement')) title = 'Recruitment Advertisement';
+        else if (rawHash.includes('press') || rawHash.includes('notices')) title = 'Press Releases and Notices';
+        else if (rawHash.includes('status')) title = 'Check Application Status';
+        else if (rawHash.includes('resume')) title = 'Submit Resume';
+        else if (rawHash.includes('internship') || rawHash.includes('intern')) title = 'Internship';
+        else if (rawHash.includes('post-vacancy') || rawHash === '#/post' || rawHash === '#post') title = 'Post Vacancy';
+        else if (rawHash.includes('vacancy-card-1')) title = 'Vacancy Card 1';
+        else if (rawHash.includes('vacancy-card-2')) title = 'Vacancy Card 2';
+
+        resetAll();
+        setComingSoonTitle(title);
+        setIsComingSoonPageOpen(true);
+        return;
+      }
+
       let cleanSoftwareHash = '';
       try {
         cleanSoftwareHash = decodeURIComponent(rawHash || '').toLowerCase().replace(/^#\/?/, '').replace(/\/$/, '').replace(/\s+/g, '-').trim();
@@ -306,9 +381,6 @@ export default function App() {
         'software-products',
         'software-products-page',
         'software-product-page',
-        'published-software',
-        'software-launches',
-        'upcoming-software',
         'product-introduction',
         'purpose-use-cases',
         'vision-mission',
@@ -355,9 +427,7 @@ export default function App() {
         rawHash.startsWith('#/job-preview') ||
         rawHash.startsWith('#/full-time') ||
         rawHash.startsWith('#/part-time') ||
-        rawHash.startsWith('#/internship') ||
         rawHash.startsWith('#/remote-job') ||
-        rawHash.startsWith('#/post-vacancy') ||
         rawHash.startsWith('#/policies') ||
         rawHash.startsWith('#/recruitment-policies') ||
         rawHash.startsWith('#/rules') ||
@@ -366,15 +436,7 @@ export default function App() {
         rawHash.startsWith('#/department') ||
         rawHash.startsWith('#/portal') ||
         rawHash.startsWith('#/online-portal') ||
-        rawHash.startsWith('#/online-application-portal') ||
-        rawHash.startsWith('#/advertisement') ||
-        rawHash.startsWith('#/press') ||
-        rawHash.startsWith('#/notices') ||
-        rawHash.startsWith('#/status') ||
-        rawHash.startsWith('#/application-status') ||
-        rawHash.startsWith('#/check-status') ||
-        rawHash.startsWith('#/resume') ||
-        rawHash.startsWith('#/submit-resume')
+        rawHash.startsWith('#/online-application-portal')
       ) {
         resetAll();
         setIsCareerPageOpen(true);
@@ -746,6 +808,13 @@ export default function App() {
   };
 
   const handleCloseContactUsPage = () => closePageAndScrollTo('home');
+  const handleCloseComingSoonPage = () => {
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      closePageAndScrollTo('home');
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-slate-900 overflow-x-clip w-full max-w-full">
@@ -819,6 +888,7 @@ export default function App() {
           {isNextGenPageOpen && <NextGenerationDigitalInnovationDecentralisedIntelligencePage onClose={handleCloseNextGenPage} />}
           {isItServicesPageOpen && <ITServicesPage onClose={handleCloseItServicesPage} />}
           {isContactUsPageOpen && <ContactUsPage onClose={handleCloseContactUsPage} />}
+          {isComingSoonPageOpen && <ComingSoonPage title={comingSoonTitle} showNav onClose={handleCloseComingSoonPage} />}
         </Suspense>
       </main>
 

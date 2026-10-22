@@ -48,6 +48,8 @@ export default function AboutUs({ onClose, onOpenCopyrightPage, onOpenMeaningPag
       if (onOpenMeaningPage) {
         onOpenMeaningPage();
       }
+    } else {
+      window.location.hash = '#coming-soon';
     }
   };
 

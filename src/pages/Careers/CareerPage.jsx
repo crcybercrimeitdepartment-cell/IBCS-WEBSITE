@@ -9,10 +9,7 @@ import RecruitmentRulesAndPoliciesPage from './RecruitmentRulesAndPolicies/Recru
 import DocumentVerificationPage from './DocumentVerification/DocumentVerificationPage';
 import DepartmentPage from './Department/DepartmentPage';
 import OnlineApplicationPortalPage from './OnlineApplicationPortal/OnlineApplicationPortalPage';
-import RecruitmentAdvertisementPage from './RecruitmentAdvertisement/RecruitmentAdvertisementPage';
-import PressReleaseAndNoticesPage from './PressReleaseAndNotices/PressReleaseAndNoticesPage';
-import CheckApplicationStatusPage from './CheckApplicationStatus/CheckApplicationStatusPage';
-import SubmitResumePage from './SubmitResume/SubmitResumePage';
+import ComingSoonPage from '../../components/ComingSoonPage';
 
 function getViewFromHash() {
   const rawHash = window.location.hash.replace(/^#\/?/, '').replace(/\/$/, '').toLowerCase();
@@ -150,6 +147,16 @@ export default function CareerPage({ onClose }) {
       </div>
     );
   }
+
+  const handleCardClick = (card) => {
+    if (['advertisements', 'press', 'status', 'resume'].includes(card.id)) {
+      window.location.hash = `#/${card.id}`;
+      return;
+    }
+    if (card.view) {
+      navigateTo(card.view);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#eceff1] flex flex-col items-center justify-start pt-6 sm:pt-8 pb-16 px-4 sm:px-8 lg:px-12 text-slate-900">
@@ -315,10 +322,10 @@ export default function CareerPage({ onClose }) {
       {currentView === 'verification' && <DocumentVerificationPage />}
       {currentView === 'department' && <DepartmentPage />}
       {currentView === 'portal' && <OnlineApplicationPortalPage />}
-      {currentView === 'advertisements' && <RecruitmentAdvertisementPage />}
-      {currentView === 'press' && <PressReleaseAndNoticesPage />}
-      {currentView === 'status' && <CheckApplicationStatusPage />}
-      {currentView === 'resume' && <SubmitResumePage />}
+      {currentView === 'advertisements' && <ComingSoonPage title="Recruitment Advertisement" categoryTitle="Careers" />}
+      {currentView === 'press' && <ComingSoonPage title="Press Releases and Notices" categoryTitle="Careers" />}
+      {currentView === 'status' && <ComingSoonPage title="Check Application Status" categoryTitle="Careers" />}
+      {currentView === 'resume' && <ComingSoonPage title="Submit Resume" categoryTitle="Careers" />}
 
       {/* Level 1 Parent Overview View (Exact 8 Cards) */}
       {currentView === 'home' && (
@@ -345,7 +352,7 @@ export default function CareerPage({ onClose }) {
                   iconName={card.iconName}
                   iconColor={card.iconColor}
                   blobColor={card.blobColor}
-                  onClick={card.view ? () => navigateTo(card.view) : undefined}
+                  onClick={() => handleCardClick(card)}
                   className="animate-stagger-card"
                   style={{ animationDelay: `${index * 60}ms` }}
                 />
